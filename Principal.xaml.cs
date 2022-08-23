@@ -12,16 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjetoLuna.Views
+namespace ProjetoLuna
 {
     /// <summary>
-    /// Lógica interna para FuncionarioFormWindow.xaml
+    /// Lógica interna para Principal.xaml
     /// </summary>
-    public partial class FuncionarioFormWindow : Window
+    public partial class Principal : Window
     {
-        public FuncionarioFormWindow()
+        public Principal()
         {
             InitializeComponent();
+
+        }
+
+        private void btEntrar_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.Login();
+            form.Show();
+            this.Close();
+        }
+
+        private void btCadUser_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

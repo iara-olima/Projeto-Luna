@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjetoLuna
+namespace ProjetoLuna.Views
 {
     /// <summary>
     /// Lógica interna para Login.xaml
