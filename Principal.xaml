@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna"
         mc:Ignorable="d"
-        Title="Principal"  Height="600" Width="600" WindowState="Maximized">
+        Title="Principal"  Height="450" Width="800">
     <Grid>
-        <Button Content="Entrar" x:Name="btEntrar" HorizontalAlignment="Left" Margin="129,484,0,0" VerticalAlignment="Top" Height="50" Width="120" FontWeight="Bold" Click="btEntrar_Click"/>
-        <Button Content="Cadastrar Usuário" x:Name="btCadUser" HorizontalAlignment="Left" Margin="300,484,0,0" VerticalAlignment="Top" Height="50" Width="120" FontWeight="Bold" Click="btCadUser_Click"/>
+        <Button Content="Entrar" x:Name="btEntrar" HorizontalAlignment="Left" Margin="207,300,0,0" VerticalAlignment="Top" Height="50" Width="120" FontWeight="Bold" Click="btEntrar_Click"/>
+        <Button Content="Cadastrar Usuário" x:Name="btCadUser" HorizontalAlignment="Left" Margin="374,300,0,0" VerticalAlignment="Top" Height="50" Width="120" FontWeight="Bold" Click="btCadUser_Click"/>
 
     </Grid>
 </Window>

@@ -10,8 +10,8 @@
         <Label Content="CPF:" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="93,91,0,0" VerticalAlignment="Top" Height="38" Width="74"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtCPF" Margin="93,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="20" BorderBrush="Black" BorderThickness="2,2,2,2"/>
         <Label Content="Senha: " HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Margin="93,180,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtSenha" Margin="93,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="20" BorderBrush="Black" BorderThickness="2,2,2,2"/>
-        <Button Content="Entrar" x:Name="btEntrar" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="293,325,0,0" VerticalAlignment="Top" Height="47" Width="131"/>
+        <PasswordBox HorizontalAlignment="Left" x:Name="pwSenha" Margin="93,217,0,0" VerticalAlignment="Top" Width="220" FontSize="20" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+        <Button Content="Entrar" x:Name="btEntrar" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="293,325,0,0" VerticalAlignment="Top" Height="47" Width="131" Click="btEntrar_Click"/>
 
     </Grid>
 </Window>
