@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace ProjetoLuna.Database
 {
@@ -14,9 +16,9 @@ namespace ProjetoLuna.Database
 
         private static string user = "root";
 
-        private static string password = "aniversario01";
+        private static string password = "root";
 
-        private static string dbname = "bd_escola";
+        private static string dbname = "";
 
         private static MySqlConnection connection;
 
