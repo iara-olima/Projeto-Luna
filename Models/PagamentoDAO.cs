@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoLuna.Models
 {
-    internal class teste
+    internal class PagamentoDAO
     {
     }
 }

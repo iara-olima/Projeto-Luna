@@ -100,6 +100,26 @@
     </ApplicationDefinition>
     <Compile Include="Database\Conexao.cs" />
     <Compile Include="Helpers\DAOHelper.cs" />
+    <Compile Include="Models\Caixa.cs" />
+    <Compile Include="Models\CaixaDAO.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteDAO.cs" />
+    <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\CompraDAO.cs" />
+    <Compile Include="Models\Despesa.cs" />
+    <Compile Include="Models\FonecedorDAO.cs" />
+    <Compile Include="Models\Fornecedor.cs" />
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\FuncionarioDAO.cs" />
+    <Compile Include="Models\Pagamento.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\ProdutoDAO.cs" />
+    <Compile Include="Models\Recebimento.cs" />
+    <Compile Include="Models\RecebimentoDAO.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioDAO.cs" />
+    <Compile Include="Models\Venda.cs" />
+    <Compile Include="Models\VendaDAO.cs" />
     <Compile Include="Principal.xaml.cs">
       <DependentUpon>Principal.xaml</DependentUpon>
     </Compile>
@@ -153,8 +173,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

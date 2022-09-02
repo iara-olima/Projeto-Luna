@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProjetoLuna.Models
 {
-    internal class Caixa
+    public class Caixa
     {
+        public string Id { get; set; }
+        public DateTime? Data { get; set; }
+        public Double? SaldoInicial { get; set; }
+        public Double? SaldoFinal { get; set; }
+        public Double? Recebimentos { get; set; }
+        public Double? Pagamentos { get; set; }
+
     }
 }

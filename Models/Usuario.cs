@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjetoLuna.Models
 {
-    internal class Usuario
+    public class Usuario
     {
+        public int Id { get; set; }
+        public string CPF { get; set; }
+        public string Senha { get; set; }
+
     }
 }

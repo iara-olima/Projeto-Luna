@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace ProjetoLuna.Models
 {
-    internal class Funcionario
+    public class Funcionario
     {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public DateTime? DataNasc { get; set; }
+        public double? Salario { get; set; }
+        public string Funcao { get; set; }
+        public string CPF { get; set; }
+        public string Email { get; set; }
+        public string Telefone { get; set; }
+        public string Sexo { get; set; }
+
     }
 }
