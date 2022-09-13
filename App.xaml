@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:ProjetoLuna"
              StartupUri="Principal.xaml">
     <Application.Resources>
-         
+        
+
     </Application.Resources>
 </Application>

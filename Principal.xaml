@@ -29,19 +29,20 @@
 
         <Image HorizontalAlignment="Left" Height="393" VerticalAlignment="Top" Width="702" Source="Imagens/Design_PDS-removebg-preview.png" Margin="49,29,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
-        <Button Content="ENTRAR" x:Name="btEntrar"  HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Height="146" Width="220" FontWeight="Normal" Click="btEntrar_Click" Grid.Column="1" Grid.Row="1" Foreground="#FFF8DDEB" FontFamily="Century Gothic" FontSize="22" BorderBrush="{x:Null}" BorderThickness="1,1,0,1" Uid="" ScrollViewer.VerticalScrollBarVisibility="Disabled" ClickMode="Press" UseLayoutRounding="False" IsDefault="True" >
-            <Button.Background>
-                <ImageBrush ImageSource="Imagens/Design_PDS__4_-removebg-preview.png" Stretch="UniformToFill"/>
-            </Button.Background>
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
+        
+
+
+
+    
+
+        <Button Grid.Column="1" Grid.Row="1" Margin="162,235,0,0"  Width="200" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="16" FontWeight="Medium"   Background="#FFC4719D" Foreground="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
         </Button>
+
         <Image HorizontalAlignment="Left" Height="392" Margin="-94,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="295" Source="Imagens/Design_PDS__2_-removebg-preview.png" Grid.ColumnSpan="2"/>
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="754" Margin="456,-71,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="392" Source="Imagens/Design_PDS__3_-removebg-preview.png"/>
         <Label Grid.Column="1" Content="Desde 2022&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="223,10,0,0" VerticalAlignment="Top" Width="98" FontSize="18" FontWeight="Normal" Foreground="#FF370F24" FontFamily="Source Sans Pro Semibold"/>
