@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna"
         mc:Ignorable="d"
-        Title="Principal"  Height="582" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Principal"  Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
         <Grid.RowDefinitions>
             <RowDefinition Height="131*"/>
@@ -16,36 +16,23 @@
             <ColumnDefinition Width="661*"/>
         </Grid.ColumnDefinitions>
 
-        <Image HorizontalAlignment="Left" Height="354" Margin="-150,-69,0,0" VerticalAlignment="Top" Width="316" Source="Imagens/Design_PDS__1_-removebg-preview.png" RenderTransformOrigin="0.242,0.57" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="19.598"/>
-                    <TranslateTransform X="-0.479" Y="-1.759"/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-
-        <Image HorizontalAlignment="Left" Height="423" VerticalAlignment="Top" Width="742" Source="Imagens/Design_PDS-removebg-preview.png" Margin="29,37,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
 
 
 
 
 
-
-        <Button Click="btEntrar_Click" Grid.Column="1" Grid.Row="1" Margin="191,301,0,0"  Width="140" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="24" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+        <Button Click="btEntrar_Click" Grid.Column="1" Grid.Row="1" Margin="322,301,0,0"  Width="140" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="24" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-
-        <Image HorizontalAlignment="Left" Height="392" Margin="-94,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="295" Source="Imagens/Design_PDS__2_-removebg-preview.png" Grid.ColumnSpan="2"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="754" Margin="456,-71,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="392" Source="Imagens/Design_PDS__3_-removebg-preview.png"/>
-        <Label Grid.Column="1" Content="Desde 2022&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="212,23,0,0" VerticalAlignment="Top" Width="98" FontSize="18" FontWeight="Normal" Foreground="#FF370F24" FontFamily="Source Sans Pro Semibold"/>
+        <Label Grid.Column="1" Content="Desde 2022&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="336,10,0,0" VerticalAlignment="Top" Width="110" FontSize="18" FontWeight="Bold" Foreground="#FF370F24" FontFamily="Source Sans Pro Semibold"/>
+        <Image HorizontalAlignment="Left" Height="960" Margin="-274,-212,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="742" Source="/Design PDS (3).png" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="501" Margin="14,25,0,0" VerticalAlignment="Top" Width="756" Source="/Design PDS (5).png" Grid.RowSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="1174" Margin="744,-94,0,0" VerticalAlignment="Top" Width="480" Source="/Design PDS (6).png" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

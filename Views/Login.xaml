@@ -5,13 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
-    <Grid>
-        <Label Content="CPF:" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="93,91,0,0" VerticalAlignment="Top" Height="38" Width="74"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtCPF" Margin="93,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="20" BorderBrush="Black" BorderThickness="2,2,2,2"/>
-        <Label Content="Senha: " HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Margin="93,180,0,0" VerticalAlignment="Top"/>
-        <PasswordBox HorizontalAlignment="Left" x:Name="pwSenha" Margin="93,217,0,0" VerticalAlignment="Top" Width="220" FontSize="20" BorderBrush="Black" BorderThickness="2,2,2,2"/>
-        <Button Content="Entrar" x:Name="btEntrar" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="293,325,0,0" VerticalAlignment="Top" Height="47" Width="131" Click="btEntrar_Click"/>
+        Title="Login"  Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#370f24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="521*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+       
+        <TextBox HorizontalAlignment="Left" x:Name="txtCPF" Margin="361,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtCPF_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtSenha" Margin="361,348,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2"  Text="Senha" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <Button Click="btEntrar_Click" Margin="374,453,0,0"  Width="110" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Click="btCancelar_Click" Margin="636,453,0,0"  Width="110" Height="50" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image Source="/Imagens/Design PDS (1).png" Margin="-443,-245,720,-245" Grid.RowSpan="2"/>
+        <Label Content="Bem Vinde!" HorizontalAlignment="Left" Margin="361,97,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
+        <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="367,183,0,0" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" Foreground="#FFF1D5E4"/>
+        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="494,185,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,0" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click"/>
 
     </Grid>
 </Window>

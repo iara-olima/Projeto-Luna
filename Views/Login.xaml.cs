@@ -43,5 +43,24 @@ namespace ProjetoLuna.Views
             }
             
         }
+
+        private void BtCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.CadastroUser();
+            form.Show();
+            this.Close();
+        }
+
+        private void btCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Principal();
+            form.Show();
+            this.Close();
+        }
+
+        private void txtCPF_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtCPF.SelectAll();
+        }
     }
 }

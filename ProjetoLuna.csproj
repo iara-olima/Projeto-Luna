@@ -127,6 +127,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\CadastroUser.xaml.cs">
+      <DependentUpon>CadastroUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
       <DependentUpon>Painel.xaml</DependentUpon>
     </Compile>
     <Page Include="Principal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CadastroUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,13 +180,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Imagens\Design_PDS-removebg-preview.png" />
-    <Resource Include="Imagens\Design_PDS__1_-removebg-preview.png" />
-    <Resource Include="Imagens\Design_PDS__2_-removebg-preview.png" />
-    <Resource Include="Imagens\Design_PDS__3_-removebg-preview.png" />
-    <Resource Include="Imagens\Design_PDS__4_-removebg-preview.png" />
+    <Resource Include="Imagens\Design PDS %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\Design PDS %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design PDS %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design PDS %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design PDS %286%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
