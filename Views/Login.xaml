@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Login"  Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Login"  Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#370f24">
         <Grid.RowDefinitions>
             <RowDefinition Height="521*"/>
