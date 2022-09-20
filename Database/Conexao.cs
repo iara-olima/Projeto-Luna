@@ -18,7 +18,7 @@ namespace ProjetoLuna.Database
 
         private static string password = "root";
 
-        private static string dbname = "";
+        private static string dbname = "bd_Luna";
 
         private static MySqlConnection connection;
 
