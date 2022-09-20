@@ -32,7 +32,7 @@
         <Label Content="Bem Vindo!" HorizontalAlignment="Left" Margin="361,97,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
         <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="359,177,0,0" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" Foreground="#FFF1D5E4" Click="Login_Click" Height="58" BorderBrush="{x:Null}"/>
-        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="493,177,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58"/>
+        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="493,177,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58" Cursor="Hand"/>
         <ComboBox HorizontalAlignment="Left" Margin="361,296,0,0" VerticalAlignment="Top" Width="383" Height="33" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtSenha_Copy" Margin="361,408,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2"  Text="Confirmar Senha" Background="{x:Null}" Foreground="#FFF1D5E4"/>
 

@@ -22,14 +22,37 @@
             </Image.RenderTransform>
         </Image>
         <Image HorizontalAlignment="Left" Height="572" Margin="-191,525,0,0" VerticalAlignment="Top" Width="705" Source="/Views/b.png" Grid.RowSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="612" Margin="784,-117,0,0" VerticalAlignment="Top" Width="847" Source="/Views/c.png"/>
+        <Image HorizontalAlignment="Left" Height="632" Margin="784,-117,0,0" VerticalAlignment="Top" Width="787" Source="/Views/c.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.09"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
         <Label Content="Cadastro de Funcionário" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="138,96,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="94,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtNome_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="94,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <ComboBox  HorizontalAlignment="Left" Margin="514,206,0,0" VerticalAlignment="Top" Width="239" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="94,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtCpf_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="94,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtEmail_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtFuncao" Margin="94,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Função" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtFuncao_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="473,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtTelefone_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtSalario" Margin="473,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Salário" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtSalario_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="94,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="94,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtFuncao" Margin="94,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Função" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="473,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtSalario" Margin="473,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Salário" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <Button Click="btCancelar_Click" Margin="514,660,0,0"  Width="150" Height="64" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Click="btSalvar_Click" Margin="298,662,0,0"  Width="150" Height="60" HorizontalAlignment="Left" Content="SALVAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
