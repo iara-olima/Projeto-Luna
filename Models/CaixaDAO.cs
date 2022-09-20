@@ -8,5 +8,6 @@ namespace ProjetoLuna.Models
 {
     internal class CaixaDAO
     {
+        
     }
 }

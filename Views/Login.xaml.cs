@@ -27,21 +27,18 @@ namespace ProjetoLuna.Views
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
             string cpf = txtCPF.Text;
-            string senha = "1";
-            string cpfN = "1";
-            //fazer função desmascarar CPF (sem máscara: cpfN);
-
-            if ((cpfN == "1") && (senha == "1"))
+            string senha = txtSenha.Text;
+            if ((cpf == "") && (senha == ""))
             {
                 var form = new Views.Painel();
                 form.Show();
                 this.Close();
             }
-            if ((cpfN != "1") || (senha != "1"))
+            else
             {
                 MessageBox.Show("A senha ou o CPF podem estar incorretos.");
             }
-            
+
         }
 
         private void BtCadastro_Click(object sender, RoutedEventArgs e)
