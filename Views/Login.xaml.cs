@@ -59,5 +59,10 @@ namespace ProjetoLuna.Views
         {
             txtCPF.SelectAll();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

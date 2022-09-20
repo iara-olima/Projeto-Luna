@@ -1,0 +1,35 @@
+﻿<Window x:Class="ProjetoLuna.Views.CadFuncionario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLuna.Views"
+        mc:Ignorable="d"
+        Title="CadFuncionario" Height="800" Width="1200" Background="#370f24">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="521*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="403" Margin="-220,-164,0,0" VerticalAlignment="Top" Width="542" Source="/Views/a.png" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.167"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="572" Margin="-191,525,0,0" VerticalAlignment="Top" Width="705" Source="/Views/b.png" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="612" Margin="784,-117,0,0" VerticalAlignment="Top" Width="847" Source="/Views/c.png"/>
+        <Label Content="Cadastro de Funcionário" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="138,96,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="94,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtNome_TextChanged"/>
+        <ComboBox  HorizontalAlignment="Left" Margin="514,206,0,0" VerticalAlignment="Top" Width="239" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="94,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtCpf_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="94,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtEmail_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtFuncao" Margin="94,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Função" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtFuncao_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="473,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtTelefone_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtSalario" Margin="473,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Salário" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtSalario_TextChanged"/>
+    </Grid>
+</Window>

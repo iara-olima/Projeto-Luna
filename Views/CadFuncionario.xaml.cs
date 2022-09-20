@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para Painel.xaml
+    /// Lógica interna para CadFuncionario.xaml
     /// </summary>
-    public partial class Painel : Window
+    public partial class CadFuncionario : Window
     {
-        public Painel()
+        public CadFuncionario()
         {
             InitializeComponent();
-        }
-
-        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

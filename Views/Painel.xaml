@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Painel" Height="450" Width="800">
-    <Grid>
-        
+        Title="Painel"  Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#FFF8DDEB">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="131*"/>
+            <RowDefinition Height="381*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="209*"/>
+            <ColumnDefinition Width="975*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+    Orientation="Horizontal" Margin="0,0,1,111" Grid.ColumnSpan="3" Background="#FF8F3765">
+            <ToggleButton
+      Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="ToggleButton_Checked" />
+            <TextBlock
+      VerticalAlignment="Center"
+      Margin="16 0 0 0"
+     />
+        </StackPanel>
+
+
     </Grid>
 </Window>
