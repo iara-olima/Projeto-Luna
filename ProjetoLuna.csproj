@@ -138,6 +138,9 @@
     <Compile Include="Views\CadastroUser.xaml.cs">
       <DependentUpon>CadastroUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CadFuncionario.xaml.cs">
+      <DependentUpon>CadFuncionario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CadastroUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CadFuncionario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +209,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Design PDS %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\c.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.6.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.6.0\build\MaterialDesignThemes.targets')" />

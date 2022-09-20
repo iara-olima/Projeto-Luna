@@ -32,7 +32,7 @@
         <Label Content="Bem Vindo!" HorizontalAlignment="Left" Margin="361,97,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
         <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="367,183,0,0" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" Foreground="#FFF1D5E4" Height="58" Click="Button_Click"/>
-        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="494,185,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,0" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58"/>
+        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="494,185,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,0" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58" Cursor="Hand"/>
 
     </Grid>
 </Window>
