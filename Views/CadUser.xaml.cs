@@ -15,18 +15,18 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para CadastroUser.xaml
+    /// Lógica interna para CadUser.xaml
     /// </summary>
-    public partial class CadastroUser : Window
+    public partial class CadUser : Window
     {
-        public CadastroUser()
+        public CadUser()
         {
             InitializeComponent();
         }
 
         private void btCadastrar_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btCancelar_Click(object sender, RoutedEventArgs e)
@@ -36,7 +36,7 @@ namespace ProjetoLuna.Views
 
         private void BtCadastro_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)

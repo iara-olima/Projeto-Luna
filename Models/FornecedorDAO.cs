@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using ProjetoLuna.Database;
 
 namespace ProjetoLuna.Models
 {
     internal class FornecedorDAO
     {
+        private static Conexao _conn = new Conexao();
         public void Update(Cliente cliente)
         {
 

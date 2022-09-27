@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="CadFuncionario" Height="800" Width="1200" Background="#370f24">
+        Title="CadFuncionario" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#370f24">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="521*"/>
@@ -34,19 +34,13 @@
         </Image>
         <Label Content="Cadastro de Funcionário" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="138,96,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="94,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <ComboBox  HorizontalAlignment="Left" Margin="514,206,0,0" VerticalAlignment="Top" Width="239" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="White"/>
+        <ComboBox x:Name="cbSexo"  HorizontalAlignment="Left" Margin="514,206,0,0" VerticalAlignment="Top" Width="239" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D5E4" Text="Sexo"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="94,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="94,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtFuncao" Margin="94,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Função" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="473,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtSalario" Margin="473,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Salário" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-    
-        <Button Click="btSalvar_Click" Margin="298,662,0,0"  Width="150" Height="60" HorizontalAlignment="Left" Content="SALVAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <DatePicker HorizontalAlignment="Left" Height="38" Margin="476,404,0,0" VerticalAlignment="Top" Width="279" BorderBrush="#FF8F3765"/>
+
     </Grid>
 </Window>

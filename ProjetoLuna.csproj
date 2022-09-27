@@ -145,8 +145,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\CadastroUser.xaml.cs">
-      <DependentUpon>CadastroUser.xaml</DependentUpon>
+    <Compile Include="Views\CadUser.xaml.cs">
+      <DependentUpon>CadUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CadFuncionario.xaml.cs">
       <DependentUpon>CadFuncionario.xaml</DependentUpon>
@@ -161,7 +161,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CadastroUser.xaml">
+    <Page Include="Views\CadUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
