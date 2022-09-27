@@ -40,13 +40,7 @@
         <TextBox HorizontalAlignment="Left" x:Name="txtFuncao" Margin="94,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Função" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="473,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtSalario" Margin="473,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Salário" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <Button Click="btCancelar_Click" Margin="514,660,0,0"  Width="150" Height="64" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
+    
         <Button Click="btSalvar_Click" Margin="298,662,0,0"  Width="150" Height="60" HorizontalAlignment="Left" Content="SALVAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
             <Button.Resources>
                 <Style TargetType="Border">
