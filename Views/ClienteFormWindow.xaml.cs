@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para CadFuncionario.xaml
+    /// Lógica interna para ClienteFormWindow.xaml
     /// </summary>
-    public partial class CadFuncionario : Window
+    public partial class ClienteFormWindow : Window
     {
-        public CadFuncionario()
+        public ClienteFormWindow()
         {
             InitializeComponent();
-        }
-
-        private void btSalvar_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjetoLuna.Database;
+using ProjetoLuna.Helpers;
+using MySql.Data.MySqlClient;
 
 namespace ProjetoLuna.Models
 {
     internal class FornecedorDAO
     {
+        private static Conexao _conn = new Conexao();
+
         public void Update(Cliente cliente)
         {
 
