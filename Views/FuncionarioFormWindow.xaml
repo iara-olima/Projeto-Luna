@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="FuncionarioFrm" Height="450" Width="800">
-    <Grid>
-        
+        Title="FuncionarioFrm" Height="650" Width="1200">
+    <Grid Background="#FFF8DDEB">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="131*"/>
+            <RowDefinition Height="381*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="209*"/>
+            <ColumnDefinition Width="975*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="167" Margin="-48,10,0,0" VerticalAlignment="Top" Width="260" Source="/Imagens/Design PDS (8).png" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+
+        <StackPanel
+    Orientation="Horizontal" Margin="0,0,1,111" Grid.ColumnSpan="3" Background="#FF8F3765">
+            <ToggleButton
+      Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="ToggleButton_Checked" />
+            <TextBlock
+      VerticalAlignment="Center"
+      Margin="16 0 0 0"
+     />
+        </StackPanel>
+        <Button Click="btVoltar_Click" Margin="805,412,0,0"  Width="151" Height="50" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Column="1" Grid.Row="1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="Lista de Funcionários" Foreground="#741546" FontSize="27" HorizontalAlignment="Left" Margin="41,118,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <DataGrid Background="#FFF8DDEB" BorderBrush="#741546" x:Name="dataGridFunc" Margin="41,162,209,10" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dataGridEscola_SelectionChanged" Grid.Column="1" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
+                <DataGridTextColumn Header="Data de Nascimento" Binding="{Binding DataNasc}"/>
+                <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"/>
+                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}"/>
+                <DataGridTextColumn Header="Função" Binding="{Binding Funcao}"/>
+                <DataGridTextColumn Header="Salário" Binding="{Binding Salario}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Click="btCadastar_Click" Content="Cadastrar" HorizontalAlignment="Left" Margin="31,38,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Click="btEditar_Click" Content="Editar" HorizontalAlignment="Left" Margin="33,102,0,0" Grid.Row="1" VerticalAlignment="Top" Width="91"/>
+        <Button Click="btExcluir_Click" Content="Excluir" HorizontalAlignment="Left" Margin="33,175,0,0" Grid.Row="1" VerticalAlignment="Top" Width="91"/>
+        <Button Click="btListar_Ckick" Content="Listar" HorizontalAlignment="Left" Margin="31,236,0,0" Grid.Row="1" VerticalAlignment="Top" Width="93"/>
     </Grid>
 </Window>

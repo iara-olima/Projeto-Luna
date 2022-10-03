@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="CadCliente" Height="450" Width="800">
+        Title="CadCliente" Height="650" Width="1200" Background="#370f24">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="521*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="403" Margin="-220,-164,0,0" VerticalAlignment="Top" Width="542" Source="/Views/a.png" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.167"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="572" Margin="-191,525,0,0" VerticalAlignment="Top" Width="705" Source="/Views/b.png" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="612" Margin="844,-270,0,0" VerticalAlignment="Top" Width="847" Source="/Views/Design PDS (9).png"/>
+        <Label Content="Cadastro de Cliente" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="138,96,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="94,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <ComboBox  HorizontalAlignment="Left" Margin="473,470,0,0" VerticalAlignment="Top" Width="285" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="94,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="94,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" Margin="94,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Endereço" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="473,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+
+        <Button Click="btSalvar_Click" Margin="297,546,0,0"  Width="151" Height="60" HorizontalAlignment="Left" Content="SALVAR
+" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Click="btCancelar_Click" Margin="540,546,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <DatePicker BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="473,417,0,0" VerticalAlignment="Top" Height="25" Width="285"/>
     </Grid>
 </Window>

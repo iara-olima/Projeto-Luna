@@ -20,9 +20,8 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Cliente Value " +
-                        "(null, @Nome, @RazaoSocial, @Cnpj, @Inscricao, @Tipo,@DataCriacao,@Responsavel, @TelefoneResp," +
-                        "@Email, @TelefoneEsc, @Rua, @Numero, @Bairro, @Complemento,@Cep, @Cidade, @Estado)";
+                comando.CommandText = "insert into Cliente value " +
+                    "(null, @Nome, @DataNasc, @Email, @Telefone, @CPF, @Endereco, @Sexo)";
 
                 comando.Parameters.AddWithValue("@Nome", cliente.Nome);
                 comando.Parameters.AddWithValue("@DataNasc", cliente.DataNasc?.ToString("yyyy-MM-dd"));
@@ -36,19 +35,16 @@ namespace ProjetoLuna.Models
 
                 if (resultado == 0)
                 {
-                    throw new Exception("Ocorreram erros ao salvar as informações");
+                    throw new Exception("Ocorreram erros ao salvar as informações!");
                 }
-
-
             }
-
             catch (Exception ex)
             {
                 throw ex;
             }
 
-
         }
+
         public List<Cliente> List()
         {
             try
@@ -66,10 +62,10 @@ namespace ProjetoLuna.Models
 
                     cliente.Id = reader.GetInt32("id_cli");
                     cliente.Nome = DAOHelper.GetString(reader, "nome_cli");
-                    cliente.DataNasc = DAOHelper.GetDateTime(reader, "dataNasc_cli");
+                    cliente.DataNasc = DAOHelper.GetDateTime(reader, "data_nasc_cli");
                     cliente.Email = DAOHelper.GetString(reader, "email_cli");
                     cliente.Telefone = DAOHelper.GetString(reader, "telefone_cli");
-                    cliente.CPF = DAOHelper.GetString(reader, "cpf_cli");                 
+                    cliente.CPF = DAOHelper.GetString(reader, "cpf_cli");
                     cliente.Endereco = DAOHelper.GetString(reader, "endereco_cli");
                     cliente.Sexo = DAOHelper.GetString(reader, "sexo_cli");
                     lista.Add(cliente);
@@ -77,14 +73,13 @@ namespace ProjetoLuna.Models
                 reader.Close();
 
                 return lista;
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
+
         public void Delete(Cliente cliente)
         {
             try
@@ -95,7 +90,7 @@ namespace ProjetoLuna.Models
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
                 {
-                    throw new Exception("Ocorreram problemas ao salvar as informações");
+                    throw new Exception("Ocorreram problemas ao deletar as informações");
                 }
             }
             catch (Exception ex)
@@ -103,27 +98,25 @@ namespace ProjetoLuna.Models
                 throw ex;
             }
         }
+
         public void Update(Cliente cliente)
         {
-
             try
             {
                 var comando = _conn.Query();
 
-
-                comando.CommandText = "update Cliente Set " +
-                        "nome_cli = @Nome, dataNasc_cli = @dataNasc, email_cli = @Email, telefone_cli = @Telefone," +
-                        "cpf_cli = @CPF, endereco_cli = @Endereco, sexo_cli = @Sexo" +
-                        "Where id_cli = @id";
+                comando.CommandText = "Update Cliente Set" +
+                    "nome_cli = @Nome, data_nasc_cli = @DataNasc, email_cli = @Email, telefone_cli = @Telefone, cpf_cli = @CPF, endereco_cli = @Endereco, sexo_cli = @Sexo" +
+                    "Where id_cli = @id";
 
                 comando.Parameters.AddWithValue("@Nome", cliente.Nome);
-                comando.Parameters.AddWithValue("@DataNasc", cliente.DataNasc?.ToString("yyyyy-MM-dd"));
+                comando.Parameters.AddWithValue("@DataNasc", cliente.DataNasc?.ToString("yyyy-MM-dd"));
                 comando.Parameters.AddWithValue("@Email", cliente.Email);
                 comando.Parameters.AddWithValue("@Telefone", cliente.Telefone);
-                comando.Parameters.AddWithValue("@CPF", cliente.CPF);        
+                comando.Parameters.AddWithValue("@CPF", cliente.CPF);
                 comando.Parameters.AddWithValue("@Endereco", cliente.Endereco);
                 comando.Parameters.AddWithValue("@Sexo", cliente.Sexo);
-               
+
                 comando.Parameters.AddWithValue("@id", cliente.Id);
 
                 var resultado = comando.ExecuteNonQuery();
@@ -132,15 +125,12 @@ namespace ProjetoLuna.Models
                 {
                     throw new Exception("Ocorreram erros ao atualizar as informações");
                 }
-
             }
-
             catch (Exception ex)
             {
                 throw ex;
             }
-
-
         }
+
     }
 }
