@@ -43,7 +43,7 @@ namespace ProjetoLuna.Views
 
         private void BtCadastro_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.CadastroUser();
+            var form = new Views.CadUser();
             form.Show();
             this.Close();
         }

@@ -46,5 +46,6 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <DatePicker BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="473,417,0,0" VerticalAlignment="Top" Height="25" Width="285"/>
     </Grid>
 </Window>

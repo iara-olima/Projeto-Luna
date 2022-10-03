@@ -1,11 +1,11 @@
-﻿<Window x:Class="ProjetoLuna.Views.CadastroUser"
+﻿<Window x:Class="ProjetoLuna.Views.CadUser"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="CadastroUser" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="CadUser" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#370f24">
         <Grid.RowDefinitions>
             <RowDefinition Height="521*"/>
@@ -32,9 +32,18 @@
         <Label Content="Bem Vindo!" HorizontalAlignment="Left" Margin="361,97,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
         <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="359,177,0,0" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" Foreground="#FFF1D5E4" Click="Login_Click" Height="58" BorderBrush="{x:Null}"/>
-        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="493,177,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58"/>
-        <ComboBox HorizontalAlignment="Left" Margin="361,296,0,0" VerticalAlignment="Top" Width="383" Height="33" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtSenha_Copy" Margin="361,408,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2"  Text="Confirmar Senha" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="493,177,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58" Cursor="Hand"/>
+        <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}"
+  ItemsSource="{Binding ShortStringList}" HorizontalAlignment="Left" Margin="361,296,0,0" VerticalAlignment="Top" Width="383" Height="33" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" ></ComboBox><ComboBox>
+            <Binding
+      Path="SelectedValidationOutlined"
+      Mode="TwoWay"
+      UpdateSourceTrigger="PropertyChanged">
+            </Binding>
+            </ComboBox>
+            <ComboBox/>
+            
+            <TextBox HorizontalAlignment="Left" x:Name="txtSenha_Copy" Margin="361,408,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2"  Text="Confirmar Senha" Background="{x:Null}" Foreground="#FFF1D5E4"/>
 
     </Grid>
 </Window>
