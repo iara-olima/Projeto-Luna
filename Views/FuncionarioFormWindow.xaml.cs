@@ -23,5 +23,37 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
+
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btCadastar_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.CadFuncionario();
+            form.Show();
+            this.Close();
+        }
+
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btListar_Ckick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Acoes_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

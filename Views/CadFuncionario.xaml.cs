@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
+using MySql.Data.MySqlClient;
 
 namespace ProjetoLuna.Views
 {
@@ -19,12 +21,25 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class CadFuncionario : Window
     {
+        private Funcionario _fun = new Funcionario();
         public CadFuncionario()
         {
             InitializeComponent();
+            cbSexo.Items.Add("Feminino");
+            cbSexo.Items.Add("Masculino");
+            Loaded += CadFuncionario_Loaded;
+            
         }
-
-        private void btSalvar_Click(object sender, RoutedEventArgs e)
+        public CadFuncionario(Funcionario funcionario)
+        {
+            InitializeComponent();
+            Loaded += CadFuncionario_Loaded;
+            _fun= funcionario;
+        }
+        private void CadFuncionario_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+            private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
 
         }

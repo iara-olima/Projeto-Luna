@@ -24,7 +24,39 @@ namespace ProjetoLuna.Views
             InitializeComponent();
         }
 
-        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        private void Acoes_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btFuncionario_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.FuncionarioFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void btCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btVenda_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btCaixa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btFinanceiro_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEstoque_Click(object sender, RoutedEventArgs e)
         {
 
         }

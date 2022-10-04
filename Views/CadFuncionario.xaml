@@ -11,7 +11,7 @@
             <RowDefinition Height="521*"/>
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="403" Margin="-220,-164,0,0" VerticalAlignment="Top" Width="542" Source="/Views/a.png" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+        <Image HorizontalAlignment="Left" Height="403" Margin="-220,-164,0,0" VerticalAlignment="Top" Width="542" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,11 +21,11 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image HorizontalAlignment="Left" Height="572" Margin="-191,525,0,0" VerticalAlignment="Top" Width="705" Source="/Views/b.png" Grid.RowSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="612" Margin="784,-117,0,0" VerticalAlignment="Top" Width="847" Source="/Views/c.png"/>
+        <Image HorizontalAlignment="Left" Height="572" Margin="-191,525,0,0" VerticalAlignment="Top" Width="705" Source="/Imagens/b.png" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="612" Margin="784,-117,0,0" VerticalAlignment="Top" Width="847" Source="/Imagens/c.png"/>
         <Label Content="Cadastro de Funcionário" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="138,96,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="94,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <ComboBox  HorizontalAlignment="Left" Margin="514,206,0,0" VerticalAlignment="Top" Width="239" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="White"/>
+        <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Margin="514,206,0,0" VerticalAlignment="Top" Width="239" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFC4719D" FontSize="30"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="94,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="94,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtFuncao" Margin="94,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Função" Background="{x:Null}" Foreground="#FFF1D5E4"/>
