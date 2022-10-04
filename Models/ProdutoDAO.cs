@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using ProjetoLuna.Database;
 using ProjetoLuna.Helpers;
 using MySql.Data.MySqlClient;
+
+
 namespace ProjetoLuna.Models
 {
     internal class ProdutoDAO

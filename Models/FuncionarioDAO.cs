@@ -11,7 +11,6 @@ namespace ProjetoLuna.Models
 {
     internal class FuncionarioDAO
     {
-       
         private static Conexao _conn = new Conexao();
 
         public void Insert(Funcionario funcionario)
@@ -61,7 +60,8 @@ namespace ProjetoLuna.Models
 
                 while (reader.Read())
                 {
-                    var funcionario = new Funcionario();
+                    var funcionario= new Funcionario();
+
 
                     funcionario.Id = reader.GetInt32("id_fun");
                     funcionario.Nome = DAOHelper.GetString(reader, "nome_fun");

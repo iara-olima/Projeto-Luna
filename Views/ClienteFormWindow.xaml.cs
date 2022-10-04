@@ -23,5 +23,40 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
+
+        private void btCadastar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dataGridEscola_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btListar_Ckick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Acoes_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

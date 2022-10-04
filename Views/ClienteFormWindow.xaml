@@ -21,7 +21,7 @@
             <StackPanel
     Orientation="Horizontal" Margin="0,0,1,111" Grid.ColumnSpan="3" Background="#FF8F3765">
                 <ToggleButton
-      Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="ToggleButton_Checked" />
+      Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="Acoes_Checked" />
                 <TextBlock
       VerticalAlignment="Center"
       Margin="16 0 0 0"

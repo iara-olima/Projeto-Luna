@@ -32,9 +32,6 @@ namespace ProjetoLuna
             this.Close();
         }
 
-        private void btCadUser_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 }

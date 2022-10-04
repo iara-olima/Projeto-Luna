@@ -21,7 +21,7 @@
         <StackPanel
     Orientation="Horizontal" Margin="0,0,1,111" Grid.ColumnSpan="3" Background="#FF8F3765">
             <ToggleButton
-      Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="ToggleButton_Checked" />
+      Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="Acoes_Checked" />
             <TextBlock
       VerticalAlignment="Center"
       Margin="16 0 0 0"
@@ -36,7 +36,7 @@
         </Button>
         <Label Content="Lista de Funcionários" Foreground="#741546" FontSize="27" HorizontalAlignment="Left" Margin="41,118,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <DataGrid Background="#FFF8DDEB" BorderBrush="#741546" x:Name="dataGridFunc" Margin="41,162,209,10" AutoGenerateColumns="False" CanUserAddRows="False" 
-                  CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dataGridEscola_SelectionChanged" Grid.Column="1" Grid.RowSpan="2">
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="LightBlue" AlternationCount="2"  Grid.Column="1" Grid.RowSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
