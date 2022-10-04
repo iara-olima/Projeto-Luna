@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="CadUser" Height="450" Width="800">
-    <Grid>
-        
+          Title="CadUser" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#370f24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="521*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+
+        <Label HorizontalAlignment="Left" x:Name="lbFunc" Margin="361,247,0,0" VerticalAlignment="Top" Width="385" FontSize="30" Content="Selecionar Funcionário:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtSenha" Margin="361,357,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2"  Text="Definir Senha" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <Button Click="btCadastrar_Click" Margin="374,480,0,0"  Width="151" Height="50" HorizontalAlignment="Left" Content="CADASTRAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Click="btCancelar_Click" Margin="600,480,0,0"  Width="150" Height="50" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image Source="/Imagens/Design PDS (1).png" Margin="-443,-245,720,-245" Grid.RowSpan="2"/>
+        <Label Content="Bem Vinde!" HorizontalAlignment="Left" Margin="361,97,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
+        <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="367,183,0,0" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" Foreground="#FFF1D5E4" Click="Login_Click" Height="64" BorderThickness="0,0,0,0"/>
+        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="494,185,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="62"/>
+        <ComboBox HorizontalAlignment="Left" Margin="367,296,0,0" VerticalAlignment="Top" Width="383" Height="41" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtSenha_Copy" Margin="361,408,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2"  Text="Confirmar Senha" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+
+
     </Grid>
 </Window>

@@ -15,43 +15,13 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para FuncionarioFrm.xaml
+    /// Lógica interna para FuncionarioFormWindow.xaml
     /// </summary>
-    public partial class FuncionarioFrm : Window
+    public partial class FuncionarioFormWindow : Window
     {
-        public FuncionarioFrm()
+        public FuncionarioFormWindow()
         {
             InitializeComponent();
-        }
-
-        private void btVoltar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btCadastar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btEditar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btExcluir_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btListar_Ckick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Acoes_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

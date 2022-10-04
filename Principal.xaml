@@ -24,8 +24,8 @@
             </Button.Resources>
         </Button>
         <Label Grid.Column="1" Content="Desde 2022&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="336,10,0,0" VerticalAlignment="Top" Width="110" FontSize="18" FontWeight="Bold" Foreground="#FF370F24" FontFamily="Source Sans Pro Semibold"/>
-        <Image HorizontalAlignment="Left" Height="960" Margin="-274,-212,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="742" Source="/Design PDS (3).png" Grid.ColumnSpan="2"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="501" Margin="14,25,0,0" VerticalAlignment="Top" Width="756" Source="/Design PDS (5).png" Grid.RowSpan="2"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="1174" Margin="744,-94,0,0" VerticalAlignment="Top" Width="480" Source="/Design PDS (6).png" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="960" Margin="-274,-212,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="742" Source="Imagens/Design PDS (3).png" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="501" Margin="14,25,0,0" VerticalAlignment="Top" Width="756" Source="Imagens/Design PDS (5).png" Grid.RowSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="1174" Margin="744,-94,0,0" VerticalAlignment="Top" Width="480" Source="Imagens/Design PDS (6).png" Grid.RowSpan="2"/>
     </Grid>
 </Window>

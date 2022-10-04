@@ -23,5 +23,27 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
+
+        private void btCadastrar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btCancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.Login();
+            form.Show();
+            this.Close();
+        }
+
+        private void BtCadastro_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

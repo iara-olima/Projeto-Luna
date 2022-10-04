@@ -19,11 +19,19 @@
         <StackPanel
     Orientation="Horizontal" Margin="0,0,1,111" Grid.ColumnSpan="3" Background="#FF8F3765">
             <ToggleButton
+                
       Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="ToggleButton_Checked" />
             <TextBlock
+                
       VerticalAlignment="Center"
       Margin="16 0 0 0"
      />
+            <Button Content="Funcionario" HorizontalAlignment="Left" Margin="46,81,0,0" VerticalAlignment="Top"/>
+            <Button Content="Cliente" HorizontalAlignment="Left" Margin="46,120,0,0" VerticalAlignment="Top"/>
+            <Button Content="Venda" HorizontalAlignment="Left" Margin="46,10,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Caixa" HorizontalAlignment="Left" Margin="46,47,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Financeiro" HorizontalAlignment="Left" Margin="46,84,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Estoque" HorizontalAlignment="Left" Margin="35,133,0,0" VerticalAlignment="Top" Grid.Row="1"/>
         </StackPanel>
 
 
