@@ -31,7 +31,9 @@ namespace ProjetoLuna.Views
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.Painel();
+            form.Show();
+            this.Close();
         }
 
         private void dataGridEscola_SelectionChanged(object sender, SelectionChangedEventArgs e)

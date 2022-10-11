@@ -31,7 +31,9 @@ namespace ProjetoLuna.Views
 
         private void btCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.ClienteFormWindow();
+            form.Show();
+            this.Close();
         }
 
         private void txtFuncao_TextChanged(object sender, TextChangedEventArgs e)
