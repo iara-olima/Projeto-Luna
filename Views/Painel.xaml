@@ -26,14 +26,23 @@
       VerticalAlignment="Center"
       Margin="16 0 0 0"
      />
-            
+
         </StackPanel>
-        <Button Click="btFuncionario_Click" Content="Funcionario" HorizontalAlignment="Left" Margin="46,81,0,0" VerticalAlignment="Top"/>
-        <Button Click="btCliente_Click" Content="Cliente" HorizontalAlignment="Left" Margin="46,120,0,0" VerticalAlignment="Top"/>
-        <Button Click="btVenda_Click" Content="Venda" HorizontalAlignment="Left" Margin="46,10,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Button Click="btCaixa_Click" Content="Caixa" HorizontalAlignment="Left" Margin="46,47,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Button Click="btFinanceiro_Click" Content="Financeiro" HorizontalAlignment="Left" Margin="46,84,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Button Click="btEstoque_Click" Content="Estoque" HorizontalAlignment="Left" Margin="35,133,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Button Click="btFuncionario_Click" Content="Funcionario" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
+        <Button Click="btCliente_Click" Content="Cliente" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
+        <Button Click="btVenda_Click" Content="Venda" HorizontalAlignment="Center" Margin="0,109,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.701"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="btCaixa_Click" Content="Caixa" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
+        <Button Click="btFinanceiro_Click" Content="Financeiro" HorizontalAlignment="Center" Margin="0,183,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
+        <Button Click="btEstoque_Click" Content="Estoque" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
 
     </Grid>
 </Window>

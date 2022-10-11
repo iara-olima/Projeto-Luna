@@ -33,5 +33,10 @@ namespace ProjetoLuna.Views
         {
 
         }
+
+        private void txtFuncao_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
