@@ -46,7 +46,9 @@ namespace ProjetoLuna.Views
 
         private void btCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new FuncionarioFormWindow();
+            form.Show();
+            this.Close();
         }
     }
 }
