@@ -31,51 +31,40 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Vencimento", rec.Vencimento);
                 comando.Parameters.AddWithValue("@Hora", rec.Hora);
                 comando.Parameters.AddWithValue("@ValorParcela", rec.ValorParc);
-                catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
 
         }
-    }
-}
-                /*comando.Parameters.AddWithValue("@Sexo", funcionario.Sexo);
+   
 
-                var resultado = comando.ExecuteNonQuery();
-
-                if (resultado == 0)
-                {
-                    throw new Exception("Ocorreram erros ao salvar as informações!");
-                }
-            }
-           
-
-        public List<Funcionario> List()
+        public List<Recebimento> List()
         {
             try
             {
-                var lista = new List<Funcionario>();
+                var lista = new List<Recebimento>();
                 var comando = _conn.Query();
 
-                comando.CommandText = "SELECT * FROM Funcionario";
+                comando.CommandText = "SELECT * FROM Recebimento";
 
                 MySqlDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    var funcionario = new Funcionario();
+                    var recebimento = new Recebimento();
 
 
-                    funcionario.Id = reader.GetInt32("id_fun");
-                    funcionario.Nome = DAOHelper.GetString(reader, "nome_fun");
-                    funcionario.DataNasc = DAOHelper.GetDateTime(reader, "data_nasc_fun");
-                    funcionario.Salario = DAOHelper.GetDouble(reader, "salario_fun");
-                    funcionario.Funcao = DAOHelper.GetString(reader, "funcao_fun");
-                    funcionario.CPF = DAOHelper.GetString(reader, "cpf_fun");
-                    funcionario.Email = DAOHelper.GetString(reader, "email_fun");
-                    funcionario.Telefone = DAOHelper.GetString(reader, "telefone_fun");
-                    funcionario.Endereco = DAOHelper.GetString(reader, "endereco_fun");
-                    funcionario.Sexo = DAOHelper.GetString(reader, "sexo_fun");
+                    recebimento.Id = reader.GetInt32("id_rec");
+                    recebimento.Data = DAOHelper.GetDateTime(reader, "data_rec");
+                    recebimento.Parcela = DAOHelper.GetString(reader, "parcela_rec");
+                    recebimento.Valor = DAOHelper.GetString(reader, "funcao_fun");
+                    recebimento.Forma = DAOHelper.GetString(reader, "cpf_fun");
+                    recebimento.Status = DAOHelper.GetString(reader, "email_fun");
+                    recebimento.Vencimento= DAOHelper.GetString(reader, "telefone_fun");
+                    recebimento.Hora = DAOHelper.GetString(reader, "endereco_fun");
+                    recebimento.ValorParcela = DAOHelper.GetString(reader, "sexo_fun");
                     lista.Add(funcionario);
                 }
                 reader.Close();
@@ -142,4 +131,5 @@ namespace ProjetoLuna.Models
             }
                 
         }
-
+    }
+}
