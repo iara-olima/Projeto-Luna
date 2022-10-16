@@ -30,7 +30,7 @@ namespace ProjetoLuna.Views
             form.Show();
             this.Close();
         }
-
+        
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.Painel();

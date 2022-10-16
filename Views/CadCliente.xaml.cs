@@ -21,39 +21,54 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class CadCliente : Window
     {
-        public Cliente cliente = new Cliente();
+        public Cliente _cli = new Cliente();
 
         public CadCliente()
         {
             InitializeComponent();
+            cbSexo.Items.Add("Feminino");
+            cbSexo.Items.Add("Masculino");
+            Loaded += CadCliente_Loaded;
+
+        }
+
+        public CadCliente(Cliente cliente)
+        {
+            InitializeComponent();
+            Loaded += CadCliente_Loaded;
+            _cli = cliente;
+        }
+
+        private void CadCliente_Loaded(object sender, RoutedEventArgs e)
+        {
         }
 
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
 
-            cliente.Nome = txtNome.Text;
-            cliente.Email = txtEmail.Text;
-            cliente.Telefone = txtTelefone.Text;
-            cliente.CPF = txtCpf.Text;
-            cliente.Endereco = txtEndereco.Text;
-            cliente.Sexo = cbSexo.Text;
+            _cli.Nome = txtNome.Text;
+            _cli.Email = txtEmail.Text;
+            _cli.Telefone = txtTelefone.Text;
+            _cli.CPF = txtCpf.Text;
+            _cli.Endereco = txtEndereco.Text;
+            _cli.Sexo = cbSexo.Text;
 
             if (dtNasc.SelectedDate != null)
-                cliente.DataNasc = dtNasc.SelectedDate;
+                _cli.DataNasc = dtNasc.SelectedDate;
             ShowMenssage();
 
             try
             {
                 var dao = new ClienteDAO();
-                if (cliente.Id > 0)
+                if (_cli.Id > 0)
                 {
-                    dao.Update(cliente);
+                    dao.Update(_cli);
                     MessageBox.Show("Dados do Cliente atualizados com sucesso!");
 
                 }
                 else
                 {
-                    dao.Insert(cliente);
+                    dao.Insert(_cli);
                     MessageBox.Show("Cliente cadastrado com sucesso.");
                 }
             }
@@ -66,10 +81,10 @@ namespace ProjetoLuna.Views
         private void ShowMenssage()
         {
 
-            MessageBox.Show("Nome: " + cliente.Nome + Environment.NewLine +
-                 "Email: " + cliente.Email + Environment.NewLine + "Telefone: " +
-                             cliente.Telefone + Environment.NewLine + "CPF: " + cliente.CPF + Environment.NewLine + "Endereço: " + cliente.Endereco +
-                             Environment.NewLine + "Sexo: " + cliente.Sexo + Environment.NewLine + "Data Nascimento: " + cliente.DataNasc
+            MessageBox.Show("Nome: " + _cli.Nome + Environment.NewLine +
+                 "Email: " + _cli.Email + Environment.NewLine + "Telefone: " +
+                             _cli.Telefone + Environment.NewLine + "CPF: " + _cli.CPF + Environment.NewLine + "Endereço: " + _cli.Endereco +
+                             Environment.NewLine + "Sexo: " + _cli.Sexo + Environment.NewLine + "Data Nascimento: " + _cli.DataNasc
                              );
         }
 

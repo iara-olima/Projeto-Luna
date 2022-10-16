@@ -44,7 +44,6 @@
             </Button.Resources>
         </Button>
         <DatePicker x:Name="dtNasc" BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="498,350,0,0" VerticalAlignment="Top" Height="42" Width="306"/>
-        <Label Content="Data de Nascimento" HorizontalAlignment="Left" Height="50" Margin="498,342,0,0" VerticalAlignment="Top" Width="280" Foreground="#FFF1D3DE" FontSize="30" FontWeight="Normal"/>
         <Button Click="btSalvar_Click" Margin="395,524,0,0"  Width="151" Height="60" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
