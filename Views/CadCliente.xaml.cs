@@ -88,7 +88,7 @@ namespace ProjetoLuna.Views
                              );
         }
 
-        private void btCancelar_Click(object sender, RoutedEventArgs e)
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.ClienteFormWindow();
             form.Show();

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -22,6 +23,12 @@ namespace ProjetoLuna.Views
         public ClienteFormWindow()
         {
             InitializeComponent();
+            Loaded += ClienteFormWindow_Loaded;
+        }
+
+        private void ClienteFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
         }
 
         private void btCadastar_Click(object sender, RoutedEventArgs e)
@@ -38,9 +45,25 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void dataGridEscola_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dataGridCliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void CarregarListagem()
+        {
+            try
+            {
+                var dao = new ClienteDAO();
+                List<Cliente> listaClientes = dao.List();
+
+                dataGridCliente.ItemsSource = listaClientes;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btEditar_Click(object sender, RoutedEventArgs e)

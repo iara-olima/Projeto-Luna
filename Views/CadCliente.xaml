@@ -23,12 +23,12 @@
             </Image.RenderTransform>
         </Image>
         <Label Content="Cadastro de Cliente&#xD;&#xA;" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="163,46,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="119,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="119,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Margin="498,420,0,0" VerticalAlignment="Top" Width="306" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="30"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="119,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="119,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" Margin="119,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Endereço" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtFuncao_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="498,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="306" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="119,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="119,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" Text="Endereço" Margin="119,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtFuncao_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="498,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <Button Click="btSalvar_Click" Margin="297,78,0,0"  Width="151" Height="60" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Row="1">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -36,14 +36,14 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Click="btCancelar_Click" Margin="540,78,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Row="1">
+        <Button Click="btVoltar_Click" Margin="540,78,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Row="1">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <DatePicker x:Name="dtNasc" BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="498,350,0,0" VerticalAlignment="Top" Height="42" Width="306"/>
+        <DatePicker x:Name="dtNasc" FontSize="25" BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="498,342,0,0" VerticalAlignment="Top" Height="42" Width="306"/>
         <Button Click="btSalvar_Click" Margin="395,524,0,0"  Width="151" Height="60" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -51,12 +51,14 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Click="btCancelar_Click" Margin="638,524,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" Grid.RowSpan="2" RenderTransformOrigin="0.747,-0.265">
+        <Button Click="btVoltar_Click" Margin="638,524,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" Grid.RowSpan="2" RenderTransformOrigin="0.747,-0.265">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
+        <Label Content="Data Nascimento:" FontSize="25" Foreground="#FFF1D5E4" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sexo:" Background="#370f24" FontSize="25" Foreground="#FFF1D5E4" HorizontalAlignment="Left" Margin="504,394,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -62,7 +62,7 @@ namespace ProjetoLuna.Models
 
                     cliente.Id = reader.GetInt32("id_cli");
                     cliente.Nome = DAOHelper.GetString(reader, "nome_cli");
-                    cliente.DataNasc = DAOHelper.GetDateTime(reader, "data_nasc_cli");
+                    cliente.DataNasc = DAOHelper.GetDateTime(reader, "dataNasc_cli");
                     cliente.Email = DAOHelper.GetString(reader, "email_cli");
                     cliente.Telefone = DAOHelper.GetString(reader, "telefone_cli");
                     cliente.CPF = DAOHelper.GetString(reader, "cpf_cli");
