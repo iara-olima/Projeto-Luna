@@ -149,6 +149,9 @@
     <Compile Include="Views\ClienteFormWindow.xaml.cs">
       <DependentUpon>ClienteFormWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\estoque.xaml.cs">
+      <DependentUpon>estoque.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncionarioFormWindow.xaml.cs">
       <DependentUpon>FuncionarioFormWindow.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ClienteFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\estoque.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

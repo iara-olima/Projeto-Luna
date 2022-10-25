@@ -18,6 +18,15 @@ namespace ProjetoLuna.Views
     /// <summary>
     /// Lógica interna para ClienteFormWindow.xaml
     /// </summary>
+    /// 
+
+
+
+    /*
+     * - Deixar oculta algumas informaçoes
+     * fazer botão voltar
+     * colocar icones na parte superior e lado direito
+     */
     public partial class ClienteFormWindow : Window
     {
         public ClienteFormWindow()
