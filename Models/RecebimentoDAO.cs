@@ -21,16 +21,18 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "insert into Recebimento value " +
-                    "(null, @Data, @Parcela, @Valor, @Forma, @Status, @Vencimento, @Hora, @ValorParcela, @null,@null)";
+                    "(null, @Data, @Parcela, @ValorParcela, @Valor, @Forma, @Status, @Vencimento, @Hora, @IdCaixa, @IdVenda)";
 
-                comando.Parameters.AddWithValue("@Data", rec.Data?.ToString("yyyy-MM-dd"));
+                comando.Parameters.AddWithValue("@Data", rec.Data?.ToString("D"));
                 comando.Parameters.AddWithValue("@Parcela", rec.Parcela);
+                comando.Parameters.AddWithValue("@ValorParcela", rec.ValorParcela);
                 comando.Parameters.AddWithValue("@Valor", rec.Valor);
                 comando.Parameters.AddWithValue("@Forma", rec.Forma);
                 comando.Parameters.AddWithValue("@Status", rec.Status);
-                comando.Parameters.AddWithValue("@Vencimento", rec.Vencimento);
-                comando.Parameters.AddWithValue("@Hora", rec.Hora);
-                comando.Parameters.AddWithValue("@ValorParcela", rec.ValorParc);
+                comando.Parameters.AddWithValue("@Vencimento", rec.Vencimento?.ToString("D"));
+                comando.Parameters.AddWithValue("@Hora", rec.Hora?.ToString("T"));
+                comando.Parameters.AddWithValue("@IdCaixa", rec.IdCaixa);
+                comando.Parameters.AddWithValue("@IdVenda", rec.IdVenda);
             }
             catch (Exception ex)
             {
@@ -77,13 +79,13 @@ namespace ProjetoLuna.Models
             }
         }
 
-        public void Delete(Funcionario funcionario)
+        public void Delete(Recebimento recebimento)
         {
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "DELETE FROM Funcionario WHERE id_fun = @id";
-                comando.Parameters.AddWithValue("@id", funcionario.Id);
+                comando.CommandText = "DELETE FROM Recebimento WHERE id_rec = @id";
+                comando.Parameters.AddWithValue("@id", recebimento.Id);
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
                 {
@@ -96,27 +98,28 @@ namespace ProjetoLuna.Models
             }
         }
 
-        public void Update(Funcionario funcionario)
+        public void Update(Recebimento recebimento)
         {
             try
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Funcionario Set" +
+                comando.CommandText = "Update Recebimento Set" +
                     "nome_fun = @Nome, data_nasc_fun = @DataNasc, salario_fun = @Salario, funcao_fun = @Funcao, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, endereco_fun = @Endereco, sexo_fun = @Sexo" +
                     "Where id_fun = @id";
 
-                comando.Parameters.AddWithValue("@Nome", funcionario.Nome);
-                comando.Parameters.AddWithValue("@DataNasc", funcionario.DataNasc?.ToString("yyyy-MM-dd"));
-                comando.Parameters.AddWithValue("@Salario", funcionario.Salario);
-                comando.Parameters.AddWithValue("@Funcao", funcionario.Funcao);
-                comando.Parameters.AddWithValue("@CPF", funcionario.CPF);
-                comando.Parameters.AddWithValue("@Email", funcionario.Email);
-                comando.Parameters.AddWithValue("@Telefone", funcionario.Telefone);
-                comando.Parameters.AddWithValue("@Endereco", funcionario.Endereco);
-                comando.Parameters.AddWithValue("@Sexo", funcionario.Sexo);
+                comando.Parameters.AddWithValue("@Data", recebimento.Data?.ToString("D"));
+                comando.Parameters.AddWithValue("@Parcela", recebimento.Parcela);
+                comando.Parameters.AddWithValue("@ValorParcela", recebimento.ValorParcela);
+                comando.Parameters.AddWithValue("@Valor", recebimento.Valor);
+                comando.Parameters.AddWithValue("@Forma", recebimento.Forma);
+                comando.Parameters.AddWithValue("@Status", recebimento.Status);
+                comando.Parameters.AddWithValue("@Vencimento", recebimento.Vencimento?.ToString("D"));
+                comando.Parameters.AddWithValue("@Hora", recebimento.Hora?.ToString("T"));
+                comando.Parameters.AddWithValue("@IdCaixa", recebimento.IdCaixa);
+                comando.Parameters.AddWithValue("@IdVenda", recebimento.IdVenda);
 
-                comando.Parameters.AddWithValue("@id", funcionario.Id);
+                comando.Parameters.AddWithValue("@id", recebimento.Id);
 
                 var resultado = comando.ExecuteNonQuery();
 
