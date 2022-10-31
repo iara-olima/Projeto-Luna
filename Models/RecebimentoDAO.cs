@@ -56,18 +56,6 @@ namespace ProjetoLuna.Models
                 while (reader.Read())
                 {
                     var recebimento = new Recebimento();
-
-
-                  /*  recebimento.Id = reader.GetInt32("id_rec");
-                    recebimento.Data = DAOHelper.GetDateTime(reader, "data_rec");
-                    recebimento.Parcela = DAOHelper.(reader, "parcela_rec");
-                    recebimento.Valor = DAOHelper.GetString(reader, "funcao_fun");
-                    recebimento.Forma = DAOHelper.GetString(reader, "cpf_fun");
-                    recebimento.Status = DAOHelper.GetString(reader, "email_fun");
-                    recebimento.Vencimento= DAOHelper.GetString(reader, "telefone_fun");
-                    recebimento.Hora = DAOHelper.GetString(reader, "endereco_fun");
-                    recebimento.ValorParcela = DAOHelper.GetString(reader, "sexo_fun");
-                    lista.Add(funcionario); */
                 }
                 reader.Close();
 
