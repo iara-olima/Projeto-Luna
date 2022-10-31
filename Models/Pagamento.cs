@@ -10,7 +10,7 @@ namespace ProjetoLuna.Models
     {
         public int Id { get; set; }
         public DateTime? Data { get; set; }
-        public float Valor { get; set; }
+        public double Valor { get; set; }
         public string FormaPag { get; set; }
         public string Status { get; set; }
         public DateTime? Vencimento { get; set; }

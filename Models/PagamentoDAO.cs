@@ -53,7 +53,18 @@ namespace ProjetoLuna.Models
 
                 while (reader.Read())
                 {
-                    var Pagamento = new Pagamento();
+                    var pagamento = new Pagamento();
+
+                    pagamento.Id = reader.GetInt32("id_pag");
+                    pagamento.Data = DAOHelper.GetDateTime(reader, "data_pag");
+                    pagamento.Valor = DAOHelper.GetDouble(reader, "valor_pag");
+                    pagamento.FormaPag = DAOHelper.GetString(reader, "email_cli");
+                    pagamento.Status = DAOHelper.GetString(reader, "telefone_cli");
+                    pagamento.Vencimento = DAOHelper.GetString(reader, "cpf_cli");
+                    pagamento.Hora = DAOHelper.GetString(reader, "endereco_cli");
+                    pagamento.IdCaixa = DAOHelper.GetString(reader, "sexo_cli");
+                    pagamento.IdDespesau = DAOHelper.GetString(reader, "sexo_cli");
+                    lista.Add(pagamento);
                 }
                 reader.Close();
 

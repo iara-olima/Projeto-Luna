@@ -24,7 +24,7 @@ namespace ProjetoLuna.Models
                     "(null, @Nome, @DataNasc, @Email, @Telefone, @CPF, @Endereco, @Sexo)";
 
                 comando.Parameters.AddWithValue("@Nome", cliente.Nome);
-                comando.Parameters.AddWithValue("@DataNasc", cliente.DataNasc?.ToString("yyyy-MM-dd"));
+                comando.Parameters.AddWithValue("@DataNasc", cliente.DataNasc?.ToString("D"));
                 comando.Parameters.AddWithValue("@Email", cliente.Email);
                 comando.Parameters.AddWithValue("@Telefone", cliente.Telefone);
                 comando.Parameters.AddWithValue("@CPF", cliente.CPF);
