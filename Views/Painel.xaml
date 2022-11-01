@@ -43,6 +43,7 @@
         <Button Click="btCaixa_Click" Content="Caixa" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
         <Button Click="btFinanceiro_Click" Content="Financeiro" HorizontalAlignment="Center" Margin="0,183,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
         <Button Click="btEstoque_Click" Content="Estoque" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
+        <Button Click="btFornecedor_Click" Content="Fornecedor" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1" Cursor="Hand"/>
 
     </Grid>
 </Window>

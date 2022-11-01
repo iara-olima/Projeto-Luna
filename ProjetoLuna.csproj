@@ -140,6 +140,9 @@
     <Compile Include="Views\CadCliente.xaml.cs">
       <DependentUpon>CadCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CadFornecedor.xaml.cs">
+      <DependentUpon>CadFornecedor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CadFuncionario.xaml.cs">
       <DependentUpon>CadFuncionario.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,9 @@
     </Compile>
     <Compile Include="Views\ClienteFormWindow.xaml.cs">
       <DependentUpon>ClienteFormWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FornecedorFormWindow.xaml.cs">
+      <DependentUpon>FornecedorFormWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncionarioFormWindow.xaml.cs">
       <DependentUpon>FuncionarioFormWindow.xaml</DependentUpon>
@@ -166,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CadFornecedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CadFuncionario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ClienteFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FornecedorFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
