@@ -33,14 +33,14 @@ namespace ProjetoLuna.Views
 
         private void btCadastar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.CadFuncionario();
+            var form = new Views.CadFornecedor();
             form.Show();
             this.Close();
         }
 
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.CadFuncionario();
+            var form = new Views.CadFornecedor();
             form.Show();
             this.Close();
         }

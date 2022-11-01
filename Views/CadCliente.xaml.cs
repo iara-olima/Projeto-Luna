@@ -116,9 +116,5 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void txtFuncao_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

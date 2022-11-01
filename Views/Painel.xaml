@@ -28,9 +28,9 @@
      />
 
         </StackPanel>
-        <Button Click="btFuncionario_Click" Content="Funcionario" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
-        <Button Click="btCliente_Click" Content="Cliente" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
-        <Button Click="btVenda_Click" Content="Venda" HorizontalAlignment="Center" Margin="0,109,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D">
+        <Button Click="btFuncionario_Click" Content="Funcionario" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
+        <Button Click="btCliente_Click" Content="Cliente" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
+        <Button Click="btVenda_Click" Content="Venda" HorizontalAlignment="Center" Margin="0,153,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -40,10 +40,12 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Click="btCaixa_Click" Content="Caixa" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
-        <Button Click="btFinanceiro_Click" Content="Financeiro" HorizontalAlignment="Center" Margin="0,183,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
-        <Button Click="btEstoque_Click" Content="Estoque" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
-        <Button Click="btFornecedor_Click" Content="Fornecedor" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1" Cursor="Hand"/>
+        <Button Click="btCaixa_Click" Content="Caixa" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
+        <Button Click="btFinanceiro_Click" Content="Financeiro" HorizontalAlignment="Center" Margin="0,227,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
+        <Button Click="btEstoque_Click" Content="Estoque" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D" Margin="0,264,0,0"/>
+        <Button Click="btFornecedor_Click" Content="Fornecedor" HorizontalAlignment="Center" Margin="0,301,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1" Cursor="Hand"/>
+        <Image HorizontalAlignment="Left" Height="167" Margin="-48,10,0,0" VerticalAlignment="Top" Width="260" Source="/Imagens/Design PDS (8).png" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="O melhor em moda intima!" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D" Grid.Column="1" Width="656" FontFamily="CommercialScript BT" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>

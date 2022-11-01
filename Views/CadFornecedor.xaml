@@ -11,7 +11,7 @@
             <RowDefinition Height="521*"/>
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="403" Margin="-210,-154,0,0" VerticalAlignment="Top" Width="542" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="379" Margin="-210,-154,0,0" VerticalAlignment="Top" Width="494" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -22,7 +22,7 @@
             </Image.RenderTransform>
         </Image>
         <Label Content="Cadastro de Fornecedor" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="125,60,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="81,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="365" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Fantasia" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="81,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="732" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Fantasia" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="80,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CNPJ" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="80,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="733" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="479,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
@@ -43,5 +43,6 @@
         </Button>
         <TextBox HorizontalAlignment="Left" x:Name="txtNome_Copy" Margin="80,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="733" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Razão Social" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtEmail_Copy" Margin="80,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="733" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Endereço" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_click" Cursor="Hand"/>
     </Grid>
 </Window>
