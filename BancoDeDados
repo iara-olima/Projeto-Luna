@@ -1,0 +1,157 @@
+create database bd_Luna;
+use bd_Luna;
+
+create table Cliente (
+id_cli int primary key auto_increment,
+nome_cli varchar (100),
+dataNasc_cli date ,
+email_cli varchar(300),
+telefone_cli varchar(300),
+cpf_cli varchar(100),
+endereco_cli varchar(100),
+sexo_cli varchar(100)
+);
+
+
+create table Funcionario(
+id_fun int primary key auto_increment,
+nome_fun varchar(200),
+dataNasc_fun date,
+salario_fun double,
+cpf_fun varchar(100),
+email_fun varchar(100),
+telefone_fun varchar(100),
+sexo_fun varchar(100),
+funcao_fun varchar(200)
+);
+
+create table Usuario(
+id_usu int primary key auto_increment,
+cpf_usu varchar(14) unique,
+senha_usu varchar(200) unique,
+id_fun_fk int,
+foreign key (id_fun_fk) references Funcionario (id_fun)
+);
+
+create table Fornecedor (
+id_forn int primary key auto_increment,
+nomeFantasia_forn varchar(200),
+razaoSoc_forn varchar (200),
+cnpj_forn varchar(200),
+email_forn varchar(200),
+telefone_forn varchar(200),
+endereco_forn varchar(200)
+);
+
+create table Produto (
+id_prod int primary key auto_increment,
+nome_prod varchar (100),
+marca_prod varchar(100),
+qtd_prod int,
+valorVenda_prod double,
+valor_compra double,
+descricao_prod varchar(300)
+);
+
+create table Caixa (
+id_cai int primary key auto_increment,
+data_cai date,
+saldoInic_cai double,
+saldoFin_cai double,
+recebimento_cai double,
+pagamento_cai double,
+id_fun_fk int,
+foreign key (id_fun_fk) references Funcionario(id_fun)
+);
+
+
+create table Venda (
+id_vend int primary key auto_increment,
+valor_vend double,
+hora_vend time,
+data_vend date,
+id_fun_fk int,
+id_cli_fk int,
+foreign key (id_fun_fk) references Funcionario(id_fun),
+foreign key (id_cli_fk) references cliente (id_cli)
+);
+
+
+
+create table Compra (
+id_comp int primary key auto_increment,
+valor_comp double,
+data_comp date,
+hora_comp time,
+parcela_comp int,
+descricao_comp varchar(300),
+valorParc_comp double,
+id_forn_fk int,
+id_fun_fk int,
+foreign key (id_forn_fk) references Fornecedor (id_forn),
+foreign key (id_fun_fk) references Funcionario (id_fun)
+);
+
+
+create table Produto_Venda (
+id_prodVend int,
+qtd_prodVend int,
+valor_prodVend double,
+id_vend_fk int,
+id_prod_fk int,
+foreign key (id_vend_fk) references Venda (id_vend),
+foreign key (id_prod_fk) references Produto (id_prod)
+);
+
+create table Produto_Compra (
+id_compProd int,
+qtd_compProd int,
+valor_compProd double,
+id_comp_fk int,
+id_prod_fk int,
+foreign key (id_comp_fk) references Compra (id_comp),
+foreign key(id_prod_fk) references Produto (id_prod)
+);
+
+create table Recebimento  (
+id_rec int primary key auto_increment,
+data_rec date,
+parcela_rec int,
+valorParc_rec double,
+valor_rec double, 
+forma_rec varchar(200),
+stts_rec varchar(200),
+vencimento_rec date,
+hora_rec time,
+id_cai_fk int,
+id_vend_fk int,
+foreign key (id_cai_fk) references Caixa (id_cai),
+foreign key (id_vend_fk) references Venda (id_vend)
+);
+
+create table Despesa (
+id_desp int primary key auto_increment,
+descricao_desp varchar(200),
+data_desp date,
+hora_desp time,
+valor_desp double,
+parcelas_deso int,
+valorParcela_desp double,
+tipo_desp varchar(200),
+id_forn_fk int,
+foreign key (id_forn_fk) references Fornecedor (id_forn)
+);
+
+create table Pagamento (
+id_pag int primary key auto_increment,
+data_pag date,
+valor_pag double,
+forma_pag varchar(200),
+stts_pag varchar(200),
+vencimento_pag date,
+hora_pag time,
+id_cai_fk int,
+id_desp_fk int,
+foreign key (id_cai_fk) references Caixa (id_cai),
+foreign key (id_desp_fk) references Despesa (id_desp)
+); 

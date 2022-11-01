@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace ProjetoLuna.Database
+namespace ProjetoLuna.DataBase
 {
     internal class Conexao
     {
@@ -52,7 +52,6 @@ namespace ProjetoLuna.Database
                 throw;
             }
         }
-
         public void Close()
         {
             connection.Close();
