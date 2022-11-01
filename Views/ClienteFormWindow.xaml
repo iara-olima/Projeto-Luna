@@ -27,7 +27,7 @@
       Margin="16 0 0 0"
      />
         </StackPanel>
-        <Button Click="btVoltar_Click" Margin="778,364,0,0"  Width="151" Height="50" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Column="1" Grid.Row="1">
+        <Button Click="btVoltar_Click" Margin="778,364,0,0"  Width="151" Height="50" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Column="1" Grid.Row="1" Cursor="Hand">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"></Setter>

@@ -77,12 +77,80 @@ namespace ProjetoLuna.Views
 
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
+            var clienteSelected = dataGridCliente.SelectedItem as Cliente;
 
+            var form = new CadCliente(clienteSelected);
+            form.ShowDialog();
+
+            //var cursoSelecionado = dataGridCurso.SelectedItem as Curso;
+
+            //var form = new CursoFormWindow(cursoSelecionado);
+            //form.ShowDialog();
         }
 
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {
+            var clienteSelected = dataGridCliente.SelectedItem as Cliente;
 
+            if (clienteSelected == null)
+            {
+                MessageBox.Show("Selecione o cliente que deseja excluir.");
+            }
+            else
+            {
+                var resultado = MessageBox.Show($"Tem certeza que deseja deletar o cliente {clienteSelected.Nome} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                try
+                {
+                    if (resultado == MessageBoxResult.Yes)
+                    {
+                        var dao = new ClienteDAO();
+                        dao.Delete(clienteSelected);
+
+                        MessageBox.Show("Cliente removido com sucesso!");
+                        var form = new ClienteFormWindow();
+                        form.Show();
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            //if (clienteSelected != null)
+            //{
+            //    MessageBox.Show(clienteSelected.Nome);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Nenhum cliente selecionado!");
+            //}
+
+            //dataGridCliente.UnselectAll();
+
+            //var cursoSelecionado = dataGridCurso.SelectedItem as Curso;
+
+            //var resultado = MessageBox.Show($"Tem certeza que deseja deletar o curso {cursoSelecionado.Nome} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            //try
+            //{
+            //    if (resultado == MessageBoxResult.Yes)
+            //    {
+            //        var dao = new CursoDAO();
+            //        dao.Delete(cursoSelecionado);
+
+            //        MessageBox.Show("Curso removido com sucesso!");
+            //        var form = new CursoListWindow();
+            //        form.Show();
+            //        this.Close();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void btListar_Ckick(object sender, RoutedEventArgs e)

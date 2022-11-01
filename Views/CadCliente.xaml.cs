@@ -41,6 +41,26 @@ namespace ProjetoLuna.Views
 
         private void CadCliente_Loaded(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Funcionando!" + _cli.Nome);
+
+            //pegar txt das variavel e definir para aparecer na tela
+
+            //txtNome.Text = _curso.Nome;
+            //txtCargaHoraria.Text = _curso.CargaHoraria;
+            //txtDescricao.Text = _curso.Descricao;
+
+            //if ((bool)rdTurnoMatutino.IsChecked)
+            //{
+            //    _curso.Turno = "Matutino";
+            //}
+            //if ((bool)rdTurnoVespertino.IsChecked)
+            //{
+            //    _curso.Turno = "Vespertino";
+            //}
+            //if ((bool)rdTurnoNoturno.IsChecked)
+            //{
+            //    _curso.Turno = "Noturno";
+            //}
         }
 
         private void btSalvar_Click(object sender, RoutedEventArgs e)
@@ -63,14 +83,15 @@ namespace ProjetoLuna.Views
                 if (_cli.Id > 0)
                 {
                     dao.Update(_cli);
-                    MessageBox.Show("Dados do Cliente atualizados com sucesso!");
 
                 }
                 else
                 {
                     dao.Insert(_cli);
-                    MessageBox.Show("Cliente cadastrado com sucesso.");
                 }
+
+                MessageBox.Show("Registro de cliente cadastrado com sucesso.");
+
             }
             catch (Exception ex)
             {
