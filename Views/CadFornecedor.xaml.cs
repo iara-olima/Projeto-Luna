@@ -33,7 +33,14 @@ namespace ProjetoLuna.Views
 
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.CadFornecedor();
+            var form = new Views.FornecedorFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void btVoltar_click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.FornecedorFormWindow();
             form.Show();
             this.Close();
         }

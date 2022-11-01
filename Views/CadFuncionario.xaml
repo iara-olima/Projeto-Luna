@@ -47,5 +47,6 @@
         </Button>
         <DatePicker BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="460,364,0,0" VerticalAlignment="Top" Height="42" Width="306"/>
         <Label Content="Data de Nascimento" HorizontalAlignment="Center" Height="50" Margin="0,356,0,0" VerticalAlignment="Top" Width="280" Foreground="#FFF1D3DE" FontSize="30" FontWeight="Normal"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="40,48,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_click"/>
     </Grid>
 </Window>
