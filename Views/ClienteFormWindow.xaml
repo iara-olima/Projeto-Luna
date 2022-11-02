@@ -35,7 +35,7 @@
             </Button.Resources>
         </Button>
         <Label Content="Lista de Clientes" Foreground="#741546" FontSize="27" HorizontalAlignment="Left" Margin="41,118,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <DataGrid Background="#FFF8DDEB" BorderBrush="#741546" x:Name="dataGridCliente" Margin="41,162,338,10" AutoGenerateColumns="False" CanUserAddRows="False" 
+        <DataGrid Background="#FFF8DDEB" BorderBrush="#741546" x:Name="dataGridCliente" Margin="41,162,210,10" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dataGridCliente_SelectionChanged" Grid.Column="1" Grid.RowSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
