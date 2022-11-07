@@ -56,7 +56,20 @@
         <Label Content="Fornecedor" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,467,0,0" Grid.Row="1"/>
 
         <Label Content="usuário:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="#741546" FontFamily="CommercialScript BT" Margin="736,495,0,0" Grid.Row="1" Grid.Column="1"/>
-    </Grid>
 
+        <DockPanel Grid.Column="1">
+            <Menu Margin="17,30,0,0" Background="#FFC4719D" Width="90" Height="70">
+                <MenuItem Width="90" Height="70">
+                    <MenuItem Header="_Pagamentos" />
+                    <MenuItem Header="_Recebimentos" />
+                    <MenuItem Header="_Despesas" />
+                    <Separator />
+                    <MenuItem Header="_Voltar" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+    </Grid>
+    
 
 </Window>
