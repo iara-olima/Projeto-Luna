@@ -11,6 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.DataBase;
+using ProjetoLuna.Views;
+using ProjetoLuna.Helpers;
+using ProjetoLuna.Models;
+using MySql.Data.MySqlClient;
 
 namespace ProjetoLuna.Views
 {
@@ -19,6 +24,8 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class Login : Window
     {
+        private static Conexao _conn = new Conexao();
+
         public Login()
         {
             InitializeComponent();
@@ -26,6 +33,42 @@ namespace ProjetoLuna.Views
 
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
+            //try
+            //{
+            //    MySqlConnection conexao = new MySqlConnection();
+            //    conexao.ConnectionString = ContentStringFormat;
+            //    conexao.Open();
+
+            //    var verificacao = _conn.Query();
+
+            //    verificacao.CommandText = "SELECT * FROM Usuario WHERE Usuario=@CPF and Senha=@Senha";
+
+            //    verificacao.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = txtCPF.Text;
+            //    verificacao.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = txtCPF.Text;
+
+            //    verificacao.CommandType = System.Data.CommandType.Text;
+            //    verificacao.Connection = conexao;
+
+            //    MySqlDataReader reader = verificacao.ExecuteReader();
+            //    if (reader.HasRows)
+            //    {
+            //        var form = new Painel();
+            //        form.Show();
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("CPF não encontrado!");
+            //    }
+            //    conexao.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            //=============================
+
             string cpf = txtCPF.Text;
             string senha = txtSenha.Text;
             if ((cpf == "") && (senha == ""))
@@ -62,7 +105,7 @@ namespace ProjetoLuna.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

@@ -69,13 +69,15 @@ namespace ProjetoLuna.Views
         {
             var clienteSelected = dataGridCliente.SelectedItem as Cliente;
 
-            var form = new CadCliente(clienteSelected);
-            form.ShowDialog();
-
-            //var cursoSelecionado = dataGridCurso.SelectedItem as Curso;
-
-            //var form = new CursoFormWindow(cursoSelecionado);
-            //form.ShowDialog();
+            if (clienteSelected == null)
+            {
+                MessageBox.Show("Selecione o cliente que deseja excluir.");
+            }
+            else
+            {
+                var form = new CadCliente(clienteSelected);
+                form.ShowDialog();
+            }
         }
 
         private void btExcluir_Click(object sender, RoutedEventArgs e)
