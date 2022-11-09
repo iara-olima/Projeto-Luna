@@ -5,47 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Painel"  Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Painel"  Height="550" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="131*"/>
-            <RowDefinition Height="381*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="209*"/>
-            <ColumnDefinition Width="975*"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel
-    Orientation="Horizontal" Margin="0,0,1,111" Grid.ColumnSpan="3" Background="#FF8F3765">
-            <ToggleButton
-                
-      Style="{StaticResource MaterialDesignHamburgerToggleButton}" Checked="Acoes_Checked" />
-            <TextBlock
-                
-      VerticalAlignment="Center"
-      Margin="16 0 0 0"
-     />
 
-        </StackPanel>
-        <Button Click="btFuncionario_Click" Content="Funcionario" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
-        <Button Click="btCliente_Click" Content="Cliente" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1"/>
-        <Button Click="btVenda_Click" Content="Venda" HorizontalAlignment="Center" Margin="0,153,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.701"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Click="btCaixa_Click" Content="Caixa" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
-        <Button Click="btFinanceiro_Click" Content="Financeiro" HorizontalAlignment="Center" Margin="0,227,0,0" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
-        <Button Click="btEstoque_Click" Content="Estoque" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Width="107" Background="#FFC4719D" BorderBrush="#FFC4719D" Margin="0,264,0,0"/>
-        <Button Click="btFornecedor_Click" Content="Fornecedor" HorizontalAlignment="Center" Margin="0,301,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1" Cursor="Hand"/>
-        <Image HorizontalAlignment="Left" Height="167" Margin="-48,10,0,0" VerticalAlignment="Top" Width="260" Source="/Imagens/Design PDS (8).png" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <Label Content="O melhor em moda intima!" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D" Grid.Column="1" Width="656" FontFamily="CommercialScript BT" HorizontalContentAlignment="Center"/>
+        <Image Grid.Column="1" HorizontalAlignment="Center" Height="500" Width="750" Source="../Imagens/Design PDS (5).png" Margin="0,9,0,25"/>
 
+        <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
+
+        <Image Source="Icons/barra_menu.png" Width="50" Height="50" Margin="76,200,124,284"/>
     </Grid>
+
 </Window>

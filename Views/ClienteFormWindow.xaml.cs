@@ -15,18 +15,6 @@ using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
-    /// <summary>
-    /// Lógica interna para ClienteFormWindow.xaml
-    /// </summary>
-    /// 
-
-
-
-    /*
-     * - Deixar oculta algumas informaçoes
-     * fazer botão voltar
-     * colocar icones na parte superior e lado direito
-     */
     public partial class ClienteFormWindow : Window
     {
         public ClienteFormWindow()
@@ -40,6 +28,7 @@ namespace ProjetoLuna.Views
             CarregarListagem();
         }
 
+
         private void btCadastar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.CadCliente();
@@ -47,6 +36,7 @@ namespace ProjetoLuna.Views
             this.Close();
         }
         
+
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.Painel();
@@ -158,9 +148,43 @@ namespace ProjetoLuna.Views
 
         }
 
-        private void Acoes_Checked(object sender, RoutedEventArgs e)
+        private void btFuncionario_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.FuncionarioFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void btCliente_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void btVenda_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btCaixa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btFinanceiro_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEstoque_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btFornecedor_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.FornecedorFormWindow();
+            form.Show();
+            this.Close();
         }
     }
 }

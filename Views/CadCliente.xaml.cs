@@ -41,7 +41,8 @@ namespace ProjetoLuna.Views
 
         private void CadCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Funcionando! " + _cli.Nome);
+            
+            MessageBox.Show("Funcionando!" + _cli.Nome);
 
             //pegar txt das variavel e definir para aparecer na tela
 
