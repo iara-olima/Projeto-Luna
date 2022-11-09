@@ -170,6 +170,9 @@
     <Compile Include="Views\Painel.xaml.cs">
       <DependentUpon>Painel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\VendaFormWindow.xaml.cs">
+      <DependentUpon>VendaFormWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Principal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,6 +222,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Painel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VendaFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
