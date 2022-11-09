@@ -1,0 +1,48 @@
+﻿<Window x:Class="ProjetoLuna.Views.DespesaFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLuna.Views"
+        mc:Ignorable="d"
+        Title="DespesaFormWindow" Height="450" Width="800" Background="#FFF8DDEB" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="130"/>
+        </Grid.RowDefinitions>
+
+
+        <DataGrid Background="White" x:Name="dataGridDespesa" Margin="136,24,140,19" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Data" Binding="{Binding Data}"/>
+                <DataGridTextColumn Header="Hora" Binding="{Binding Hora}"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                <DataGridTextColumn Header="Parcelas" Binding="{Binding Parcelas}"/>
+                <DataGridTextColumn Header="Valor Parc." Binding="{Binding ValorParc}"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Menu Background="#FFC4719D" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem Width="35" Height="35">
+                <MenuItem Header="_Funcionário" />
+                <MenuItem Header="_Cliente" />
+                <MenuItem Header="" />
+                <Separator />
+            </MenuItem>
+        </Menu>
+
+        <Button Content="Registrar" x:Name="btRegistrar" Click="btRegistrar_Click" Height="30" Width="100" Grid.Row="1" Margin="17,24,683,120"/>
+        <Button Content="Editar" x:Name="btEditar" Click="btEditar_Click" Height="30" Width="100" Grid.Row="1" Margin="17,72,683,72"/>
+        <Button Content="Excluir" x:Name="btExcluir" Click="btExcluir_Click" Height="30" Width="100" Grid.Row="1" Margin="17,125,683,19"/>
+
+        <Label Content="Despesas:" FontSize="20" FontFamily="roboto" Foreground="#741546" Margin="140,126,564,137" Grid.RowSpan="2"/>
+
+        <Button x:Name="btVoltar" Content="\/" Click="btVoltar_Click" Margin="21,77,733,21" Grid.Row="2"/>
+    </Grid>
+
+</Window>

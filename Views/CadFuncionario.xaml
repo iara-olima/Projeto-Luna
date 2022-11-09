@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
         Title="CadFuncionario" Height="650" Width="1200" Background="#370f24" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Margin="0,0,0,-335">
+    <Grid Margin="0,0,0,-16">
         <Grid.RowDefinitions>
             <RowDefinition Height="521*"/>
             <RowDefinition Height="45*"/>

@@ -155,6 +155,9 @@
     <Compile Include="Views\ClienteFormWindow.xaml.cs">
       <DependentUpon>ClienteFormWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DespesaFormWindow.xaml.cs">
+      <DependentUpon>DespesaFormWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FornecedorFormWindow.xaml.cs">
       <DependentUpon>FornecedorFormWindow.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ClienteFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DespesaFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

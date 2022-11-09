@@ -26,8 +26,8 @@
             </Button.Resources>
         </Button>
         <Label Content="Lista de Clientes" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" Margin="52,93,0,0" VerticalAlignment="Top" Grid.Column="1" Height="59" Width="302" Grid.RowSpan="2"/>
-        <DataGrid Background="#FFF8DDEB" BorderBrush="#741546" x:Name="dataGridCliente" Margin="54,52,364,58" AutoGenerateColumns="False" CanUserAddRows="False" 
-                  CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dataGridCliente_SelectionChanged" Grid.Row="1" Grid.Column="1">
+        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCliente" Margin="54,52,364,58" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" SelectionChanged="dataGridCliente_SelectionChanged" Grid.Row="1" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
