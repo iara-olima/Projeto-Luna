@@ -15,6 +15,8 @@
         <Image Grid.Column="1" HorizontalAlignment="Center" Height="500" Width="750" Source="../Imagens/Design PDS (5).png" Margin="0,9,0,25"/>
 
         <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
+
+        <Image Source="Icons/barra_menu.png" Width="50" Height="50" Margin="76,200,124,284"/>
     </Grid>
 
 </Window>
