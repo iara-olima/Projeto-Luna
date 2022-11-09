@@ -16,7 +16,7 @@
             <ColumnDefinition Width="661*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Click="btEntrar_Click" Grid.Column="1" Grid.Row="1" Margin="322,301,0,0"  Width="140" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="24" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+        <Button Click="btEntrar_Click" Grid.Column="1" Grid.Row="1" Margin="322,301,0,0"  Width="140" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="24" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"></Setter>
