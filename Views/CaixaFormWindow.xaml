@@ -39,9 +39,10 @@
                 </Label.RenderTransform>
             </Label>
         </StackPanel>
+
         <DatePicker BorderBrush="#FFF8DDEB" Height="42" Grid.Column="1" Margin="364,10,494,0" VerticalAlignment="Top" RenderTransformOrigin="-0.297,0.525" />
         <Label Content="Data Inicial" HorizontalAlignment="Left" Height="42" Margin="366,19,0,0" VerticalAlignment="Top" Width="105" Foreground="#FFF1D3DE" FontSize="15" FontWeight="Normal" Grid.Column="1"/>
-        <DatePicker BorderBrush="#FFF8DDEB" Height="42" RenderTransformOrigin="-0.297,0.525" Grid.Column="1" Margin="571,10,286,0" VerticalAlignment="Top"/>
+        <DatePicker BorderBrush="#FFF8DDEB" Height="42" RenderTransformOrigin="-0.297,0.525" Grid.Column="1" Margin="571,10,286,0" VerticalAlignment="Top" />
         <Label Content="Data Final" HorizontalAlignment="Left" Height="42" Margin="571,20,0,0" VerticalAlignment="Top" Width="95" Foreground="#FFF1D3DE" FontSize="15" FontWeight="Normal" Grid.Column="1"/>
         <Button Click="btRelatorio_Click" Content="Relatório" Grid.Column="1" Margin="790,19,41,111" BorderBrush="#FF8F3765" Foreground="#FFF8DDEB" FontSize="20" FontWeight="Normal" RenderTransformOrigin="0.437,1.232" Cursor="Hand" BorderThickness="0,0,0,0">
             <Button.RenderTransform>
