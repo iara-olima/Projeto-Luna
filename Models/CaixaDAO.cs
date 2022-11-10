@@ -95,15 +95,35 @@ namespace ProjetoLuna.Models
             }
         }
 
-        //public void Update(Caixa caixa)
-        //{
-        //    try
-        //    {
-        //        var comando = _conn.Query();
+        public void Update(Caixa caixa)
+        {
+            try
+            {
+               var comando = _conn.Query();
 
-        //        comando.CommandText = "UpdateCaixa Set" + 
-        //            "data_cai = @Data, saldo_inicial_cai = @SaldoInicial, saldo_final_cai = @SaldoFinal, recebimento"
-        //    }
-        //}
+                comando.CommandText = "UpdateCaixa Set" +
+                    "data_cai = @Data, saldo_inicial_cai = @SaldoInicial, " +
+                    "saldo_final_cai = @SaldoFinal, recebimento_cai = @Recebimentos, pagamento_cai = @Pagamentos";
+
+                comando.Parameters.AddWithValue("@Data", caixa.Data);
+                comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);
+                comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
+                comando.Parameters.AddWithValue("@Recebimentos", caixa.Recebimentos);
+                comando.Parameters.AddWithValue("@Pagamentos", caixa.Pagamentos);
+
+                comando.Parameters.AddWithValue("@id", caixa.Id);
+
+                var resultado = comando.ExecuteNonQuery();
+
+                if(resultado == 0)
+                {
+                    throw new Exception("Ocorreram erros ao atualizae as informações");
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
