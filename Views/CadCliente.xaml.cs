@@ -39,6 +39,7 @@ namespace ProjetoLuna.Views
             _cli = cliente;
         }
 
+        //Verifica se a variavel _cli esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void CadCliente_Loaded(object sender, RoutedEventArgs e)
         {
             if (_cli.Id > 0)
@@ -70,27 +71,9 @@ namespace ProjetoLuna.Views
                 InitializeComponent();
                 Loaded += CadCliente_Loaded;
             }
-
-            //pegar txt das variavel e definir para aparecer na tela
-
-            //txtNome.Text = _curso.Nome;
-            //txtCargaHoraria.Text = _curso.CargaHoraria;
-            //txtDescricao.Text = _curso.Descricao;
-
-            //if ((bool)rdTurnoMatutino.IsChecked)
-            //{
-            //    _curso.Turno = "Matutino";
-            //}
-            //if ((bool)rdTurnoVespertino.IsChecked)
-            //{
-            //    _curso.Turno = "Vespertino";
-            //}
-            //if ((bool)rdTurnoNoturno.IsChecked)
-            //{
-            //    _curso.Turno = "Noturno";
-            //}
         }
 
+        //Salva ou atualiza as informações presentes nos campos no Banco de Dados
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
 
@@ -127,6 +110,7 @@ namespace ProjetoLuna.Views
             }
         }
 
+        //Informa os registros de cada atributo antes de realizar um novo cadastro ou uma atualização
         private void ShowMenssage()
         {
 
