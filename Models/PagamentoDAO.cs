@@ -101,8 +101,8 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Pagamento Set" +
-                    "data_pag = @Data, valor_pag = @Valor, forma_pag = @FormaPag, stts_pag = @Status, vencimento_pag = @Vencimento, hora_pag = @Hora, id_cai_fk = @IdCaixa, id_desp_fk = @IdDespesa" +
+                comando.CommandText = "Update Pagamento Set " +
+                    "data_pag = @Data, valor_pag = @Valor, forma_pag = @FormaPag, stts_pag = @Status, vencimento_pag = @Vencimento, hora_pag = @Hora, id_cai_fk = @IdCaixa, id_desp_fk = @IdDespesa " +
                     "Where id_pag = @id";
 
                 comando.Parameters.AddWithValue("@Data", pag.Data?.ToString("D"));

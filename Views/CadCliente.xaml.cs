@@ -39,31 +39,41 @@ namespace ProjetoLuna.Views
             _cli = cliente;
         }
 
+        //Verifica se a variavel _cli esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void CadCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            MessageBox.Show("Funcionando!" + _cli.Nome);
+            if (_cli.Id > 0)
+            {
+                MessageBox.Show("Cliente: " + _cli.Nome);
 
-            //pegar txt das variavel e definir para aparecer na tela
+                txtNome.Text = _cli.Nome;
+                txtCpf.Text = _cli.CPF;
+                txtEmail.Text = _cli.Email;
+                txtEndereco.Text = _cli.Endereco;
+                txtTelefone.Text = _cli.Telefone;
+                dtNasc.SelectedDate = _cli.DataNasc;
 
-            //txtNome.Text = _curso.Nome;
-            //txtCargaHoraria.Text = _curso.CargaHoraria;
-            //txtDescricao.Text = _curso.Descricao;
-
-            //if ((bool)rdTurnoMatutino.IsChecked)
-            //{
-            //    _curso.Turno = "Matutino";
-            //}
-            //if ((bool)rdTurnoVespertino.IsChecked)
-            //{
-            //    _curso.Turno = "Vespertino";
-            //}
-            //if ((bool)rdTurnoNoturno.IsChecked)
-            //{
-            //    _curso.Turno = "Noturno";
-            //}
+                if (_cli.Sexo == "Masculino")
+                {
+                    cbSexo.SelectedItem = "Masculino";
+                    cbSexo.Items.Add("Masculino");
+                    cbSexo.Items.Add("Feminino");
+                }
+                else
+                {
+                    cbSexo.SelectedItem = "Masculino";
+                    cbSexo.Items.Add("Masculino");
+                    cbSexo.Items.Add("Feminino");
+                }
+            }
+            else
+            {
+                InitializeComponent();
+                Loaded += CadCliente_Loaded;
+            }
         }
 
+        //Salva ou atualiza as informações presentes nos campos no Banco de Dados
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
 
@@ -91,7 +101,7 @@ namespace ProjetoLuna.Views
                     dao.Insert(_cli);
                 }
 
-                MessageBox.Show("Registro de cliente cadastrado com sucesso.");
+                MessageBox.Show("Registro do cliente "+_cli.Nome+" atualizado com sucesso!");
 
             }
             catch (Exception ex)
@@ -100,6 +110,7 @@ namespace ProjetoLuna.Views
             }
         }
 
+        //Informa os registros de cada atributo antes de realizar um novo cadastro ou uma atualização
         private void ShowMenssage()
         {
 

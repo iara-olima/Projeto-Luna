@@ -65,19 +65,16 @@ namespace ProjetoLuna.Views
             }
         }
 
+        //Verifica o valor selecionado no Data Grid e aciona a tela de cadastro com as informações carregadas nos campos
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
             var clienteSelected = dataGridCliente.SelectedItem as Cliente;
 
             var form = new CadCliente(clienteSelected);
             form.ShowDialog();
-
-            //var cursoSelecionado = dataGridCurso.SelectedItem as Curso;
-
-            //var form = new CursoFormWindow(cursoSelecionado);
-            //form.ShowDialog();
         }
 
+        //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {
             var clienteSelected = dataGridCliente.SelectedItem as Cliente;
@@ -108,39 +105,6 @@ namespace ProjetoLuna.Views
                     MessageBox.Show(ex.Message);
                 }
             }
-
-            //if (clienteSelected != null)
-            //{
-            //    MessageBox.Show(clienteSelected.Nome);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Nenhum cliente selecionado!");
-            //}
-
-            //dataGridCliente.UnselectAll();
-
-            //var cursoSelecionado = dataGridCurso.SelectedItem as Curso;
-
-            //var resultado = MessageBox.Show($"Tem certeza que deseja deletar o curso {cursoSelecionado.Nome} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-            //try
-            //{
-            //    if (resultado == MessageBoxResult.Yes)
-            //    {
-            //        var dao = new CursoDAO();
-            //        dao.Delete(cursoSelecionado);
-
-            //        MessageBox.Show("Curso removido com sucesso!");
-            //        var form = new CursoListWindow();
-            //        form.Show();
-            //        this.Close();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
         }
 
         private void btListar_Ckick(object sender, RoutedEventArgs e)

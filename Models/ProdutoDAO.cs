@@ -104,8 +104,8 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Produto Set" +
-                    "nome_prod = @Nome, marca_prod = @Marca, quantidade_prod = @Quantidade, valor_venda_prod = @ValorVenda, valor_compra_prod = @ValorCompra" +
+                comando.CommandText = "Update Produto Set " +
+                    "nome_prod = @Nome, marca_prod = @Marca, quantidade_prod = @Quantidade, valor_venda_prod = @ValorVenda, valor_compra_prod = @ValorCompra " +
                     "Where id_prod = @id";
 
                 comando.Parameters.AddWithValue("@Nome", produto.Nome);
