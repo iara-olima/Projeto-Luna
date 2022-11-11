@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Painel"  Height="550" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Painel"  Height="550" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -15,9 +15,8 @@
         <TextBlock Text="since 2022" FontSize="15" Grid.Column="1" HorizontalAlignment="Center" Foreground="#741546"/>
         <Image Grid.Column="1" HorizontalAlignment="Center" Height="500" Width="750" Source="../Imagens/Design PDS (5).png" Margin="0,9,0,25"/>
 
-        <Border CornerRadius=" 0 40 0 0" Background="#741546">
-            <Button Click="btCaixa_Click" Content="Caixa" Margin="62,267,62,235" Cursor="Hand"/>
-        </Border>
+        <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
+
 
         <Image HorizontalAlignment="Left" Height="81" Margin="-10,-14,0,0" VerticalAlignment="Top" Width="72" Source="/Icons/barra_menu.png"/>
 
