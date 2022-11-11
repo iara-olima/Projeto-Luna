@@ -1,12 +1,100 @@
-﻿<Window x:Class="ProjetoLuna.Views.CaixaFormWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.CaixaFormWindow"
         mc:Ignorable="d"
-        Title="CaixaFormWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="CaixaFormWindow" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#FFF8DDEB">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="131*"/>
+            <RowDefinition Height="381*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="209*"/>
+            <ColumnDefinition Width="975*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel
+    Orientation="Horizontal" Margin="1,0,1,91" Grid.ColumnSpan="2" Background="#FF8F3765" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.494"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.01"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Label Content="  Caixa do Dia" Foreground="#FFF8DDEB" FontSize="29" Height="48" Width="236" FontStyle="Normal" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.33" AngleX="0.15"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.536" X="0.126"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+
+        <DatePicker BorderBrush="#FFF8DDEB" Height="42" Grid.Column="1" Margin="364,10,494,0" VerticalAlignment="Top" RenderTransformOrigin="-0.297,0.525" />
+        <Label Content="Data Inicial" HorizontalAlignment="Left" Height="42" Margin="366,19,0,0" VerticalAlignment="Top" Width="105" Foreground="#FFF1D3DE" FontSize="15" FontWeight="Normal" Grid.Column="1"/>
+        <DatePicker BorderBrush="#FFF8DDEB" Height="42" RenderTransformOrigin="-0.297,0.525" Grid.Column="1" Margin="571,10,286,0" VerticalAlignment="Top" />
+        <Label Content="Data Final" HorizontalAlignment="Left" Height="42" Margin="571,20,0,0" VerticalAlignment="Top" Width="95" Foreground="#FFF1D3DE" FontSize="15" FontWeight="Normal" Grid.Column="1"/>
+        <Button Click="btRelatorio_Click" Content="Relatório" Grid.Column="1" Margin="790,19,41,111" BorderBrush="#FF8F3765" Foreground="#FFF8DDEB" FontSize="20" FontWeight="Normal" RenderTransformOrigin="0.437,1.232" Cursor="Hand" BorderThickness="0,0,0,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="790,12,0,0" VerticalAlignment="Top" Width="33" Source="/Imagens/rel.png"/>
+        <Label Content="Entrada (+)" HorizontalAlignment="Left" Margin="18,81,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="127,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Background="White" Height="20" FontSize="18" Grid.ColumnSpan="2"/>
+        <Label Content="Pagamento" HorizontalAlignment="Left" Margin="65,81,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18" Grid.Column="1"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="174,86,0,0" VerticalAlignment="Top" Width="108" Height="20" Background="White"/>
+        <Label Content="Descrição" HorizontalAlignment="Left" Margin="18,139,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="127,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" Background="White" Height="20" FontSize="18" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="287,72,0,0" VerticalAlignment="Top" Height="99" Width="119" RenderTransformOrigin="0.086,0.173" BorderBrush="{x:Null}" Click="btEntrada_Click" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagens/+.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Saída (-)" HorizontalAlignment="Left" Margin="392,81,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="501,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Background="White" Height="20" FontSize="18" Grid.Column="1"/>
+        <Label Content="Descrição" HorizontalAlignment="Left" Margin="392,139,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18" Grid.RowSpan="2" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="501,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" Background="White" Height="20" FontSize="18" Grid.RowSpan="2" Grid.Column="1"/>
+        <Label Content="Entrada (+)" HorizontalAlignment="Left" Margin="18,81,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="127,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Background="White" Height="20" FontSize="18" Grid.ColumnSpan="2"/>
+        <Label Content="Pagamento" HorizontalAlignment="Left" Margin="65,81,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18" Grid.Column="1"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="174,86,0,0" VerticalAlignment="Top" Width="108" Height="20" Background="White"/>
+        <Label Content="Descrição" HorizontalAlignment="Left" Margin="18,139,0,0" VerticalAlignment="Top" Foreground="#FF8F3765" FontWeight="Bold" FontSize="18" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="127,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" Background="White" Height="20" FontSize="18" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button Click="btSaida_Click" Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="861,51,0,0" VerticalAlignment="Top" Height="141" Width="126" RenderTransformOrigin="0.086,0.173" BorderBrush="{x:Null}" Grid.RowSpan="2">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="1.101"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagens/DESIGN_PDS__1_-removebg-preview.png"/>
+            </Button.Background>
+        </Button>
+        <materialDesign:Card Grid.Column="1" Content="Card" HorizontalAlignment="Left" Margin="200,262,0,0" Grid.Row="1" VerticalAlignment="Top" Height="200" Width="367"/>
+        <materialDesign:Card Grid.Column="1" Content="Card" HorizontalAlignment="Left" Margin="590,262,0,0" Grid.Row="1" VerticalAlignment="Top" Height="200" Width="367"/>
+        <materialDesign:Card Content="Card" HorizontalAlignment="Left" Margin="22,262,0,0" Grid.Row="1" VerticalAlignment="Top" Height="200" Width="367" Grid.ColumnSpan="2"/>
+
     </Grid>
 </Window>

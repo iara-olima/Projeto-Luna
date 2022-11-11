@@ -23,5 +23,25 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
+
+        private void btRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

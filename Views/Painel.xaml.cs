@@ -45,7 +45,9 @@ namespace ProjetoLuna.Views
 
         private void btCaixa_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.CaixaFormWindow();
+            form.Show();
+            this.Close();
         }
 
         private void btFinanceiro_Click(object sender, RoutedEventArgs e)

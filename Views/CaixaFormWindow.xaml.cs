@@ -23,5 +23,20 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
+
+        private void btRelatorio_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEntrada_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btSaida_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
