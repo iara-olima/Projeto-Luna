@@ -103,8 +103,8 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Fornecedor Set" +
-                    "nomeFantasia_for = @NomeFantasia, razaoSocial_for = @RazaoSocial, cnpj_for = @CNPJ, email_for = @Email, telefone_for = @Telefone, endereco_for = @Endereco" +
+                comando.CommandText = "Update Fornecedor Set " +
+                    "nomeFantasia_for = @NomeFantasia, razaoSocial_for = @RazaoSocial, cnpj_for = @CNPJ, email_for = @Email, telefone_for = @Telefone, endereco_for = @Endereco " +
                     "Where id_fun = @id";
 
                 comando.Parameters.AddWithValue("@NomeFantasia", fornecedor.NomeFantasia);
