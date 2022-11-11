@@ -41,8 +41,35 @@ namespace ProjetoLuna.Views
 
         private void CadCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            MessageBox.Show("Funcionando!" + _cli.Nome);
+            if (_cli.Id > 0)
+            {
+                MessageBox.Show("Cliente: " + _cli.Nome);
+
+                txtNome.Text = _cli.Nome;
+                txtCpf.Text = _cli.CPF;
+                txtEmail.Text = _cli.Email;
+                txtEndereco.Text = _cli.Endereco;
+                txtTelefone.Text = _cli.Telefone;
+                dtNasc.SelectedDate = _cli.DataNasc;
+
+                if (_cli.Sexo == "Masculino")
+                {
+                    cbSexo.SelectedItem = "Masculino";
+                    cbSexo.Items.Add("Masculino");
+                    cbSexo.Items.Add("Feminino");
+                }
+                else
+                {
+                    cbSexo.SelectedItem = "Masculino";
+                    cbSexo.Items.Add("Masculino");
+                    cbSexo.Items.Add("Feminino");
+                }
+            }
+            else
+            {
+                InitializeComponent();
+                Loaded += CadCliente_Loaded;
+            }
 
             //pegar txt das variavel e definir para aparecer na tela
 
@@ -91,7 +118,7 @@ namespace ProjetoLuna.Views
                     dao.Insert(_cli);
                 }
 
-                MessageBox.Show("Registro de cliente cadastrado com sucesso.");
+                MessageBox.Show("Registro do cliente "+_cli.Nome+" atualizado com sucesso!");
 
             }
             catch (Exception ex)

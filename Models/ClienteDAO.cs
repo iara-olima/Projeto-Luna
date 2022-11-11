@@ -105,10 +105,11 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Cliente Set" +
-                    "nome_cli = @Nome, dataNasc_cli = @DataNasc, email_cli = @Email, telefone_cli = @Telefone, cpf_cli = @CPF, endereco_cli = @Endereco, sexo_cli = @Sexo" +
+                comando.CommandText = "Update Cliente Set " +
+                    "nome_cli = @Nome, dataNasc_cli = @DataNasc, email_cli = @Email, telefone_cli = @Telefone, cpf_cli = @CPF, endereco_cli = @Endereco, sexo_cli = @Sexo " +
                     "Where id_cli = @id";
 
+                comando.Parameters.AddWithValue("@id", cliente.Id);
                 comando.Parameters.AddWithValue("@Nome", cliente.Nome);
                 comando.Parameters.AddWithValue("@DataNasc", cliente.DataNasc?.ToString("yyyy-MM-dd"));
                 comando.Parameters.AddWithValue("@Email", cliente.Email);
@@ -117,24 +118,18 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Endereco", cliente.Endereco);
                 comando.Parameters.AddWithValue("@Sexo", cliente.Sexo);
 
-                comando.Parameters.AddWithValue("@id", cliente.Id);
-
                 var resultado = comando.ExecuteNonQuery();
 
                 if (resultado == 0)
                 {
                     throw new Exception("Ocorreram erros ao atualizar as informações");
-
                 }
-
-                
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-}
+        }
 
     }
 }
