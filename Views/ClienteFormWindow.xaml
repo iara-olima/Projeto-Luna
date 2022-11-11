@@ -5,73 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="ClienteFormWindow" Height="650" Width="1300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="ClienteFormWindow" Height="650" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="580*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="209*"/>
-            <ColumnDefinition Width="975*"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="167" Margin="-56,-41,0,0" VerticalAlignment="Top" Width="260" Source="/Imagens/Design PDS (8).png" Grid.RowSpan="2"/>
 
-        <Button Click="btVoltar_Click" Margin="712,433,0,0"  Width="115" Height="54" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Column="1" Grid.Row="1" Cursor="Hand">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Label Content="Lista de Clientes" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" Margin="52,93,0,0" VerticalAlignment="Top" Grid.Column="1" Height="59" Width="302" Grid.RowSpan="2"/>
-        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCliente" Margin="54,52,364,58" AutoGenerateColumns="False" CanUserAddRows="False" 
-                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" SelectionChanged="dataGridCliente_SelectionChanged" Grid.Row="1" Grid.Column="1">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
-                <DataGridTextColumn Header="Data de Nascimento" Binding="{Binding DataNasc}"/>
-                <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"/>
-                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}"/>
-                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
-            </DataGrid.Columns>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel Margin="0 0 0 0">
+                <Image HorizontalAlignment="Left" Width="120" Source="/Imagens/Design PDS (8).png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="150 10 0 0">
+                <StackPanel Margin="0 0 30 0">
+                    <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,0" Height="55">
+                        <Image Source="/Views/cliente_icon.png"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="0 0 20 0">
+                    <Button x:Name="btFuncionario" Click="btFuncionario_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="50">
+                        <Image Source="/Icons/func_icon.png"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="0 0 20 0">
+                    <Button x:Name="btEstoque" Click="btEstoque_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="50">
+                        <Image Source="/Icons/estoque_icon.png"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="0 0 20 0">
+                    <Button x:Name="btVenda" Click="btVenda_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="50">
+                        <Image Source="/Icons/venda_icon.png"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="0 0 20 0">
+                    <Button x:Name="btFinanceiro" Click="btFinanceiro_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="50">
+                        <Image Source="/Icons/financeiro_icon.png"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel>
+                    <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,0" Height="50">
+                        <Image Source="/Icons/caixa_icon.png"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel>
+                    <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="60,0,0,0" Height="46">
+                        <Image Source="/Icons/voltar_icon.png"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        
+        
+        <!-- TELA CLIENTE (FORA MENU)-->
+        <StackPanel Grid.Row="1" Width="650" Height="250">
+            <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCliente" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" SelectionChanged="dataGridCliente_SelectionChanged" Height="200" Width="600">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
+                    <DataGridTextColumn Header="Data de Nascimento" Binding="{Binding DataNasc}"/>
+                    <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"/>
+                    <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}"/>
+                    <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
 
-        </DataGrid>
-        <Button Name="cadastrar" Click="btCadastar_Click" Background="#FFF8DDEB" BorderBrush="#FFF8DDEB" HorizontalAlignment="Left" Margin="712,86,0,0" VerticalAlignment="Top" Grid.Column="1" Width="80" Height="70" Grid.Row="1">
-            <Image Source="../Imagens/iconCadastro.png" Height="70" Width="50"></Image>
-        </Button>
-
-
-        <Button Click="btEditar_Click" Content="Editar" HorizontalAlignment="Left" Margin="712,166,0,0" VerticalAlignment="Top" Width="80" Height="70" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Column="1" Grid.Row="1"/>
-        <Button Click="btExcluir_Click" Content="Excluir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="70" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Column="1" Margin="712,247,0,0" Grid.Row="1"/>
-        <Button Click="btListar_Ckick" Content="Listar" HorizontalAlignment="Left" Margin="712,329,0,0" VerticalAlignment="Top" Width="80" Height="70" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Column="1" Grid.Row="1"/>
-
-        <Button Click="btFuncionario_Click" HorizontalAlignment="Left" Margin="17,4,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1" Height="70" Width="90"/>
-        <Button Click="btCliente_Click" HorizontalAlignment="Left" Margin="17,78,0,0" VerticalAlignment="Top" Width="90" Height="70" Background="#FFF8DDEB" BorderBrush="#FFF8DDEB" Grid.Row="1"/>
-        <Button Click="btVenda_Click" HorizontalAlignment="Left" Margin="17,152,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Width="90" Height="70" Background="#FFC4719D" BorderBrush="#FFC4719D">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.701"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Click="btCaixa_Click" HorizontalAlignment="Left" Margin="17,374,0,0" VerticalAlignment="Top" Grid.Row="1" Width="90" Height="70" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
-        <Button Click="btFinanceiro_Click" HorizontalAlignment="Left" Margin="17,226,0,0" VerticalAlignment="Top" Grid.Row="1" Width="90" Height="70" Background="#FFC4719D" BorderBrush="#FFC4719D"/>
-        <Button Click="btEstoque_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="90" Height="70" Background="#FFC4719D" BorderBrush="#FFC4719D" Margin="17,300,0,0"/>
-        <Button Click="btFornecedor_Click" HorizontalAlignment="Left" Margin="17,448,0,0" VerticalAlignment="Top" Background="#FFC4719D" BorderBrush="#FFC4719D" Grid.Row="1" Cursor="Hand" Width="90" Height="70"/>
-
-        <Label Content="Funcionário" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,23,0,0" Grid.Row="1"/>
-        <Label Content="Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,97,0,0" Grid.Row="1"/>
-        <Label Content="Venda" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,171,0,0" Grid.Row="1"/>
-        <Label Content="Financeiro" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,245,0,0" Grid.Row="1"/>
-        <Label Content="Estoque" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,319,0,0" Grid.Row="1"/>
-        <Label Content="Caixa" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,393,0,0" Grid.Row="1"/>
-        <Label Content="Fornecedor" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#741546" FontFamily="CommercialScript BT" Grid.ColumnSpan="2" Margin="108,467,0,0" Grid.Row="1"/>
     </Grid>
 </Window>

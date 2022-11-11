@@ -15,17 +15,14 @@
         <TextBlock Text="since 2022" FontSize="15" Grid.Column="1" HorizontalAlignment="Center" Foreground="#741546"/>
         <Image Grid.Column="1" HorizontalAlignment="Center" Height="500" Width="750" Source="../Imagens/Design PDS (5).png" Margin="0,9,0,25"/>
 
-        <Border CornerRadius=" 0 40 0 0" Background="#741546">
-            <Button Click="btCaixa_Click" Content="Caixa" Margin="62,267,62,235" Cursor="Hand"/>
-        </Border>
+        <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
 
         <Image HorizontalAlignment="Left" Height="81" Margin="-10,-14,0,0" VerticalAlignment="Top" Width="72" Source="/Icons/barra_menu.png"/>
 
         <TextBlock Text="usuario:" FontSize="20" VerticalAlignment="Bottom"/>
 
         <StackPanel Height="350">
-
-            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="35">
+            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/cliente_icon.png" Height="32" Width="32"/>
                     <TextBlock Text="Cliente" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
@@ -49,13 +46,17 @@
                     <TextBlock Text="Venda" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btFinanceiro" Click="btFinanceiro_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
-                <StackPanel Orientation="Horizontal" Width="240" Height="35">
-                    <Image Source="/Icons/financeiro_icon.png" Height="32" Width="32"/>
-                    <TextBlock Text="Financeiro" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
-                </StackPanel>
-            </Button>
-            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
+            <StackPanel Orientation="Horizontal" Width="240" Height="38" Margin="0 -10 0 0">
+                <Menu>
+                    <Image Source="/Icons/financeiro_icon.png" Margin="-10 0 0 10"/>
+                    <MenuItem Header="_Financeiro" Cursor="Hand" FontSize="25" Margin="-25 0 0 0" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
+                        <MenuItem Header="_Pagamentos" Click="Pagamentos_Click"/>
+                        <MenuItem Header="_Recebimentos" Click="Recebimentos_Click"/>
+                        <MenuItem Header="_Despesas" Click="Despesas_Click"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,15,0,0" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240" Height="35">
                     <Image Source="/Icons/caixa_icon.png" Height="32" Width="32"/>
                     <TextBlock Text="Caixa" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>

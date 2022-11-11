@@ -66,5 +66,26 @@ namespace ProjetoLuna.Views
             form.Show();
             this.Close();
         }
+
+        private void Pagamentos_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.PagamentoFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Recebimentos_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.RecebimentoFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Despesas_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.DespesaFormWindow();
+            form.Show();
+            this.Close();
+        }
     }
 }

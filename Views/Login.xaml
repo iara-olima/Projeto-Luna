@@ -5,34 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Login"  Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Login" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#370f24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="521*"/>
-            <RowDefinition Height="45*"/>
+            <RowDefinition Height="650"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <TextBox HorizontalAlignment="Left" x:Name="txtCPF" Margin="361,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4" TextChanged="txtCPF_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtSenha" Margin="361,348,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2"  Text="Senha" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <Button Click="btEntrar_Click" Margin="361,453,0,0"  Width="110" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Click="btCancelar_Click" Margin="600,453,0,0"  Width="146" Height="50" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <StackPanel Width="500">
+            <Label Content="Bem Vindo!" Margin="0 100 0 0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <Button Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" Foreground="#FFF1D5E4" Height="58"/>
+                <Button Content="Cadastro" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,0" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58" Cursor="Hand"/>
+            </StackPanel>
+            <TextBlock Text="CPF:" FontFamily="roboto" Foreground="#FFF1D5E4" FontSize="25" Width="50" HorizontalAlignment="Left" Margin="0 30 0 0"/>
+            <TextBox HorizontalAlignment="Left" x:Name="txtCPF" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <TextBlock Text="Senha:" FontFamily="roboto" Foreground="#FFF1D5E4" FontSize="25" Width="78" HorizontalAlignment="Left" Margin="0 30 0 0"/>
+            <TextBox HorizontalAlignment="Left" x:Name="txtSenha" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 100 0">
+                <Button Click="btEntrar_Click" Width="110" Margin="0 0 50 0" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Click="btLimpar_Click" Width="146" Height="50" HorizontalAlignment="Left" Content="LIMPAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </StackPanel>
         <Image Source="/Imagens/Design PDS (1).png" Margin="-434,-245,712,-245" Grid.RowSpan="2"/>
-        <Label Content="Bem Vindo!" HorizontalAlignment="Left" Margin="361,97,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
         <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="367,183,0,0" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" Foreground="#FFF1D5E4" Height="58" Click="Button_Click"/>
-        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="494,185,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,0" FontSize="30" Foreground="#FFF1D5E4" Click="BtCadastro_Click" Height="58" Cursor="Hand"/>
-
     </Grid>
 </Window>
