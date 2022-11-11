@@ -22,7 +22,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Label Content="Cadastro de Cliente" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="163,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cadastro de Cliente&#xD;&#xA;" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="163,46,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="119,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Margin="498,430,0,0" VerticalAlignment="Top" Width="306" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="30"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="119,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
