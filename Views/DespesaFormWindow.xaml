@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="DespesaFormWindow" Height="350" Width="800" Background="#FFF8DDEB" >
+        Title="DespesaFormWindow" Height="350" Width="800" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
 
     <Grid>
 
         <!--MENU-->
         <Menu>
             <MenuItem Cursor="Hand" Margin="5 5 0 0" Header=">" FontSize="25" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
-                <MenuItem Header="_Cliente" Click="Pagamentos_Click" FontSize="20"/>
-                <MenuItem Header="_Funcionario" Click="Recebimentos_Click" FontSize="20"/>
-                <MenuItem Header="_Estoque" Click="Despesas_Click" FontSize="20"/>
-                <MenuItem Header="_Venda" Click="Pagamentos_Click" FontSize="20"/>
-                <MenuItem Header="_Financeiro" Click="Recebimentos_Click" FontSize="20" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
+                <MenuItem Header="_Cliente" Click="Cliente_Click" FontSize="20"/>
+                <MenuItem Header="_Funcionario" Click="Funcionario_Click" FontSize="20"/>
+                <MenuItem Header="_Estoque" Click="Estoque_Click" FontSize="20"/>
+                <MenuItem Header="_Venda" Click="Venda_Click" FontSize="20"/>
+                <MenuItem Header="_Financeiro" FontSize="20" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
                     <MenuItem Header="_Pagamentos" Click="Pagamentos_Click" FontSize="20"/>
                     <MenuItem Header="_Recebimentos" Click="Recebimentos_Click" FontSize="20"/>
-                    <MenuItem Header="_Despesas" Click="Despesas_Click" FontSize="20"/>
+                    <MenuItem Header="_Despesas" FontSize="20"/>
                 </MenuItem>
-                <MenuItem Header="_Caixa" Click="Despesas_Click" FontSize="20"/>
-                <MenuItem Header="_Fornecedor" Click="Pagamentos_Click" FontSize="20"/>
+                <MenuItem Header="_Caixa" Click="Caixa_Click" FontSize="20"/>
+                <MenuItem Header="_Fornecedor" Click="Fornecedor_Click" FontSize="20"/>
             </MenuItem>
         </Menu>
         <!--MENU FINAL-->

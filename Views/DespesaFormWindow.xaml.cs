@@ -45,28 +45,28 @@ namespace ProjetoLuna.Views
         }
 
         //COMANDOS MENU
-        private void btFuncionario_Click(object sender, RoutedEventArgs e)
+        private void Funcionario_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FuncionarioFormWindow();
             form.Show();
             this.Close();
         }
 
-        private void btCliente_Click(object sender, RoutedEventArgs e)
+        private void Cliente_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.ClienteFormWindow();
             form.Show();
             this.Close();
         }
 
-        private void btVenda_Click(object sender, RoutedEventArgs e)
+        private void Venda_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.VendaFormWindow();
             form.Show();
             this.Close();
         }
 
-        private void btCaixa_Click(object sender, RoutedEventArgs e)
+        private void Caixa_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.CaixaFormWindow();
             form.Show();
@@ -87,20 +87,13 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void Despesas_Click(object sender, RoutedEventArgs e)
-        {
-            var form = new Views.DespesaFormWindow();
-            form.Show();
-            this.Close();
-        }
-
-        private void btEstoque_Click(object sender, RoutedEventArgs e)
+        private void Estoque_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.EstoqueFormWindow();
             form.Show();
             this.Close();
         }
-        private void btFornecedor_Click(object sender, RoutedEventArgs e)
+        private void Fornecedor_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FornecedorFormWindow();
             form.Show();
