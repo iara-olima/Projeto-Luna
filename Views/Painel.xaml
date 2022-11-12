@@ -21,7 +21,7 @@
 
         <TextBlock Text="usuario:" FontSize="20" VerticalAlignment="Bottom"/>
 
-        <StackPanel Height="350">
+        <StackPanel Height="390">
             <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/cliente_icon.png" Height="32" Width="32"/>
@@ -62,7 +62,16 @@
                     <TextBlock Text="Caixa" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
                 </StackPanel>
             </Button>
+            <StackPanel>
+                <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,15,0,0" Height="38">
+                    <StackPanel Orientation="Horizontal" Width="240" Height="35">
+                        <Image Source="/Icons/fornecedor_icon.png" Height="32" Width="32"/>
+                        <TextBlock Text="Fornecedor" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </StackPanel>
-    </Grid>
+       
 
+    </Grid>
 </Window>

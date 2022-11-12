@@ -5,44 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="DespesaFormWindow" Height="450" Width="800" Background="#FFF8DDEB" >
+        Title="DespesaFormWindow" Height="350" Width="800" Background="#FFF8DDEB" >
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="130"/>
-        </Grid.RowDefinitions>
 
-
-        <DataGrid Background="White" x:Name="dataGridDespesa" Margin="136,24,140,19" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                <DataGridTextColumn Header="Data" Binding="{Binding Data}"/>
-                <DataGridTextColumn Header="Hora" Binding="{Binding Hora}"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
-                <DataGridTextColumn Header="Parcelas" Binding="{Binding Parcelas}"/>
-                <DataGridTextColumn Header="Valor Parc." Binding="{Binding ValorParc}"/>
-                <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
-        <Menu Background="#FFC4719D" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <MenuItem Width="35" Height="35">
-                <MenuItem Header="_Funcionário" />
-                <MenuItem Header="_Cliente" />
-                <MenuItem Header="" />
-                <Separator />
+        <!--MENU-->
+        <Menu>
+            <MenuItem Cursor="Hand" Margin="5 5 0 0" Header=">" FontSize="25" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
+                <MenuItem Header="_Cliente" Click="Pagamentos_Click" FontSize="20"/>
+                <MenuItem Header="_Funcionario" Click="Recebimentos_Click" FontSize="20"/>
+                <MenuItem Header="_Estoque" Click="Despesas_Click" FontSize="20"/>
+                <MenuItem Header="_Venda" Click="Pagamentos_Click" FontSize="20"/>
+                <MenuItem Header="_Financeiro" Click="Recebimentos_Click" FontSize="20" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
+                    <MenuItem Header="_Pagamentos" Click="Pagamentos_Click" FontSize="20"/>
+                    <MenuItem Header="_Recebimentos" Click="Recebimentos_Click" FontSize="20"/>
+                    <MenuItem Header="_Despesas" Click="Despesas_Click" FontSize="20"/>
+                </MenuItem>
+                <MenuItem Header="_Caixa" Click="Despesas_Click" FontSize="20"/>
+                <MenuItem Header="_Fornecedor" Click="Pagamentos_Click" FontSize="20"/>
             </MenuItem>
         </Menu>
+        <!--MENU FINAL-->
 
-        <Button Content="Registrar" x:Name="btRegistrar" Click="btRegistrar_Click" Height="30" Width="100" Grid.Row="1" Margin="17,24,683,120"/>
-        <Button Content="Editar" x:Name="btEditar" Click="btEditar_Click" Height="30" Width="100" Grid.Row="1" Margin="17,72,683,72"/>
-        <Button Content="Excluir" x:Name="btExcluir" Click="btExcluir_Click" Height="30" Width="100" Grid.Row="1" Margin="17,125,683,19"/>
+        <StackPanel Width="550" Height="210" Margin="30 0 0 0">
+            <TextBlock Text="Despesas:" FontSize="20" FontWeight="Bold" FontFamily="roboto" Foreground="#741546"/>
+            <DataGrid Background="White" x:Name="dataGridDespesa" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                    <DataGridTextColumn Header="Data" Binding="{Binding Data}"/>
+                    <DataGridTextColumn Header="Hora" Binding="{Binding Hora}"/>
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                    <DataGridTextColumn Header="Parcelas" Binding="{Binding Parcelas}"/>
+                    <DataGridTextColumn Header="Valor Parc." Binding="{Binding ValorParc}"/>
+                    <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
 
-        <Label Content="Despesas:" FontSize="20" FontFamily="roboto" Foreground="#741546" Margin="140,126,564,137" Grid.RowSpan="2"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25 0 0 0">
+            <Button Content="Registrar" x:Name="btRegistrar" Click="btRegistrar_Click" Background="#FFC4719D" BorderBrush="{x:Null}" Height="30" Width="100" Margin="0 0 0 10"/>
+            <Button Content="Editar" x:Name="btEditar" Click="btEditar_Click" Background="#FFC4719D" BorderBrush="{x:Null}" Height="30" Width="100" Margin="0 0 0 10"/>
+            <Button Content="Excluir" x:Name="btExcluir" Click="btExcluir_Click" Background="#FFC4719D" BorderBrush="{x:Null}" Height="30" Width="100"/>
+        </StackPanel>
 
-        <Button x:Name="btVoltar" Content="\/" Click="btVoltar_Click" Margin="21,77,733,21" Grid.Row="2"/>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="45 0 0 62">
+            <Button x:Name="btVoltar" Width="60" Click="btVoltar_Click" Background="#FFC4719D" BorderBrush="{x:Null}">
+                <Image Source="/Icons/voltar_icon.png"/>
+            </Button>
+        </StackPanel>
     </Grid>
 
 </Window>
