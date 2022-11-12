@@ -26,7 +26,9 @@ namespace ProjetoLuna.Views
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.RegDespesa();
+            form.Show();
+            this.Close();
         }
 
         private void btEditar_Click(object sender, RoutedEventArgs e)

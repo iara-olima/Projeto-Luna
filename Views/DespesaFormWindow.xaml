@@ -27,7 +27,7 @@
         </Menu>
         <!--MENU FINAL-->
 
-        <StackPanel Width="550" Height="210" Margin="30 0 0 0">
+        <StackPanel Width="650" Height="210" Margin="130 0 0 0">
             <TextBlock Text="Despesas:" FontSize="20" FontWeight="Bold" FontFamily="roboto" Foreground="#741546"/>
             <DataGrid Background="White" x:Name="dataGridDespesa" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189">
                 <DataGrid.Columns>
@@ -38,6 +38,7 @@
                     <DataGridTextColumn Header="Parcelas" Binding="{Binding Parcelas}"/>
                     <DataGridTextColumn Header="Valor Parc." Binding="{Binding ValorParc}"/>
                     <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}"/>
+                    <DataGridTextColumn Header="Fornecedor" Binding="{Binding Fornecedor}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

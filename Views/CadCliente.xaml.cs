@@ -128,5 +128,9 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
+        private void btLimpar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,11 +7,10 @@
         mc:Ignorable="d"
         Title="CadCliente" Height="650" Width="1200" Background="#370f24" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Cursor="Hand">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="521*"/>
-            <RowDefinition Height="45*"/>
-        </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="612" Margin="869,-320,0,0" VerticalAlignment="Top" Width="847" Source="/Views/Design PDS (9).png"/>
+        <StackPanel HorizontalAlignment="Right" Width="400" Margin="0 -230 -50 0">
+            <Image Height="612" Width="800" Source="/Imagens/Design PDS (10).png"/>
+        </StackPanel>
+        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_Click" Cursor="Hand"/>
         <Image HorizontalAlignment="Left" Height="403" Margin="-220,-164,0,0" VerticalAlignment="Top" Width="542" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -23,45 +22,45 @@
             </Image.RenderTransform>
         </Image>
         
-            <Label Content="Cadastro de Cliente" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="163,46,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="119,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-            <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Margin="498,430,0,0" VerticalAlignment="Top" Width="306" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="30"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="119,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="CPF" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="119,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" Text="Endereço" Margin="119,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="498,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-            <Button Click="btSalvar_Click" Margin="297,78,0,0"  Width="151" Height="60" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Row="1">
+            <StackPanel Width="550" Height="90" HorizontalAlignment="Left" Margin="120 90 0 0" VerticalAlignment="Top" >
+                <TextBlock Text="Cadastro do Cliente" FontWeight="Bold" Foreground="#FFF1D5E4" FontSize="57"/>
+            </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0 80 150 0" Height="350" Width="800">
+            <StackPanel Width="400" HorizontalAlignment="Left" Height="350" Margin="0 0 10 0">
+                <TextBlock Text="Nome Completo:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtNome" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="CPF:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtCpf" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Email:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtEmail" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Endereço:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            </StackPanel>
+            <StackPanel Width="400" Height="350">
+                <TextBlock Text="Telefone:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Data Nascimento:" FontSize="30" Foreground="#FFF1D5E4" HorizontalAlignment="Left"/>
+                <DatePicker x:Name="dtNasc" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="385"/>
+                <TextBlock Text="Sexo:" Background="#370f24" FontSize="30" Foreground="#FFF1D5E4"/>
+                <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Width="385" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="30"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">
+            <Button Click="btSalvar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Click="btVoltar_Click" Margin="540,78,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.Row="1">
+            <Button Click="btLimpar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="LIMPAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" RenderTransformOrigin="0.747,-0.265">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <DatePicker x:Name="dtNasc" FontSize="25" BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="498,342,0,0" VerticalAlignment="Top" Height="42" Width="306"/>
-            <Button Click="btSalvar_Click" Margin="395,524,0,0"  Width="151" Height="60" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Grid.RowSpan="2">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="20"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Click="btVoltar_Click" Margin="638,524,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="VOLTAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" Grid.RowSpan="2" RenderTransformOrigin="0.747,-0.265">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="20"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Label Content="Data Nascimento:" FontSize="25" Foreground="#FFF1D5E4" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top"/>
-            <Label Content="Sexo:" Background="#370f24" FontSize="25" Foreground="#FFF1D5E4" HorizontalAlignment="Left" Margin="498,384,0,0" VerticalAlignment="Top"/>
-            <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_Click" Cursor="Hand"/>
-        
+        </StackPanel>
     </Grid>
 </Window>
