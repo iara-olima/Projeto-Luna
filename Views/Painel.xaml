@@ -20,7 +20,7 @@
 
         <Image HorizontalAlignment="Left" Height="81" Margin="-10,-14,0,0" VerticalAlignment="Top" Width="72" Source="/Icons/barra_menu.png"/>
 
-        <TextBlock Text="usuario:" FontSize="20" VerticalAlignment="Bottom"/>
+        <TextBlock Text="Usuário:" FontSize="20" VerticalAlignment="Bottom"/>
 
         <StackPanel Height="350">
 
