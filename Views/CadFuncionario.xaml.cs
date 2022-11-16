@@ -41,8 +41,44 @@ namespace ProjetoLuna.Views
         }
             private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
+           
+            _fun.Nome = txtNome.Text;
+            _fun.CPF = txtCpf.Text;
+            _fun.Email = txtEmail.Text;
+            _fun.Funcao = txtFuncao.Text;
+            _fun.Sexo = cbSexo.Text;
+            _fun.Telefone = txtTelefone.Text;
+            txtSalario.Text= _fun.Salario.ToString();
+            
+            
+            if (dt_DataNasc.SelectedDate != null)
+                _fun.DataNasc = dt_DataNasc.SelectedDate;
+            MessageBox.Show("Funcionando!");
 
+            try
+            {
+                var dao = new FuncionarioDAO();
+                if (_fun.Id > 0)
+                {
+                    dao.Update(_fun);
+
+                }
+                else
+                {
+                    dao.Insert(_fun);
+                }
+
+               // MessageBox.Show("Registro do Funcionário " + _fun.Nome + " atualizado com sucesso!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+           
+    
+   
 
         private void btCancelar_Click(object sender, RoutedEventArgs e)
         {

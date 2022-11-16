@@ -21,7 +21,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image HorizontalAlignment="Left" Height="612" Margin="771,-153,0,0" VerticalAlignment="Top" Width="847" Source="/Imagens/c.png"/>
         <Label Content="Cadastro de Funcionário" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="125,60,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="81,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Completo" Background="{x:Null}" Foreground="#FFF1D5E4"/>
         <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Margin="501,170,0,0" VerticalAlignment="Top" Width="239" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="30"/>
@@ -45,8 +44,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <DatePicker BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="460,364,0,0" VerticalAlignment="Top" Height="42" Width="306"/>
-        <Label Content="Data de Nascimento" HorizontalAlignment="Center" Height="50" Margin="0,356,0,0" VerticalAlignment="Top" Width="280" Foreground="#FFF1D3DE" FontSize="30" FontWeight="Normal"/>
+        <DatePicker x:Name="dt_DataNasc" BorderBrush="#FF8F3765" HorizontalAlignment="Left" Margin="460,387,0,0" VerticalAlignment="Top" Height="42" Width="306" FontSize="30" Foreground="Black"/>
+        <Label Content="Data de Nascimento" HorizontalAlignment="Center" Height="50" Margin="0,345,0,0" VerticalAlignment="Top" Width="280" Foreground="#FFF1D3DE" FontSize="30" FontWeight="Normal"/>
         <Button Content="" HorizontalAlignment="Left" Margin="40,48,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_click"/>
     </Grid>
 </Window>
