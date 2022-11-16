@@ -50,6 +50,8 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        
+
+        <Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -23,5 +23,81 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
+
+        private void btRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //COMANDOS MENU
+        private void Funcionario_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.FuncionarioFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Cliente_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.ClienteFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Venda_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.VendaFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Caixa_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.CaixaFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Despesas_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.DespesaFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Recebimentos_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.RecebimentoFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void Estoque_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.EstoqueFormWindow();
+            form.Show();
+            this.Close();
+        }
+        private void Fornecedor_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.FornecedorFormWindow();
+            form.Show();
+            this.Close();
+        }
     }
 }

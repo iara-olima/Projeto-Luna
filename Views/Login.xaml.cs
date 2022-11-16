@@ -48,11 +48,17 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void btLimpar_Click(object sender, RoutedEventArgs e)
+        private void btCancelar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Principal();
             form.Show();
             this.Close();
-        }       
+        }
+
+
+        private void btLimpar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

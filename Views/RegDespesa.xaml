@@ -1,0 +1,60 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLuna.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegDespesa"
+        mc:Ignorable="d"
+        Title="RegDespesa" Height="650" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="/Icons/seta_icon.png"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_Click" Cursor="Hand"/>
+
+        <TextBlock Text="Registrar Despesa" FontSize="40" FontWeight="Bold" Foreground="#741546" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,9,0,0"/>
+
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 0" Height="360" Width="750">
+            <StackPanel Width="350" HorizontalAlignment="Left" Margin="0 0 0 0">
+                <TextBlock Text="Data:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
+                <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335"/>
+                <TextBlock Text="Hora:" Foreground="#741546" FontSize="25"/>
+                <materialDesign:TimePicker Width="335" HorizontalAlignment="Left"/>
+                <TextBlock Text="Tipo:" FontSize="25" Foreground="#741546"/>
+                <ComboBox x:Name="cbTipo" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <TextBlock Text="Fornecedor:" Foreground="#741546" FontSize="25"/>
+                <ComboBox x:Name="cbFornecedor" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Width="350" Margin="60 0 0 0">
+                <TextBlock Text="Valor:" Foreground="#741546" FontSize="25"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <CheckBox x:Name="CheckParc" Content="Parcelado" FontSize="15" Width="100" HorizontalAlignment="Left" IsChecked="{Binding MyCheckedMode, Mode=TwoWay}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Qtd Parc.:" Foreground="#741546" FontSize="20"/>
+                    <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
+                    IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <TextBlock Text="Valor Parc.:" Foreground="#741546" FontSize="20"/>
+                    <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
+                    IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 70">
+            <Button Click="btSalvar_Click"  Width="150" Height="60" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Click="btLimpar_Click" Width="150" Height="60" HorizontalAlignment="Left" Content="LIMPAR" FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" RenderTransformOrigin="0.747,-0.265">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

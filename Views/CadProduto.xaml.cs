@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para VendaFormWindow.xaml
+    /// Lógica interna para CadProduto.xaml
     /// </summary>
-    public partial class VendaFormWindow : Window
+    public partial class CadProduto : Window
     {
-        public VendaFormWindow()
+        public CadProduto()
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-
-        private void btVoltar_Click(object sender, RoutedEventArgs e)
-        {
-            var form = new Views.Painel();
-            form.Show();
-            this.Close();
-        }
-=======
->>>>>>> 5f5fa370fcb4dabfa349e57b6c27597a86723bb3
     }
 }

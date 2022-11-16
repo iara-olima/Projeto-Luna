@@ -15,27 +15,29 @@ using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
-    public partial class ClienteFormWindow : Window
+    /// <summary>
+    /// Lógica interna para EstoqueFormWindow.xaml
+    /// </summary>
+    public partial class EstoqueFormWindow : Window
     {
-        public ClienteFormWindow()
+        public EstoqueFormWindow()
         {
             InitializeComponent();
-            Loaded += ClienteFormWindow_Loaded;
+            Loaded += EstoqueFormWindow_Loaded;
         }
 
-        private void ClienteFormWindow_Loaded(object sender, RoutedEventArgs e)
+        private void EstoqueFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
             CarregarListagem();
         }
 
-
         private void btCadastar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.CadCliente();
+            var form = new Views.CadProduto();
             form.Show();
             this.Close();
         }
-        
+
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
@@ -48,10 +50,10 @@ namespace ProjetoLuna.Views
         {
             try
             {
-                var dao = new ClienteDAO();
-                List<Cliente> listaClientes = dao.List();
+                var dao = new ProdutoDAO();
+                List<Produto> listaEstoque = dao.List();
 
-                dataGridCliente.ItemsSource = listaClientes;
+                dataGridProduto.ItemsSource = listaEstoque;
 
             }
             catch (Exception ex)
@@ -63,34 +65,34 @@ namespace ProjetoLuna.Views
         //Verifica o valor selecionado no Data Grid e aciona a tela de cadastro com as informações carregadas nos campos
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
-            var clienteSelected = dataGridCliente.SelectedItem as Cliente;
+            var produtoSelected = dataGridProduto.SelectedItem as Funcionario;
 
-            var form = new CadCliente(clienteSelected);
+            var form = new CadFuncionario(produtoSelected);
             form.ShowDialog();
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {
-            var clienteSelected = dataGridCliente.SelectedItem as Cliente;
+            var produtoSelected = dataGridProduto.SelectedItem as Produto;
 
-            if (clienteSelected == null)
+            if (produtoSelected == null)
             {
-                MessageBox.Show("Selecione o cliente que deseja excluir.");
+                MessageBox.Show("Selecione o produto que deseja excluir.");
             }
             else
             {
-                var resultado = MessageBox.Show($"Tem certeza que deseja deletar o cliente {clienteSelected.Nome} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                var resultado = MessageBox.Show($"Tem certeza que deseja deletar o produto {produtoSelected.Nome} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                 try
                 {
                     if (resultado == MessageBoxResult.Yes)
                     {
-                        var dao = new ClienteDAO();
-                        dao.Delete(clienteSelected);
+                        var dao = new ProdutoDAO();
+                        dao.Delete(produtoSelected);
 
-                        MessageBox.Show("Cliente removido com sucesso!");
-                        var form = new ClienteFormWindow();
+                        MessageBox.Show("Produto removido com sucesso!");
+                        var form = new FuncionarioFormWindow();
                         form.Show();
                         this.Close();
                     }
@@ -106,17 +108,19 @@ namespace ProjetoLuna.Views
         {
         }
 
-            //COMANDOS MENU
-            private void btFuncionario_Click(object sender, RoutedEventArgs e)
+        //COMANDOS MENU
+        private void btFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.FuncionarioFormWindow();
+            var form = new Views.EstoqueFormWindow();
             form.Show();
             this.Close();
         }
 
         private void btCliente_Click(object sender, RoutedEventArgs e)
         {
-            
+            var form = new Views.ClienteFormWindow();
+            form.Show();
+            this.Close();
         }
 
         private void btVenda_Click(object sender, RoutedEventArgs e)
@@ -156,9 +160,7 @@ namespace ProjetoLuna.Views
 
         private void btEstoque_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.EstoqueFormWindow();
-            form.Show();
-            this.Close();
+           
         }
         private void btFornecedor_Click(object sender, RoutedEventArgs e)
         {

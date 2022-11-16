@@ -1,27 +1,21 @@
-﻿<Window x:Class="ProjetoLuna.Views.Painel"
+﻿<Window x:Class="ProjetoLuna.Views.EstoqueFormWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Painel"  Height="550" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="EstoqueFormWindow" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="167" Margin="-56,-41,0,0" VerticalAlignment="Top" Width="260" Source="/Imagens/Design PDS (8).png" Grid.RowSpan="2"/>
 
-        <TextBlock Text="since 2022" FontWeight="Bold" FontSize="15" Grid.Column="1" HorizontalAlignment="Center" Foreground="#741546"/>
-        <Image Grid.Column="1" HorizontalAlignment="Center" Height="500" Width="750" Source="../Imagens/Design PDS (5).png" Margin="0,9,0,25"/>
+        <!--MENU-->
 
-        <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
-
-        <Image HorizontalAlignment="Left" Height="81" Margin="-10,-14,0,0" VerticalAlignment="Top" Width="72" Source="/Icons/barra_menu.png"/>
-
-        <TextBlock Text="Usuário:" FontSize="20" VerticalAlignment="Bottom"/>
-
-        <StackPanel Height="390">
+        <StackPanel Height="450" Grid.Row="1" Background="#741546">
             <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/cliente_icon.png" Height="32" Width="32"/>
@@ -71,7 +65,37 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-       
 
+        <StackPanel VerticalAlignment="Bottom" Background="#741546" Height="122">
+            <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,15,0,0" Height="38">
+                <StackPanel Orientation="Horizontal" Width="240" Height="35">
+                    <Image Source="/Icons/voltar_icon.png" Height="32" Width="32"/>
+                    <TextBlock Text="Voltar" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <!--FIM MENU-->
+
+        <TextBlock Text="Lista de Produtos" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="341" Grid.Column="1" Margin="64,34,0,0"/>
+        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProduto" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="62,89,62,98">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Qtd}"/>
+                <DataGridTextColumn Header="Valor Venda" Binding="{Binding ValorVend}"/>
+                <DataGridTextColumn Header="Valor Compra" Binding="{Binding ValorComp}"/>
+                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal" Width="460" Margin="0 0 0 55">
+            <Button Name="btCadastrar" Content="Cadastrar" Click="btCadastar_Click" Background="#FFC4719D" Grid.Column="1" Width="100" Margin="0 0 20 0" BorderBrush="{x:Null}"/>
+            <Button Name="btEditar" Click="btEditar_Click" Content="Editar" Background="#FFC4719D" Grid.Column="1" Width="100" Margin="0 0 20 0" BorderBrush="{x:Null}"/>
+            <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="100" Margin="0 0 20 0" BorderBrush="{x:Null}"/>
+            <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="100" BorderBrush="{x:Null}"/>
+        </StackPanel>
     </Grid>
 </Window>

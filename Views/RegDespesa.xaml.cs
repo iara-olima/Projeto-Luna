@@ -15,23 +15,32 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para VendaFormWindow.xaml
+    /// Lógica interna para RegDespesa.xaml
     /// </summary>
-    public partial class VendaFormWindow : Window
+    public partial class RegDespesa : Window
     {
-        public VendaFormWindow()
+        public RegDespesa()
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.Painel();
+            var form = new Views.ClienteFormWindow();
             form.Show();
             this.Close();
         }
-=======
->>>>>>> 5f5fa370fcb4dabfa349e57b6c27597a86723bb3
+
+
+
+        private void btLimpar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btSalvar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
