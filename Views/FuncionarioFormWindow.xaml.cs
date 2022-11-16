@@ -23,7 +23,7 @@ namespace ProjetoLuna.Views
         public FuncionarioFormWindow()
         {
             InitializeComponent();
-            Loaded += FuncionarioFormWindow;
+            Loaded += FuncionarioFormWindow_Loaded;
         }
 
         private void FuncionarioFormWindow_Loaded(object sender, RoutedEventArgs e)

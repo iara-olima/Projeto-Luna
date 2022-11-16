@@ -76,18 +76,19 @@
         </StackPanel>
         <!--FIM MENU-->
 
-        <TextBlock Text="Lista de Funcionários" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="302" Grid.Column="1" Margin="64,34,0,0"/>
+        <TextBlock Text="Lista de Funcionários" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="404" Grid.Column="1" Margin="64,34,0,0"/>
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridFunc" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="62,89,62,98">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
                 <DataGridTextColumn Header="Data de Nascimento" Binding="{Binding DataNasc}"/>
+                <DataGridTextColumn Header="Salario" Binding="{Binding Salario}"/>
                 <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"/>
-                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}"/>
-                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
+                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}"/>
+                <DataGridTextColumn Header="Função" Binding="{Binding Funcao}"/>
             </DataGrid.Columns>
         </DataGrid>
 
