@@ -48,7 +48,9 @@ namespace ProjetoLuna.Views
             _fun.Funcao = txtFuncao.Text;
             _fun.Sexo = cbSexo.Text;
             _fun.Telefone = txtTelefone.Text;
-            txtSalario.Text= _fun.Salario.ToString();
+            // txtSalario.Text= _fun.Salario.ToString();
+            if (double.TryParse(txtSalario.Text, out double Salario))
+                _fun.Salario = Salario;
             
             
             if (dt_DataNasc.SelectedDate != null)
