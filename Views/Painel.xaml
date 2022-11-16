@@ -19,7 +19,7 @@
 
         <Image HorizontalAlignment="Left" Height="81" Margin="-10,-14,0,0" VerticalAlignment="Top" Width="72" Source="/Icons/barra_menu.png"/>
 
-        <TextBlock Text="usuario:" FontSize="20" VerticalAlignment="Bottom"/>
+        <TextBlock Text="Usuário:" FontSize="20" VerticalAlignment="Bottom"/>
 
         <StackPanel Height="390">
             <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
