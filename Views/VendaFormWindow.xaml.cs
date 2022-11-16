@@ -23,7 +23,6 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
@@ -31,7 +30,5 @@ namespace ProjetoLuna.Views
             form.Show();
             this.Close();
         }
-=======
->>>>>>> 5f5fa370fcb4dabfa349e57b6c27597a86723bb3
     }
 }
