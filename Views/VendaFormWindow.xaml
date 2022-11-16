@@ -34,7 +34,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label Content="Listagem de produtos" Foreground="#741546" FontSize="27" HorizontalAlignment="Left" Margin="41,118,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Listagem de Produtos" Foreground="#741546" FontSize="27" HorizontalAlignment="Left" Margin="41,118,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <DataGrid Background="#FFF8DDEB" BorderBrush="#741546" x:Name="dataGridFunc" Margin="41,162,209,10" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="LightBlue" AlternationCount="2"  Grid.Column="1" Grid.RowSpan="2">
             <DataGrid.Columns>
