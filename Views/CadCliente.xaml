@@ -47,7 +47,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">
-            <Button Click="btSalvar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0">
+            <Button Click="btSalvar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0" Cursor="Hand">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>

@@ -21,17 +21,16 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "insert into Funcionario value " +
-                    "(null, @Nome, @DataNasc, @Salario, @Funcao, @CPF, @Email, @Telefone, @Endereco, @Sexo)";
+                    "(null, @Nome, @DataNasc, @Salario,@CPF, @Email, @Telefone, @Sexo, @Funcao)";
 
                 comando.Parameters.AddWithValue("@Nome", funcionario.Nome);
                 comando.Parameters.AddWithValue("@DataNasc", funcionario.DataNasc?.ToString("yyyy-MM-dd"));
-                comando.Parameters.AddWithValue("@Salario", funcionario.Salario);
-                comando.Parameters.AddWithValue("@Funcao", funcionario.Funcao);
+                comando.Parameters.AddWithValue("@Salario", funcionario.Salario);            
                 comando.Parameters.AddWithValue("@CPF", funcionario.CPF);
                 comando.Parameters.AddWithValue("@Email", funcionario.Email);
                 comando.Parameters.AddWithValue("@Telefone", funcionario.Telefone);
-                comando.Parameters.AddWithValue("@Endereco", funcionario.Endereco);
                 comando.Parameters.AddWithValue("@Sexo", funcionario.Sexo);
+                comando.Parameters.AddWithValue("@Funcao", funcionario.Funcao);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -65,14 +64,13 @@ namespace ProjetoLuna.Models
 
                     funcionario.Id = reader.GetInt32("id_fun");
                     funcionario.Nome = DAOHelper.GetString(reader, "nome_fun");
-                    funcionario.DataNasc = DAOHelper.GetDateTime(reader, "data_nasc_fun");
-                    funcionario.Salario = DAOHelper.GetDouble(reader, "salario_fun");
-                    funcionario.Funcao = DAOHelper.GetString(reader, "funcao_fun");
+                    funcionario.DataNasc = DAOHelper.GetDateTime(reader, "dataNasc_fun");
+                    funcionario.Salario = DAOHelper.GetDouble(reader, "salario_fun");                  
                     funcionario.CPF = DAOHelper.GetString(reader, "cpf_fun");
                     funcionario.Email = DAOHelper.GetString(reader, "email_fun");
                     funcionario.Telefone = DAOHelper.GetString(reader, "telefone_fun");
-                    funcionario.Endereco = DAOHelper.GetString(reader, "endereco_fun");
                     funcionario.Sexo = DAOHelper.GetString(reader, "sexo_fun");
+                    funcionario.Funcao = DAOHelper.GetString(reader, "funcao_fun");
                     lista.Add(funcionario);
                 }
                 reader.Close();
@@ -111,19 +109,17 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Funcionario Set " +
-                    "nome_fun = @Nome, data_nasc_fun = @DataNasc, salario_fun = @Salario, funcao_fun = @Funcao, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, endereco_fun = @Endereco, sexo_fun = @Sexo " +
+                    "nome_fun = @Nome, data_nasc_fun = @DataNasc, salario_fun = @Salario, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, sexo_fun = @Sexo, funcao_fun = @Funcao " +
                     "Where id_fun = @id";
 
                 comando.Parameters.AddWithValue("@Nome", funcionario.Nome);
                 comando.Parameters.AddWithValue("@DataNasc", funcionario.DataNasc?.ToString("yyyy-MM-dd"));
-                comando.Parameters.AddWithValue("@Salario", funcionario.Salario);
-                comando.Parameters.AddWithValue("@Funcao", funcionario.Funcao);
+                comando.Parameters.AddWithValue("@Salario", funcionario.Salario);             
                 comando.Parameters.AddWithValue("@CPF", funcionario.CPF);
                 comando.Parameters.AddWithValue("@Email", funcionario.Email);
                 comando.Parameters.AddWithValue("@Telefone", funcionario.Telefone);
-                comando.Parameters.AddWithValue("@Endereco", funcionario.Endereco);
                 comando.Parameters.AddWithValue("@Sexo", funcionario.Sexo);
-
+                comando.Parameters.AddWithValue("@Funcao", funcionario.Funcao);
                 comando.Parameters.AddWithValue("@id", funcionario.Id);
 
                 var resultado = comando.ExecuteNonQuery();

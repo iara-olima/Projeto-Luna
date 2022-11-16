@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="CadProduto" Height="450" Width="800">
+        Title="CadProduto" Height="650" Width="1200" Background="#370f24" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Cursor="Hand">
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Right" Width="400" Margin="0 -230 -50 0">
+            <Image Height="612" Width="800" Source="/Imagens/Design PDS (10).png"/>
+        </StackPanel>
+        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_Click" Cursor="Hand"/>
+        <Image HorizontalAlignment="Left" Height="403" Margin="-220,-164,0,0" VerticalAlignment="Top" Width="542" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.167"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <StackPanel Width="550" Height="90" HorizontalAlignment="Left" Margin="120 90 0 0" VerticalAlignment="Top" >
+            <TextBlock Text="Cadastro de Produto" FontWeight="Bold" Foreground="#FFF1D5E4" FontSize="57"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0 80 150 0" Height="350" Width="800">
+            <StackPanel Width="400" HorizontalAlignment="Left" Height="350" Margin="0 0 10 0">
+                <TextBlock Text="Nome:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtNome" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Marca:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtMarca" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Valor Venda:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtValorVenda" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Valor Compra:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtValorCompra" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            </StackPanel>
+            <StackPanel Width="400" Height="350">
+                <TextBlock Text="Quantidade:" Foreground="#FFF1D5E4" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtQuantidade" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Descrição:" FontSize="30" Foreground="#FFF1D5E4" HorizontalAlignment="Left"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtDescricao" TextWrapping="Wrap" Height="130" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">
+            <Button Click="btSalvar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0" Cursor="Hand">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Click="btLimpar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="LIMPAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" RenderTransformOrigin="0.747,-0.265">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
