@@ -15,7 +15,6 @@ namespace ProjetoLuna.Models
 
         public void Insert(Cliente cliente)
         {
-
             try
             {
                 var comando = _conn.Query();

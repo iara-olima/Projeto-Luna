@@ -53,6 +53,7 @@ namespace ProjetoLuna.Views
                 txtTelefone.Text = _cli.Telefone;
                 dtNasc.SelectedDate = _cli.DataNasc;
 
+
                 if (_cli.Sexo == "Masculino")
                 {
                     cbSexo.SelectedItem = "Masculino";

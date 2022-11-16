@@ -11,6 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.DataBase;
+using ProjetoLuna.Helpers;
+using ProjetoLuna.Models;
+using ProjetoLuna.Properties;
+using ProjetoLuna.Views;
 
 namespace ProjetoLuna.Views
 {
@@ -19,9 +24,24 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class CaixaFormWindow : Window
     {
+        public Caixa _cai = new Caixa();
+
         public CaixaFormWindow()
         {
             InitializeComponent();
+            Loaded += CaixaFormWindow_Loaded;
+        }
+
+        public CaixaFormWindow(Caixa caixa)
+        {
+            InitializeComponent();
+            Loaded += CaixaFormWindow_Loaded;
+            _cai = caixa;
+        }
+
+        private void CaixaFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void btRelatorio_Click(object sender, RoutedEventArgs e)
