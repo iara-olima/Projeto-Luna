@@ -26,7 +26,7 @@
             </StackPanel>
             <StackPanel Width="350" Margin="60 0 0 0">
                 <TextBlock Text="Valor:" Foreground="#741546" FontSize="25"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
                 <CheckBox x:Name="CheckParc" Content="Parcelado" FontSize="15" Width="100" HorizontalAlignment="Left" IsChecked="{Binding MyCheckedMode, Mode=TwoWay}"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Qtd Parc.:" Foreground="#741546" FontSize="20"/>
@@ -41,14 +41,14 @@
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 70">
-            <Button Click="btSalvar_Click"  Width="150" Height="50" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0">
+            <Button Click="btSalvar_Click"  Width="150" Height="60" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Click="btLimpar_Click" Width="150" Height="50" HorizontalAlignment="Left" Content="LIMPAR" FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" RenderTransformOrigin="0.747,-0.265">
+            <Button Click="btLimpar_Click" Width="150" Height="60" HorizontalAlignment="Left" Content="LIMPAR" FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" RenderTransformOrigin="0.747,-0.265">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>

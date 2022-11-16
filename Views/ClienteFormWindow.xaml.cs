@@ -116,9 +116,7 @@ namespace ProjetoLuna.Views
 
         private void btCliente_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.ClienteFormWindow();
-            form.Show();
-            this.Close();
+            
         }
 
         private void btVenda_Click(object sender, RoutedEventArgs e)

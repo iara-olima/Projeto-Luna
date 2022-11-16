@@ -185,6 +185,9 @@
     <Compile Include="Views\RegPagamento.xaml.cs">
       <DependentUpon>RegPagamento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegRecebimento.xaml.cs">
+      <DependentUpon>RegRecebimento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\VendaFormWindow.xaml.cs">
       <DependentUpon>VendaFormWindow.xaml</DependentUpon>
     </Compile>
@@ -257,6 +260,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegPagamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegRecebimento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
