@@ -87,7 +87,6 @@
                 <DataGridTextColumn Header="Valor Venda" Binding="{Binding ValorVend}"/>
                 <DataGridTextColumn Header="Valor Compra" Binding="{Binding ValorComp}"/>
                 <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
             </DataGrid.Columns>
         </DataGrid>
 
