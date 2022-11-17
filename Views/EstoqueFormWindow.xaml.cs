@@ -111,7 +111,7 @@ namespace ProjetoLuna.Views
         //COMANDOS MENU
         private void btFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.EstoqueFormWindow();
+            var form = new Views.FuncionarioFormWindow();
             form.Show();
             this.Close();
         }

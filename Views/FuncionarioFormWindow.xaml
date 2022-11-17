@@ -78,7 +78,7 @@
 
         <TextBlock Text="Lista de Funcionários" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="404" Grid.Column="1" Margin="64,34,0,0"/>
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridFunc" AutoGenerateColumns="False" CanUserAddRows="False" 
-                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="62,89,62,98">
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="62,89,62,98" SelectionChanged="dataGridFunc_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>

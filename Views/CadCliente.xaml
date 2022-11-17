@@ -10,8 +10,7 @@
         <StackPanel HorizontalAlignment="Right" Width="400" Margin="0 -230 -50 0">
             <Image Height="612" Width="800" Source="/Imagens/Design PDS (10).png"/>
         </StackPanel>
-        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_Click" Cursor="Hand"/>
-        <Image HorizontalAlignment="Left" Height="403" Margin="-220,-164,0,0" VerticalAlignment="Top" Width="542" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="403" Margin="-230,-168,0,0" VerticalAlignment="Top" Width="542" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,10 +20,11 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        
-            <StackPanel Width="550" Height="90" HorizontalAlignment="Left" Margin="120 90 0 0" VerticalAlignment="Top" >
-                <TextBlock Text="Cadastro do Cliente" FontWeight="Bold" Foreground="#FFF1D5E4" FontSize="57"/>
-            </StackPanel>
+        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_Click" Cursor="Hand"/>
+
+        <StackPanel Width="550" Height="90" HorizontalAlignment="Left" Margin="120 90 0 0" VerticalAlignment="Top" >
+            <TextBlock Text="Cadastro do Cliente" FontWeight="Bold" Foreground="#FFF1D5E4" FontSize="57"/>
+        </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0 80 150 0" Height="350" Width="800">
             <StackPanel Width="400" HorizontalAlignment="Left" Height="350" Margin="0 0 10 0">
