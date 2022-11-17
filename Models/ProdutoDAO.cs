@@ -63,9 +63,9 @@ namespace ProjetoLuna.Models
                     produto.Id = reader.GetInt32("id_prod");
                     produto.Nome = DAOHelper.GetString(reader, "nome_prod");
                     produto.Marca = DAOHelper.GetString(reader, "marca_prod");
-                    produto.Quantidade = DAOHelper.GetString(reader, "qtd_prod");
+                    produto.Quantidade = DAOHelper.GetString(reader, "quantidade_prod");
                     produto.ValorVenda = DAOHelper.GetDouble(reader, "valorVenda_prod");
-                    produto.ValorCompra = DAOHelper.GetDouble(reader, "valor_compra");
+                    produto.ValorCompra = DAOHelper.GetDouble(reader, "valorCompra_prod");
                     produto.Descricao = DAOHelper.GetString(reader, "descricao_prod");
                     lista.Add(produto);
                 }
@@ -105,7 +105,7 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Produto Set " +
-                    "nome_prod = @Nome, marca_prod = @Marca, qtd_prod = @Quantidade, valor_venda_prod = @ValorVenda, valor_compra_prod = @ValorCompra " +
+                    "nome_prod = @Nome, marca_prod = @Marca, quantidade_prod = @Quantidade, valor_venda_prod = @ValorVenda, valor_compra_prod = @ValorCompra " +
                     "Where id_prod = @id";
 
                 comando.Parameters.AddWithValue("@Nome", produto.Nome);
