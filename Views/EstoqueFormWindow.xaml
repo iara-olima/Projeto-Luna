@@ -83,9 +83,9 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
-                <DataGridTextColumn Header="Quantidade" Binding="{Binding Qtd}"/>
-                <DataGridTextColumn Header="Valor Venda" Binding="{Binding ValorVend}"/>
-                <DataGridTextColumn Header="Valor Compra" Binding="{Binding ValorComp}"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
+                <DataGridTextColumn Header="Valor Venda" Binding="{Binding ValorVenda}"/>
+                <DataGridTextColumn Header="Valor Compra" Binding="{Binding ValorCompra}"/>
                 <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
             </DataGrid.Columns>
         </DataGrid>

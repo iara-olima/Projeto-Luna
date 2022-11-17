@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="CadProduto" Height="650" Width="1200" Background="#370f24" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Cursor="Hand">
     <Grid>
+
         <Image HorizontalAlignment="Left" Height="403" Margin="-227,-168,0,0" VerticalAlignment="Top" Width="542" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>

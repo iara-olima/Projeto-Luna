@@ -168,5 +168,10 @@ namespace ProjetoLuna.Views
             form.Show();
             this.Close();
         }
+
+        private void dataGridFunc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
