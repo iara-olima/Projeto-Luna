@@ -148,9 +148,6 @@
     <Compile Include="Views\CadProduto.xaml.cs">
       <DependentUpon>CadProduto.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CadRecebimento.xaml.cs">
-      <DependentUpon>CadRecebimento.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\CadUser.xaml.cs">
       <DependentUpon>CadUser.xaml</DependentUpon>
     </Compile>
@@ -213,10 +210,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CadProduto.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CadRecebimento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
