@@ -21,7 +21,7 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class CadProduto : Window
     { 
-        public Produto _prod = new Produto();
+        private Produto _prod = new Produto();
     
         public CadProduto()
         {
@@ -29,7 +29,7 @@ namespace ProjetoLuna.Views
             Loaded += CadProduto_Loaded;
         }
 
-        private void CadCliente(Produto produto)
+        public CadProduto(Produto produto)
         {
             InitializeComponent();
             Loaded += CadProduto_Loaded;
@@ -38,17 +38,7 @@ namespace ProjetoLuna.Views
 
         private void CadProduto_Loaded(object sender, RoutedEventArgs e)
         {
-            if (_prod.Id > 0)
-            {
-                MessageBox.Show("Produto: " + _prod.Nome);
-
-                txtNome.Text = _prod.Nome;
-                txtMarca.Text = _prod.Marca;
-                txtQuantidade.Text = _prod.Quantidade;
-                txtDescricao.Text = _prod.Descricao;
-                txtValorVenda.Text = _prod.ValorVenda.ToString();
-                txtValorCompra.Text = _prod.ValorCompra.ToString();
-            }
+           
         }
 
         private void btSalvar_Click(object sender, RoutedEventArgs e)
@@ -57,9 +47,17 @@ namespace ProjetoLuna.Views
             _prod.Marca = txtMarca.Text;
             _prod.Quantidade = txtQuantidade.Text;
             _prod.Descricao = txtDescricao.Text;
-            txtValorVenda.Text = _prod.ValorVenda.ToString();
-            txtValorCompra.Text = _prod.ValorCompra.ToString();
+            //txtValorVenda.Text = _prod.ValorVenda.ToString();//
+            //txtValorCompra.Text = _prod.ValorCompra.ToString();//
 
+            if (double.TryParse(txtValorVenda.Text, out double ValorVenda))
+                _prod.ValorVenda = ValorVenda;
+
+            if (double.TryParse(txtValorCompra.Text, out double ValorCompra))
+                _prod.ValorCompra = ValorCompra;
+
+
+            MessageBox.Show("Funcionando!");
 
             try
             {
@@ -83,16 +81,6 @@ namespace ProjetoLuna.Views
             }
         }
 
-        //Informa os registros de cada atributo antes de realizar um novo cadastro ou uma atualização
-        private void ShowMenssage()
-        {
-
-            MessageBox.Show("Nome: " + _prod.Nome + Environment.NewLine +
-                 "Marca: " + _prod.Marca + Environment.NewLine + "Valor Venda: " +
-                             _prod.ValorVenda + Environment.NewLine + "Valor Compra: " + _prod.ValorCompra + Environment.NewLine + "Quantidade: " + _prod.Quantidade +
-                             Environment.NewLine + "Descrição: " + _prod.Descricao);
-        }
-    
 
         private void btLimpar_Click(object sender, RoutedEventArgs e)
         {
