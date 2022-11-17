@@ -95,14 +95,16 @@ namespace ProjetoLuna.Views
                 if (_cli.Id > 0)
                 {
                     dao.Update(_cli);
+                    MessageBox.Show("Registro do cliente " + _cli.Nome + " atualizado com sucesso!");
 
                 }
                 else
                 {
                     dao.Insert(_cli);
+                    MessageBox.Show("Registro do cliente " + _cli.Nome + " inseridos com sucesso!");
                 }
 
-                MessageBox.Show("Registro do cliente "+_cli.Nome+" atualizado com sucesso!");
+                
 
             }
             catch (Exception ex)
@@ -124,8 +126,8 @@ namespace ProjetoLuna.Views
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.ClienteFormWindow();
-            form.Show();
+         //   var form = new Views.ClienteFormWindow();
+        //  form.Show();
             this.Close();
         }
 

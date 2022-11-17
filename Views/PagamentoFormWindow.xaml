@@ -33,9 +33,11 @@
                     <DataGridTextColumn Header="Hora" Binding="{Binding Hora}"/>
                     <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
                     <DataGridTextColumn Header="Forma Pag." Binding="{Binding FormaPag}"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Stts}"/>
                     <DataGridTextColumn Header="Vencimento" Binding="{Binding Vencimento}"/>
                     <DataGridTextColumn Header="Caixa" Binding="{Binding idCaixa}"/>
                     <DataGridTextColumn Header="Cód. Despesa" Binding="{Binding idDesp}"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Stts}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
