@@ -89,11 +89,16 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void btVoltar_click(object sender, RoutedEventArgs e)
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FuncionarioFormWindow();
             form.Show();
             this.Close();
+        }
+
+        private void btLimpar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

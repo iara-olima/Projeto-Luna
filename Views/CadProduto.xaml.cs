@@ -29,7 +29,7 @@ namespace ProjetoLuna.Views
             Loaded += CadProduto_Loaded;
         }
 
-        private void CadCliente(Produto produto)
+        public CadProduto(Produto produto)
         {
             InitializeComponent();
             Loaded += CadProduto_Loaded;
@@ -67,14 +67,16 @@ namespace ProjetoLuna.Views
                 if (_prod.Id > 0)
                 {
                     dao.Update(_prod);
+                    MessageBox.Show("Registro de Produto " + _prod.Nome + " atualizado com sucesso!");
 
                 }
                 else
                 {
                     dao.Insert(_prod);
+                    MessageBox.Show("Registro de Produto " + _prod.Nome + " inserido com sucesso!");
                 }
 
-                MessageBox.Show("Registro de Produto " + _prod.Nome + " atualizado com sucesso!");
+                
 
             }
             catch (Exception ex)

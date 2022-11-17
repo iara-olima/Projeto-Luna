@@ -65,9 +65,9 @@ namespace ProjetoLuna.Views
         //Verifica o valor selecionado no Data Grid e aciona a tela de cadastro com as informações carregadas nos campos
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
-            var produtoSelected = dataGridProduto.SelectedItem as Funcionario;
+            var produtoSelected = dataGridProduto.SelectedItem as Produto;
 
-            var form = new CadFuncionario(produtoSelected);
+            var form = new CadProduto(produtoSelected);
             form.ShowDialog();
         }
 
@@ -92,7 +92,7 @@ namespace ProjetoLuna.Views
                         dao.Delete(produtoSelected);
 
                         MessageBox.Show("Produto removido com sucesso!");
-                        var form = new FuncionarioFormWindow();
+                        var form = new EstoqueFormWindow();
                         form.Show();
                         this.Close();
                     }
@@ -168,5 +168,7 @@ namespace ProjetoLuna.Views
             form.Show();
             this.Close();
         }
+
+    
     }
 }
