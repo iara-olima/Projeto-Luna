@@ -49,7 +49,7 @@ nome_prod varchar (100),
 marca_prod varchar(100),
 qtd_prod int,
 valorVenda_prod double,
-valor_compra double,
+valorCompra_prod double,
 descricao_prod varchar(300)
 );
 
@@ -135,7 +135,7 @@ descricao_desp varchar(200),
 data_desp date,
 hora_desp time,
 valor_desp double,
-parcelas_deso int,
+parcelas_desp int,
 valorParcela_desp double,
 tipo_desp varchar(200),
 id_forn_fk int,
