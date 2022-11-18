@@ -101,9 +101,6 @@ namespace ProjetoLuna.Views
                     dao.Insert(_fun);
                     MessageBox.Show("Registro do Funcionário " + _fun.Nome + " inseridos com sucesso!");
                 }
-
-               
-
             }
             catch (Exception ex)
             {
@@ -111,16 +108,6 @@ namespace ProjetoLuna.Views
             }
         }
            
-    
-   
-
-        private void btCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            var form = new Views.FuncionarioFormWindow();
-            form.Show();
-            this.Close();
-        }
-
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FuncionarioFormWindow();
@@ -130,7 +117,13 @@ namespace ProjetoLuna.Views
 
         private void btLimpar_Click(object sender, RoutedEventArgs e)
         {
-
+            txtNome.Clear();
+            txtCpf.Clear();
+            txtEmail.Clear();
+            txtFuncao.Clear();
+            cbSexo.Items.Clear();
+            txtTelefone.Clear();
+            txtSalario.Clear();
         }
     }
 }

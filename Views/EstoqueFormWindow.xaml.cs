@@ -67,8 +67,15 @@ namespace ProjetoLuna.Views
         {
             var produtoSelected = dataGridProduto.SelectedItem as Produto;
 
-            var form = new CadProduto(produtoSelected);
-            form.ShowDialog();
+            if (produtoSelected == null)
+            {
+                MessageBox.Show("Selecione o produto que deseja editar.");
+            }
+            else
+            {
+                var form = new CadProduto(produtoSelected);
+                form.ShowDialog();
+            }
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
