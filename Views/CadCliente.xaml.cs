@@ -62,7 +62,7 @@ namespace ProjetoLuna.Views
                 }
                 else
                 {
-                    cbSexo.SelectedItem = "Masculino";
+                    cbSexo.SelectedItem = "Feminino";
                     cbSexo.Items.Add("Masculino");
                     cbSexo.Items.Add("Feminino");
                 }
@@ -133,7 +133,12 @@ namespace ProjetoLuna.Views
 
         private void btLimpar_Click(object sender, RoutedEventArgs e)
         {
-
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtTelefone.Clear();
+            txtCpf.Clear();
+            txtEndereco.Clear();
+            cbSexo.Items.Clear();
         }
     }
 }

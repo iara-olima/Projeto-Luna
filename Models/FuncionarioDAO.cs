@@ -109,7 +109,7 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Funcionario Set " +
-                    "nome_fun = @Nome, data_nasc_fun = @DataNasc, salario_fun = @Salario, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, sexo_fun = @Sexo, funcao_fun = @Funcao " +
+                    "nome_fun = @Nome, dataNasc_fun = @DataNasc, salario_fun = @Salario, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, sexo_fun = @Sexo, funcao_fun = @Funcao " +
                     "Where id_fun = @id";
 
                 comando.Parameters.AddWithValue("@Nome", funcionario.Nome);

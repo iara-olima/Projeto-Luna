@@ -66,9 +66,16 @@ namespace ProjetoLuna.Views
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
             var funcionarioSelected = dataGridFunc.SelectedItem as Funcionario;
-
-            var form = new CadFuncionario(funcionarioSelected);
-            form.ShowDialog();
+            if (funcionarioSelected == null)
+            {
+                MessageBox.Show("Selecione o funcionário que deseja editar.");
+            }
+            else
+            {
+                var form = new CadFuncionario(funcionarioSelected);
+                form.ShowDialog();
+                this.Close();
+            }
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo

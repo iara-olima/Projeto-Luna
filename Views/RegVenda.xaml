@@ -43,7 +43,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btRegistrar" Content="Registrar Venda" Click="btProdVend_Click" Background="#741546" Width="200" Height="100" FontSize="20" BorderBrush="{x:Null}">
+                <Button x:Name="btRegistrar" Content="Registrar Venda" Click="btRegistrar_Click" Background="#741546" Width="200" Height="100" FontSize="20" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>
