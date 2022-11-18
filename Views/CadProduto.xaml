@@ -16,19 +16,19 @@
         <StackPanel Orientation="Horizontal" Margin="0 30 150 0" Height="350" Width="800">
             <StackPanel Width="400" HorizontalAlignment="Left" Height="350" Margin="0 0 10 0">
                 <TextBlock Text="Nome:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtNome" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtNome" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Marca:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtMarca" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtMarca" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Valor Venda:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtValorVenda" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtValorVenda" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Valor Compra:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtValorCompra" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtValorCompra" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
             </StackPanel>
             <StackPanel Width="400" Height="350">
                 <TextBlock Text="Quantidade:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtQuantidade" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtQuantidade" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Descrição:" FontSize="30" Foreground="#741546" HorizontalAlignment="Left"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtDescricao" TextWrapping="Wrap" Height="130" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtDescricao" TextWrapping="Wrap" Height="130" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">

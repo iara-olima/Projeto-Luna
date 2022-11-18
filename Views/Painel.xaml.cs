@@ -45,6 +45,13 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
+        private void btCompra_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.CompraFormWindow();
+            form.Show();
+            this.Close();
+        }
+
         private void btCaixa_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.CaixaFormWindow();
