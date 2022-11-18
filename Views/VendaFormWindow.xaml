@@ -13,8 +13,8 @@
         </Grid.ColumnDefinitions>
         <!--MENU-->
 
-        <StackPanel Height="528" Grid.Row="1" Background="#741546" Margin="0 0 0 50">
-            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,20,0,25" Height="40" Width="70">
+        <StackPanel Height="528" Grid.Row="1" Background="#741546" Margin="0 0 0 110">
+            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,40,0,25" Height="40" Width="70">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/cliente_icon.png" Height="40" Width="40"/>
                 </StackPanel>
@@ -63,8 +63,8 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Bottom" Background="#741546">
-            <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,15,0,30" Height="38">
+        <StackPanel VerticalAlignment="Bottom" Background="#741546" Height="110">
+            <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,30,0,0" Height="38">
                 <StackPanel Orientation="Horizontal" Height="35">
                     <Image Source="/Icons/voltar_icon.png" Height="32" Width="32"/>
                 </StackPanel>
@@ -73,7 +73,7 @@
         <!--FIM MENU-->
 
         <TextBlock Text="Vendas:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="158" Grid.Column="1" Margin="131,128,0,0"/>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top" Margin="0 95 170 0">
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top" Margin="0 95 160 0">
             <Button x:Name="btRegistrar" Content="Registrar Venda" Click="btRegistrarVend_Click" Background="#FFC4719D" Width="204" Height="78" FontSize="20" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -94,10 +94,10 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal" Height="100" Width="516" Margin="0,456,0,78">
-            <Button Name="btEditar" Click="btEditar_Click" Content="Editar" Background="#FFC4719D" Grid.Column="1" Width="100" Margin="0 0 20 0" BorderBrush="{x:Null}"/>
-            <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="100" Margin="0 0 20 0" BorderBrush="{x:Null}"/>
-            <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="100" BorderBrush="{x:Null}"/>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal" Height="50" Width="550" Margin="0,430,130,78">
+            <Button Name="btEditar" Click="btEditar_Click" Content="Editar" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
+            <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
+            <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="150" BorderBrush="{x:Null}"/>
         </StackPanel>
     </Grid>
 </Window>
