@@ -104,9 +104,5 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void btVoltar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
