@@ -48,5 +48,10 @@ namespace ProjetoLuna.Views
         {
 
         }
+
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

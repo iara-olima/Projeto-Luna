@@ -105,5 +105,10 @@ namespace ProjetoLuna.Views
             form.Show();
             this.Close();
         }
+
+        private void MenuItem_Click()
+        {
+
+        }
     }
 }

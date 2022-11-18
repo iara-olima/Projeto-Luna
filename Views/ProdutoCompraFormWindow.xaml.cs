@@ -23,5 +23,15 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
         }
+
+        private void btPesquisar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btOK_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
