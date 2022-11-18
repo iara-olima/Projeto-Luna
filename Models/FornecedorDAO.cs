@@ -59,13 +59,13 @@ namespace ProjetoLuna.Models
                 {
                     var fornecedor = new Fornecedor();
 
-                    fornecedor.Id = reader.GetInt32("id_for");
-                    fornecedor.NomeFantasia = DAOHelper.GetString(reader, "nomeFantasia_for");
-                    fornecedor.RazaoSocial = DAOHelper.GetString(reader, "razaoSocial_for");
-                    fornecedor.CNPJ = DAOHelper.GetString(reader, "cnpj_for");
-                    fornecedor.Email = DAOHelper.GetString(reader, "email_for");
-                    fornecedor.Telefone = DAOHelper.GetString(reader, "telefone_for");
-                    fornecedor.Endereco = DAOHelper.GetString(reader, "endereco_for");
+                    fornecedor.Id = reader.GetInt32("id_forn");
+                    fornecedor.NomeFantasia = DAOHelper.GetString(reader, "nomeFantasia_forn");
+                    fornecedor.RazaoSocial = DAOHelper.GetString(reader, "razaoSoc_forn");
+                    fornecedor.CNPJ = DAOHelper.GetString(reader, "cnpj_forn");
+                    fornecedor.Email = DAOHelper.GetString(reader, "email_forn");
+                    fornecedor.Telefone = DAOHelper.GetString(reader, "telefone_forn");
+                    fornecedor.Endereco = DAOHelper.GetString(reader, "endereco_forn");
                     lista.Add(fornecedor);
                 }
                 reader.Close();
@@ -83,7 +83,7 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "DELETE FROM Fornecedor WHERE id_for = @id";
+                comando.CommandText = "DELETE FROM Fornecedor WHERE id_forn = @id";
                 comando.Parameters.AddWithValue("@id", fornecedor.Id);
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
@@ -104,8 +104,8 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Fornecedor Set " +
-                    "nomeFantasia_for = @NomeFantasia, razaoSocial_for = @RazaoSocial, cnpj_for = @CNPJ, email_for = @Email, telefone_for = @Telefone, endereco_for = @Endereco " +
-                    "Where id_fun = @id";
+                    "nomeFantasia_forn = @NomeFantasia, razaoSoc_forn = @RazaoSocial, cnpj_forn = @CNPJ, email_forn = @Email, telefone_forn = @Telefone, endereco_forn = @Endereco " +
+                    "Where id_forn = @id";
 
                 comando.Parameters.AddWithValue("@NomeFantasia", fornecedor.NomeFantasia);
                 comando.Parameters.AddWithValue("@RazaoSocial", fornecedor.RazaoSocial);

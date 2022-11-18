@@ -126,8 +126,8 @@ namespace ProjetoLuna.Views
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-           var form = new Views.ClienteFormWindow();
-           form.Show();
+            var form = new Views.ClienteFormWindow();
+            form.Show();
             this.Close();
         }
 
