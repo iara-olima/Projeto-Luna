@@ -16,6 +16,7 @@
                 <MenuItem Header="_Funcionario" Click="Funcionario_Click" FontSize="20"/>
                 <MenuItem Header="_Estoque" Click="Estoque_Click" FontSize="20"/>
                 <MenuItem Header="_Venda" Click="Venda_Click" FontSize="20"/>
+                <MenuItem Header="_Compra" Click="Compra_Click" FontSize="20"/>
                 <MenuItem Header="_Financeiro" FontSize="20" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
                     <MenuItem Header="_Pagamentos" Click="Pagamentos_Click" FontSize="20"/>
                     <MenuItem Header="_Recebimentos" Click="Recebimentos_Click" FontSize="20"/>

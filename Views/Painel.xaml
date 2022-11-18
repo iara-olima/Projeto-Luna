@@ -52,6 +52,20 @@
                     <TextBlock Text="Compra" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
                 </StackPanel>
             </Button>
+            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
+                <StackPanel Orientation="Horizontal" Width="240" Height="35">
+                    <Image Source="/Icons/caixa_icon.png" Height="32" Width="32"/>
+                    <TextBlock Text="Caixa" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                </StackPanel>
+            </Button>
+            <StackPanel>
+                <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
+                    <StackPanel Orientation="Horizontal" Width="240" Height="35">
+                        <Image Source="/Icons/fornecedor_icon.png" Height="32" Width="32"/>
+                        <TextBlock Text="Fornecedor" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
             <StackPanel Orientation="Horizontal" Width="240" Height="38" Margin="0 0 0 -10">
                 <Menu>
                     <Image Source="/Icons/financeiro_icon.png" Margin="-10 0 0 10"/>
@@ -61,20 +75,6 @@
                         <MenuItem Header="_Despesas" Click="Despesas_Click" FontSize="20"/>
                     </MenuItem>
                 </Menu>
-            </StackPanel>
-            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,15,0,0" Height="38">
-                <StackPanel Orientation="Horizontal" Width="240" Height="35">
-                    <Image Source="/Icons/caixa_icon.png" Height="32" Width="32"/>
-                    <TextBlock Text="Caixa" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
-                </StackPanel>
-            </Button>
-            <StackPanel>
-                <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,0" Height="38">
-                    <StackPanel Orientation="Horizontal" Width="240" Height="35">
-                        <Image Source="/Icons/fornecedor_icon.png" Height="32" Width="32"/>
-                        <TextBlock Text="Fornecedor" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
-                    </StackPanel>
-                </Button>
             </StackPanel>
         </StackPanel>
        

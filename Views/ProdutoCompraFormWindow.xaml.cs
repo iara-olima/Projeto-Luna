@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para RegCompra.xaml
+    /// Lógica interna para ProdutoCompraFormWindow.xaml
     /// </summary>
-    public partial class RegCompra : Window
+    public partial class ProdutoCompraFormWindow : Window
     {
-        public RegCompra()
+        public ProdutoCompraFormWindow()
         {
             InitializeComponent();
-        }
-
-        private void btProdComp_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

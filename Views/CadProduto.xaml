@@ -29,6 +29,8 @@
                 <TextBox HorizontalAlignment="Left" x:Name="txtQuantidade" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Descrição:" FontSize="30" Foreground="#741546" HorizontalAlignment="Left"/>
                 <TextBox HorizontalAlignment="Left" x:Name="txtDescricao" TextWrapping="Wrap" Height="130" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
+                <TextBlock Text="Código:" Foreground="#741546" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtCodigo" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black" IsReadOnly="True"/>
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">

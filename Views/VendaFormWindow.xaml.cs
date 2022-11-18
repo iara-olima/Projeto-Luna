@@ -47,9 +47,7 @@ namespace ProjetoLuna.Views
 
         private void btVenda_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.VendaFormWindow();
-            form.Show();
-            this.Close();
+           
         }
 
         private void btCompra_Click(object sender, RoutedEventArgs e)
@@ -103,7 +101,9 @@ namespace ProjetoLuna.Views
 
         private void btRegistrarVend_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.RegVenda();
+            form.Show();
+            this.Close();
         }
 
         private void btEditar_Click(object sender, RoutedEventArgs e)

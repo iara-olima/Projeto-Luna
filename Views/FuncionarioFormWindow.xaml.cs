@@ -118,7 +118,7 @@ namespace ProjetoLuna.Views
         //COMANDOS MENU
         private void btFuncionario_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void btCliente_Click(object sender, RoutedEventArgs e)
@@ -176,9 +176,12 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void dataGridFunc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btCompra_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.CompraFormWindow();
+            form.Show();
+            this.Close();
         }
     }
 }
+

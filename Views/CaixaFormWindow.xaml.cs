@@ -44,17 +44,7 @@ namespace ProjetoLuna.Views
             
         }
 
-        private void btRelatorio_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btEntrada_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btSaida_Click(object sender, RoutedEventArgs e)
+        private void btOK_Click(object sender, RoutedEventArgs e)
         {
 
         }

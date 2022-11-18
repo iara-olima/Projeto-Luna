@@ -181,11 +181,17 @@
     <Compile Include="Views\Painel.xaml.cs">
       <DependentUpon>Painel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProdutoCompraFormWindow.xaml.cs">
+      <DependentUpon>ProdutoCompraFormWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProdutoVendaFormWindow.xaml.cs">
       <DependentUpon>ProdutoVendaFormWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RecebimentoFormWindow.xaml.cs">
       <DependentUpon>RecebimentoFormWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegCompra.xaml.cs">
+      <DependentUpon>RegCompra.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegDespesa.xaml.cs">
       <DependentUpon>RegDespesa.xaml</DependentUpon>
@@ -266,11 +272,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ProdutoCompraFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProdutoVendaFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RecebimentoFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegCompra.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
