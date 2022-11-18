@@ -5,44 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="CadFornecedor" Height="650" Width="1200" Background="#370f24" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Margin="0,0,0,-335">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="521*"/>
-            <RowDefinition Height="45*"/>
-        </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="379" Margin="-210,-154,0,0" VerticalAlignment="Top" Width="494" Source="/Imagens/a.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.167"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <Label Content="Cadastro de Fornecedor" Foreground="#FFF1D5E4" FontSize="57" HorizontalAlignment="Left" Margin="125,60,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtNome" Margin="81,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="732" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Nome Fantasia" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtCpf" Margin="80,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="CNPJ" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtEmail" Margin="80,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="733" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Email" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" Margin="479,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Telefone" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <Button Click="btSalvar_Click" Margin="371,541,0,0"  Width="151" Height="60" HorizontalAlignment="Left" Content="SALVAR
-" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Click="btCancelar_Click" Margin="600,541,0,0"  Width="152" Height="60" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <TextBox HorizontalAlignment="Left" x:Name="txtNome_Copy" Margin="80,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="733" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Razão Social" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtEmail_Copy" Margin="80,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="733" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Text="Endereço" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="31" Click="btVoltar_click" Cursor="Hand"/>
+        Title="CadFornecedor" Height="650" Width="1200" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Cursor="Hand">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="/Icons/seta_icon.png"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="11,12,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_click" Cursor="Hand"/>
+        <StackPanel Width="750" Height="90" HorizontalAlignment="Left" Margin="120 40 0 0" VerticalAlignment="Top" >
+            <TextBlock Text="Cadastro de Fornecedores" FontWeight="Bold" Foreground="#741546" FontSize="57"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0 30 150 0" Height="350" Width="800">
+            <StackPanel Width="400" HorizontalAlignment="Left" Height="350" Margin="0 0 10 0">
+                <TextBlock Text="Nome Fantasia:" Foreground="#741546" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtNomeFantasia" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Razão Social:" Foreground="#741546" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtRazaoSocial" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="CNPJ:" Foreground="#741546" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtCNPJ" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Email:" Foreground="#741546" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtEmail" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            </StackPanel>
+            <StackPanel Width="400" Height="350">
+                <TextBlock Text="Telefone:" Foreground="#741546" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBlock Text="Endereço:" Foreground="#741546" FontSize="30"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">
+            <Button Click="btSalvar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0" Cursor="Hand">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Click="btLimpar_Click"  Width="150" Height="50" HorizontalAlignment="Left" Content="LIMPAR" FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand" RenderTransformOrigin="0.747,-0.265">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

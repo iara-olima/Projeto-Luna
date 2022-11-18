@@ -67,6 +67,8 @@ namespace ProjetoLuna.Views
 
             var form = new CadCliente(clienteSelected);
             form.ShowDialog();
+            this.Close();
+
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
