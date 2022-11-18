@@ -75,6 +75,7 @@ namespace ProjetoLuna.Views
             {
                 var form = new CadProduto(produtoSelected);
                 form.ShowDialog();
+                this.Close();
             }
         }
 
