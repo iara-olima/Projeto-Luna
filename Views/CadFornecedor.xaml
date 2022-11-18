@@ -16,19 +16,19 @@
         <StackPanel Orientation="Horizontal" Margin="0 30 150 0" Height="350" Width="800">
             <StackPanel Width="400" HorizontalAlignment="Left" Height="350" Margin="0 0 10 0">
                 <TextBlock Text="Nome Fantasia:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtNomeFantasia" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtNomeFantasia" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FF741546"/>
                 <TextBlock Text="Razão Social:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtRazaoSocial" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtRazaoSocial" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FF741546"/>
                 <TextBlock Text="CNPJ:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtCNPJ" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtCNPJ" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FF741546"/>
                 <TextBlock Text="Email:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtEmail" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtEmail" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FF741546"/>
             </StackPanel>
             <StackPanel Width="400" Height="350">
                 <TextBlock Text="Telefone:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FF741546"/>
                 <TextBlock Text="Endereço:" Foreground="#741546" FontSize="30"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                    <TextBox HorizontalAlignment="Left" x:Name="txtEndereco" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FF741546"/>
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">
