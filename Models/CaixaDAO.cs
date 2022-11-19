@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ProjetoLuna.DataBase;
 using ProjetoLuna.Helpers;
 using MySql.Data.MySqlClient;
+
 namespace ProjetoLuna.Models
 {
     internal class CaixaDAO
@@ -86,7 +87,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "UpdateCaixa Set" +
+                comando.CommandText = "Update Caixa Set" +
                     "data_cai = @Data, saldo_inicial_cai = @SaldoInicial, " +
                     "saldo_final_cai = @SaldoFinal, recebimento_cai = @Recebimentos, pagamento_cai = @Pagamentos";
 

@@ -90,7 +90,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "UpdateCompra Set" +
+                comando.CommandText = "Update Compra Set" +
                     "valor_com = @Valor, data_com = @Data, " +
                     "hora_com = @Hora, parcela_com = @Parcela, descricao_com = @Descricao";
 
