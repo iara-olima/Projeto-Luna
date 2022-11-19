@@ -1,11 +1,11 @@
-﻿<Window x:Class="ProjetoLuna.Views.VendaFormWindow"
+﻿<Window x:Class="ProjetoLuna.Views.CompraFormWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="FuncionarioFormWindow" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="CompraFormWindow" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -72,9 +72,9 @@
         </StackPanel>
         <!--FIM MENU-->
 
-        <TextBlock Text="Vendas:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="158" Grid.Column="1" Margin="131,128,0,0"/>
+        <TextBlock Text="Compras:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="180" Grid.Column="1" Margin="131,128,0,0"/>
         <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top" Margin="0 95 160 0">
-            <Button x:Name="btRegistrar" Content="Registrar Venda" Click="btRegistrarVend_Click" Background="#FFC4719D" Width="204" Height="78" FontSize="20" BorderBrush="{x:Null}">
+            <Button x:Name="btRegistrar" Content="Registrar Compra" Click="btRegistrarVend_Click" Background="#FFC4719D" Width="204" Height="78" FontSize="20" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
@@ -99,5 +99,6 @@
             <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
             <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="150" BorderBrush="{x:Null}"/>
         </StackPanel>
+
     </Grid>
 </Window>

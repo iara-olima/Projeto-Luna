@@ -9,7 +9,7 @@
         Title="RegPagamento" Height="650" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <Image HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="/Icons/seta_icon.png"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_Click" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="12,8,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_Click" Cursor="Hand"/>
 
         <TextBlock Text="Registrar Pagamento" FontSize="40" FontWeight="Bold" Foreground="#741546" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,9,0,0"/>
 
@@ -28,8 +28,8 @@
                 <TextBlock Text="Vencimento:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
                 <DatePicker x:Name="dtVenc" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335"/>
                 <TextBlock Text="Caixa:" FontSize="25" Foreground="#741546"/>
-                    <ComboBox x:Name="cbCaixa" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
-                    <TextBlock Text="Despesa:" Foreground="#741546" FontSize="25"/>
+                <ComboBox x:Name="cbCaixa" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <TextBlock Text="Despesa:" Foreground="#741546" FontSize="25"/>
                 <ComboBox x:Name="cbDespesa" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
             </StackPanel>
         </StackPanel>

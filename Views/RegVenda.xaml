@@ -1,0 +1,67 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLuna.Views"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegVenda"
+        mc:Ignorable="d"
+        Title="RegVenda" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="/Icons/seta_icon.png"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="12,8,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_Click" Cursor="Hand"/>
+
+        <TextBlock Text="Registrar Venda" FontSize="40" FontWeight="Bold" Foreground="#741546" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,9,0,0"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Width="800">
+            <StackPanel Orientation="Horizontal" Height="250" Width="750">
+                <StackPanel Width="350" HorizontalAlignment="Left">
+                    <TextBlock Text="Valor:" Foreground="#741546" FontSize="25"/>
+                    <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4" Margin="0 0 0 15"/>
+                    <TextBlock Text="Data:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
+                    <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335" Margin="0 0 0 15"/>
+                    <TextBlock Text="Hora:" Foreground="#741546" FontSize="25"/>
+                    <materialDesign:TimePicker Width="335" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Width="350" Margin="60 0 0 0">
+                    <TextBlock Text="Funcionário:" FontSize="25" Foreground="#741546"/>
+                    <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                    <TextBlock Text="Cliente:" Foreground="#741546" FontSize="25"/>
+                    <ComboBox x:Name="cbCliente" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                    <TextBlock Text="Código:" Foreground="#741546" FontSize="25" Margin="0 0 0 0"/>
+                    <TextBox HorizontalAlignment="Left" x:Name="txtCodigo" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black" IsReadOnly="True"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0 0 0" Width="700" Orientation="Horizontal">
+                <Button x:Name="btSelProdVend" Content="Selecionar Produtos Vendidos" Click="btProdVend_Click" Background="#741546" Width="400" Height="50" FontSize="20" BorderBrush="{x:Null}" Margin="0 0 80 0">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btRegistrar" Content="Registrar Venda" Click="btRegistrar_Click" Background="#741546" Width="200" Height="100" FontSize="20" BorderBrush="{x:Null}">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <TextBlock Text="Produtos Vendidos:" FontSize="30" Foreground="#741546" Height="40" Width="260" Grid.Column="1" Margin="10,105,430,489"/>
+        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProdutosVendidos" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="10,145,10,142">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="450"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" Width="250"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

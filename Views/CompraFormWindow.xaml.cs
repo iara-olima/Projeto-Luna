@@ -15,67 +15,48 @@ using System.Windows.Shapes;
 namespace ProjetoLuna.Views
 {
     /// <summary>
-    /// Lógica interna para DespesaFormWindow.xaml
+    /// Lógica interna para CompraFormWindow.xaml
     /// </summary>
-    public partial class DespesaFormWindow : Window
+    public partial class CompraFormWindow : Window
     {
-        public DespesaFormWindow()
+        public CompraFormWindow()
         {
             InitializeComponent();
         }
 
-        private void btRegistrar_Click(object sender, RoutedEventArgs e)
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.RegDespesa();
+            var form = new Views.Painel();
             form.Show();
             this.Close();
         }
 
-        private void btEditar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btExcluir_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btVoltar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        //COMANDOS MENU
-        private void Funcionario_Click(object sender, RoutedEventArgs e)
+        private void btFuncionario_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FuncionarioFormWindow();
             form.Show();
             this.Close();
         }
 
-        private void Cliente_Click(object sender, RoutedEventArgs e)
+        private void btCliente_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.ClienteFormWindow();
             form.Show();
             this.Close();
         }
 
-        private void Venda_Click(object sender, RoutedEventArgs e)
+        private void btVenda_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.VendaFormWindow();
             form.Show();
             this.Close();
         }
 
-        private void Compra_Click(object sender, RoutedEventArgs e)
+        private void btCompra_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.CompraFormWindow();
-            form.Show();
-            this.Close();
         }
 
-        private void Caixa_Click(object sender, RoutedEventArgs e)
+        private void btCaixa_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.CaixaFormWindow();
             form.Show();
@@ -96,18 +77,47 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void Estoque_Click(object sender, RoutedEventArgs e)
+        private void Despesas_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.DespesaFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void btEstoque_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.EstoqueFormWindow();
             form.Show();
             this.Close();
         }
-        private void Fornecedor_Click(object sender, RoutedEventArgs e)
+
+        private void btFornecedor_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FornecedorFormWindow();
             form.Show();
             this.Close();
         }
 
+        private void btRegistrarVend_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.RegVenda();
+            form.Show();
+            this.Close();
+        }
+
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEmitir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

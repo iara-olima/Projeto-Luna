@@ -157,6 +157,9 @@
     <Compile Include="Views\ClienteFormWindow.xaml.cs">
       <DependentUpon>ClienteFormWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CompraFormWindow.xaml.cs">
+      <DependentUpon>CompraFormWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DespesaFormWindow.xaml.cs">
       <DependentUpon>DespesaFormWindow.xaml</DependentUpon>
     </Compile>
@@ -178,8 +181,17 @@
     <Compile Include="Views\Painel.xaml.cs">
       <DependentUpon>Painel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProdutoCompraFormWindow.xaml.cs">
+      <DependentUpon>ProdutoCompraFormWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdutoVendaFormWindow.xaml.cs">
+      <DependentUpon>ProdutoVendaFormWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RecebimentoFormWindow.xaml.cs">
       <DependentUpon>RecebimentoFormWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegCompra.xaml.cs">
+      <DependentUpon>RegCompra.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegDespesa.xaml.cs">
       <DependentUpon>RegDespesa.xaml</DependentUpon>
@@ -189,6 +201,9 @@
     </Compile>
     <Compile Include="Views\RegRecebimento.xaml.cs">
       <DependentUpon>RegRecebimento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegVenda.xaml.cs">
+      <DependentUpon>RegVenda.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VendaFormWindow.xaml.cs">
       <DependentUpon>VendaFormWindow.xaml</DependentUpon>
@@ -225,6 +240,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CompraFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DespesaFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -253,7 +272,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ProdutoCompraFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdutoVendaFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RecebimentoFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegCompra.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,6 +297,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegRecebimento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegVenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -347,12 +382,6 @@
     <Resource Include="Icons\venda_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\financeiro_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\caixa_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagens\rel.png" />
   </ItemGroup>
   <ItemGroup>
@@ -369,6 +398,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\seta_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\compra_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\financeiro_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\caixa_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\lupa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" />

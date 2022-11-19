@@ -99,5 +99,13 @@ namespace ProjetoLuna.Views
             form.Show();
             this.Close();
         }
+        private void Compra_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.CompraFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+       
     }
 }

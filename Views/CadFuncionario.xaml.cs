@@ -28,16 +28,48 @@ namespace ProjetoLuna.Views
             cbSexo.Items.Add("Feminino");
             cbSexo.Items.Add("Masculino");
             Loaded += CadFuncionario_Loaded;
-            
+
         }
+
         public CadFuncionario(Funcionario funcionario)
         {
             InitializeComponent();
             Loaded += CadFuncionario_Loaded;
-            _fun= funcionario;
+            _fun = funcionario;
         }
+
+        //Verifica se a variavel _fun esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void CadFuncionario_Loaded(object sender, RoutedEventArgs e)
         {
+            if (_fun.Id > 0)
+            {
+                MessageBox.Show("Funcionário: " + _fun.Nome);
+
+                txtNome.Text = _fun.Nome;
+                dtDataNasc.SelectedDate = _fun.DataNasc;
+                txtSalario.Text = _fun.Salario.ToString();
+                txtCpf.Text = _fun.CPF;
+                txtEmail.Text = _fun.Email;
+                txtTelefone.Text = _fun.Telefone;
+                if (_fun.Sexo == "Masculino")
+                {
+                    cbSexo.SelectedItem = "Masculino";
+                    cbSexo.Items.Add("Masculino");
+                    cbSexo.Items.Add("Feminino");
+                }
+                else
+                {
+                    cbSexo.SelectedItem = "Feminino";
+                    cbSexo.Items.Add("Masculino");
+                    cbSexo.Items.Add("Feminino");
+                }
+                txtFuncao.Text = _fun.Funcao;
+            }
+            else
+            {
+                InitializeComponent();
+                Loaded += CadFuncionario_Loaded;
+            }
         }
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
@@ -48,14 +80,12 @@ namespace ProjetoLuna.Views
             _fun.Funcao = txtFuncao.Text;
             _fun.Sexo = cbSexo.Text;
             _fun.Telefone = txtTelefone.Text;
-            // txtSalario.Text= _fun.Salario.ToString();
             if (double.TryParse(txtSalario.Text, out double Salario))
                 _fun.Salario = Salario;
             
             
-            if (dt_DataNasc.SelectedDate != null)
-                _fun.DataNasc = dt_DataNasc.SelectedDate;
-            MessageBox.Show("Funcionando!");
+            if (dtDataNasc.SelectedDate != null)
+                _fun.DataNasc = dtDataNasc.SelectedDate;
 
             try
             {
@@ -63,15 +93,14 @@ namespace ProjetoLuna.Views
                 if (_fun.Id > 0)
                 {
                     dao.Update(_fun);
+                    MessageBox.Show("Registro do Funcionário " + _fun.Nome + " atualizado com sucesso!");
 
                 }
                 else
                 {
                     dao.Insert(_fun);
+                    MessageBox.Show("Registro do Funcionário " + _fun.Nome + " inseridos com sucesso!");
                 }
-
-               // MessageBox.Show("Registro do Funcionário " + _fun.Nome + " atualizado com sucesso!");
-
             }
             catch (Exception ex)
             {
@@ -79,16 +108,6 @@ namespace ProjetoLuna.Views
             }
         }
            
-    
-   
-
-        private void btCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            var form = new Views.FuncionarioFormWindow();
-            form.Show();
-            this.Close();
-        }
-
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FuncionarioFormWindow();
@@ -98,7 +117,13 @@ namespace ProjetoLuna.Views
 
         private void btLimpar_Click(object sender, RoutedEventArgs e)
         {
-
+            txtNome.Clear();
+            txtCpf.Clear();
+            txtEmail.Clear();
+            txtFuncao.Clear();
+            cbSexo.Items.Clear();
+            txtTelefone.Clear();
+            txtSalario.Clear();
         }
     }
 }

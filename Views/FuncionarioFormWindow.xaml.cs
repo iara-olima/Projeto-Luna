@@ -66,9 +66,16 @@ namespace ProjetoLuna.Views
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
             var funcionarioSelected = dataGridFunc.SelectedItem as Funcionario;
-
-            var form = new CadFuncionario(funcionarioSelected);
-            form.ShowDialog();
+            if (funcionarioSelected == null)
+            {
+                MessageBox.Show("Selecione o funcionário que deseja editar.");
+            }
+            else
+            {
+                var form = new CadFuncionario(funcionarioSelected);
+                form.ShowDialog();
+                this.Close();
+            }
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
@@ -111,7 +118,7 @@ namespace ProjetoLuna.Views
         //COMANDOS MENU
         private void btFuncionario_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void btCliente_Click(object sender, RoutedEventArgs e)
@@ -169,9 +176,12 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void dataGridFunc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btCompra_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.CompraFormWindow();
+            form.Show();
+            this.Close();
         }
     }
 }
+

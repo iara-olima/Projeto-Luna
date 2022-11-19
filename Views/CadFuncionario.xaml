@@ -43,7 +43,7 @@
                 <TextBlock Text="Telefone:" Foreground="#FFF1D5E4" FontSize="30"/>
                 <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
                 <TextBlock Text="Data Nascimento:" FontSize="30" Foreground="#FFF1D5E4" HorizontalAlignment="Left"/>
-                <DatePicker x:Name="dt_DataNasc" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="385"/>
+                <DatePicker x:Name="dtDataNasc" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="385"/>
                 <TextBlock Text="Salário:" Foreground="#FFF1D5E4" FontSize="30"/>
                 <TextBox HorizontalAlignment="Left" x:Name="txtSalario" TextWrapping="Wrap" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
             </StackPanel>

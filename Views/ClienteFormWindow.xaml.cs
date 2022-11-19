@@ -65,8 +65,17 @@ namespace ProjetoLuna.Views
         {
             var clienteSelected = dataGridCliente.SelectedItem as Cliente;
 
-            var form = new CadCliente(clienteSelected);
-            form.ShowDialog();
+            if (clienteSelected == null)
+            {
+                MessageBox.Show("Selecione o cliente que deseja editar.");
+            }
+            else
+            {
+
+                var form = new CadCliente(clienteSelected);
+                form.ShowDialog();
+                this.Close();
+            }
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
@@ -163,6 +172,13 @@ namespace ProjetoLuna.Views
         private void btFornecedor_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FornecedorFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void btCompra_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new Views.CompraFormWindow();
             form.Show();
             this.Close();
         }
