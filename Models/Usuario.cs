@@ -11,6 +11,7 @@ namespace ProjetoLuna.Models
         public int Id { get; set; }
         public string CPF { get; set; }
         public string Senha { get; set; }
+        public int IdFuncionario { get; set; }
 
     }
 }
