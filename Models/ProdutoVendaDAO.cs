@@ -54,9 +54,9 @@ namespace ProjetoLuna.Models
                 {
                     var produto_venda = new ProdutoVenda();
 
-                    produto_venda.Id = reader.GetInt32("id_compProd");
-                    produto_venda.Quantidade = reader.GetInt32("qtd_compProd");
-                    produto_venda.Valor = DAOHelper.GetDouble(reader, "valor_compProd");
+                    produto_venda.Id = reader.GetInt32("id_prodVend");
+                    produto_venda.Quantidade = reader.GetInt32("qtd_prodVend");
+                    produto_venda.Valor = DAOHelper.GetDouble(reader, "valor_prodVend");
                     produto_venda.IdVenda = reader.GetInt32("id_vend_fk");
                     produto_venda.IdProduto = reader.GetInt32("id_prod_fk");
                     lista.Add(produto_venda);
@@ -113,7 +113,7 @@ namespace ProjetoLuna.Models
 
                 if (resultado == 0)
                 {
-                    throw new Exception("Ocorreram erros ao atualizae as informações");
+                    throw new Exception("Ocorreram erros ao atualizar as informações");
                 }
             }
             catch (Exception ex)

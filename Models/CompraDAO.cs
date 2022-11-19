@@ -106,7 +106,7 @@ namespace ProjetoLuna.Models
 
                 if (resultado == 0)
                 {
-                    throw new Exception("Ocorreram erros ao atualizae as informações");
+                    throw new Exception("Ocorreram erros ao atualizar as informações");
                 }
             }
             catch (Exception ex)
