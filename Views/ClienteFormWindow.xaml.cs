@@ -64,21 +64,16 @@ namespace ProjetoLuna.Views
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
             var clienteSelected = dataGridCliente.SelectedItem as Cliente;
-
             if (clienteSelected == null)
             {
                 MessageBox.Show("Selecione o cliente que deseja editar.");
             }
             else
             {
-
                 var form = new CadCliente(clienteSelected);
                 form.ShowDialog();
                 this.Close();
             }
-
-            var form = new CadCliente(clienteSelected);
-            form.ShowDialog();
 
         }
 

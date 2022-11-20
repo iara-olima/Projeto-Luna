@@ -104,13 +104,8 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Fornecedor Set " +
-<<<<<<< Updated upstream
                     "nomeFantasia_forn = @NomeFantasia, razaoSoc_forn = @RazaoSocial, cnpj_forn = @CNPJ, email_forn = @Email, telefone_forn = @Telefone, endereco_forn = @Endereco " +
                     "Where id_forn = @id";
-=======
-                    "nomeFantasia_for = @NomeFantasia, razaoSocial_for = @RazaoSocial, cnpj_for = @CNPJ, email_for = @Email, telefone_for = @Telefone, endereco_for = @Endereco " +
-                    "Where id_fun = @id";
->>>>>>> Stashed changes
 
                 comando.Parameters.AddWithValue("@NomeFantasia", fornecedor.NomeFantasia);
                 comando.Parameters.AddWithValue("@RazaoSocial", fornecedor.RazaoSocial);
