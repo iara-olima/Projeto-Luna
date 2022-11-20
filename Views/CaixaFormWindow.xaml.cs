@@ -43,15 +43,18 @@ namespace ProjetoLuna.Views
         private void CaixaFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
             CarregarListagem();
+            cbFuncionario.ItemsSource = new FuncionarioDAO().List();
+
         }
         private void CarregarListagem()
         {
+
             try
             {
                 var dao = new CaixaDAO();
                 List<Caixa> listaCaixa = dao.List();
 
-                dataGridDespesa.ItemsSource = listaCaixa;
+                dataGridCaixa.ItemsSource = listaCaixa;
 
             }
             catch (Exception ex)
@@ -62,51 +65,76 @@ namespace ProjetoLuna.Views
 
         private void btOK_Click(object sender, RoutedEventArgs e)
         {
-
-
-            if (double.TryParse(txtPagamentos.Text, out double Pagamentos))
-                _cai.Pagamentos = Pagamentos;
-
-
-            if (double.TryParse(txtSaldoInicial.Text, out double SaldoInicial))
-                _cai.SaldoInicial = SaldoInicial;
-
-            if (double.TryParse(txtSaldoFinal.Text, out double SaldoFinal))
-                _cai.SaldoFinal = SaldoFinal;
-
-            if (double.TryParse(txtRecebimentos.Text, out double Recebimentos))
-                _cai.Recebimentos = Recebimentos;
-
-
             if (dtData.SelectedDate != null)
                 _cai.Data = dtData.SelectedDate;
+            if (double.TryParse(txtSaldoInicial.Text, out double SaldoInicial))
+                _cai.SaldoInicial = SaldoInicial;
+            if (double.TryParse(txtSaldoFinal.Text, out double SaldoFinal))
+                _cai.SaldoFinal = SaldoFinal;
+            if (double.TryParse(txtRecebimentos.Text, out double Recebimentos))
+                _cai.Recebimentos = Recebimentos;
+            if (double.TryParse(txtPagamentos.Text, out double Pagamentos))
+                _cai.Pagamentos = Pagamentos;
+            _cai.Funcionario = cbFuncionario.SelectedItem as Funcionario;
+
+
 
             try
             {
                 var dao = new CaixaDAO();
-                if (_cai.Id > 0)
-                {
-                    dao.Insert(_cai);
-                    MessageBox.Show("Registro de Caixa " + _cai.Id + " inserido com sucesso!");
-
-                }
                 
+                    dao.Insert(_cai);
+                    MessageBox.Show("Caixa inserido com sucesso!");
+                    CarregarListagem(); 
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            /*  if (double.TryParse(txtPagamentos.Text, out double Pagamentos))
+                  _cai.Pagamentos = Pagamentos;
+
+
+              if (double.TryParse(txtSaldoInicial.Text, out double SaldoInicial))
+                  _cai.SaldoInicial = SaldoInicial;
+
+              if (double.TryParse(txtSaldoFinal.Text, out double SaldoFinal))
+                  _cai.SaldoFinal = SaldoFinal;
+
+              if (double.TryParse(txtRecebimentos.Text, out double Recebimentos))
+                  _cai.Recebimentos = Recebimentos;
+
+              if (cbFuncionario.SelectedItem != null)
+                  _cai.Funcionario = cbFuncionario.SelectedItem as Funcionario;
+
+
+              if (dtData.SelectedDate != null)
+                  _cai.Data = dtData.SelectedDate;
+
+              try
+              {
+                  var dao = new CaixaDAO();
+                  if (_cai.Id > 0)
+                  {
+                      dao.Insert(_cai);
+                      MessageBox.Show("Registro de Caixa " + _cai.Id + " inserido com sucesso!");
+
+                  }
+
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show(ex.Message);
+              }*/
         }
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.FuncionarioFormWindow();
+            var form = new Views.Painel();
             form.Show();
             this.Close();
         }
 
-        private void btVoltar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -21,19 +21,20 @@
         <StackPanel Orientation="Horizontal" Height="250" VerticalAlignment="Bottom">
             <StackPanel Width="350" HorizontalAlignment="Left" Margin="150 0 0 0">
                 <TextBlock Text="Data:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
-                <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335"/>
+                <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335" Foreground="Black"/>
                 <TextBlock Text="Saldo Inicial:" Foreground="#741546" FontSize="25"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtSaldoInicial" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtSaldoInicial" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Saldo Final:" Foreground="#741546" FontSize="25"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtSaldoFinal" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtSaldoFinal" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
             </StackPanel>
             <StackPanel Width="350" Margin="150 0 0 0">
                 <TextBlock Text="Recebimentos:" Foreground="#741546" FontSize="25"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtRecebimentos" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtRecebimentos" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Pagamentos:" Foreground="#741546" FontSize="25"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtPagamentos" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtPagamentos" TextWrapping="Wrap" Width="335" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black"/>
                 <TextBlock Text="Funcionário:" Foreground="#741546" FontSize="25"/>
-                <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" Foreground="Black" BorderThickness="2,2,2,2" FontSize="20" DisplayMemberPath="Nome"
+                          SelectedValuePath="Id"/>
             </StackPanel>
         </StackPanel>
 
@@ -45,14 +46,13 @@
             </Button.Resources>
         </Button>
 
-        <DataGrid Background="White" x:Name="dataGridDespesa" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" Margin="37,16,38,10">
+        <DataGrid Background="White" x:Name="dataGridCaixa" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" Margin="37,16,38,10">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="150"/>
-                <DataGridTextColumn Header="Saldo Inicial" Binding="{Binding SaldoInicial}" Width="150"/>
-                <DataGridTextColumn Header="Saldo Final" Binding="{Binding SaldoFinal}" Width="150"/>
-                <DataGridTextColumn Header="Recebimentos" Binding="{Binding Recebimentos}" Width="150"/>
-                <DataGridTextColumn Header="Pagamentos" Binding="{Binding Pagamentos}" Width="150"/>
-                <DataGridTextColumn Header="Funcionário" Binding="{Binding Funcionario}" Width="*"/>
+                <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
+                <DataGridTextColumn Header="Saldo Inicial" Binding="{Binding SaldoInicial}" Width="*"/>
+                <DataGridTextColumn Header="Saldo Final" Binding="{Binding SaldoFinal}" Width="*"/>
+                <DataGridTextColumn Header="Recebimentos" Binding="{Binding Recebimentos}" Width="*"/>
+                <DataGridTextColumn Header="Pagamentos" Binding="{Binding Pagamentos}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

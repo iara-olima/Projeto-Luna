@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -24,7 +25,12 @@ namespace ProjetoLuna.Views
             InitializeComponent();
         }
 
-        private void btFuncionario_Click(object sender, RoutedEventArgs e)
+        private void Painel_Loaded(object sender, RoutedEventArgs e)
+        { 
+         //   txtBlockNomeUsuario.Text = Funcionario.GetInstance().Funcionario.Nome;
+        }
+
+            private void btFuncionario_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FuncionarioFormWindow();
             form.Show();

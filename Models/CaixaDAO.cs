@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ProjetoLuna.DataBase;
 using ProjetoLuna.Helpers;
 using MySql.Data.MySqlClient;
+
 namespace ProjetoLuna.Models
 {
     internal class CaixaDAO
@@ -16,13 +17,14 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "insert into Cliente value " +
-                    "(null, @Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos)";
+                comando.CommandText = "insert into Caixa value " +
+                    "(null, @Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos, @Funcionario)";
                 comando.Parameters.AddWithValue("@Data", caixa.Data);
                 comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);
                 comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
                 comando.Parameters.AddWithValue("@Recebimentos", caixa.Recebimentos);
                 comando.Parameters.AddWithValue("@Pagamentos", caixa.Pagamentos);
+                comando.Parameters.AddWithValue("@Funcionario", caixa.Funcionario.Id);
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
                 {
@@ -48,8 +50,8 @@ namespace ProjetoLuna.Models
 
                     caixa.Id = reader.GetInt32("id_cai");
                     caixa.Data = DAOHelper.GetDateTime(reader, "data_cai");
-                    caixa.SaldoInicial = DAOHelper.GetDouble(reader, "saldo_inicial_cai");
-                    caixa.SaldoFinal = DAOHelper.GetDouble(reader, "saldo_final_cai");
+                    caixa.SaldoInicial = DAOHelper.GetDouble(reader, "saldoInic_cai");
+                    caixa.SaldoFinal = DAOHelper.GetDouble(reader, "saldoFin_cai");
                     caixa.Recebimentos = DAOHelper.GetDouble(reader, "recebimento_cai");
                     caixa.Pagamentos = DAOHelper.GetDouble(reader, "pagamento_cai");
                     lista.Add(caixa);
@@ -80,35 +82,6 @@ namespace ProjetoLuna.Models
                 throw ex;
             }
         }
-        public void Update(Caixa caixa)
-        {
-            try
-            {
-                var comando = _conn.Query();
-
-                comando.CommandText = "UpdateCaixa Set" +
-                    "data_cai = @Data, saldo_inicial_cai = @SaldoInicial, " +
-                    "saldo_final_cai = @SaldoFinal, recebimento_cai = @Recebimentos, pagamento_cai = @Pagamentos";
-
-                comando.Parameters.AddWithValue("@Data", caixa.Data);
-                comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);
-                comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
-                comando.Parameters.AddWithValue("@Recebimentos", caixa.Recebimentos);
-                comando.Parameters.AddWithValue("@Pagamentos", caixa.Pagamentos);
-
-                comando.Parameters.AddWithValue("@id", caixa.Id);
-
-                var resultado = comando.ExecuteNonQuery();
-
-                if (resultado == 0)
-                {
-                    throw new Exception("Ocorreram erros ao atualizae as informações");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+   
     }
 }
