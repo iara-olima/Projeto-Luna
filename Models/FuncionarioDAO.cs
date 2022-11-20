@@ -109,7 +109,11 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Funcionario Set " +
+<<<<<<< Updated upstream
                     "nome_fun = @Nome, dataNasc_fun = @DataNasc, salario_fun = @Salario, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, sexo_fun = @Sexo, funcao_fun = @Funcao " +
+=======
+                    "nome_fun = @Nome, data_nasc_fun = @DataNasc, salario_fun = @Salario, funcao_fun = @Funcao, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, endereco_fun = @Endereco, sexo_fun = @Sexo " +
+>>>>>>> Stashed changes
                     "Where id_fun = @id";
 
                 comando.Parameters.AddWithValue("@Nome", funcionario.Nome);

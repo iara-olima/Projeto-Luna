@@ -39,7 +39,7 @@
             </StackPanel>
             <StackPanel Width="400" Height="350">
                 <TextBlock Text="Sexo:" Background="#370f24" FontSize="30" Foreground="#FFF1D5E4"/>
-                <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Width="385" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="30"/>
+                <ComboBox x:Name="cbSexo" HorizontalAlignment="Left" Width="385" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="30"/>
                 <TextBlock Text="Telefone:" Foreground="#FFF1D5E4" FontSize="30"/>
                 <TextBox HorizontalAlignment="Left" x:Name="txtTelefone" TextWrapping="Wrap" Width="385" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
                 <TextBlock Text="Data Nascimento:" FontSize="30" Foreground="#FFF1D5E4" HorizontalAlignment="Left"/>

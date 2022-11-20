@@ -53,7 +53,10 @@ namespace ProjetoLuna.Views
                 txtTelefone.Text = _cli.Telefone;
                 dtNasc.SelectedDate = _cli.DataNasc;
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                 if (_cli.Sexo == "Masculino")
                 {
                     cbSexo.SelectedItem = "Masculino";
@@ -62,7 +65,11 @@ namespace ProjetoLuna.Views
                 }
                 else
                 {
+<<<<<<< Updated upstream
                     cbSexo.SelectedItem = "Feminino";
+=======
+                    cbSexo.SelectedItem = "Masculino";
+>>>>>>> Stashed changes
                     cbSexo.Items.Add("Masculino");
                     cbSexo.Items.Add("Feminino");
                 }
@@ -104,7 +111,11 @@ namespace ProjetoLuna.Views
                     MessageBox.Show("Registro do cliente " + _cli.Nome + " inseridos com sucesso!");
                 }
 
+<<<<<<< Updated upstream
                 
+=======
+                MessageBox.Show("Registro do cliente "+_cli.Nome+" atualizado com sucesso!");
+>>>>>>> Stashed changes
 
             }
             catch (Exception ex)

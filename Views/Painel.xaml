@@ -17,12 +17,22 @@
 
         <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
 
+
         <Image HorizontalAlignment="Left" Height="81" Margin="-10,-14,0,0" VerticalAlignment="Top" Width="72" Source="/Icons/barra_menu.png"/>
 
-        <TextBlock Text="Usuário:" FontSize="20" VerticalAlignment="Bottom"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+            <TextBlock FontWeight="Bold" Padding="5">Usuário:</TextBlock>
+            <TextBlock x:Name="txtBlockNomeUsuario" Padding="0 5"></TextBlock>
+        </StackPanel>
 
+<<<<<<< Updated upstream
         <StackPanel Height="410">
             <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
+=======
+        <StackPanel Height="350">
+
+            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="35">
+>>>>>>> Stashed changes
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/cliente_icon.png" Height="32" Width="32"/>
                     <TextBlock Text="Cliente" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
@@ -46,6 +56,7 @@
                     <TextBlock Text="Venda" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
                 </StackPanel>
             </Button>
+<<<<<<< Updated upstream
             <Button x:Name="btCompra" Click="btCompra_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240" Height="35">
                     <Image Source="/Icons/compra_icon.png" Height="32" Width="32"/>
@@ -53,11 +64,21 @@
                 </StackPanel>
             </Button>
             <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
+=======
+            <Button x:Name="btFinanceiro" Click="btFinanceiro_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
+                <StackPanel Orientation="Horizontal" Width="240" Height="35">
+                    <Image Source="/Icons/financeiro_icon.png" Height="32" Width="32"/>
+                    <TextBlock Text="Financeiro" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="38">
+>>>>>>> Stashed changes
                 <StackPanel Orientation="Horizontal" Width="240" Height="35">
                     <Image Source="/Icons/caixa_icon.png" Height="32" Width="32"/>
                     <TextBlock Text="Caixa" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
                 </StackPanel>
             </Button>
+<<<<<<< Updated upstream
             <StackPanel>
                 <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
                     <StackPanel Orientation="Horizontal" Width="240" Height="35">
@@ -76,6 +97,8 @@
                     </MenuItem>
                 </Menu>
             </StackPanel>
+=======
+>>>>>>> Stashed changes
         </StackPanel>
        
 

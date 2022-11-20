@@ -106,6 +106,5 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-       
     }
 }

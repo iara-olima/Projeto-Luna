@@ -105,7 +105,11 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Produto Set " +
+<<<<<<< Updated upstream
                     "nome_prod = @Nome, marca_prod = @Marca, qtd_prod = @Quantidade, valorVenda_prod = @ValorVenda, valorCompra_prod = @ValorCompra " +
+=======
+                    "nome_prod = @Nome, marca_prod = @Marca, quantidade_prod = @Quantidade, valor_venda_prod = @ValorVenda, valor_compra_prod = @ValorCompra " +
+>>>>>>> Stashed changes
                     "Where id_prod = @id";
 
                 comando.Parameters.AddWithValue("@Nome", produto.Nome);
