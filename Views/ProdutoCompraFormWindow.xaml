@@ -19,12 +19,12 @@
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Margin="10,89,10,98">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
-                <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding Marca}" Width="*"/>
+                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}" Width="*"/>
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
                 <DataGridTextColumn Header="Valor Venda" Binding="{Binding ValorVenda}"/>
                 <DataGridTextColumn Header="Valor Compra" Binding="{Binding ValorCompra}"/>
-                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
             </DataGrid.Columns>
         </DataGrid>
 

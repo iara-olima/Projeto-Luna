@@ -88,14 +88,14 @@
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="62,89,62,98">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
-                <DataGridTextColumn Header="Data de Nascimento" Binding="{Binding DataNasc}"/>
-                <DataGridTextColumn Header="Salario" Binding="{Binding Salario}"/>
-                <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
-                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}"/>
-                <DataGridTextColumn Header="Função" Binding="{Binding Funcao}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                <DataGridTextColumn Header="Data de Nascimento" Binding="{Binding DataNasc}" Width="160"/>
+                <DataGridTextColumn Header="Salario" Binding="{Binding Salario}" Width="*"/>
+                <DataGridTextColumn Header="CPF" Binding="{Binding CPF}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Width="*"/>
+                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*"/>
+                <DataGridTextColumn Header="Função" Binding="{Binding Funcao}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
