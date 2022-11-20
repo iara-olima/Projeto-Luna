@@ -54,9 +54,9 @@ namespace ProjetoLuna.Models
                 {
                     var produto_venda = new ProdutoVenda();
 
-                    produto_venda.Id = reader.GetInt32("id_compProd");
-                    produto_venda.Quantidade = reader.GetInt32("qtd_compProd");
-                    produto_venda.Valor = DAOHelper.GetDouble(reader, "valor_compProd");
+                    produto_venda.Id = reader.GetInt32("id_prodVend");
+                    produto_venda.Quantidade = reader.GetInt32("qtd_prodVend");
+                    produto_venda.Valor = DAOHelper.GetDouble(reader, "valor_prodVend");
                     produto_venda.IdVenda = reader.GetInt32("id_vend_fk");
                     produto_venda.IdProduto = reader.GetInt32("id_prod_fk");
                     lista.Add(produto_venda);
@@ -92,15 +92,34 @@ namespace ProjetoLuna.Models
             }
         }
 
-        //FALTA TERMINAR
-        //public void Update(ProdutoVenda produtoVenda)
-        //{
-        //    try
-        //    {
-        //        var comando = _conn.Query();
+        public void Update(ProdutoVenda produtoVenda)
+        {
+            try
+            {
+                var comando = _conn.Query();
 
-        //        comando.CommandText = "update Produto_Venda set qtd_prodVend = @Quantidade, valor"
-        //    }
-        //}
+                comando.CommandText = "Update Produto_Venda Set" +
+                    "qtd_prodVend = @Quantidade, valor_prodVend = @Valor, " +
+                    "id_vend_fk = @IdVenda, id_prod_fk = @IdProduto";
+
+                comando.Parameters.AddWithValue("@qtd_prodVend", produtoVenda.Quantidade);
+                comando.Parameters.AddWithValue("@valor_prodVend", produtoVenda.Valor);
+                comando.Parameters.AddWithValue("@id_vend_fk", produtoVenda.IdVenda);
+                comando.Parameters.AddWithValue("@id_prod_fk", produtoVenda.IdProduto);
+
+                comando.Parameters.AddWithValue("@id", produtoVenda.Id);
+
+                var resultado = comando.ExecuteNonQuery();
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Ocorreram erros ao atualizar as informações");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
