@@ -28,7 +28,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Click="btOK_Click" Width="100" Height="50" Content="OK" FontSize="22" FontWeight="Medium" Background="#741546" BorderBrush="{x:Null}" VerticalAlignment="Bottom" IsDefault="True" Margin="0 0 0 40">
+        <Button Click="btAdicionar_Click" Width="250" Height="40"  Content="Adicionar Produto" FontSize="22" FontWeight="Medium" Background="#741546" BorderBrush="{x:Null}" VerticalAlignment="Bottom" HorizontalAlignment="Right" IsDefault="True" Margin="0 0 40 40">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>

@@ -111,6 +111,7 @@
     <Compile Include="Models\ClienteDAO.cs" />
     <Compile Include="Models\Compra.cs" />
     <Compile Include="Models\CompraDAO.cs" />
+    <Compile Include="Models\CompraItem.cs" />
     <Compile Include="Models\Despesa.cs" />
     <Compile Include="Models\DespesaDAO.cs" />
     <Compile Include="Models\Fornecedor.cs" />

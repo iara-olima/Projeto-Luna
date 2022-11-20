@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -19,19 +20,57 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class ProdutoCompraFormWindow : Window
     {
+        private List<Produto> _produtosList = new List<Produto>();
+
+        public List<Produto> ProdutosSelecionados { get; private set; } = new List<Produto>();
+
         public ProdutoCompraFormWindow()
         {
             InitializeComponent();
+            Loaded += ProdutoCompraFormWindow_Loaded;
         }
 
-        private void btPesquisar_Click(object sender, RoutedEventArgs e)
+        private void ProdutoCompraFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
-
+            LoadDataGrid();
         }
 
-        private void btOK_Click(object sender, RoutedEventArgs e)
+        private void BtPesquisar_Click(object sender, RoutedEventArgs e)
         {
+            var text = txtPesquisa.Text;
 
+            var filteredList = _produtosList.Where(i => i.Nome.ToLower().Contains(text));
+            dataGridProduto.ItemsSource = filteredList;
+        }
+
+        private void BtAdicionar_Click(object sender, RoutedEventArgs e)
+        {
+            var itens = dataGridProduto.Items;
+            ProdutosSelecionados.Clear();
+
+            foreach (Produto produto in itens)
+            {
+                if (produto.IsSelected)
+                    ProdutosSelecionados.Add(produto);
+            }
+
+            if (ProdutosSelecionados.Count == 0)
+                MessageBox.Show("Nenhum produto foi selecionado!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            this.Close();
+        }
+        private void LoadDataGrid()
+        {
+            try
+            {
+                _produtosList = new ProdutoDAO().List();
+                dataGridProduto.ItemsSource = _produtosList;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Não Executado", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

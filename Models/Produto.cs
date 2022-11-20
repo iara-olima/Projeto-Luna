@@ -16,5 +16,19 @@ namespace ProjetoLuna.Models
         public Double? ValorCompra { get; set; }
         public string Descricao { get; set; }
 
+        private bool _selected = false;
+
+        public bool IsSelected
+        {
+            get
+            {
+                return _selected;
+            }
+            set
+            {
+                _selected = value;
+            }
+        }
+
     }
 }
