@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="PagamentoFormWindow" Height="350" Width="800" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="PagamentoFormWindow" Height="350" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <!--MENU-->
         <Menu>
@@ -26,19 +26,16 @@
         </Menu>
         <!--MENU FINAL-->
 
-        <StackPanel Width="650" Height="210" Margin="110 0 0 0">
+        <StackPanel Width="800" Height="210" Margin="110 0 0 0">
             <TextBlock Text="Pagamentos:" FontSize="20" FontWeight="Bold" FontFamily="roboto" Foreground="#741546"/>
-            <DataGrid Background="White" x:Name="dataGridDespesa" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189" Width="640">
+            <DataGrid Background="White" x:Name="dataGridDespesa" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189" Width="800">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Data" Binding="{Binding Data}"/>
-                    <DataGridTextColumn Header="Hora" Binding="{Binding Hora}"/>
-                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
-                    <DataGridTextColumn Header="Forma Pag." Binding="{Binding FormaPag}"/>
-                    <DataGridTextColumn Header="Status" Binding="{Binding Stts}"/>
-                    <DataGridTextColumn Header="Vencimento" Binding="{Binding Vencimento}"/>
-                    <DataGridTextColumn Header="Caixa" Binding="{Binding idCaixa}"/>
-                    <DataGridTextColumn Header="Cód. Despesa" Binding="{Binding idDesp}"/>
-                    <DataGridTextColumn Header="Status" Binding="{Binding Stts}"/>
+                    <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
+                    <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*"/>
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                    <DataGridTextColumn Header="Forma Pag." Binding="{Binding FormaPag}" Width="*"/>
+                    <DataGridTextColumn Header="Vencimento" Binding="{Binding Vencimento}" Width="*"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Stts}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

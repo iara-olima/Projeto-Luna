@@ -88,12 +88,12 @@
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="62,89,62,98">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nome Fantasia" Binding="{Binding NomeFantasia}"/>
-                <DataGridTextColumn Header="Razão Social" Binding="{Binding RazaoSocial}"/>
-                <DataGridTextColumn Header="CNPJ" Binding="{Binding CNPJ}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}"/>
-                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
+                <DataGridTextColumn Header="Nome Fantasia" Binding="{Binding NomeFantasia}" Width="*"/>
+                <DataGridTextColumn Header="Razão Social" Binding="{Binding RazaoSocial}" Width="*"/>
+                <DataGridTextColumn Header="CNPJ" Binding="{Binding CNPJ}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Width="*"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

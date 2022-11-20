@@ -85,12 +85,12 @@
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCliente" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="131,193,131,165">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Código" Binding="{Binding Id}" Width="100"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="100"/>
-                <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="100"/>
-                <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="100"/>
-                <DataGridTextColumn Header="Funcionário" Binding="{Binding Funcionario}" Width="150"/>
-                <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente}" Width="150"/>
+                <DataGridTextColumn Header="Código" Binding="{Binding Id}" Width="*"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*"/>
+                <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
+                <DataGridTextColumn Header="Funcionário" Binding="{Binding Funcionario}" Width="*"/>
+                <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
