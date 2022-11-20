@@ -20,7 +20,7 @@
             <TextBlock Text="CPF:" FontFamily="roboto" Foreground="#FFF1D5E4" FontSize="25" Width="50" HorizontalAlignment="Left" Margin="0 30 0 0"/>
             <TextBox HorizontalAlignment="Left" x:Name="txtCPF" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
             <TextBlock Text="Senha:" FontFamily="roboto" Foreground="#FFF1D5E4" FontSize="25" Width="78" HorizontalAlignment="Left" Margin="0 30 0 0"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtSenha" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <PasswordBox HorizontalAlignment="Left" x:Name="txtSenha" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 100 0">
                 <Button Click="btEntrar_Click" Width="110" Margin="0 0 50 0" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
                     <Button.Resources>
