@@ -17,13 +17,17 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "insert into Cliente value " +
-                    "(null, @Valor, @Data, @Hora, @Parcela, @Descricao)";
+                comando.CommandText = "insert into Compra value " +
+                    "(null, @Valor, @Data, @Hora, @Parcela, @Descricao, @ValorParc, @IdFornecedor, @IdFuncionario)";
                 comando.Parameters.AddWithValue("@Valor", compra.Valor);
                 comando.Parameters.AddWithValue("@Data", compra.Data);
                 comando.Parameters.AddWithValue("@Hora", compra.Hora);
                 comando.Parameters.AddWithValue("@Parcela", compra.Parcela);
                 comando.Parameters.AddWithValue("@Descricao", compra.Descricao);
+                comando.Parameters.AddWithValue("@ValorParc", compra.ValorParc);
+                comando.Parameters.AddWithValue("@IdFornecedor", compra.IdFornecedor);
+                comando.Parameters.AddWithValue("@IdFuncionario", compra.IdFuncionario);
+
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
                 {
@@ -54,6 +58,10 @@ namespace ProjetoLuna.Models
                     compra.Hora = DAOHelper.GetDateTime(reader, "hora_comp");
                     compra.Parcela = reader.GetInt32("pagamento_comp");
                     compra.Descricao = DAOHelper.GetString(reader, "descricao_comp");
+                    compra.ValorParc = DAOHelper.GetDouble(reader, "valorParc_comp");
+                    compra.IdFornecedor = reader.GetInt32("id_forn_fk");
+                    compra.IdFornecedor = reader.GetInt32("id_fun_fk");
+
                     lista.Add(compra);
                 }
                 reader.Close();
@@ -92,13 +100,17 @@ namespace ProjetoLuna.Models
 
                 comando.CommandText = "Update Compra Set" +
                     "valor_comp = @Valor, data_comp = @Data, " +
-                    "hora_comp = @Hora, parcela_comp = @Parcela, descricao_comp = @Descricao";
+                    "hora_comp = @Hora, parcela_comp = @Parcela, descricao_comp = @Descricao, valorParc_comp = @ValorParc, +" +
+                    "id_forn_fk = @IdFornecedor, id_fun_fk = @IdFuncionario";
 
                 comando.Parameters.AddWithValue("@Valor", compra.Valor);
                 comando.Parameters.AddWithValue("@Data", compra.Data);
                 comando.Parameters.AddWithValue("@Hora", compra.Hora);
                 comando.Parameters.AddWithValue("@Pagamento", compra.Parcela);
                 comando.Parameters.AddWithValue("@Descricao", compra.Descricao);
+                comando.Parameters.AddWithValue("@ValorParc", compra.ValorParc);
+                comando.Parameters.AddWithValue("@IdFornecedor", compra.IdFornecedor);
+                comando.Parameters.AddWithValue("@IdFuncionario", compra.IdFuncionario);
 
                 comando.Parameters.AddWithValue("@id", compra.Id);
 
