@@ -12,8 +12,40 @@ namespace ProjetoLuna.Models
 {
     internal class UsuarioDAO
     {
-
         private static Conexao _conn = new Conexao();
+
+        public Usuario GetByUsuario(string usuarioCpf, string senha)
+        {
+            try
+            {
+                var query = _conn.Query();
+                query.CommandText = "SELECT * FROM usuario LEFT JOIN funcionario ON id_fun = id_fun_fk WHERE cpf_usu = @usuario AND senha_usu = @senha;";
+
+                query.Parameters.AddWithValue("@usuario", usuarioCpf);
+                query.Parameters.AddWithValue("@senha", senha);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                Usuario usuario = null;
+
+                while (reader.Read())
+                {
+                    usuario = Usuario.GetInstance();
+                    usuario.Id = reader.GetInt32("id_usu");
+                    usuario.UsuarioCPF = reader.GetString("cpf_usu");
+                }
+
+                return usuario;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
 
         public void Insert(Usuario usuario)
         {

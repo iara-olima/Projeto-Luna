@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -27,9 +28,8 @@ namespace ProjetoLuna.Views
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
             string cpf = txtCPF.Text;
-            string senha = txtSenha.Text;
-            if ((cpf == "") && (senha == ""))
-            {
+            string senha = txtSenha.Password.ToString();
+            if (Usuario.Login(cpf, senha)) {
                 var form = new Views.Painel();
                 form.Show();
                 this.Close();
@@ -58,7 +58,8 @@ namespace ProjetoLuna.Views
 
         private void btLimpar_Click(object sender, RoutedEventArgs e)
         {
-
+            txtCPF.Clear();
+            txtSenha.Clear();
         }
     }
 }
