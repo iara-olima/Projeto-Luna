@@ -13,7 +13,7 @@
             <TextBox HorizontalAlignment="Left" x:Name="txtPesquisa" Width="335" Height="25" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black"/>
             <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Icons/lupa.png"/>
         </StackPanel>
-        <Button Content="" HorizontalAlignment="Right" Margin="0,55,70,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Click="btPesquisar_Click" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Right" Margin="0,55,70,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Click="BtPesquisar_Click" Cursor="Hand"/>
         <TextBlock Text="Produtos:" FontWeight="Bold" Foreground="#741546" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="140" Margin="12,50,0,0"/>
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProduto" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Margin="10,89,10,98">
