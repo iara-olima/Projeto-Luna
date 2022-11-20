@@ -16,6 +16,8 @@ namespace ProjetoLuna.Models
         public int Parcelas { get; set; }
         public Double? ValorParc { get; set; }
         public string Tipo { get; set; }
+        public int IdFornecedor { get; set; }   
+
 
     }
 }
