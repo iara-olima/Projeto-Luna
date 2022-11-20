@@ -65,7 +65,6 @@ namespace ProjetoLuna.Views
         {
             var clienteSelected = dataGridCliente.SelectedItem as Cliente;
 
-<<<<<<< Updated upstream
             if (clienteSelected == null)
             {
                 MessageBox.Show("Selecione o cliente que deseja editar.");
@@ -77,10 +76,10 @@ namespace ProjetoLuna.Views
                 form.ShowDialog();
                 this.Close();
             }
-=======
+
             var form = new CadCliente(clienteSelected);
             form.ShowDialog();
->>>>>>> Stashed changes
+
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
