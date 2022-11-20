@@ -49,11 +49,11 @@ namespace ProjetoLuna.Models
                     var compra = new Compra();
 
                     compra.Id = reader.GetInt32("id_cai");
-                    compra.Valor = DAOHelper.GetDouble(reader, "valor_com");
-                    compra.Data = DAOHelper.GetDateTime(reader, "data_com");
-                    compra.Hora = DAOHelper.GetDateTime(reader, "hora_com");
-                    compra.Parcela = reader.GetInt32("pagamento_com");
-                    compra.Descricao = DAOHelper.GetString(reader, "descricao_com");
+                    compra.Valor = DAOHelper.GetDouble(reader, "valor_comp");
+                    compra.Data = DAOHelper.GetDateTime(reader, "data_comp");
+                    compra.Hora = DAOHelper.GetDateTime(reader, "hora_comp");
+                    compra.Parcela = reader.GetInt32("pagamento_comp");
+                    compra.Descricao = DAOHelper.GetString(reader, "descricao_comp");
                     lista.Add(compra);
                 }
                 reader.Close();
@@ -70,7 +70,7 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "DELETE FROM Compra WHERE id_com = @id";
+                comando.CommandText = "DELETE FROM Compra WHERE id_comp = @id";
                 comando.Parameters.AddWithValue("@id", compra.Id);
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
@@ -91,8 +91,8 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Compra Set" +
-                    "valor_com = @Valor, data_com = @Data, " +
-                    "hora_com = @Hora, parcela_com = @Parcela, descricao_com = @Descricao";
+                    "valor_comp = @Valor, data_comp = @Data, " +
+                    "hora_comp = @Hora, parcela_comp = @Parcela, descricao_comp = @Descricao";
 
                 comando.Parameters.AddWithValue("@Valor", compra.Valor);
                 comando.Parameters.AddWithValue("@Data", compra.Data);
