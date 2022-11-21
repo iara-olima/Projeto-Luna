@@ -74,7 +74,7 @@
 
         <TextBlock Text="Compras:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="180" Grid.Column="1" Margin="131,128,0,0"/>
         <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top" Margin="0 95 160 0">
-            <Button x:Name="btRegistrar" Content="Registrar Compra" Click="btRegistrarVend_Click" Background="#FFC4719D" Width="204" Height="78" FontSize="20" BorderBrush="{x:Null}">
+            <Button x:Name="btRegistrar" Content="Registrar Compra" Click="btRegistrarComp_Click" Background="#FFC4719D" Width="204" Height="78" FontSize="20" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
@@ -87,10 +87,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Id}" Width="*"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
-                <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*"/>
                 <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
-                <DataGridTextColumn Header="Funcionário" Binding="{Binding Funcionario}" Width="*"/>
-                <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente}" Width="*"/>
+
             </DataGrid.Columns>
         </DataGrid>
 
