@@ -15,16 +15,13 @@ using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
-    /// <summary>
-    /// Lógica interna para Login.xaml
-    /// </summary>
     public partial class Login : Window
     {
+        private static Conexao _conn = new Conexao();
         public Login()
         {
             InitializeComponent();
         }
-
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
             string cpf = txtCPF.Text;
@@ -34,16 +31,14 @@ namespace ProjetoLuna.Views
                 form.Show();
                 this.Close();
             }
-            else
-            {
-                MessageBox.Show("A senha ou o CPF podem estar incorretos.");
-            }
+            else MessageBox.Show("A senha ou o CPF podem estar incorretos.");
 
+            _conn.Close();
         }
 
         private void BtCadastro_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.CadUser();
+            var form = new CadUser();
             form.Show();
             this.Close();
         }
