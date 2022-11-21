@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace ProjetoLuna.Models
 {
-    class CompraDAO
+    internal class CompraDAO
     {
         private static Conexao _conn = new Conexao();
         public void Insert(Compra compra)
@@ -18,20 +18,17 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
                 comando.CommandText = "insert into Compra value " +
-                    "(null, @Valor, @Data, @FormaPag, @Parcela, @Descricao, @ValorParc, @IdFornecedor, @IdFuncionario)";
+                    "(null, @Valor, @Data, @Hora, @Parcela, @Descricao, @ValorParc, @IdFornecedor, @IdFuncionario)";
                 comando.Parameters.AddWithValue("@Valor", compra.Valor);
                 comando.Parameters.AddWithValue("@Data", compra.Data);
-                comando.Parameters.AddWithValue("@FormaPag", compra.FormaPagamento);
+                comando.Parameters.AddWithValue("@Hora", compra.Hora);
                 comando.Parameters.AddWithValue("@Parcela", compra.Parcela);
                 comando.Parameters.AddWithValue("@Descricao", compra.Descricao);
                 comando.Parameters.AddWithValue("@ValorParc", compra.ValorParc);
-                comando.Parameters.AddWithValue("@IdFornecedor", compra.Fornecedor.Id);
-                comando.Parameters.AddWithValue("@IdFuncionario", compra.Funcionario.Id);
+                comando.Parameters.AddWithValue("@IdFornecedor", compra.IdFornecedor);
+                comando.Parameters.AddWithValue("@IdFuncionario", compra.IdFuncionario);
 
                 var resultado = comando.ExecuteNonQuery();
-                long compraId = comando.LastInsertedId;
-
-                InsertItens(compraId, compra.Itens);
                 if (resultado == 0)
                 {
                     throw new Exception("Ocorreram erros ao savar as informações!");
@@ -40,35 +37,6 @@ namespace ProjetoLuna.Models
             catch (Exception ex)
             {
                 throw ex;
-            }
-        }
-
-        private void InsertItens(long compraId, List<CompraItem> itens)
-        {
-
-            foreach (CompraItem item in itens)
-            {
-                var comando = _conn.Query();
-                comando.CommandText = "insert into Produto_Compra (qtd_compProd, valor_compProd, id_comp_fk, id_prod_fk)" + "values (@Quantidade, @Valor, @IdCompra, @IdProduto);";
-
-                comando.Parameters.AddWithValue("@Quantidade", item.Quantidade);
-                comando.Parameters.AddWithValue("@Valor", item.Valor);
-
-                /*
-                 *query.CommandText = "INSERT INTO Produto_Compra (id_comp_fk, id_prod_fk, quantidade_itenc, valor_itenc, valor_total_itenc) " +
-                    "VALUES (@compra, @produto, @quantidade, @valor, @valor_total)";
-
-                query.Parameters.AddWithValue("@compra", compraId);
-                query.Parameters.AddWithValue("@produto", item.Produto.Id);
-                query.Parameters.AddWithValue("@quantidade", item.Quantidade);
-                query.Parameters.AddWithValue("@valor", item.Valor);
-                query.Parameters.AddWithValue("@valor_total", item.ValorTotal);
-                 */
-
-                var result = comando.ExecuteNonQuery();
-
-                if (result == 0)
-                    throw new Exception("Os itens da compra não foi adicionada. Verifique e tente novamente.");
             }
         }
 
@@ -87,12 +55,12 @@ namespace ProjetoLuna.Models
                     compra.Id = reader.GetInt32("id_cai");
                     compra.Valor = DAOHelper.GetDouble(reader, "valor_comp");
                     compra.Data = DAOHelper.GetDateTime(reader, "data_comp");
-                    compra.FormaPagamento = DAOHelper.GetString(reader, "formaPag_comp");
+                    compra.Hora = DAOHelper.GetDateTime(reader, "hora_comp");
                     compra.Parcela = reader.GetInt32("pagamento_comp");
                     compra.Descricao = DAOHelper.GetString(reader, "descricao_comp");
                     compra.ValorParc = DAOHelper.GetDouble(reader, "valorParc_comp");
-                    compra.Fornecedor.Id = reader.GetInt32("id_forn_fk");
-                    compra.Fornecedor.Id = reader.GetInt32("id_fun_fk");
+                    compra.IdFornecedor = reader.GetInt32("id_forn_fk");
+                    compra.IdFornecedor = reader.GetInt32("id_fun_fk");
 
                     lista.Add(compra);
                 }
@@ -132,16 +100,17 @@ namespace ProjetoLuna.Models
 
                 comando.CommandText = "Update Compra Set" +
                     "valor_comp = @Valor, data_comp = @Data, " +
-                    "formaPag_comp = @FormaPag, parcela_comp = @Parcela, descricao_comp = @Descricao, valorParc_comp = @ValorParc, +" +
+                    "hora_comp = @Hora, parcela_comp = @Parcela, descricao_comp = @Descricao, valorParc_comp = @ValorParc, +" +
                     "id_forn_fk = @IdFornecedor, id_fun_fk = @IdFuncionario";
 
                 comando.Parameters.AddWithValue("@Valor", compra.Valor);
                 comando.Parameters.AddWithValue("@Data", compra.Data);
+                comando.Parameters.AddWithValue("@Hora", compra.Hora);
                 comando.Parameters.AddWithValue("@Pagamento", compra.Parcela);
                 comando.Parameters.AddWithValue("@Descricao", compra.Descricao);
                 comando.Parameters.AddWithValue("@ValorParc", compra.ValorParc);
-                comando.Parameters.AddWithValue("@IdFornecedor", compra.Fornecedor.Id);
-                comando.Parameters.AddWithValue("@IdFuncionario", compra.Funcionario.Id);
+                comando.Parameters.AddWithValue("@IdFornecedor", compra.IdFornecedor);
+                comando.Parameters.AddWithValue("@IdFuncionario", compra.IdFuncionario);
 
                 comando.Parameters.AddWithValue("@id", compra.Id);
 

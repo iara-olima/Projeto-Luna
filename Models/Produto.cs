@@ -12,8 +12,8 @@ namespace ProjetoLuna.Models
         public string Nome { get; set; }
         public string Marca { get; set; }
         public string Quantidade { get; set; }
-        public Double ValorVenda { get; set; }
-        public Double ValorCompra { get; set; }
+        public Double? ValorVenda { get; set; }
+        public Double? ValorCompra { get; set; }
         public string Descricao { get; set; }
 
         private bool _selected = false;
