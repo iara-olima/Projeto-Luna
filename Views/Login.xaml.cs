@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ProjetoLuna.Models;
-using ProjetoLuna.DataBase;
 
 namespace ProjetoLuna.Views
 {

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -19,24 +20,150 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class RegCompra : Window
     {
+        private Compra _compra = new Compra();
+
+        private List<CompraItem> _compraItensList = new List<CompraItem>();
+
         public RegCompra()
         {
             InitializeComponent();
+            Loaded += RegCompra_Loaded;
         }
 
-        private void btProdComp_Click(object sender, RoutedEventArgs e)
+        private void RegCompra_Loaded(object sender, RoutedEventArgs e)
         {
-
+            LoadData();
         }
 
-        private void btVoltar_Click(object sender, RoutedEventArgs e)
+        private void BtRegistrar_Click(object sender, RoutedEventArgs e)
         {
+            if (dtData.SelectedDate != null)
+                _compra.Data = (DateTime)dtData.SelectedDate;
 
+            if (comboBoxFuncionario.SelectedItem != null)
+                _compra.Funcionario = comboBoxFuncionario.SelectedItem as Funcionario;
+
+            if (comboBoxFornecedor.SelectedItem != null)
+                _compra.Fornecedor = comboBoxFornecedor.SelectedItem as Fornecedor;
+
+            _compra.FormaPagamento = txtFormaPagamento.Text;
+            _compra.ValorTotal = UpdateValorTotal();
+            _compra.Itens = _compraItensList;
+
+            SalvarCompra();
         }
 
-        private void btRegistrar_Click(object sender, RoutedEventArgs e)
+        private void BtnAddProduto_Click(object sender, RoutedEventArgs e)
         {
+            var window = new CompraProdutoListAdd();
+            window.ShowDialog();
 
+            var produtosSelecionadosList = window.ProdutosSelecionados;
+            var count = 1;
+
+            foreach (Produto produto in produtosSelecionadosList)
+            {
+
+                if (!_compraItensList.Exists(item => item.Produto.Id == produto.Id))
+                {
+                    _compraItensList.Add(new CompraItem()
+                    {
+                        Id = count,
+                        Produto = produto,
+                        Quantidade = 1,
+                        Valor = produto.ValorCompra,
+                        ValorTotal = produto.ValorCompra
+                    });
+
+                    count++;
+                }
+            }
+
+            LoadDataGrid();
+        }
+
+        private void BtnRemoverProduto_Click(object sender, RoutedEventArgs e)
+        {
+            var itemSelected = dataGrid.SelectedItem as CompraItem;
+            _compraItensList.Remove(itemSelected);
+            LoadDataGrid();
+        }
+
+        private void DataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            var item = e.Row.Item as CompraItem;
+
+            var value = (e.EditingElement as TextBox).Text;
+            _ = int.TryParse(value, out int quantidade);
+
+            if (quantidade > 1)
+            {
+                item.Quantidade = quantidade;
+                item.ValorTotal = quantidade * item.Valor;
+            }
+
+            LoadDataGrid();
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SalvarCompra()
+        {
+            try
+            {
+                if (Validate())
+                {
+                    var dao = new CompraDAO();
+                    dao.Insert(_compra);
+
+                    MessageBox.Show($"Compra realizada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Não Executado", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private double UpdateValorTotal()
+        {
+            double valor = 0.0;
+
+            _compraItensList.ForEach(item => valor += item.ValorTotal);
+
+            txtValorTotal.Text = valor.ToString("C");
+
+            return valor;
+        }
+
+        private void LoadDataGrid()
+        {
+            _ = UpdateValorTotal();
+            dataGrid.ItemsSource = null;
+            dataGrid.ItemsSource = _compraItensList;
+        }
+
+        private void LoadData()
+        {
+            dtPickerData.SelectedDate = DateTime.Now;
+
+            try
+            {
+                comboBoxFuncionario.ItemsSource = new FuncionarioDAO().List();
+                comboBoxFornecedor.ItemsSource = new FornecedorDAO().List();
+
+                comboBoxFuncionario.SelectedValue = Usuario.GetFuncionarioId();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Não Executado", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
