@@ -20,32 +20,30 @@
         <StackPanel Orientation="Horizontal" Margin="0 0 0 0" Height="500" Width="750">
             <StackPanel Width="350" Height="350" HorizontalAlignment="Left" Margin="0 0 0 0">
                 <TextBlock Text="Data:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
-                <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335"/>
-                <TextBlock Text="Hora:" Foreground="#741546" FontSize="25"/>
-                <materialDesign:TimePicker Width="335" HorizontalAlignment="Left"/>
+                <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335" Foreground="Black"/>
                 <TextBlock Text="Forma de Pagamento:" FontSize="25" Foreground="#741546"/>
-                <ComboBox x:Name="cbFormaPag" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <ComboBox x:Name="cbFormaPag" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20"/>
                 <TextBlock Text="Descrição:" Foreground="#741546" FontSize="25"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtDescricao" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4" Height="90"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtDescricao" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black" Height="90"/>
             </StackPanel>
             <StackPanel Width="350" Height="350" Margin="60 0 0 0">
-                <TextBlock Text="Valor:" Foreground="#741546" FontSize="25"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
                 <CheckBox x:Name="CheckParc" Content="Parcelado" FontSize="15" Width="100" HorizontalAlignment="Left" IsChecked="{Binding MyCheckedMode, Mode=TwoWay}"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Qtd Parc.:" Foreground="#741546" FontSize="20"/>
-                    <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
+                    <TextBox VerticalAlignment="Center" FontSize="15" x:Name="txtQtdParc" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
                     IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <TextBlock Text="Valor Parc.:" Foreground="#741546" FontSize="20"/>
-                    <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
+                    <TextBox VerticalAlignment="Center" FontSize="15" x:Name="txtValorParc" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
                     IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
                 </StackPanel>
                 <TextBlock Text="Fornecedor:" FontSize="25" Foreground="#741546" Margin="0 20 0 0"/>
-                <ComboBox x:Name="cbFornecedor" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <ComboBox x:Name="cbFornecedor" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20" DisplayMemberPath="Nome"
+                          SelectedValuePath="Id"/>
                 <TextBlock Text="Funcionário:" Foreground="#741546" FontSize="25"/>
-                <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20" DisplayMemberPath="Nome"
+                          SelectedValuePath="Id"/>
             </StackPanel>
 
         </StackPanel>
@@ -67,13 +65,26 @@
             </Button>
         </StackPanel>
 
-        <TextBlock Text="Produtos Comprados:" FontSize="30" Foreground="#741546" Height="40" Width="300" Grid.Column="1" Margin="10,105,390,489"/>
-        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProdutosVendidos" AutoGenerateColumns="False" CanUserAddRows="False" 
+        <TextBlock Text="Produtos Comprados:" FontSize="30" Foreground="#741546" Height="40" Grid.Column="1" Margin="10,65,390,489"/>
+        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProdutos" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="10,145,10,142">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Descricao" Binding="{Binding Descricao}" Width="450"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="250"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                <DataGridTemplateColumn Header="Remover">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Remover" 
+                                        Height="15" FontSize="10" Padding="0"
+                                        ToolTip="Remover produto da lista de compras" Click="BtRemoverProduto_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Margin="0 0 0 60" Width="400">
+            <TextBlock Text="Valor Total:" Foreground="#741546" FontSize="25"/>
+            <TextBox HorizontalAlignment="Left" x:Name="txtValorTotal" TextWrapping="Wrap" Width="335" Height="50" IsReadOnly="True" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black"/>
+        </StackPanel>
     </Grid>
 </Window>

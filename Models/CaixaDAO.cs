@@ -17,7 +17,7 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "insert into Cliente value " +
+                comando.CommandText = "insert into Caixa value " +
                     "(null, @Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos)";
                 comando.Parameters.AddWithValue("@Data", caixa.Data);
                 comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);

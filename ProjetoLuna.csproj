@@ -121,8 +121,6 @@
     <Compile Include="Models\Pagamento.cs" />
     <Compile Include="Models\PagamentoDAO.cs" />
     <Compile Include="Models\Produto.cs" />
-    <Compile Include="Models\ProdutoCompra.cs" />
-    <Compile Include="Models\ProdutoCompraDAO.cs" />
     <Compile Include="Models\ProdutoDAO.cs" />
     <Compile Include="Models\ProdutoVenda.cs" />
     <Compile Include="Models\ProdutoVendaDAO.cs" />

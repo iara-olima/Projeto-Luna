@@ -27,35 +27,47 @@ namespace ProjetoLuna.Views
         public RegCompra()
         {
             InitializeComponent();
+            cbFormaPag.Items.Add("Cartão");
+            cbFormaPag.Items.Add("Dinheiro");
+            cbFormaPag.Items.Add("Cheque");
+            cbFormaPag.Items.Add("Outro");
             Loaded += RegCompra_Loaded;
         }
 
         private void RegCompra_Loaded(object sender, RoutedEventArgs e)
         {
+            cbFuncionario.ItemsSource = new FuncionarioDAO().List();
+            cbFornecedor.ItemsSource = new FornecedorDAO().List();
             LoadData();
         }
 
-        private void BtRegistrar_Click(object sender, RoutedEventArgs e)
+        private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
             if (dtData.SelectedDate != null)
                 _compra.Data = (DateTime)dtData.SelectedDate;
 
-            if (comboBoxFuncionario.SelectedItem != null)
-                _compra.Funcionario = comboBoxFuncionario.SelectedItem as Funcionario;
+            if (cbFuncionario.SelectedItem != null)
+                _compra.Funcionario = cbFuncionario.SelectedItem as Funcionario;
 
-            if (comboBoxFornecedor.SelectedItem != null)
-                _compra.Fornecedor = comboBoxFornecedor.SelectedItem as Fornecedor;
+            if (int.TryParse(txtQtdParc.Text, out int qtdParc))
+                _compra.Parcela = qtdParc;
 
-            _compra.FormaPagamento = txtFormaPagamento.Text;
-            _compra.ValorTotal = UpdateValorTotal();
+            if (double.TryParse(txtValorParc.Text, out double valorParc))
+                _compra.ValorParc = valorParc;
+
+            if (cbFornecedor.SelectedItem != null)
+                _compra.Fornecedor = cbFornecedor.SelectedItem as Fornecedor;
+
+            _compra.FormaPagamento = cbFormaPag.Text;
+            _compra.Valor = UpdateValorTotal();
             _compra.Itens = _compraItensList;
 
             SalvarCompra();
         }
 
-        private void BtnAddProduto_Click(object sender, RoutedEventArgs e)
+        private void btProdComp_Click(object sender, RoutedEventArgs e)
         {
-            var window = new CompraProdutoListAdd();
+            var window = new ProdutoCompraFormWindow();
             window.ShowDialog();
 
             var produtosSelecionadosList = window.ProdutosSelecionados;
@@ -82,9 +94,9 @@ namespace ProjetoLuna.Views
             LoadDataGrid();
         }
 
-        private void BtnRemoverProduto_Click(object sender, RoutedEventArgs e)
+        private void BtRemoverProduto_Click(object sender, RoutedEventArgs e)
         {
-            var itemSelected = dataGrid.SelectedItem as CompraItem;
+            var itemSelected = dataGridProdutos.SelectedItem as CompraItem;
             _compraItensList.Remove(itemSelected);
             LoadDataGrid();
         }
@@ -105,24 +117,44 @@ namespace ProjetoLuna.Views
             LoadDataGrid();
         }
 
-        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
+            var form = new Views.CompraFormWindow();
+            form.Show();
             this.Close();
         }
 
-        private void SalvarCompra()
+        private void Registrar()
         {
             try
             {
-                if (Validate())
-                {
+               
                     var dao = new CompraDAO();
                     dao.Insert(_compra);
 
                     MessageBox.Show($"Compra realizada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     this.Close();
-                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Não Executado", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void SalvarCompra()
+        {
+            try
+            {
+               
+                    var dao = new CompraDAO();
+                    dao.Insert(_compra);
+
+                    MessageBox.Show($"Compra realizada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    this.Close();
+                
             }
             catch (Exception ex)
             {
@@ -144,20 +176,20 @@ namespace ProjetoLuna.Views
         private void LoadDataGrid()
         {
             _ = UpdateValorTotal();
-            dataGrid.ItemsSource = null;
-            dataGrid.ItemsSource = _compraItensList;
+            dataGridProdutos.ItemsSource = null;
+            dataGridProdutos.ItemsSource = _compraItensList;
         }
 
         private void LoadData()
         {
-            dtPickerData.SelectedDate = DateTime.Now;
+            dtData.SelectedDate = DateTime.Now;
 
             try
             {
-                comboBoxFuncionario.ItemsSource = new FuncionarioDAO().List();
-                comboBoxFornecedor.ItemsSource = new FornecedorDAO().List();
+                cbFuncionario.ItemsSource = new FuncionarioDAO().List();
+                cbFornecedor.ItemsSource = new FornecedorDAO().List();
 
-                comboBoxFuncionario.SelectedValue = Usuario.GetFuncionarioId();
+              //  cbFuncionario.SelectedValue = Usuario.GetFuncionarioId();
 
             }
             catch (Exception ex)

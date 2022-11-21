@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace ProjetoLuna.Models
 {
-    internal class CompraItem
+    public class CompraItem
     {
         public int Id { get; set; }
+
         public int Quantidade { get; set; }
+
         public double Valor { get; set; }
+
         public double ValorTotal { get; set; }
+
         public Produto Produto { get; set; }
+    
     }
 }

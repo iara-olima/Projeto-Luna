@@ -35,7 +35,7 @@ namespace ProjetoLuna.Views
             LoadDataGrid();
         }
 
-        private void BtPesquisar_Click(object sender, RoutedEventArgs e)
+        private void btPesquisar_Click(object sender, RoutedEventArgs e)
         {
             var text = txtPesquisa.Text;
 
@@ -43,7 +43,7 @@ namespace ProjetoLuna.Views
             dataGridProduto.ItemsSource = filteredList;
         }
 
-        private void BtAdicionar_Click(object sender, RoutedEventArgs e)
+        private void btAdicionar_Click(object sender, RoutedEventArgs e)
         {
             var itens = dataGridProduto.Items;
             ProdutosSelecionados.Clear();
