@@ -28,10 +28,19 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@IdFornecedor", compra.Fornecedor.Id);
                 comando.Parameters.AddWithValue("@IdFuncionario", compra.Funcionario.Id);
 
-                var resultado = comando.ExecuteNonQuery();
-                long compraId = comando.LastInsertedId;
 
-                InsertItens(compraId, compra.Itens);
+                var resultado = comando.ExecuteNonQuery();
+                comando.CommandText = "SELECT LAST_INSERT_ID();";
+                MySqlDataReader reader = comando.ExecuteReader();
+                reader.Read();
+                int IdCompra = reader.GetInt32("LAST_INSERT_ID()");
+
+                reader.Close();
+
+                InsertItens(IdCompra, compra.Itens);
+  
+
+                InsertItens(IdCompra, compra.Itens);
                 if (resultado == 0)
                 {
                     throw new Exception("Ocorreram erros ao savar as informações!");
@@ -48,14 +57,8 @@ namespace ProjetoLuna.Models
 
             foreach (CompraItem item in itens)
             {
-                var comando = _conn.Query();
-                comando.CommandText = "insert into Produto_Compra (qtd_compProd, valor_compProd, id_comp_fk, id_prod_fk)" + "values (@Quantidade, @Valor, @IdCompra, @IdProduto);";
-
-                comando.Parameters.AddWithValue("@Quantidade", item.Quantidade);
-                comando.Parameters.AddWithValue("@Valor", item.Valor);
-
-                /*
-                 *query.CommandText = "INSERT INTO Produto_Compra (id_comp_fk, id_prod_fk, quantidade_itenc, valor_itenc, valor_total_itenc) " +
+                var query = _conn.Query();
+                query.CommandText = "INSERT INTO Produto_Compra (quantidade_itenc, valor_itenc, valor_total_itenc, id_comp_fk, id_prod_fk) " +
                     "VALUES (@compra, @produto, @quantidade, @valor, @valor_total)";
 
                 query.Parameters.AddWithValue("@compra", compraId);
@@ -63,9 +66,8 @@ namespace ProjetoLuna.Models
                 query.Parameters.AddWithValue("@quantidade", item.Quantidade);
                 query.Parameters.AddWithValue("@valor", item.Valor);
                 query.Parameters.AddWithValue("@valor_total", item.ValorTotal);
-                 */
 
-                var result = comando.ExecuteNonQuery();
+                var result = query.ExecuteNonQuery();
 
                 if (result == 0)
                     throw new Exception("Os itens da compra não foi adicionada. Verifique e tente novamente.");
@@ -116,40 +118,6 @@ namespace ProjetoLuna.Models
                 if (resultado == 0)
                 {
                     throw new Exception("Ocorreram problemas ao deletar as informações");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void Update(Compra compra)
-        {
-            try
-            {
-                var comando = _conn.Query();
-
-                comando.CommandText = "Update Compra Set" +
-                    "valor_comp = @Valor, data_comp = @Data, " +
-                    "formaPag_comp = @FormaPag, parcela_comp = @Parcela, descricao_comp = @Descricao, valorParc_comp = @ValorParc, +" +
-                    "id_forn_fk = @IdFornecedor, id_fun_fk = @IdFuncionario";
-
-                comando.Parameters.AddWithValue("@Valor", compra.Valor);
-                comando.Parameters.AddWithValue("@Data", compra.Data);
-                comando.Parameters.AddWithValue("@Pagamento", compra.Parcela);
-                comando.Parameters.AddWithValue("@Descricao", compra.Descricao);
-                comando.Parameters.AddWithValue("@ValorParc", compra.ValorParc);
-                comando.Parameters.AddWithValue("@IdFornecedor", compra.Fornecedor.Id);
-                comando.Parameters.AddWithValue("@IdFuncionario", compra.Funcionario.Id);
-
-                comando.Parameters.AddWithValue("@id", compra.Id);
-
-                var resultado = comando.ExecuteNonQuery();
-
-                if (resultado == 0)
-                {
-                    throw new Exception("Ocorreram erros ao atualizar as informações");
                 }
             }
             catch (Exception ex)

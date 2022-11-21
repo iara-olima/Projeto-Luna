@@ -124,24 +124,6 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void Registrar()
-        {
-            try
-            {
-
-                var dao = new CompraDAO();
-                dao.Insert(_compra);
-
-                MessageBox.Show($"Compra realizada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                this.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Não Executado", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
 
         private void SalvarCompra()
         {
@@ -152,8 +134,6 @@ namespace ProjetoLuna.Views
                 dao.Insert(_compra);
 
                 MessageBox.Show($"Compra realizada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                this.Close();
 
             }
             catch (Exception ex)
