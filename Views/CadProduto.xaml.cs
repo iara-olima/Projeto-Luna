@@ -27,6 +27,7 @@ namespace ProjetoLuna.Views
         {
             InitializeComponent();
             Loaded += CadProduto_Loaded;
+           
 
         }
 
@@ -35,11 +36,13 @@ namespace ProjetoLuna.Views
             InitializeComponent();
             Loaded += CadProduto_Loaded;
             _prod = produto;
+
         }
 
         //Verifica se a variavel _prod esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void CadProduto_Loaded(object sender, RoutedEventArgs e)
         {
+            txtCodigo.Text = _prod.Id.ToString();
             if (_prod.Id > 0)
             {
                 MessageBox.Show("Produto: " + _prod.Nome);

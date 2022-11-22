@@ -27,6 +27,8 @@
                 <TextBox HorizontalAlignment="Left" x:Name="txtDescricao" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black" Height="90"/>
             </StackPanel>
             <StackPanel Width="350" Height="350" Margin="60 0 0 0">
+                <TextBlock Text="Valor:" Foreground="#741546" FontSize="25"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black" Height="40"/>
                 <CheckBox x:Name="CheckParc" Content="Parcelado" FontSize="15" Width="100" HorizontalAlignment="Left" IsChecked="{Binding MyCheckedMode, Mode=TwoWay}"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Qtd Parc.:" Foreground="#741546" FontSize="20"/>
@@ -39,7 +41,7 @@
                     IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
                 </StackPanel>
                 <TextBlock Text="Fornecedor:" FontSize="25" Foreground="#741546" Margin="0 20 0 0"/>
-                <ComboBox x:Name="cbFornecedor" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20" DisplayMemberPath="Nome"
+                <ComboBox x:Name="cbFornecedor" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20" DisplayMemberPath="NomeFantasia"
                           SelectedValuePath="Id"/>
                 <TextBlock Text="Funcionário:" Foreground="#741546" FontSize="25"/>
                 <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20" DisplayMemberPath="Nome"
@@ -65,11 +67,13 @@
             </Button>
         </StackPanel>
 
-        <TextBlock Text="Produtos Comprados:" FontSize="30" Foreground="#741546" Height="40" Grid.Column="1" Margin="10,65,390,489"/>
+        <StackPanel Grid.Column="1" Margin="10,65,390,489" Height="40">
+            <TextBlock Text="Produtos Comprados:" FontSize="30" Foreground="#741546" Height="40"/>
+        </StackPanel>
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProdutos" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="10,145,10,142">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Produto}" Width="*"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
                 <DataGridTemplateColumn Header="Remover">
                     <DataGridTemplateColumn.CellTemplate>

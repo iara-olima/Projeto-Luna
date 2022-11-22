@@ -59,7 +59,9 @@ namespace ProjetoLuna.Views
                 _compra.Fornecedor = cbFornecedor.SelectedItem as Fornecedor;
 
             _compra.FormaPagamento = cbFormaPag.Text;
-            _compra.Valor = UpdateValorTotal();
+            if (double.TryParse(txtValor.Text, out double Valor))
+                _compra.Valor = Valor;
+
             _compra.Itens = _compraItensList;
 
             SalvarCompra();
@@ -124,24 +126,6 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void Registrar()
-        {
-            try
-            {
-
-                var dao = new CompraDAO();
-                dao.Insert(_compra);
-
-                MessageBox.Show($"Compra realizada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                this.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Não Executado", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
 
         private void SalvarCompra()
         {
@@ -152,8 +136,13 @@ namespace ProjetoLuna.Views
                 dao.Insert(_compra);
 
                 MessageBox.Show($"Compra realizada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                this.Close();
+                cbFuncionario.SelectedIndex = -1;
+                cbFornecedor.SelectedIndex = -1;
+                txtQtdParc.Clear();
+                txtValorParc.Clear();
+                txtValor.Clear();
+                txtDescricao.Clear();
+                txtValorTotal.Clear();
 
             }
             catch (Exception ex)

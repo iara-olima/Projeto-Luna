@@ -12,26 +12,33 @@ namespace ProjetoLuna.Models
 {
     internal class VendaDAO
     {
-
         private static Conexao _conn = new Conexao();
-
         public void Insert(Venda venda)
         {
             try
             {
                 var comando = _conn.Query();
-
-                comando.CommandText = "insert into Venda values (null, @Valor, @Hora, @Data, @IdFuncionario, @IdCliente);";
-
-                comando.Parameters.AddWithValue("@valor", venda.Valor);
-                comando.Parameters.AddWithValue("@Hora", venda.Hora);
+                comando.CommandText = "insert into Venda value " +
+                    "(null, @Valor, @Data, @Hora, @IdFuncionario, @IdCliente)";
+                comando.Parameters.AddWithValue("@Valor", venda.Valor);
                 comando.Parameters.AddWithValue("@Data", venda.Data);
-                comando.Parameters.AddWithValue("@IdFuncionario", venda.IdFuncionario);
-                comando.Parameters.AddWithValue("@IdCliente", venda.IdCliente);
-
+                comando.Parameters.AddWithValue("@Hora", venda.Hora);
+                comando.Parameters.AddWithValue("@IdFuncionario", venda.Funcionario.Id);
+                comando.Parameters.AddWithValue("@IdCliente", venda.Cliente.Id);
+              
 
                 var resultado = comando.ExecuteNonQuery();
+                comando.CommandText = "SELECT LAST_INSERT_ID();";
+                MySqlDataReader reader = comando.ExecuteReader();
+                reader.Read();
+                int IdVenda = reader.GetInt32("LAST_INSERT_ID()");
 
+                reader.Close();
+
+                InsertItens(IdVenda, venda.Itens);
+
+
+                InsertItens(IdVenda, venda.Itens);
                 if (resultado == 0)
                 {
                     throw new Exception("Ocorreram erros ao salvar as informações!");
@@ -43,6 +50,26 @@ namespace ProjetoLuna.Models
             }
         }
 
+        private void InsertItens(long vendaId, List<VendaItem> itens)
+        {
+
+            foreach (VendaItem item in itens)
+            {
+                var query = _conn.Query();
+                query.CommandText = "INSERT INTO Produto_Venda (quantidade_itenv, valor_itenv, valor_total_itenv, id_vend_fk, id_prod_fk) " +
+                    "VALUES (@venda, @produto, @quantidade, @valor, @valor_total)";
+
+                query.Parameters.AddWithValue("@venda", vendaId);
+                query.Parameters.AddWithValue("@produto", item.Produto.Id);
+                query.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                query.Parameters.AddWithValue("@valor", item.Valor);
+
+                var result = query.ExecuteNonQuery();
+
+                if (result == 0)
+                    throw new Exception("Os itens da venda não foi adicionada. Verifique e tente novamente.");
+            }
+        }
         public List<Venda> List()
         {
             try
@@ -62,8 +89,8 @@ namespace ProjetoLuna.Models
                     venda.Valor = reader.GetDouble("valor_vend");
                     venda.Hora = DAOHelper.GetDateTime(reader, "hora_vend");
                     venda.Data = reader.GetDateTime("data_vend");
-                    venda.IdFuncionario = reader.GetInt32("id_fun_fk");
-                    venda.IdCliente = reader.GetInt32("id_cli_fk");
+                    venda.Funcionario.Id = reader.GetInt32("id_fun_fk");
+                    venda.Cliente.Id = reader.GetInt32("id_cli_fk");
                     lista.Add(venda);
                 }
 
@@ -110,8 +137,8 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@valor_vend", venda.Valor);
                 comando.Parameters.AddWithValue("@hora_vend", venda.Hora);
                 comando.Parameters.AddWithValue("@data_vend", venda.Data);
-                comando.Parameters.AddWithValue("@id_fun_fk", venda.IdFuncionario);
-                comando.Parameters.AddWithValue("@id_cli_fk", venda.IdCliente);
+                comando.Parameters.AddWithValue("@id_fun_fk", venda.Funcionario.Id);
+                comando.Parameters.AddWithValue("@id_cli_fk", venda.Cliente.Id);
 
                 comando.Parameters.AddWithValue("@id", venda.Id);
 

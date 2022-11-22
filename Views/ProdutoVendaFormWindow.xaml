@@ -8,9 +8,9 @@
         Title="ProdutoVendaFormWindow" Height="450" Width="800" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 55 70 0" Height="30">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 45 70 0" Height="40">
             <TextBlock Text="Pesquisar:" Foreground="#741546" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="90" Margin="0 0 2 0"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtPesquisa" Width="335" Height="25" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black"/>
+            <TextBox HorizontalAlignment="Left" x:Name="txtPesquisa" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black"/>
             <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Icons/lupa.png"/>
         </StackPanel>
         <Button Content="" HorizontalAlignment="Right" Margin="0,55,70,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Click="btPesquisar_Click" Cursor="Hand"/>
@@ -25,15 +25,23 @@
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
                 <DataGridTextColumn Header="Valor Venda" Binding="{Binding ValorVenda}"/>
                 <DataGridTextColumn Header="Valor Compra" Binding="{Binding ValorCompra}"/>
+                <DataGridTemplateColumn Header="Adicionar?">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Click="btOK_Click" Width="100" Height="50" Content="OK" FontSize="22" FontWeight="Medium" Background="#741546" BorderBrush="{x:Null}" VerticalAlignment="Bottom" IsDefault="True" Margin="0 0 0 40">
+        <Button Click="btAdicionar_Click" Width="250" Height="40"  Content="Adicionar Produto" FontSize="22" FontWeight="Medium" Background="#741546" BorderBrush="{x:Null}" VerticalAlignment="Bottom" HorizontalAlignment="Right" IsDefault="True" Margin="0 0 40 40">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
+
     </Grid>
 </Window>
