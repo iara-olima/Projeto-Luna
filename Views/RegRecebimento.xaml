@@ -18,7 +18,7 @@
                 <TextBlock Text="Data:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
                 <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335"/>
                 <TextBlock Text="Hora:" Foreground="#741546" FontSize="25"/>
-                <materialDesign:TimePicker Width="335" HorizontalAlignment="Left"/>
+                <materialDesign:TimePicker Name="Thora" Width="335" HorizontalAlignment="Left"/>
                 <TextBlock Text="Forma de Pagamento:" FontSize="25" Foreground="#741546"/>
                 <ComboBox x:Name="cbFormaPag" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
                 <TextBlock Text="Vencimento:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
@@ -30,12 +30,12 @@
                 <CheckBox x:Name="CheckParc" Content="Parcelado" FontSize="15" Width="100" HorizontalAlignment="Left" IsChecked="{Binding MyCheckedMode, Mode=TwoWay}"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Qtd Parc.:" Foreground="#741546" FontSize="20"/>
-                    <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
+                    <TextBox Name="txtQtdParc"  VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
                     IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <TextBlock Text="Valor Parc.:" Foreground="#741546" FontSize="20"/>
-                    <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
+                    <TextBox VerticalAlignment="Center" Name="txtValorParc" HorizontalAlignment="Left" Width="200" Text="{Binding SomeValue, Mode=TwoWay}"   
                     IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
                 </StackPanel>
                 <TextBlock Text="Caixa:" FontSize="25" Foreground="#741546" Margin="0 20 0 0"/>

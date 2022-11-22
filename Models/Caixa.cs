@@ -14,6 +14,7 @@ namespace ProjetoLuna.Models
         public Double? SaldoFinal { get; set; }
         public Double? Recebimentos { get; set; }
         public Double? Pagamentos { get; set; }
+        public int IdFuncionario { get; set; }
         public Funcionario Funcionario { get; set; }
 
     }

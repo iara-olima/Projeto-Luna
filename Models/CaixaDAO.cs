@@ -17,13 +17,14 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "insert into Caixa value " +
-                    "(null, @Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos)";
+                comando.CommandText = "call inserirCaixa(@Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos, @IdFuncionario);";
                 comando.Parameters.AddWithValue("@Data", caixa.Data);
                 comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);
                 comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
                 comando.Parameters.AddWithValue("@Recebimentos", caixa.Recebimentos);
                 comando.Parameters.AddWithValue("@Pagamentos", caixa.Pagamentos);
+                comando.Parameters.AddWithValue("@IdFuncionario", caixa.Funcionario.Id);
+
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
                 {
@@ -49,8 +50,8 @@ namespace ProjetoLuna.Models
 
                     caixa.Id = reader.GetInt32("id_cai");
                     caixa.Data = DAOHelper.GetDateTime(reader, "data_cai");
-                    caixa.SaldoInicial = DAOHelper.GetDouble(reader, "saldo_inicial_cai");
-                    caixa.SaldoFinal = DAOHelper.GetDouble(reader, "saldo_final_cai");
+                    caixa.SaldoInicial = DAOHelper.GetDouble(reader, "saldoInic_cai");
+                    caixa.SaldoFinal = DAOHelper.GetDouble(reader, "saldoFin_cai");
                     caixa.Recebimentos = DAOHelper.GetDouble(reader, "recebimento_cai");
                     caixa.Pagamentos = DAOHelper.GetDouble(reader, "pagamento_cai");
                     lista.Add(caixa);
@@ -87,15 +88,14 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Caixa Set" +
-                    "data_cai = @Data, saldo_inicial_cai = @SaldoInicial, " +
-                    "saldo_final_cai = @SaldoFinal, recebimento_cai = @Recebimentos, pagamento_cai = @Pagamentos";
+                comando.CommandText = "call atualizarCaixa(@id, @Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos, @IdFuncionario);";
 
                 comando.Parameters.AddWithValue("@Data", caixa.Data);
                 comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);
                 comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
                 comando.Parameters.AddWithValue("@Recebimentos", caixa.Recebimentos);
                 comando.Parameters.AddWithValue("@Pagamentos", caixa.Pagamentos);
+                comando.Parameters.AddWithValue("@IdFuncionario", caixa.Funcionario.Id);
 
                 comando.Parameters.AddWithValue("@id", caixa.Id);
 

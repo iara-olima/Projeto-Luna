@@ -15,7 +15,7 @@ namespace ProjetoLuna.Models
         public string Status { get; set; }
         public DateTime? Vencimento { get; set; }
         public DateTime? Hora { get; set; }
-        public int IdCaixa { get; set; }
-        public int IdDespesa { get; set; }
+        public Caixa Caixa { get; set; }
+        public Despesa Despesa { get; set; }
     }
 }

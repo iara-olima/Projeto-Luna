@@ -21,7 +21,7 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class CadFuncionario : Window
     {
-        private Funcionario _fun = new Funcionario();
+        public Funcionario _fun = new Funcionario();
         public CadFuncionario()
         {
             InitializeComponent();

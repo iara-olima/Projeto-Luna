@@ -37,6 +37,9 @@ namespace ProjetoLuna.Views
             _desp = despesa;
             dtData.SelectedDate = DateTime.Now;
             Thora.SelectedTime = DateTime.Now;
+            cbTipo.Items.Add("Energia");
+            cbTipo.Items.Add("Manutenção");
+            cbTipo.Items.Add("Outro");
         }
 
         //Verifica se a variavel _desp esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
