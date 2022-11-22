@@ -91,7 +91,6 @@ foreign key (id_forn_fk) references Fornecedor (id_forn),
 foreign key (id_fun_fk) references Funcionario (id_fun)
 );
 
-
 create table Produto_Venda (
 id_prodVend int primary key auto_increment,
 quantidade_itenv varchar(100),
@@ -390,11 +389,11 @@ $$ delimiter ;
 
 #Inserir Compra
 delimiter $$
-	create procedure inserirCompra(valor double, data date, hora time, parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
+	create procedure inserirCompra(valor double, data date, forma varchar(300), parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
     begin
 		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
 			if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
-				insert into Compra values(null, valor, data, hora, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
+				insert into Compra values(null, valor, data, forma, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
             else
 				select "O fornecedor selecionado não existe no cadastro!" as ERRO;
             end if;
@@ -579,5 +578,3 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
-select * from Produto;
