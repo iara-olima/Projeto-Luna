@@ -12,8 +12,11 @@ namespace ProjetoLuna.Models
         public Double? Valor { get; set; }
         public DateTime? Hora { get; set; }
         public DateTime? Data { get; set; }
-        public int IdFuncionario { get; set; }
-        public int IdCliente { get; set; }  
+        public Funcionario Funcionario { get; set; }
+
+        public Cliente Cliente { get; set; }
+
+        public List<VendaItem> Itens { get; set; } = new List<VendaItem>();
 
     }
 }

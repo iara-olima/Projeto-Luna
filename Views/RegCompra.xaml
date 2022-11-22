@@ -73,7 +73,7 @@
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProdutos" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="10,145,10,142">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Produto}" Width="*"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
                 <DataGridTemplateColumn Header="Remover">
                     <DataGridTemplateColumn.CellTemplate>
