@@ -31,8 +31,8 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Status", rec.Status);
                 comando.Parameters.AddWithValue("@Vencimento", rec.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", rec.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", rec.IdCaixa);
-                comando.Parameters.AddWithValue("@IdVenda", rec.IdVenda);
+                comando.Parameters.AddWithValue("@IdCaixa", rec.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdVenda", rec.Venda.Id);
             }
             catch (Exception ex)
             {
@@ -104,8 +104,8 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Status", recebimento.Status);
                 comando.Parameters.AddWithValue("@Vencimento", recebimento.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", recebimento.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", recebimento.IdCaixa);
-                comando.Parameters.AddWithValue("@IdVenda", recebimento.IdVenda);
+                comando.Parameters.AddWithValue("@IdCaixa", recebimento.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdVenda", recebimento.Venda.Id);
 
                 comando.Parameters.AddWithValue("@id", recebimento.Id);
 
