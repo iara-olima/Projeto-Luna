@@ -61,7 +61,6 @@ namespace ProjetoLuna.Models
                 {
                     var funcionario= new Funcionario();
 
-
                     funcionario.Id = reader.GetInt32("id_fun");
                     funcionario.Nome = DAOHelper.GetString(reader, "nome_fun");
                     funcionario.DataNasc = DAOHelper.GetDateTime(reader, "dataNasc_fun");
