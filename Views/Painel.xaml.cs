@@ -28,6 +28,7 @@ namespace ProjetoLuna.Views
 
         private void Painel_Loaded(object sender, RoutedEventArgs e)
         {
+            usuarioLogadoLabel.Content = Usuario.GetInstance().Nome;
         }
 
         private void btFuncionario_Click(object sender, RoutedEventArgs e)

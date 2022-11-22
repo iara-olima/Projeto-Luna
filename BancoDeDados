@@ -575,3 +575,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
+
+delete from Usuario where (id_usu = 3);
+select * from usuario;

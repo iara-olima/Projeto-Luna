@@ -37,7 +37,7 @@ namespace ProjetoLuna.Views
 
         private void btCancelar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Principal();
+            var form = new Painel();
             form.Show();
             this.Close();
         }
@@ -72,18 +72,10 @@ namespace ProjetoLuna.Views
         {
             try
             {
+                var  userLogado = Usuario.GetInstance();
                 var dao = new FuncionarioDAO();
-                funcionarioCB.ItemsSource = dao.List();
-                //comando.CommandText = "select * from Funcionario;";
-                //MySqlDataReader reader = comando.ExecuteReader();
 
-                //while (reader.Read())
-                //{
-                //    var funcionario = new Funcionario();
-                //    funcionario.Nome = reader.GetString("nome_fun");
-                //    funcionarioCB.Items.Add(funcionario.Nome);
-                //}
-                //_conn.Close();
+                funcionarioCB.ItemsSource = dao.List().Where(func => func.Id != userLogado.IdFuncionario).ToList();
             }
             catch (Exception ex) 
             {

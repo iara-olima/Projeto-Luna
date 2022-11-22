@@ -35,6 +35,8 @@ namespace ProjetoLuna.Models
                 {
                     usuario = Usuario.GetInstance();
                     usuario.Id = reader.GetInt32("id_usu");
+                    usuario.Nome = reader.GetString("nome_fun");
+                    usuario.IdFuncionario = reader.GetInt32("id_fun_fk");
                     usuario.UsuarioCPF = reader.GetString("cpf_usu");
                 }
 
@@ -96,22 +98,6 @@ namespace ProjetoLuna.Models
             }
             catch (Exception ex) { throw ex; }
         }
-
-        public void Delete(Usuario usuario)
-        {
-            try
-            {
-                var comando = _conn.Query();
-
-                comando.CommandText = "delete from Usuario where id_usu = @id";
-                comando.Parameters.AddWithValue("id", usuario.Id);
-                var resultado = comando.ExecuteNonQuery();
-
-                if (resultado == 0) throw new Exception("Ocorreram problemas ao deletar as informações");
-            }
-            catch (Exception ex) { throw ex; }
-        }
-
         public void Update(Usuario usuario)
         {
             try
