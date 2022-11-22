@@ -21,7 +21,7 @@
             <StackPanel Orientation="Horizontal" Height="250" Width="750">
                 <StackPanel Width="350" HorizontalAlignment="Left">
                     <TextBlock Text="Valor:" Foreground="#741546" FontSize="25"/>
-                    <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black" Margin="0 0 0 15"/>
+                    <TextBox HorizontalAlignment="Left" x:Name="txtValor" IsReadOnly="True" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black" Margin="0 0 0 15"/>
                     <TextBlock Text="Data:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
                     <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335" Margin="0 0 0 15"/>
                     <TextBlock Text="Hora:" Foreground="#741546" FontSize="25"/>
