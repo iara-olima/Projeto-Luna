@@ -17,7 +17,7 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "call inserirCaixa(@Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos, @IdFuncionario)";
+                comando.CommandText = "call inserirCaixa(@Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos, @IdFuncionario);";
                 comando.Parameters.AddWithValue("@Data", caixa.Data);
                 comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);
                 comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
@@ -88,15 +88,14 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Caixa Set" +
-                    "data_cai = @Data, saldo_inicial_cai = @SaldoInicial, " +
-                    "saldo_final_cai = @SaldoFinal, recebimento_cai = @Recebimentos, pagamento_cai = @Pagamentos";
+                comando.CommandText = "call atualizarCaixa(@id, @Data, @SaldoInicial, @SaldoFinal, @Recebimentos, @Pagamentos, @IdFuncionario);";
 
                 comando.Parameters.AddWithValue("@Data", caixa.Data);
                 comando.Parameters.AddWithValue("@SaldoInicial", caixa.SaldoInicial);
                 comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
                 comando.Parameters.AddWithValue("@Recebimentos", caixa.Recebimentos);
                 comando.Parameters.AddWithValue("@Pagamentos", caixa.Pagamentos);
+                comando.Parameters.AddWithValue("@IdFuncionario", caixa.Funcionario.Id);
 
                 comando.Parameters.AddWithValue("@id", caixa.Id);
 
