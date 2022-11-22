@@ -25,7 +25,7 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Hora", venda.Hora);
                 comando.Parameters.AddWithValue("@IdFuncionario", venda.Funcionario.Id);
                 comando.Parameters.AddWithValue("@IdCliente", venda.Cliente.Id);
-              
+             
 
                 var resultado = comando.ExecuteNonQuery();
                 comando.CommandText = "SELECT LAST_INSERT_ID();";
@@ -34,8 +34,6 @@ namespace ProjetoLuna.Models
                 int IdVenda = reader.GetInt32("LAST_INSERT_ID()");
 
                 reader.Close();
-
-                InsertItens(IdVenda, venda.Itens);
 
 
                 InsertItens(IdVenda, venda.Itens);
