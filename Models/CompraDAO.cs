@@ -17,8 +17,7 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "insert into Compra value " +
-                    "(null, @Valor, @Data, @FormaPag, @Parcela, @Descricao, @ValorParc, @IdFornecedor, @IdFuncionario)";
+                comando.CommandText = "call inserirCompra(@Valor, @Data, @FormaPag, @Parcela, @Descricao, @ValorParc, @IdFornecedor, @IdFuncionario);";
                 comando.Parameters.AddWithValue("@Valor", compra.Valor);
                 comando.Parameters.AddWithValue("@Data", compra.Data);
                 comando.Parameters.AddWithValue("@FormaPag", compra.FormaPagamento);
