@@ -156,7 +156,7 @@ foreign key (id_desp_fk) references Despesa (id_desp)
 ); 
 
 #CRIAÇÃO AUTOMATICA DE USUARIO ADM
-insert into Funcionario values(null, "ADM", "0000-00-00", 0, 0, "a", "0", "I", "ADM");
+insert into Funcionario values(null, "ADM", "2005-03-11", 0, 0, "a", "0", "I", "ADM");
 insert into Usuario values(null, 0, "adm", 1);
 
 #PROCEDIMENTOS DO PROJETO LUNA
