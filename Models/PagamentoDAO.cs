@@ -29,8 +29,8 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Status", pag.Status);
                 comando.Parameters.AddWithValue("@Vencimento", pag.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", pag.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", pag.IdCaixa);
-                comando.Parameters.AddWithValue("@IdDespesa", pag.IdDespesa);
+                comando.Parameters.AddWithValue("@IdCaixa", pag.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdDespesa", pag.Despesa.Id);
             }
             catch (Exception ex)
             {
@@ -62,8 +62,8 @@ namespace ProjetoLuna.Models
                     pagamento.Status = DAOHelper.GetString(reader, "stts_pag");
                     pagamento.Vencimento = DAOHelper.GetDateTime(reader, "vencimento_pag");
                     pagamento.Hora = DAOHelper.GetDateTime(reader, "hora_pag");
-                    pagamento.IdCaixa = reader.GetInt32("id_cai_fk");
-                    pagamento.IdDespesa = reader.GetInt32("id_desp_fk");
+                    pagamento.Caixa.Id = reader.GetInt32("id_cai_fk");
+                    pagamento.Despesa.Id = reader.GetInt32("id_desp_fk");
                     lista.Add(pagamento);
                 }
                 reader.Close();
@@ -111,8 +111,8 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Status", pag.Status);
                 comando.Parameters.AddWithValue("@Vencimento", pag.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", pag.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", pag.IdCaixa);
-                comando.Parameters.AddWithValue("@IdDespesa", pag.IdDespesa);
+                comando.Parameters.AddWithValue("@IdCaixa", pag.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdDespesa", pag.Despesa.Id);
 
                 comando.Parameters.AddWithValue("@id", pag.Id);
 

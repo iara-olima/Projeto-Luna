@@ -19,8 +19,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Cliente value " +
-                    "(null, @Nome, @DataNasc, @Email, @Telefone, @CPF, @Endereco, @Sexo)";
+                comando.CommandText = "call inserirCliente(@Nome, @DataNasc, @Email, @Telefone, @CPF, @Endereco, @Sexo);";
 
                 comando.Parameters.AddWithValue("@Nome", cliente.Nome);
                 comando.Parameters.AddWithValue("@DataNasc", cliente.DataNasc?.ToString("yyyy-MM-dd"));
@@ -104,9 +103,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Cliente Set " +
-                    "nome_cli = @Nome, dataNasc_cli = @DataNasc, email_cli = @Email, telefone_cli = @Telefone, cpf_cli = @CPF, endereco_cli = @Endereco, sexo_cli = @Sexo " +
-                    "Where id_cli = @id";
+                comando.CommandText = "call atualizarCliente(@id, @Nome, @DataNasc, @Email, @Telefone, @CPF, @Endereco, @Sexo);";
 
                 comando.Parameters.AddWithValue("@id", cliente.Id);
                 comando.Parameters.AddWithValue("@Nome", cliente.Nome);
