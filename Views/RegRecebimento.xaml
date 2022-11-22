@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegRecebimento"
         mc:Ignorable="d"
-        Title="RegRecebimento" Height="650" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="Luna - Moda Íntima" Height="650" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <Image HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="/Icons/seta_icon.png"/>
         <Button Content="" HorizontalAlignment="Left" Margin="11,12,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_Click" Cursor="Hand"/>

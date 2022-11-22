@@ -23,14 +23,14 @@ namespace ProjetoLuna.Views
         public Painel()
         {
             InitializeComponent();
+            Loaded += Painel_Loaded;
         }
 
         private void Painel_Loaded(object sender, RoutedEventArgs e)
-        { 
-         //   txtBlockNomeUsuario.Text = Funcionario.GetInstance().Funcionario.Nome;
+        {
         }
 
-            private void btFuncionario_Click(object sender, RoutedEventArgs e)
+        private void btFuncionario_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FuncionarioFormWindow();
             form.Show();
@@ -96,6 +96,13 @@ namespace ProjetoLuna.Views
         private void btFornecedor_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.FornecedorFormWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void btUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new CadUser();
             form.Show();
             this.Close();
         }

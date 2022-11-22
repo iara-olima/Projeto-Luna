@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="PagamentoFormWindow" Height="350" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="Luna - Moda Íntima" Height="350" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <!--MENU-->
         <Menu>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="ProdutoVendaFormWindow" Height="450" Width="800" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="Luna - Moda Íntima" Height="450" Width="800" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 45 70 0" Height="40">

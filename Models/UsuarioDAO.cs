@@ -18,6 +18,7 @@ namespace ProjetoLuna.Models
 
         public Usuario GetByUsuario(string usuarioCpf, string senha)
         {
+            _conn.Restart();
             try
             {
                 var query = _conn.Query();

@@ -5,38 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-          Title="CadUser" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+          Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/UserIconPurple.png">
     <Grid Background="#370f24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="521*"/>
-            <RowDefinition Height="45*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label HorizontalAlignment="Left" x:Name="lbFunc" Margin="361,248,0,0" VerticalAlignment="Top" Width="385" FontSize="30" Content="Selecionar Funcionário:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <PasswordBox HorizontalAlignment="Left" x:Name="txtSenha" Margin="361,357,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <PasswordBox HorizontalAlignment="Left" x:Name="txtSenhaConfirma" Margin="361,408,0,0" VerticalAlignment="Top" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-        <Button Click="btCadastrar_Click" Margin="374,480,0,0"  Width="151" Height="50" HorizontalAlignment="Left" Content="CADASTRAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Click="btCancelar_Click" Margin="600,480,0,0"  Width="150" Height="50" HorizontalAlignment="Left" Content="CANCELAR" FontSize="22" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Cursor="Hand">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Image Source="/Imagens/Design PDS (1).png" Margin="-443,-245,720,-245" Grid.RowSpan="2"/>
-        <Label Content="Bem Vindo!" HorizontalAlignment="Left" Margin="361,97,0,0" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
-        <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="367,183,0,0" VerticalAlignment="Top" FontSize="30" Background="{x:Null}" Foreground="#FFF1D5E4" Click="Login_Click" Height="64" BorderThickness="0,0,0,0"/>
-        <Button Content="Cadastro" HorizontalAlignment="Left" Margin="494,185,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" FontSize="30" Foreground="#FFF1D5E4" Height="62"/>
-        <ComboBox x:Name="funcionarioCB" 
-                  HorizontalAlignment="Left" Margin="361,296,0,0" VerticalAlignment="Top" Width="389" Height="41" 
+        <StackPanel Width="500">
+            <Button Content="Cadastro de Usuário" Margin="0 100 0 0" HorizontalAlignment="Center"  Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FF8F3765" FontSize="30" Foreground="#FFF1D5E4" Height="62"/>
+
+            <Label HorizontalAlignment="Center" x:Name="lbFunc" Margin="0 10 0 0" Width="315" FontSize="30" Content="Selecionar Funcionário:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <ComboBox x:Name="funcionarioCB" 
+                  HorizontalAlignment="Center" Width="389" Height="41" 
                   BorderBrush="#FF8F3765" BorderThickness="2,2,2,2"
-                  DisplayMemberPath="Nome" SelectedValuePath="Id"/>
+                  DisplayMemberPath="Nome" SelectedValuePath="Id" Cursor="Hand" Foreground="#FFF1D5E4" FontSize="30" HorizontalContentAlignment="Center"/>
+
+            <Label HorizontalAlignment="Center" Margin="0 20 0 0" Width="190" FontSize="30" Content="Definir Senha:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <PasswordBox HorizontalAlignment="Center" x:Name="txtSenhaConfirma" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4" HorizontalContentAlignment="Center"/>
+
+            <Label HorizontalAlignment="Center" Margin="0 20 0 0" Width="235" FontSize="30" Content="Confirmar Senha:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <PasswordBox x:Name="txtSenha" HorizontalAlignment="Center" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4" HorizontalContentAlignment="Center"></PasswordBox>
+
+            <WrapPanel HorizontalAlignment="Center" Margin="0 30 0 0">
+                <Button Click="btCadastrar_Click" Margin="0 0 50 0" Width="150" Height="50" Content="CADASTRAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" IsDefault="True" Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Click="btCancelar_Click" Width="150" Height="50" Content="CANCELAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" IsDefault="True" Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+
+        <Image Source="/Imagens/Design PDS (1).png" Margin="-443,-245,720,-245" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
     </Grid>
 </Window>

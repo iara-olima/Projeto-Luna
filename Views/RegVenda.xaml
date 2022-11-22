@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegVenda"
         mc:Ignorable="d"
-        Title="RegVenda" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="Luna - Moda Íntima" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="800"/>

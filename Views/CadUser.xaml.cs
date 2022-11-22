@@ -26,6 +26,7 @@ namespace ProjetoLuna.Views
         public CadUser()
         {
             InitializeComponent();
+            _conn.Restart();
             Loaded += CadUser_Loaded;
         }
 
@@ -72,9 +73,7 @@ namespace ProjetoLuna.Views
             try
             {
                 var dao = new FuncionarioDAO();
-
                 funcionarioCB.ItemsSource = dao.List();
-                //var comando = _conn.Query();
                 //comando.CommandText = "select * from Funcionario;";
                 //MySqlDataReader reader = comando.ExecuteReader();
 
@@ -86,7 +85,14 @@ namespace ProjetoLuna.Views
                 //}
                 //_conn.Close();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) 
+            {
+
+                Conexao conexao = new Conexao();
+                conexao.Restart();
+                MessageBox .Show(ex.Message);
+                funcionarioCB.Items.Refresh();
+            }
         }
     }
 }
