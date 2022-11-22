@@ -12,7 +12,6 @@ endereco_cli varchar(100),
 sexo_cli varchar(100)
 );
 
-
 create table Funcionario(
 id_fun int primary key auto_increment,
 nome_fun varchar(200),
@@ -25,17 +24,13 @@ sexo_fun varchar(100),
 funcao_fun varchar(200)
 );
 
-insert into Funcionario values (null, 'teste', '2022-09-09', 2000, '123', 'a', '0000', 'Feminino', 'Vendedor');
-
 create table Usuario(
 id_usu int primary key auto_increment,
-cpf_usu varchar(14) unique,
+cpf_usu varchar(300),
 senha_usu varchar(200) unique,
 id_fun_fk int,
 foreign key (id_fun_fk) references Funcionario (id_fun)
 );
-
-insert into Usuario values (null, '123', '123', 1);
 
 create table Fornecedor (
 id_forn int primary key auto_increment,
@@ -98,19 +93,21 @@ foreign key (id_fun_fk) references Funcionario (id_fun)
 
 
 create table Produto_Venda (
-id_prodVend int,
-qtd_prodVend int,
-valor_prodVend double,
+id_prodVend int primary key auto_increment,
+quantidade_itenv varchar(100),
+valor_itenv double,
+valor_total_itenv double,
 id_vend_fk int,
 id_prod_fk int,
 foreign key (id_vend_fk) references Venda (id_vend),
-foreign key (id_prod_fk) references Produto (id_prod)
+foreign key(id_prod_fk) references Produto (id_prod)
 );
 
 create table Produto_Compra (
-id_compProd int,
-qtd_compProd int,
-valor_compProd double,
+id_compProd int primary key auto_increment,
+quantidade_itenc varchar(100),
+valor_itenc double,
+valor_total_itenc double,
 id_comp_fk int,
 id_prod_fk int,
 foreign key (id_comp_fk) references Compra (id_comp),
@@ -124,6 +121,7 @@ parcela_rec int,
 valorParc_rec double,
 valor_rec double, 
 forma_rec varchar(200),
+stts_rec varchar(200),
 vencimento_rec date,
 hora_rec time,
 id_cai_fk int,
@@ -159,3 +157,427 @@ foreign key (id_cai_fk) references Caixa (id_cai),
 foreign key (id_desp_fk) references Despesa (id_desp)
 ); 
 
+select * from usuario;
+
+#CRIAÇÃO AUTOMATICA DE USUARIO ADM
+insert into Funcionario values(null, "ADM", "1980-10-10", 0, 0, "a", "0", "I", "ADM");
+insert into Usuario values(null, 0, "adm", 1);
+
+#PROCEDIMENTOS DO PROJETO LUNA
+#Inserir Cliente
+delimiter $$
+	create procedure inserirCliente(nome varchar(100), nascimento date, email varchar(300), telefone varchar(300), cpf varchar(100), endereco varchar(100), sexo varchar(100))
+    begin
+		if((select cpf_cli from Cliente where cpf_cli = cpf) is null)then
+			if(nome <> "") and (nome is not null)then
+				insert into Cliente values(null, nome, nascimento, email, telefone, cpf, endereco, sexo);
+            else
+				select "O nome do cliente precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O CPF do cliente inserido já está cadastrado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Cliente
+delimiter $$
+	create procedure atualizarCliente(id int, nome varchar(100), nascimento date, email varchar(300), telefone varchar(300), cpf varchar(100), endereco varchar(100), sexo varchar(100))
+    begin
+		if(cpf <> "") and (cpf is not null)then
+			if(nome <> "") and (nome is not null)then
+				update Cliente set nome_cli = nome, dataNasc_cli = nascimento, email_cli = email, telefone_cli = telefone, cpf_cli = cpf, endereco_cli = endereco, sexo_cli = sexo where (id_cli = id);
+            else
+				select "O nome do cliente precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O CPF do cliente precisa ser informado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Funcionário
+delimiter $$
+	create procedure inserirFuncionario(nome varchar(200), nascimento date, salario double, cpf varchar(100), email varchar(100), telefone varchar(100), sexo varchar(100), funcao varchar(200))
+    begin
+		if((select cpf_fun from Funcionario where cpf_fun = cpf) is null)then
+			if(nome <> "") and (nome is not null)then
+				insert into Funcionario values(null, nome, nascimento, salario, cpf, email, telefone, sexo, funcao);
+            else
+				select "O nome do funcionário precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O CPF do funcionário inserido já está cadastrado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Funcionario
+delimiter $$
+	create procedure atualizarFuncionario(id int, nome varchar(100), nascimento date, salario double, cpf varchar(100), email varchar(300), telefone varchar(300), sexo varchar(100), funcao varchar(200))
+    begin
+		if(cpf <> "") and (cpf is not null)then
+			if(nome <> "") and (nome is not null)then
+				update Funcionario set nome_fun = nome, dataNasc_fun = nascimento, salario_fun = salario, cpf_fun = cpf, email_fun = email, telefone_fun = telefone, sexo_fun = sexo, funcao_fun = funcao where (id_fun = id);
+            else
+				select "O nome do funcionário precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O CPF do funcionário precisa ser informado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Usuário
+delimiter $$
+	create procedure inserirUsuario(cpf varchar(14), senha varchar(200), idFuncionario int)
+    begin
+		if((select cpf_usu from Usuario where cpf_usu = cpf) is null)then
+			if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
+				insert into Usuario values(null, cpf, senha, idFuncionario);
+            else
+				select "O funcionário selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O CPF inserido já está cadastrado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Usuario
+delimiter $$
+	create procedure atualizarUsuario(id int, cpf varchar(14), senha varchar(200), idFuncionario int)
+    begin
+		if(cpf <> "") and (cpf is not null)then
+			if(senha <> "") and (senha is not null)then
+				update Usuario set cpf_usu = cpf, senha_usu = senha, id_fun_fk = idFuncionario where (id_usu = id);
+            else
+				select "A senha precisa ser informada!" as ERRO;
+            end if;
+        else
+			select "O CPF precisa ser informado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Fornecedor
+delimiter $$
+	create procedure inserirFornecedor(nomeFantasia varchar(200), razaoSocial varchar(200), cnpj varchar(200), email varchar(200), telefone varchar(200), endereco varchar(200))
+    begin
+		if((select cnpj_forn from Fornecedor where cnpj_forn = cnpj) is null)then
+			if(nomeFantasia <> "") and (nomeFantasia is not null)then
+				insert into Fornecedor values(null, nomeFantasia, razaoSocial, cnpj, email, telefone, endereco);
+            else
+				select "O nome fantasia precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O CNPJ inserido já está cadastrado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Fornecedor
+delimiter $$
+	create procedure atualizarFornecedor(id int, nomeFantasia varchar(200), razaoSocial varchar(200), cnpj varchar(200), email varchar(200), telefone varchar(200), endereco varchar(200))
+    begin
+		if(nomeFantasia <> "") and (nomeFantasia is not null)then
+			if(cnpj <> "") and (cnpj is not null)then
+				update Fornecedor set nomeFantasia_forn = nomeFantasia, razaoSoc_forn = razaoSocial, cnpj_forn = cnpj, email_forn = email, telefone_forn = telefone, endereco_forn = endereco where (id_forn = id);
+            else
+				select "O CNPJ precisa ser informada!" as ERRO;
+            end if;
+        else
+			select "O nome fantasia precisa ser informado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Produto
+delimiter $$
+	create procedure inserirProduto(nome varchar(100), marca varchar(100), quantidade int, valorVenda double, valorCompra double, descricao varchar(300))
+    begin
+		if(nome <> "") and (nome is not null)then
+			if(valorVenda <> "") and (valorVenda is not null)then
+				insert into Produto values(null, nome, marca, quantidade, valorVenda, valorCompra, descricao);
+            else
+				select "O valor da venda precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O nome precisa ser informado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Produto
+delimiter $$
+	create procedure atualizarProduto(id int, nome varchar(100), marca varchar(100), quantidade int, valorVenda double, valorCompra double, descricao varchar(300))
+    begin
+		if(nome <> "") and (nome is not null)then
+			if(valorVenda <> "") and (valorVenda is not null)then
+				update Produto set nome_prod = nome, marca_prod = marca, qtd_prod = quantidade, valorVenda_prod = valorVenda, valorCompra_prod = valorCompra, descricao_prod = descricao where (id_prod = id);
+            else
+				select "O valor da venda precisa ser informada!" as ERRO;
+            end if;
+        else
+			select "O nome precisa ser informado!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Caixa
+delimiter $$
+	create procedure inserirCaixa(data date, saldoInicial double, saldoFinal double, recebimento double, pagamento double, idFuncionario int)
+    begin
+		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
+			if(saldoInicial <> "") and (saldoInicial is not null)then
+				insert into Caixa values(null, data, saldoInicial, saldoFinal, recebimento, pagamento, idFuncionario);
+            else
+				select "A data precisa ser informada!" as ERRO;
+            end if;
+        else
+			select "O funcionário selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Caixa
+delimiter $$
+	create procedure atualizarCaixa(id int, data date, saldoInicial double, saldoFinal double, recebimento double, pagamento double, idFuncionario int)
+    begin
+		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
+			if(saldoInicial <> "") and (saldoInicial is not null)then
+				update Caixa set data_cai = data, saldoInic_cai = saldoInicial, saldoFin_cai = saldoFinal, recebimento_cai = recebimento, pagamento_cai = pagamento, id_fun_fk = idFuncionario where (id_cai = id);
+            else
+				select "O saldo inicial precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O funcionário selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Venda
+delimiter $$
+	create procedure inserirVenda(valor double, hora time, data date, idFuncionario int, idCliente int)
+    begin
+		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
+			if((select id_cli from Cliente where id_cli = idCliente) is not null)then
+				insert into Venda values(null, valor, hora, data, idFuncionario, idCliente);
+            else
+				select "O cliente selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O funcionário selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Venda
+delimiter $$
+	create procedure atualizarVenda(id int, valor double, hora time, data date, idFuncionario int, idCliente int)
+    begin
+		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
+			if((select id_cli from Cliente where id_cli = idCliente) is not null)then
+				update Venda set valor_vend = valor, hora_vend = hora, data_vend = data, id_fun_fk = idFuncionario, id_cli_fk = idCliente where (id_vend = id);
+            else
+				select "O cliente selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O funcionário selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Compra
+delimiter $$
+	create procedure inserirCompra(valor double, data date, hora time, parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
+    begin
+		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
+			if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
+				insert into Compra values(null, valor, data, hora, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
+            else
+				select "O fornecedor selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O funcionário selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#AtualizarCompra
+delimiter $$
+	create procedure atualizarCompra(id int, valor double, data date, hora time, parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
+    begin
+		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
+			if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
+				update Compra set valor_comp = valor, data_comp = data, hora_comp = hora, parcela_comp = parcela, descricao_comp = descricao, valorParc_comp = valorParcela, id_forn_fk = idFornecedor, id_fun_fk = idFuncionario where (id_comp = id);
+            else
+				select "O fornecedor selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O funcionário selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Produto_Venda
+delimiter $$
+	create procedure inserirProdutoVenda(quantidade int, valor double, idVenda int, idProduto int)
+    begin
+		if((select id_vend from Venda where id_vend = idVenda) is not null)then
+			if((select id_prod from Produto where id_prod = idProduto) is not null)then
+				insert into Produto_Venda values(null, quantidade, valor, idVenda, idProduto);
+            else
+				select "O produto selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "A venda selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Produto_Venda
+delimiter $$
+	create procedure atualizarProdutoVenda(id int, quantidade int, valor double, idVenda int, idProduto int)
+    begin
+		if((select id_vend from Venda where id_vend = idVenda) is not null)then
+			if((select id_prod from Produto where id_prod = idProduto) is not null)then
+				update Produto_Venda set qtd_prodVend = quantidade, valor_prodVend = valor, id_vend_fk = idVenda, id_prod_fk = idProduto where (id_prodVend = id);
+            else
+				select "O produto selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "A venda selecionada não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Produto_Compra
+delimiter $$
+	create procedure inserirProdutoCompra(quantidade int, valor double, idCompra int, idProduto int)
+    begin
+		if((select id_comp from Compra where id_comp = idCompra) is not null)then
+			if((select id_prod from Produto where id_prod = idProduto) is not null)then
+				insert into Produto_Compra values(null, quantidade, valor, idCompra, idProduto);
+            else
+				select "O produto selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "A compra selecionada não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Produto_Compra
+delimiter $$
+	create procedure atualizarProdutoCompra(id int, quantidade int, valor double, idCompra int, idProduto int)
+    begin
+		if((select id_comp from Compra where id_comp = idCompra) is not null)then
+			if((select id_prod from Produto where id_prod = idProduto) is not null)then
+				update Produto_Compra set qtd_compProd = quantidade, valor_compProd = valor, id_comp_fk = idCompra, id_prod_fk = idProduto where (id_compProd = id);
+            else
+				select "O produto selecionado não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "A compra selecionada não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Recebimento
+delimiter $$
+	create procedure inserirRecebimento(data date, parcela int, valorParcela double, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idVenda int)
+    begin
+		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
+			if((select id_vend from Venda where id_vend = idVenda) is not null)then
+				insert into Recebimento values(null, data, parcela, valorParcela, valor, forma, status, vencimento, hora, idCaixa, idVenda);
+            else
+				select "A venda selecionada não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O caixa selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Recebimento
+delimiter $$
+	create procedure atualizarRecebimento(id int, data date, parcela int, valorParcela double, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idVenda int)
+    begin
+		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
+			if((select id_vend from Venda where id_vend = idVenda) is not null)then
+				update Recebimento set data_rec = data, parcela_rec = parcela, valorParc_rec = valorParcela, valor_rec = valor, forma_rec = forma, stts_rec = status, vencimento_rec = vencimento, hora_rec = hora, id_cai_fk = idCaixa, id_vend_fk = idVenda where (id_rec = id);
+            else
+				select "A venda selecionada não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O caixa selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Despesa
+delimiter $$
+	create procedure inserirDespesa(descricao varchar(200), data date, hora time, valor double, parcelas int, valorParcela double, tipo varchar(200), idFornecedor int)
+    begin
+		if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
+			if(valor <> "") and (valor is not null)then
+				insert into Despesa values(null, descricao, data, hora, valor, parcelas, valorParcela, tipo, idFornecedor);
+            else
+				select "O valor precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O fornecedor selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Despesa
+delimiter $$
+	create procedure atualizarDespesa(id int, descricao varchar(200), data date, hora time, valor double, parcelas int, valorParcela double, tipo varchar(200), idFornecedor int)
+    begin
+		if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
+			if(valor <> "") and (valor is not null)then
+				update Despesa set descricao_desp = descricao, data_desp = data, hora_desp = hora, valor_desp = valor, parcelas_desp = parcelas, valorParcela_desp = valorParcela, tipo_desp = tipo, id_forn_fk = idFornecedor where (id_desp = id);
+            else
+				select "O valor precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O fornecedor selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Inserir Pagamento
+delimiter $$
+	create procedure inserirPagamento(data date, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
+    begin
+		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
+			if((select id_desp from Despesa where id_desp = idDespesa) is not null)then
+				insert into Pagamento values(null, data, valor, forma, status, vencimento, hora, idCaixa, idDespesa);
+            else
+				select "A despesa selecionada não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O caixa selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+#Atualizar Pagamento
+delimiter $$
+	create procedure atualizarPagamento(id int, data date, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
+    begin
+		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
+			if((select id_desp from Despesa where id_desp = idDespesa) is not null)then
+				update Pagamento set data_pag = data, valor_pag = valor, forma_pag = forma, stts_pag = status, vencimento_pag = vencimento, hora_pag = hora, id_cai_fk = idCaixa, id_desp_fk = idDespesa where (id_pag = id);
+            else
+				select "A despesa selecionada não existe no cadastro!" as ERRO;
+            end if;
+        else
+			select "O caixa selecionado não existe no cadastro!" as ERRO;
+		end if;
+    end;
+$$ delimiter ;
+
+select * from Produto;
