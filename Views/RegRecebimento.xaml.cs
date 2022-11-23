@@ -46,6 +46,8 @@ namespace ProjetoLuna.Views
         //Verifica se a variavel _desp esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void RegRecebimento_Loaded(object sender, RoutedEventArgs e)
         {
+            cbCaixa.ItemsSource = new CaixaDAO().List();
+            cbVenda.ItemsSource = new VendaDAO().List();
             if (_rec.Id > 0)
             {
                 MessageBox.Show("Recebimento: " + _rec.Id);
@@ -72,6 +74,8 @@ namespace ProjetoLuna.Views
         }
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
+            _rec.Caixa = cbCaixa.SelectedItem as Caixa;
+            _rec.Venda = cbVenda.SelectedItem as Venda;
 
             if (dtData.SelectedDate != null)
                 _rec.Data = dtData.SelectedDate;
@@ -112,7 +116,7 @@ namespace ProjetoLuna.Views
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.FuncionarioFormWindow();
+            var form = new Views.RecebimentoFormWindow();
             form.Show();
             this.Close();
         }

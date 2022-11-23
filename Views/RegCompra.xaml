@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegCompra"
         mc:Ignorable="d"
-        Title="Luna - Moda Íntima" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="RegCompra" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="800"/>
@@ -73,7 +73,7 @@
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProdutos" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="10,145,10,142">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Produto}" Width="*"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
                 <DataGridTemplateColumn Header="Remover">
                     <DataGridTemplateColumn.CellTemplate>

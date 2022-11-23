@@ -23,7 +23,14 @@ namespace ProjetoLuna.Views
         public PagamentoFormWindow()
         {
             InitializeComponent();
+            Loaded += PagamentoFormWindow_Loaded;
         }
+
+        private void PagamentoFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
+        }
+
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.RegPagamento();
@@ -74,25 +81,25 @@ namespace ProjetoLuna.Views
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {
-            var pagamentoSelected = dataGridPagamento.SelectedItem as Pagamento;
+            var despesaSelected = dataGridPagamento.SelectedItem as Despesa;
 
-            if (pagamentoSelected == null)
+            if (despesaSelected == null)
             {
                 MessageBox.Show("Selecione o pagamento que deseja excluir.");
             }
             else
             {
-                var resultado = MessageBox.Show($"Tem certeza que deseja deletar o pagamento ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                var resultado = MessageBox.Show($"Tem certeza que deseja deletar o pagamento?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                 try
                 {
                     if (resultado == MessageBoxResult.Yes)
                     {
-                        var dao = new PagamentoDAO();
-                        dao.Delete(pagamentoSelected);
+                        var dao = new DespesaDAO();
+                        dao.Delete(despesaSelected);
 
                         MessageBox.Show("Pagamento removido com sucesso!");
-                        var form = new PagamentoFormWindow();
+                        var form = new DespesaFormWindow();
                         form.Show();
                         this.Close();
                     }

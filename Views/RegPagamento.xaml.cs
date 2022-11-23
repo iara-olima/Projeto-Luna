@@ -29,7 +29,8 @@ namespace ProjetoLuna.Views
             cbFormaPag.Items.Add("Dinheiro");
             cbFormaPag.Items.Add("Cheque");
             cbFormaPag.Items.Add("Outro");
-
+            dtData.SelectedDate = DateTime.Now;
+            Thora.SelectedTime = DateTime.Now;
             Loaded += RegPagamento_Loaded;
 
         }
@@ -39,13 +40,16 @@ namespace ProjetoLuna.Views
             InitializeComponent();
             Loaded += RegPagamento_Loaded;
             _pag = pagamento;
-            dtData.SelectedDate = DateTime.Now;
-            Thora.SelectedTime = DateTime.Now;
+         
         }
 
         //Verifica se a variavel _desp esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void RegPagamento_Loaded(object sender, RoutedEventArgs e)
         {
+            dtData.SelectedDate = DateTime.Now;
+            Thora.SelectedTime = DateTime.Now;
+            cbCaixa.ItemsSource = new CaixaDAO().List();
+            cbDespesa.ItemsSource = new DespesaDAO().List();
             if (_pag.Id > 0)
             {
                 MessageBox.Show("Pagamento: " + _pag.Id);
@@ -78,6 +82,7 @@ namespace ProjetoLuna.Views
                 _pag.Vencimento = dtVenc.SelectedDate;
             _pag.Caixa = cbCaixa.SelectedItem as Caixa;
             _pag.Despesa = cbDespesa.SelectedItem as Despesa;
+            _pag.FormaPag = cbFormaPag.Text;
 
             try
             {
@@ -102,7 +107,7 @@ namespace ProjetoLuna.Views
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.FuncionarioFormWindow();
+            var form = new Views.PagamentoFormWindow();
             form.Show();
             this.Close();
         }

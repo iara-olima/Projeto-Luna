@@ -104,8 +104,6 @@ namespace ProjetoLuna.Views
                     MessageBox.Show("Registro do cliente " + _cli.Nome + " inseridos com sucesso!");
                 }
 
-                MessageBox.Show("Registro do cliente "+_cli.Nome+" atualizado com sucesso!");
-
 
             }
             catch (Exception ex)

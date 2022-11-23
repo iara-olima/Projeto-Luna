@@ -25,7 +25,11 @@ namespace ProjetoLuna.Views
         public RegDespesa()
         {
             InitializeComponent();
-
+            dtData.SelectedDate = DateTime.Now;
+            Thora.SelectedTime = DateTime.Now;
+            cbTipo.Items.Add("Energia");
+            cbTipo.Items.Add("Manutenção");
+            cbTipo.Items.Add("Outro");
             Loaded += RegDespesa_Loaded;
 
         }
@@ -35,16 +39,13 @@ namespace ProjetoLuna.Views
             InitializeComponent();
             Loaded += RegDespesa_Loaded;
             _desp = despesa;
-            dtData.SelectedDate = DateTime.Now;
-            Thora.SelectedTime = DateTime.Now;
-            cbTipo.Items.Add("Energia");
-            cbTipo.Items.Add("Manutenção");
-            cbTipo.Items.Add("Outro");
+          
         }
 
         //Verifica se a variavel _desp esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void RegDespesa_Loaded(object sender, RoutedEventArgs e)
         {
+        
             if (_desp.Id > 0)
             {
                 MessageBox.Show("Despesa: " + _desp.Descricao);
@@ -52,11 +53,15 @@ namespace ProjetoLuna.Views
                 txtDescricao.Text = _desp.Descricao;
                 dtData.SelectedDate = _desp.Data;
                 Thora.SelectedTime = _desp.Hora;
+                cbTipo.SelectedItem = _desp.Tipo;
+
                 if (int.TryParse(txtQtdParc.Text, out int qtdParc))
                     _desp.Parcelas = qtdParc;
-
+                if (double.TryParse(txtValor.Text, out double Valor))
+                    _desp.Valor = Valor;
                 if (double.TryParse(txtValorParc.Text, out double valorParc))
                     _desp.ValorParc = valorParc;
+               
 
   
             }
@@ -70,15 +75,24 @@ namespace ProjetoLuna.Views
         {
 
             _desp.Descricao = txtDescricao.Text;
+
             if (dtData.SelectedDate != null)
                 _desp.Data = dtData.SelectedDate;
+
             if (Thora.SelectedTime != null)
                 _desp.Hora = Thora.SelectedTime;
+
+            cbTipo.Text = _desp.Tipo;
+
+
+            if (double.TryParse(txtValor.Text, out double Valor))
+                _desp.Valor = Valor;
+
             if (int.TryParse(txtQtdParc.Text, out int QtdParc))
                 _desp.Parcelas = QtdParc;
+
             if (double.TryParse(txtValorParc.Text, out double ValorParc))
                 _desp.ValorParc = ValorParc;
-
             try
             {
                 var dao = new DespesaDAO();
@@ -102,7 +116,7 @@ namespace ProjetoLuna.Views
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.FuncionarioFormWindow();
+            var form = new Views.DespesaFormWindow();
             form.Show();
             this.Close();
         }
@@ -112,6 +126,7 @@ namespace ProjetoLuna.Views
             txtDescricao.Clear();
             txtQtdParc.Clear();
             txtValorParc.Clear();
+            txtValor.Clear();
         }
     }
 }

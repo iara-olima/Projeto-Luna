@@ -15,8 +15,8 @@ namespace ProjetoLuna.Models
         private static Conexao _conn = new Conexao();
         public void Insert(Venda venda)
         {
-            try
-            {
+
+            { 
                 var comando = _conn.Query();
                 comando.CommandText = "insert into Venda value " +
                     "(null, @Valor, @Data, @Hora, @IdFuncionario, @IdCliente)";
@@ -42,10 +42,7 @@ namespace ProjetoLuna.Models
                     throw new Exception("Ocorreram erros ao salvar as informações!");
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+           
         }
 
         private void InsertItens(long vendaId, List<VendaItem> itens)
@@ -54,8 +51,8 @@ namespace ProjetoLuna.Models
             foreach (VendaItem item in itens)
             {
                 var query = _conn.Query();
-                query.CommandText = "INSERT INTO Produto_Venda (quantidade_itenv, valor_itenv, valor_total_itenv, id_vend_fk, id_prod_fk) " +
-                    "VALUES (@venda, @produto, @quantidade, @valor, @valor_total)";
+                query.CommandText = "INSERT INTO Produto_Venda (quantidade_itenv, valor_itenv, id_vend_fk, id_prod_fk) " +
+                    "VALUES (@quantidade, @valor, @venda, @produto)";
 
                 query.Parameters.AddWithValue("@venda", vendaId);
                 query.Parameters.AddWithValue("@produto", item.Produto.Id);

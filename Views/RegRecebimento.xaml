@@ -39,9 +39,11 @@
                     IsEnabled="{Binding ElementName=CheckParc, Path=IsChecked, Mode=TwoWay}" />
                 </StackPanel>
                 <TextBlock Text="Caixa:" FontSize="25" Foreground="#741546" Margin="0 20 0 0"/>
-                <ComboBox x:Name="cbCaixa" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <ComboBox x:Name="cbCaixa" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20" DisplayMemberPath="Nome"
+                          SelectedValuePath="Id"/>
                 <TextBlock Text="Venda:" Foreground="#741546" FontSize="25"/>
-                <ComboBox x:Name="cbVenda" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                <ComboBox x:Name="cbVenda" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20" DisplayMemberPath="Nome"
+                          SelectedValuePath="Id"/>
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 70">

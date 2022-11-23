@@ -74,7 +74,7 @@ namespace ProjetoLuna.Views
                         Id = count,
                         Produto = produto,
                         Quantidade = 1,
-                        Valor = produto.ValorVenda
+                        Valor = produto.ValorVenda,
                     });
 
                     count++;

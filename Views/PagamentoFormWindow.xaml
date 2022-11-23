@@ -31,11 +31,9 @@
             <DataGrid Background="White" x:Name="dataGridPagamento" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189" Width="800">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
-                    <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*"/>
                     <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
                     <DataGridTextColumn Header="Forma Pag." Binding="{Binding FormaPag}" Width="*"/>
                     <DataGridTextColumn Header="Vencimento" Binding="{Binding Vencimento}" Width="*"/>
-                    <DataGridTextColumn Header="Status" Binding="{Binding Stts}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
