@@ -20,8 +20,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Fornecedor value " +
-                    "(null, @NomeFantasia, @RazaoSocial, @CNPJ, @Email, @Telefone, @Endereco)";
+                comando.CommandText = "call inserirFornecedor(@NomeFantasia, @RazaoSocial, @CNPJ, @Email, @Telefone, @Endereco);";
 
                 comando.Parameters.AddWithValue("@NomeFantasia", fornecedor.NomeFantasia);
                 comando.Parameters.AddWithValue("@RazaoSocial", fornecedor.RazaoSocial);
@@ -103,9 +102,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Fornecedor Set " +
-                    "nomeFantasia_forn = @NomeFantasia, razaoSoc_forn = @RazaoSocial, cnpj_forn = @CNPJ, email_forn = @Email, telefone_forn = @Telefone, endereco_forn = @Endereco " +
-                    "Where id_forn = @id";
+                comando.CommandText = "call atualizarFornecedor(@id, @NomeFantasia, @RazaoSocial, @CNPJ, @Email, @Telefone, @Endereco);";
 
                 comando.Parameters.AddWithValue("@NomeFantasia", fornecedor.NomeFantasia);
                 comando.Parameters.AddWithValue("@RazaoSocial", fornecedor.RazaoSocial);
