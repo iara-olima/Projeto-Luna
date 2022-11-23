@@ -20,8 +20,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Funcionario value " +
-                    "(null, @Nome, @DataNasc, @Salario,@CPF, @Email, @Telefone, @Sexo, @Funcao)";
+                comando.CommandText = "call inserirFuncionario(@Nome, @DataNasc, @Salario,@CPF, @Email, @Telefone, @Sexo, @Funcao);";
 
                 comando.Parameters.AddWithValue("@Nome", funcionario.Nome);
                 comando.Parameters.AddWithValue("@DataNasc", funcionario.DataNasc?.ToString("yyyy-MM-dd"));
@@ -107,10 +106,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Funcionario Set " +
-
-                    "nome_fun = @Nome, data_nasc_fun = @DataNasc, salario_fun = @Salario, funcao_fun = @Funcao, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, endereco_fun = @Endereco, sexo_fun = @Sexo " +
-                    "Where id_fun = @id";
+                comando.CommandText = "call atualizarFuncionario(@id, @Nome, @DataNasc, @Salario,@CPF, @Email, @Telefone, @Sexo, @Funcao);";
 
                 comando.Parameters.AddWithValue("@Nome", funcionario.Nome);
                 comando.Parameters.AddWithValue("@DataNasc", funcionario.DataNasc?.ToString("yyyy-MM-dd"));
