@@ -20,8 +20,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Pagamento value " +
-                    "(null, @Data, @Valor, @FormaPag, @Vencimento, @Hora, @IdCaixa, @IdDespesa)";
+                comando.CommandText = "call inserirPagamento(@Data, @Valor, @FormaPag, @Vencimento, @Hora, @IdCaixa, @IdDespesa);";
 
                 comando.Parameters.AddWithValue("@Data", pag.Data?.ToString("D"));
                 comando.Parameters.AddWithValue("@Valor", pag.Valor);
@@ -58,8 +57,12 @@ namespace ProjetoLuna.Models
                     pagamento.Data = DAOHelper.GetDateTime(reader, "data_pag");
                     pagamento.Valor = DAOHelper.GetDouble(reader, "valor_pag");
                     pagamento.FormaPag = DAOHelper.GetString(reader, "forma_pag");
+                    pagamento.FormaPag = DAOHelper.GetString(reader, "forma_pag");
+                    pagamento.Status = DAOHelper.GetString(reader, "stts_pag");
                     pagamento.Vencimento = DAOHelper.GetDateTime(reader, "vencimento_pag");
                     pagamento.Hora = DAOHelper.GetDateTime(reader, "hora_pag");
+                    pagamento.Caixa.Id = reader.GetInt32("id_cai_fk");
+                    pagamento.Despesa.Id = reader.GetInt32("id_desp_fk");
 
                     lista.Add(pagamento);
                 }
@@ -98,9 +101,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Pagamento Set " +
-                    "data_pag = @Data, valor_pag = @Valor, forma_pag = @FormaPag, vencimento_pag = @Vencimento, hora_pag = @Hora, id_cai_fk = @IdCaixa, id_desp_fk = @IdDespesa " +
-                    "Where id_pag = @id";
+                comando.CommandText = "call atualizarPagamento(@id, @Data, @Valor, @FormaPag, @Vencimento, @Hora, @IdCaixa, @IdDespesa);";
 
                 comando.Parameters.AddWithValue("@Data", pag.Data?.ToString("D"));
                 comando.Parameters.AddWithValue("@Valor", pag.Valor);
