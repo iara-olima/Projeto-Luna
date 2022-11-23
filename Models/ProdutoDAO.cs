@@ -21,8 +21,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Produto value " +
-                    "(null, @Nome, @Marca, @Quantidade, @ValorVenda, @ValorCompra, @Descricao )";
+                comando.CommandText = "call inserirProduto(@Nome, @Marca, @Quantidade, @ValorVenda, @ValorCompra, @Descricao);";
 
                 comando.Parameters.AddWithValue("@Nome", produto.Nome);
                 comando.Parameters.AddWithValue("@Marca", produto.Marca);
@@ -104,9 +103,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Produto Set " +
-                    "nome_prod = @Nome, marca_prod = @Marca, qtd_prod = @Quantidade, valorVenda_prod = @ValorVenda, valorCompra_prod = @ValorCompra " +
-                    "Where id_prod = @id";
+                comando.CommandText = "call atualizarProduto(@id, @Nome, @Marca, @Quantidade, @ValorVenda, @ValorCompra, @Descricao);";
 
                 comando.Parameters.AddWithValue("@Nome", produto.Nome);
                 comando.Parameters.AddWithValue("@Marca", produto.Marca);
