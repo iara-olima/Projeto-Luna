@@ -38,7 +38,7 @@ namespace ProjetoLuna.Models
                 reader.Close();
 
                 InsertItens(IdCompra, compra.Itens);
-  
+
 
                 InsertItens(IdCompra, compra.Itens);
                 if (resultado == 0)
@@ -58,7 +58,7 @@ namespace ProjetoLuna.Models
             foreach (CompraItem item in itens)
             {
                 var query = _conn.Query();
-                query.CommandText = "INSERT INTO Produto_Compra (quantidade_itenc, valor_itenc, valor_total_itenc, id_comp_fk, id_prod_fk) " +
+                query.CommandText = "INSERT INTO Produto_Compra (id_comp_fk, id_prod_fk, quantidade_itenc, valor_itenc, valor_total_itenc) " +
                     "VALUES (@compra, @produto, @quantidade, @valor, @valor_total)";
 
                 query.Parameters.AddWithValue("@compra", compraId);
@@ -86,7 +86,7 @@ namespace ProjetoLuna.Models
                 {
                     var compra = new Compra();
 
-                    compra.Id = reader.GetInt32("id_cai");
+                    compra.Id = reader.GetInt32("id_comp");
                     compra.Valor = DAOHelper.GetDouble(reader, "valor_comp");
                     compra.Data = DAOHelper.GetDateTime(reader, "data_comp");
                     compra.FormaPagamento = DAOHelper.GetString(reader, "formaPag_comp");
@@ -94,7 +94,7 @@ namespace ProjetoLuna.Models
                     compra.Descricao = DAOHelper.GetString(reader, "descricao_comp");
                     compra.ValorParc = DAOHelper.GetDouble(reader, "valorParc_comp");
                     compra.Fornecedor.Id = reader.GetInt32("id_forn_fk");
-                    compra.Fornecedor.Id = reader.GetInt32("id_fun_fk");
+                    compra.Funcionario.Id = reader.GetInt32("id_fun_fk");
 
                     lista.Add(compra);
                 }

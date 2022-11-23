@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -22,26 +23,92 @@ namespace ProjetoLuna.Views
         public RecebimentoFormWindow()
         {
             InitializeComponent();
+            Loaded += RecebimentoFormWindow_Loaded;
+        }
+
+        private void RecebimentoFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
         }
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.RegRecebimento();
+            form.Show();
+            this.Close();
         }
 
-        private void btEditar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btExcluir_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
+            var form = new Views.Painel();
+            form.Show();
+            this.Close();
+        }
 
+        private void CarregarListagem()
+        {
+            try
+            {
+                var dao = new RecebimentoDAO();
+                List<Recebimento> listaRecebimento = dao.List();
+
+                dataGridRecebimento.ItemsSource = listaRecebimento;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Verifica o valor selecionado no Data Grid e aciona a tela de cadastro com as informações carregadas nos campos
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+            var recebimentoSelected = dataGridRecebimento.SelectedItem as Recebimento;
+            if (recebimentoSelected == null)
+            {
+                MessageBox.Show("Selecione o recebimento que deseja editar.");
+            }
+            else
+            {
+                var form = new RegRecebimento(recebimentoSelected);
+                form.ShowDialog();
+                this.Close();
+            }
+        }
+
+        //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
+        private void btExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            var recebimentoSelected = dataGridRecebimento.SelectedItem as Recebimento;
+
+            if (recebimentoSelected == null)
+            {
+                MessageBox.Show("Selecione o recebimento que deseja excluir.");
+            }
+            else
+            {
+                var resultado = MessageBox.Show($"Tem certeza que deseja deletar o recebimento?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                try
+                {
+                    if (resultado == MessageBoxResult.Yes)
+                    {
+                        var dao = new RecebimentoDAO();
+                        dao.Delete(recebimentoSelected);
+
+                        MessageBox.Show("Recebimento removido com sucesso!");
+                        var form = new RecebimentoFormWindow();
+                        form.Show();
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         //COMANDOS MENU

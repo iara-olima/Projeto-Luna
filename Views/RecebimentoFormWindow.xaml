@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="RecebimentoFormWindow" Height="350" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="Luna - Moda Íntima" Height="350" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <!--MENU-->
         <Menu>
@@ -28,7 +28,7 @@
 
         <StackPanel Width="800" Height="210" Margin="110 0 0 0">
             <TextBlock Text="Recebimentos:" FontSize="20" FontWeight="Bold" FontFamily="roboto" Foreground="#741546"/>
-            <DataGrid Background="White" x:Name="dataGridDespesa" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189" Width="800">
+            <DataGrid Background="White" x:Name="dataGridRecebimento" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189" Width="800">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
                     <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*"/>

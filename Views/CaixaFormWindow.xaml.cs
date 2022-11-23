@@ -44,6 +44,7 @@ namespace ProjetoLuna.Views
         {
             CarregarListagem();
             cbFuncionario.ItemsSource = new FuncionarioDAO().List();
+          
 
         }
         private void CarregarListagem()

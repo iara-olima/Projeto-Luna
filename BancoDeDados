@@ -81,7 +81,7 @@ create table Compra (
 id_comp int primary key auto_increment,
 valor_comp double,
 data_comp date,
-hora_comp time,
+formaPag_comp varchar(100),
 parcela_comp int,
 descricao_comp varchar(300),
 valorParc_comp double,
@@ -91,21 +91,22 @@ foreign key (id_forn_fk) references Fornecedor (id_forn),
 foreign key (id_fun_fk) references Funcionario (id_fun)
 );
 
-
 create table Produto_Venda (
 id_prodVend int primary key auto_increment,
-qtd_prodVend int,
-valor_prodVend double,
+quantidade_itenv varchar(100),
+valor_itenv double,
+valor_total_itenv double,
 id_vend_fk int,
 id_prod_fk int,
 foreign key (id_vend_fk) references Venda (id_vend),
-foreign key (id_prod_fk) references Produto (id_prod)
+foreign key(id_prod_fk) references Produto (id_prod)
 );
 
 create table Produto_Compra (
 id_compProd int primary key auto_increment,
-qtd_compProd int,
-valor_compProd double,
+quantidade_itenc varchar(100),
+valor_itenc double,
+valor_total_itenc double,
 id_comp_fk int,
 id_prod_fk int,
 foreign key (id_comp_fk) references Compra (id_comp),
@@ -155,8 +156,10 @@ foreign key (id_cai_fk) references Caixa (id_cai),
 foreign key (id_desp_fk) references Despesa (id_desp)
 ); 
 
+select * from usuario;
+
 #CRIAÇÃO AUTOMATICA DE USUARIO ADM
-insert into Funcionario values(null, "ADM", "0000-00-00", 0, 0, "a", "0", "I", "ADM");
+insert into Funcionario values(null, "ADM", "1980-10-10", 0, 0, "a", "0", "I", "ADM");
 insert into Usuario values(null, 0, "adm", 1);
 
 #PROCEDIMENTOS DO PROJETO LUNA
@@ -386,11 +389,11 @@ $$ delimiter ;
 
 #Inserir Compra
 delimiter $$
-	create procedure inserirCompra(valor double, data date, hora time, parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
+	create procedure inserirCompra(valor double, data date, forma varchar(300), parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
     begin
 		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
 			if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
-				insert into Compra values(null, valor, data, hora, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
+				insert into Compra values(null, valor, data, forma, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
             else
 				select "O fornecedor selecionado não existe no cadastro!" as ERRO;
             end if;

@@ -22,7 +22,9 @@ namespace ProjetoLuna.Views
         public Login()
         {
             InitializeComponent();
+            _conn.Restart();
         }
+
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
             string cpf = txtCPF.Text;
@@ -33,8 +35,6 @@ namespace ProjetoLuna.Views
                 this.Close();
             }
             else MessageBox.Show("A senha ou o CPF podem estar incorretos.");
-
-            _conn.Close();
         }
 
         private void BtCadastro_Click(object sender, RoutedEventArgs e)

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.CaixaFormWindow"
         mc:Ignorable="d"
-        Title="CaixaFormWindow" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
         <Grid.RowDefinitions>
             <RowDefinition Height="350"/>

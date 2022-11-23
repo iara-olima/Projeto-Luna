@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegVenda"
         mc:Ignorable="d"
-        Title="RegVenda" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="Luna - Moda Íntima" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="800"/>
@@ -21,17 +21,19 @@
             <StackPanel Orientation="Horizontal" Height="250" Width="750">
                 <StackPanel Width="350" HorizontalAlignment="Left">
                     <TextBlock Text="Valor:" Foreground="#741546" FontSize="25"/>
-                    <TextBox HorizontalAlignment="Left" x:Name="txtValor" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="#FFF1D5E4" Margin="0 0 0 15"/>
+                    <TextBox HorizontalAlignment="Left" x:Name="txtValor" IsReadOnly="True" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="{x:Null}" Foreground="Black" Margin="0 0 0 15"/>
                     <TextBlock Text="Data:" FontSize="25" Foreground="#741546" HorizontalAlignment="Left"/>
                     <DatePicker x:Name="dtData" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Width="335" Margin="0 0 0 15"/>
                     <TextBlock Text="Hora:" Foreground="#741546" FontSize="25"/>
-                    <materialDesign:TimePicker Width="335" HorizontalAlignment="Left"/>
+                    <materialDesign:TimePicker Name="Thora" Width="335" HorizontalAlignment="Left"/>
                 </StackPanel>
                 <StackPanel Width="350" Margin="60 0 0 0">
                     <TextBlock Text="Funcionário:" FontSize="25" Foreground="#741546"/>
-                    <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                    <ComboBox x:Name="cbFuncionario" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20"  DisplayMemberPath="Nome"
+                          SelectedValuePath="Id"/>
                     <TextBlock Text="Cliente:" Foreground="#741546" FontSize="25"/>
-                    <ComboBox x:Name="cbCliente" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="#FFF1D3DE" FontSize="20"/>
+                    <ComboBox x:Name="cbCliente" HorizontalAlignment="Left" Width="335" Height="50" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Foreground="Black" FontSize="20"  DisplayMemberPath="Nome"
+                          SelectedValuePath="Id"/>
                     <TextBlock Text="Código:" Foreground="#741546" FontSize="25" Margin="0 0 0 0"/>
                     <TextBox HorizontalAlignment="Left" x:Name="txtCodigo" TextWrapping="Wrap" Width="335" FontSize="20" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black" IsReadOnly="True"/>
                 </StackPanel>

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -22,6 +23,12 @@ namespace ProjetoLuna.Views
         public DespesaFormWindow()
         {
             InitializeComponent();
+            Loaded += DespesaFormWindow_Loaded;
+        }
+
+        private void DespesaFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
         }
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
@@ -31,19 +38,77 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void btEditar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btExcluir_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
+            var form = new Views.Painel();
+            form.Show();
+            this.Close();
+        }
 
+        private void CarregarListagem()
+        {
+            try
+            {
+                var dao = new DespesaDAO();
+                List<Despesa> listaDespesa = dao.List();
+
+                dataGridDespesa.ItemsSource = listaDespesa;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Verifica o valor selecionado no Data Grid e aciona a tela de cadastro com as informações carregadas nos campos
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+            var despesaSelected = dataGridDespesa.SelectedItem as Despesa;
+            if (despesaSelected == null)
+            {
+                MessageBox.Show("Selecione a despesa que deseja editar.");
+            }
+            else
+            {
+                var form = new RegDespesa(despesaSelected);
+                form.ShowDialog();
+                this.Close();
+            }
+        }
+
+        //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
+        private void btExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            var despesaSelected = dataGridDespesa.SelectedItem as Despesa;
+
+            if (despesaSelected == null)
+            {
+                MessageBox.Show("Selecione a despesa que deseja excluir.");
+            }
+            else
+            {
+                var resultado = MessageBox.Show($"Tem certeza que deseja deletar a despesa {despesaSelected.Descricao} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                try
+                {
+                    if (resultado == MessageBoxResult.Yes)
+                    {
+                        var dao = new DespesaDAO();
+                        dao.Delete(despesaSelected);
+
+                        MessageBox.Show("Despesa removida com sucesso!");
+                        var form = new DespesaFormWindow();
+                        form.Show();
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         //COMANDOS MENU

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
+using MySql.Data.MySqlClient;
 
 namespace ProjetoLuna.Views
 {
@@ -19,28 +21,112 @@ namespace ProjetoLuna.Views
     /// </summary>
     public partial class RegPagamento : Window
     {
+        private Pagamento _pag = new Pagamento();
+        
         public RegPagamento()
         {
             InitializeComponent();
+            Loaded += RegPagamento_Loaded;
+
+        }
+
+        public RegPagamento(Pagamento pagamento)
+        {
+            InitializeComponent();
+            Loaded += RegPagamento_Loaded;
+            _pag = pagamento;
+         
+        }
+        
+        private void LoadData()
+        {
+            cbFormaPag.Items.Add("Cartão");
+            cbFormaPag.Items.Add("Dinheiro");
+            cbFormaPag.Items.Add("Cheque");
+            cbFormaPag.Items.Add("Outro");
+            dtData.SelectedDate = DateTime.Now;
+            Thora.SelectedTime = DateTime.Now;
+            
+            cbCaixa.ItemsSource = new CaixaDAO().List();
+            cbDespesa.ItemsSource = new DespesaDAO().List();
+        }
+        
+        private void preencherForm()
+        {
+            dtData.SelectedDate = _pag.Data;
+            Thora.SelectedTime = _pag.Hora;
+                
+            if (double.TryParse(txtValor.Text, out double Valor))
+                _pag.Valor = Valor;
+                    
+            dtVenc.SelectedDate = _pag.Vencimento;
+            cbFormaPag.SelectedItem = _pag.FormaPag;
+                
+            if (_pag.Caixa != null)
+                cbCaixa.SelectedValue = _pag.Caixa.Id;
+                    
+            if (_pag.Despesa != null)
+                cbDespesa.SelectedValue = _pag.Despesa.Id;
+        }
+
+        //Verifica se a variavel _desp esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
+        private void RegPagamento_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadData();
+            
+            if (_pag.Id > 0)
+                preencherForm();
+        }
+        
+        private void btSalvar_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (dtData.SelectedDate != null)
+                _pag.Data = dtData.SelectedDate;
+            if (Thora.SelectedTime != null)
+                _pag.Hora = Thora.SelectedTime;
+            if (double.TryParse(txtValor.Text, out double Valor))
+                _pag.Valor = Valor;
+            if (dtVenc.SelectedDate != null)
+                _pag.Vencimento = dtVenc.SelectedDate;
+            _pag.Caixa = cbCaixa.SelectedItem as Caixa;
+            _pag.Despesa = cbDespesa.SelectedItem as Despesa;
+            _pag.FormaPag = cbFormaPag.Text;
+
+            try
+            {
+                var dao = new PagamentoDAO();
+                if (_pag.Id > 0)
+                {
+                    dao.Update(_pag);
+                    MessageBox.Show("Registro do pagamento atualizado com sucesso!");
+
+                }
+                else
+                {
+                    dao.Insert(_pag);
+                    MessageBox.Show("Registro do pagamento inserido com sucesso!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.ClienteFormWindow();
+            var form = new Views.PagamentoFormWindow();
             form.Show();
             this.Close();
         }
 
-
-
         private void btLimpar_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btSalvar_Click(object sender, RoutedEventArgs e)
-        {
-
+            txtValor.Clear();
+            cbCaixa.SelectedIndex = -1;
+            cbDespesa.SelectedIndex = -1;
+            cbFormaPag.SelectedIndex = -1;
         }
     }
 }

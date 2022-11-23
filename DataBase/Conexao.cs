@@ -20,6 +20,8 @@ namespace ProjetoLuna.DataBase
 
         private static string dbname = "bd_Luna";
 
+        private static Conexao _conn = new Conexao();
+
         private static MySqlConnection connection;
 
         private static MySqlCommand command;
@@ -55,6 +57,13 @@ namespace ProjetoLuna.DataBase
         public void Close()
         {
             connection.Close();
+        }
+        public void Restart()
+        {
+            var conexao = _conn.Query();
+            conexao.Connection.Close();
+            connection.Dispose();
+            conexao.Connection.Open();
         }
     }
 }

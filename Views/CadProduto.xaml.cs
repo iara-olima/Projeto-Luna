@@ -20,14 +20,14 @@ namespace ProjetoLuna.Views
     /// Lógica interna para CadProduto.xaml
     /// </summary>
     public partial class CadProduto : Window
-    { 
+    {
         private Produto _prod = new Produto();
 
         public CadProduto()
         {
             InitializeComponent();
             Loaded += CadProduto_Loaded;
-           
+
 
         }
 

@@ -21,16 +21,15 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "insert into Pagamento value " +
-                    "(null, @Data, @Valor, @FormaPag, @Status, @Vencimento, @Hora, @IdCaixa, @IdDespesa)";
+                    "(null, @Data, @Valor, @FormaPag, @Vencimento, @Hora, @IdCaixa, @IdDespesa)";
 
                 comando.Parameters.AddWithValue("@Data", pag.Data?.ToString("D"));
                 comando.Parameters.AddWithValue("@Valor", pag.Valor);
                 comando.Parameters.AddWithValue("@FormaPag", pag.FormaPag);
-                comando.Parameters.AddWithValue("@Status", pag.Status);
                 comando.Parameters.AddWithValue("@Vencimento", pag.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", pag.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", pag.IdCaixa);
-                comando.Parameters.AddWithValue("@IdDespesa", pag.IdDespesa);
+                comando.Parameters.AddWithValue("@IdCaixa", pag.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdDespesa", pag.Despesa.Id);
             }
             catch (Exception ex)
             {
@@ -59,11 +58,9 @@ namespace ProjetoLuna.Models
                     pagamento.Data = DAOHelper.GetDateTime(reader, "data_pag");
                     pagamento.Valor = DAOHelper.GetDouble(reader, "valor_pag");
                     pagamento.FormaPag = DAOHelper.GetString(reader, "forma_pag");
-                    pagamento.Status = DAOHelper.GetString(reader, "stts_pag");
                     pagamento.Vencimento = DAOHelper.GetDateTime(reader, "vencimento_pag");
                     pagamento.Hora = DAOHelper.GetDateTime(reader, "hora_pag");
-                    pagamento.IdCaixa = reader.GetInt32("id_cai_fk");
-                    pagamento.IdDespesa = reader.GetInt32("id_desp_fk");
+
                     lista.Add(pagamento);
                 }
                 reader.Close();
@@ -102,17 +99,16 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Pagamento Set " +
-                    "data_pag = @Data, valor_pag = @Valor, forma_pag = @FormaPag, stts_pag = @Status, vencimento_pag = @Vencimento, hora_pag = @Hora, id_cai_fk = @IdCaixa, id_desp_fk = @IdDespesa " +
+                    "data_pag = @Data, valor_pag = @Valor, forma_pag = @FormaPag, vencimento_pag = @Vencimento, hora_pag = @Hora, id_cai_fk = @IdCaixa, id_desp_fk = @IdDespesa " +
                     "Where id_pag = @id";
 
                 comando.Parameters.AddWithValue("@Data", pag.Data?.ToString("D"));
                 comando.Parameters.AddWithValue("@Valor", pag.Valor);
                 comando.Parameters.AddWithValue("@FormaPag", pag.FormaPag);
-                comando.Parameters.AddWithValue("@Status", pag.Status);
                 comando.Parameters.AddWithValue("@Vencimento", pag.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", pag.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", pag.IdCaixa);
-                comando.Parameters.AddWithValue("@IdDespesa", pag.IdDespesa);
+                comando.Parameters.AddWithValue("@IdCaixa", pag.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdDespesa", pag.Despesa.Id);
 
                 comando.Parameters.AddWithValue("@id", pag.Id);
 

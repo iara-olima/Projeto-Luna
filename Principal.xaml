@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna"
         mc:Ignorable="d"
-        Title="Principal"  Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Início"  Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/Home-Icon-TelaInicio.png">
     <Grid Background="#FFF8DDEB">
         <Grid.RowDefinitions>
             <RowDefinition Height="131*"/>

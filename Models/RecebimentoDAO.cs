@@ -21,18 +21,17 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "insert into Recebimento value " +
-                    "(null, @Data, @Parcela, @ValorParcela, @Valor, @Forma, @Status, @Vencimento, @Hora, @IdCaixa, @IdVenda)";
+                    "(null, @Data, @Parcela, @ValorParcela, @Valor, @Forma, @Vencimento, @Hora, @IdCaixa, @IdVenda)";
 
                 comando.Parameters.AddWithValue("@Data", rec.Data?.ToString("D"));
                 comando.Parameters.AddWithValue("@Parcela", rec.Parcela);
                 comando.Parameters.AddWithValue("@ValorParcela", rec.ValorParcela);
                 comando.Parameters.AddWithValue("@Valor", rec.Valor);
                 comando.Parameters.AddWithValue("@Forma", rec.Forma);
-                comando.Parameters.AddWithValue("@Status", rec.Status);
                 comando.Parameters.AddWithValue("@Vencimento", rec.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", rec.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", rec.IdCaixa);
-                comando.Parameters.AddWithValue("@IdVenda", rec.IdVenda);
+                comando.Parameters.AddWithValue("@IdCaixa", rec.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdVenda", rec.Venda.Id);
             }
             catch (Exception ex)
             {
@@ -93,19 +92,17 @@ namespace ProjetoLuna.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "Update Recebimento Set " +
-                    "nome_fun = @Nome, data_nasc_fun = @DataNasc, salario_fun = @Salario, funcao_fun = @Funcao, cpf_fun = @CPF,email_fun = @Email, telefone_fun = @Telefone, endereco_fun = @Endereco, sexo_fun = @Sexo " +
-                    "Where id_fun = @id";
+                   "(data_rec = @Data, parcela_rec = @Parcela, valorParc_rec = @ValorParcela, valor_rec = @Valor, forma_rec = @Forma, vencimento_rec = @Vencimento, hora_rec = @Hora, id_cai_fk = @IdCaixa, id_vend_fk = @IdVenda)";
 
                 comando.Parameters.AddWithValue("@Data", recebimento.Data?.ToString("D"));
                 comando.Parameters.AddWithValue("@Parcela", recebimento.Parcela);
                 comando.Parameters.AddWithValue("@ValorParcela", recebimento.ValorParcela);
                 comando.Parameters.AddWithValue("@Valor", recebimento.Valor);
                 comando.Parameters.AddWithValue("@Forma", recebimento.Forma);
-                comando.Parameters.AddWithValue("@Status", recebimento.Status);
                 comando.Parameters.AddWithValue("@Vencimento", recebimento.Vencimento?.ToString("D"));
                 comando.Parameters.AddWithValue("@Hora", recebimento.Hora?.ToString("T"));
-                comando.Parameters.AddWithValue("@IdCaixa", recebimento.IdCaixa);
-                comando.Parameters.AddWithValue("@IdVenda", recebimento.IdVenda);
+                comando.Parameters.AddWithValue("@IdCaixa", recebimento.Caixa.Id);
+                comando.Parameters.AddWithValue("@IdVenda", recebimento.Venda.Id);
 
                 comando.Parameters.AddWithValue("@id", recebimento.Id);
 

@@ -15,32 +15,22 @@ namespace ProjetoLuna.Models
 
         public void Insert(Despesa despesa)
         {
-
             try
             {
-
                 var comando = _conn.Query();
-
-                comando.CommandText = "insert into Despesa value " +
-                    "(null, @Descricao, @Data, @Hora, @Valor, @Parcelas, @Valor Parcela, @Tipo, @IdFornecedor)";
-
+                comando.CommandText = "call inserirDespesa(@Descricao, @Data, @Hora, @Valor, @Parcelas, @ValorParc, @Tipo);";
                 comando.Parameters.AddWithValue("@Descricao", despesa.Descricao);
                 comando.Parameters.AddWithValue("@Data", despesa.Data);
                 comando.Parameters.AddWithValue("@Hora", despesa.Hora);
                 comando.Parameters.AddWithValue("@Valor", despesa.Valor);
                 comando.Parameters.AddWithValue("@Parcelas", despesa.Parcelas);
-                comando.Parameters.AddWithValue("@Valor Parcela", despesa.ValorParc);
+                comando.Parameters.AddWithValue("@ValorParc", despesa.ValorParc);
                 comando.Parameters.AddWithValue("@Tipo", despesa.Tipo);
-                comando.Parameters.AddWithValue("@IdForncedor", despesa.IdFornecedor);
-
-
-
 
                 var resultado = comando.ExecuteNonQuery();
-
                 if (resultado == 0)
                 {
-                    throw new Exception("Ocorreram erros ao salvar as informações!");
+                    throw new Exception("Ocorreram erros ao savar as informações!");
                 }
             }
             catch (Exception ex)
@@ -67,12 +57,11 @@ namespace ProjetoLuna.Models
                     despesa.Id = reader.GetInt32("id_desp");
                     despesa.Descricao = DAOHelper.GetString(reader, "descricao_desp");
                     despesa.Data = DAOHelper.GetDateTime(reader, "data_desp");
-                    despesa.Hora = DAOHelper.GetDateTime(reader, "hora_desp");
+                  //  despesa.Hora = DAOHelper.GetDateTime(reader, "hora_desp");
                     despesa.Valor = DAOHelper.GetDouble(reader, "valor_desp");
                     despesa.Parcelas = reader.GetInt32("parcelas_desp");
                     despesa.ValorParc = DAOHelper.GetDouble(reader, "valorParcela_desp");
                     despesa.Tipo = DAOHelper.GetString(reader, "tipo_desp");
-                    despesa.IdFornecedor = reader.GetInt32("id_forn_fk");
 
 
                     lista.Add(despesa);
@@ -113,7 +102,7 @@ namespace ProjetoLuna.Models
 
                 comando.CommandText = "Update Despesa Set " +
                     "descricao_desp = @Descricao, data_desp = @Data, hora_desp = @Hora, valor_desp = @Valor +" +
-                    " parcelas_desp = @Parcelas, valorParcela_desp = @Valor Parcela, tipo_desp = @Tipo, id_forn_fk = @IdFornecedor " +
+                    " parcelas_desp = @Parcelas, valorParcela_desp = @ValorParcela, tipo_desp = @Tipo, id_forn_fk = @IdFornecedor " +
                     "Where id_cli = @id";
 
                 comando.Parameters.AddWithValue("@Descricao", despesa.Descricao);
@@ -121,9 +110,9 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Hora", despesa.Hora);
                 comando.Parameters.AddWithValue("@Valor", despesa.Valor);
                 comando.Parameters.AddWithValue("@Parcelas", despesa.Parcelas);
-                comando.Parameters.AddWithValue("@Valor Parcela", despesa.ValorParc);
+                comando.Parameters.AddWithValue("@ValorParcela", despesa.ValorParc);
                 comando.Parameters.AddWithValue("@Tipo", despesa.Tipo);
-                comando.Parameters.AddWithValue("@IdForncedor", despesa.IdFornecedor);
+                comando.Parameters.AddWithValue("@IdForncedor", despesa.Fornecedor.Id);
 
                 var resultado = comando.ExecuteNonQuery();
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="CompraFormWindow" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFF8DDEB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -16,38 +16,38 @@
         <StackPanel Height="528" Grid.Row="1" Background="#741546" Margin="0 0 0 110">
             <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,40,0,25" Height="40" Width="70">
                 <StackPanel Orientation="Horizontal" Width="40">
-                    <Image Source="/Icons/cliente_icon.png" Height="40" Width="40"/>
+                    <Image Source="/Icons/client-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btFuncionario" Click="btFuncionario_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="40" Width="70">
                 <StackPanel Orientation="Horizontal" Width="40">
-                    <Image Source="/Icons/func_icon.png" Height="40" Width="40"/>
+                    <Image Source="/Icons/employee-card.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btEstoque" Click="btEstoque_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="40" Width="70">
                 <StackPanel Orientation="Horizontal" Width="40">
-                    <Image Source="/Icons/estoque_icon.png" Height="40" Width="40"/>
+                    <Image Source="/Icons/instock-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btVenda" Click="btVenda_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40" Width="70">
                 <StackPanel Orientation="Horizontal" Width="40">
-                    <Image Source="/Icons/venda_icon.png" Height="40" Width="40"/>
+                    <Image Source="/Icons/sale-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btCompra" Click="btCompra_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40" Width="70">
                 <StackPanel Orientation="Horizontal" Width="40">
-                    <Image Source="/Icons/compra_icon.png" Height="40" Width="40"/>
+                    <Image Source="/Icons/cartbuy-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40" Width="70">
                 <StackPanel Orientation="Horizontal" Width="40">
-                    <Image Source="/Icons/caixa_icon.png" Height="40" Width="40"/>
+                    <Image Source="/Icons/cashiermachine-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <StackPanel>
                 <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="40" Width="70">
                     <StackPanel Orientation="Horizontal" Width="40">
-                        <Image Source="/Icons/fornecedor_icon.png" Height="40" Width="40"/>
+                        <Image Source="/Icons/provider-icon.png" Height="40" Width="40"/>
                     </StackPanel>
                 </Button>
                 <StackPanel Orientation="Horizontal" Width="80" Height="38" Margin="0 -10 0 0">

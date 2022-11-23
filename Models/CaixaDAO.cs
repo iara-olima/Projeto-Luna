@@ -94,6 +94,7 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@SaldoFinal", caixa.SaldoFinal);
                 comando.Parameters.AddWithValue("@Recebimentos", caixa.Recebimentos);
                 comando.Parameters.AddWithValue("@Pagamentos", caixa.Pagamentos);
+                comando.Parameters.AddWithValue("@IdFuncionario", caixa.Funcionario.Id);
 
                 comando.Parameters.AddWithValue("@id", caixa.Id);
 

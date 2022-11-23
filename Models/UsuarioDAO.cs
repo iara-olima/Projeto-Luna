@@ -12,12 +12,13 @@ using ProjetoLuna.Views;
 
 namespace ProjetoLuna.Models
 {
-    internal class UsuarioDAO
+    public class UsuarioDAO
     {
         private static Conexao _conn = new Conexao();
 
         public Usuario GetByUsuario(string usuarioCpf, string senha)
         {
+            _conn.Restart();
             try
             {
                 var query = _conn.Query();
@@ -34,6 +35,8 @@ namespace ProjetoLuna.Models
                 {
                     usuario = Usuario.GetInstance();
                     usuario.Id = reader.GetInt32("id_usu");
+                    usuario.Nome = reader.GetString("nome_fun");
+                    usuario.IdFuncionario = reader.GetInt32("id_fun_fk");
                     usuario.UsuarioCPF = reader.GetString("cpf_usu");
                 }
 
@@ -56,16 +59,13 @@ namespace ProjetoLuna.Models
 
                 comando.CommandText = "insert into Usuario values (null, @CPF, @Senha, @IdFuncionario);";
 
-                comando.Parameters.AddWithValue("@Usuario", usuario.UsuarioNome);
+                comando.Parameters.AddWithValue("@CPF", usuario.Funcionario.CPF);
                 comando.Parameters.AddWithValue("@Senha", usuario.Senha);
-                comando.Parameters.AddWithValue("@IdFuncionario", usuario.IdFuncionario);
+                comando.Parameters.AddWithValue("@IdFuncionario", usuario.Funcionario.Id);
 
                 var resultado = comando.ExecuteNonQuery();
 
-                if (resultado == 0)
-                {
-                    throw new Exception("Ocorreram erros ao salvar as informações!");
-                }
+                if (resultado == 0) throw new Exception("Ocorreram erros ao atualizar as informações");
             }
             catch (Exception ex) { throw ex; }
         }
@@ -86,7 +86,7 @@ namespace ProjetoLuna.Models
                     var usuario = new Usuario();
 
                     usuario.Id = reader.GetInt32("id_usu");
-                    usuario.UsuarioNome = reader.GetString("usuario_usu");
+                    usuario.UsuarioCPF = reader.GetString("cpf_usu");
                     usuario.Senha = DAOHelper.GetString(reader, "senha_usu");
                     usuario.IdFuncionario = reader.GetInt32("id_fun_fk");
                     lista.Add(usuario);
@@ -98,22 +98,6 @@ namespace ProjetoLuna.Models
             }
             catch (Exception ex) { throw ex; }
         }
-
-        public void Delete(Usuario usuario)
-        {
-            try
-            {
-                var comando = _conn.Query();
-
-                comando.CommandText = "delete from Usuario where id_usu = @id";
-                comando.Parameters.AddWithValue("id", usuario.Id);
-                var resultado = comando.ExecuteNonQuery();
-
-                if (resultado == 0) throw new Exception("Ocorreram problemas ao deletar as informações");
-            }
-            catch (Exception ex) { throw ex; }
-        }
-
         public void Update(Usuario usuario)
         {
             try
@@ -124,7 +108,7 @@ namespace ProjetoLuna.Models
                     "cpf_usu = @CPF, senha_usu = @Senha, " +
                     "id_fun_fk = @IdFuncionario";
 
-                comando.Parameters.AddWithValue("@usuario_usu", usuario.UsuarioNome);
+                comando.Parameters.AddWithValue("@cpf_usu", usuario.UsuarioCPF);
                 comando.Parameters.AddWithValue("@senha_usu", usuario.Senha);
                 comando.Parameters.AddWithValue("@id_fun_fk", usuario.IdFuncionario);
 
