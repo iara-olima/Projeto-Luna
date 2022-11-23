@@ -94,7 +94,7 @@ namespace ProjetoLuna.Models
                     compra.Descricao = DAOHelper.GetString(reader, "descricao_comp");
                     compra.ValorParc = DAOHelper.GetDouble(reader, "valorParc_comp");
                     compra.Fornecedor.Id = reader.GetInt32("id_forn_fk");
-                    compra.Fornecedor.Id = reader.GetInt32("id_fun_fk");
+                    compra.Funcionario.Id = reader.GetInt32("id_fun_fk");
 
                     lista.Add(compra);
                 }

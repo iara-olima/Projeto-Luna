@@ -67,36 +67,32 @@ namespace ProjetoLuna.Models
         }
         public List<Venda> List()
         {
+
             try
             {
                 var lista = new List<Venda>();
                 var comando = _conn.Query();
-
-                comando.CommandText = "select * from Venda;";
-
+                comando.CommandText = "SELECT * FROM Venda";
                 MySqlDataReader reader = comando.ExecuteReader();
-
                 while (reader.Read())
                 {
                     var venda = new Venda();
 
                     venda.Id = reader.GetInt32("id_vend");
-                    venda.Valor = reader.GetDouble("valor_vend");
+                    venda.Valor = DAOHelper.GetDouble(reader, "valor_vend");
+                    venda.Data = DAOHelper.GetDateTime(reader, "data_vend");
                     venda.Hora = DAOHelper.GetDateTime(reader, "hora_vend");
-                    venda.Data = reader.GetDateTime("data_vend");
-                    venda.Funcionario.Id = reader.GetInt32("id_fun_fk");
-                    venda.Cliente.Id = reader.GetInt32("id_cli_fk");
+
                     lista.Add(venda);
                 }
-
                 reader.Close();
-
                 return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
         }
 
         public void Delete(Venda venda)

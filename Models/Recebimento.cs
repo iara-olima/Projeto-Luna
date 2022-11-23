@@ -14,7 +14,6 @@ namespace ProjetoLuna.Models
         public double ValorParcela { get; set; }
         public double Valor { get; set; }
         public string Forma { get; set; }
-        public string Status { get; set; }
         public DateTime? Vencimento { get; set; }
         public DateTime? Hora { get; set; }
         public Caixa Caixa { get; set; }

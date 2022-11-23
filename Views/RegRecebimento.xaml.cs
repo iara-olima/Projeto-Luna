@@ -24,7 +24,10 @@ namespace ProjetoLuna.Views
         private Recebimento _rec = new Recebimento();
         public RegRecebimento()
         {
+
             InitializeComponent();
+            dtData.SelectedDate = DateTime.Now;
+            Thora.SelectedTime = DateTime.Now;
             cbFormaPag.Items.Add("Cartão");
             cbFormaPag.Items.Add("Dinheiro");
             cbFormaPag.Items.Add("Cheque");
@@ -36,11 +39,11 @@ namespace ProjetoLuna.Views
 
         public RegRecebimento(Recebimento recebimento)
         {
+
             InitializeComponent();
             Loaded += RegRecebimento_Loaded;
             _rec = recebimento;
-            dtData.SelectedDate = DateTime.Now;
-            Thora.SelectedTime = DateTime.Now;
+           
         }
 
         //Verifica se a variavel _desp esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
@@ -62,8 +65,6 @@ namespace ProjetoLuna.Views
                 if (int.TryParse(txtQtdParc.Text, out int QtdParc))
                     _rec.Parcela = QtdParc;
                 cbFormaPag.SelectedItem = _rec.Forma;
-                cbCaixa.ItemsSource = new CaixaDAO().List();
-                cbVenda.ItemsSource = new VendaDAO().List();
              
             }
             else

@@ -23,7 +23,14 @@ namespace ProjetoLuna.Views
         public RecebimentoFormWindow()
         {
             InitializeComponent();
+            Loaded += RecebimentoFormWindow_Loaded;
         }
+
+        private void RecebimentoFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
+        }
+
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.RegRecebimento();
