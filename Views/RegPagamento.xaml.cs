@@ -22,15 +22,10 @@ namespace ProjetoLuna.Views
     public partial class RegPagamento : Window
     {
         private Pagamento _pag = new Pagamento();
+        
         public RegPagamento()
         {
             InitializeComponent();
-            cbFormaPag.Items.Add("Cartão");
-            cbFormaPag.Items.Add("Dinheiro");
-            cbFormaPag.Items.Add("Cheque");
-            cbFormaPag.Items.Add("Outro");
-            dtData.SelectedDate = DateTime.Now;
-            Thora.SelectedTime = DateTime.Now;
             Loaded += RegPagamento_Loaded;
 
         }
@@ -42,33 +37,47 @@ namespace ProjetoLuna.Views
             _pag = pagamento;
          
         }
+        
+        private void LoadData()
+        {
+            cbFormaPag.Items.Add("Cartão");
+            cbFormaPag.Items.Add("Dinheiro");
+            cbFormaPag.Items.Add("Cheque");
+            cbFormaPag.Items.Add("Outro");
+            dtData.SelectedDate = DateTime.Now;
+            Thora.SelectedTime = DateTime.Now;
+            
+            cbCaixa.ItemsSource = new CaixaDAO().List();
+            cbDespesa.ItemsSource = new DespesaDAO().List();
+        }
+        
+        private void preencherForm()
+        {
+            dtData.SelectedDate = _pag.Data;
+            Thora.SelectedTime = _pag.Hora;
+                
+            if (double.TryParse(txtValor.Text, out double Valor))
+                _pag.Valor = Valor;
+                    
+            dtVenc.SelectedDate = _pag.Vencimento;
+            cbFormaPag.SelectedItem = _pag.FormaPag;
+                
+            if (_pag.Caixa != null)
+                cbCaixa.SelectedValue = _pag.Caixa.Id;
+                    
+            if (_pag.Despesa != null)
+                cbDespesa.SelectedValue = _pag.Despesa.Id;
+        }
 
         //Verifica se a variavel _desp esta com valor maior que 0, se sim carrega as informações para editar um cadastro já salvo, senão realiza um novo cadastro
         private void RegPagamento_Loaded(object sender, RoutedEventArgs e)
         {
-            dtData.SelectedDate = DateTime.Now;
-            Thora.SelectedTime = DateTime.Now;
-            cbCaixa.ItemsSource = new CaixaDAO().List();
-            cbDespesa.ItemsSource = new DespesaDAO().List();
+            LoadData();
+            
             if (_pag.Id > 0)
-            {
-                MessageBox.Show("Pagamento: " + _pag.Id);
-
-                dtData.SelectedDate = _pag.Data;
-                Thora.SelectedTime = _pag.Hora;
-                if (double.TryParse(txtValor.Text, out double Valor))
-                    _pag.Valor = Valor;
-                dtVenc.SelectedDate = _pag.Vencimento;
-                cbCaixa.ItemsSource = new CaixaDAO().List();
-                cbDespesa.ItemsSource = new DespesaDAO().List();
-                cbFormaPag.SelectedItem = _pag.FormaPag;
-            }
-            else
-            {
-                InitializeComponent();
-                Loaded += RegPagamento_Loaded;
-            }
+                preencherForm();
         }
+        
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
 
