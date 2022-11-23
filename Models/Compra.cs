@@ -16,9 +16,9 @@ namespace ProjetoLuna.Models
         public int Parcela { get; set; }
         public string Descricao { get; set; }
         public Double? ValorParc { get; set; }
-        public Funcionario Funcionario { get; set; }
-
         public Fornecedor Fornecedor { get; set; }
+        public Funcionario Funcionario { get; set; }
+        
 
         public List<CompraItem> Itens { get; set; } = new List<CompraItem>();
     }

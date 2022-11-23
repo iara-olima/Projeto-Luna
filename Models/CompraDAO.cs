@@ -17,8 +17,7 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "insert into Compra value " +
-                    "(null, @Valor, @Data, @FormaPag, @Parcela, @Descricao, @ValorParc, @IdFornecedor, @IdFuncionario)";
+                comando.CommandText = "call inserirCompra(@Valor, @Data, @FormaPag, @Parcela, @Descricao, @ValorParc, @IdFornecedor, @IdFuncionario);";
                 comando.Parameters.AddWithValue("@Valor", compra.Valor);
                 comando.Parameters.AddWithValue("@Data", compra.Data);
                 comando.Parameters.AddWithValue("@FormaPag", compra.FormaPagamento);
@@ -90,7 +89,7 @@ namespace ProjetoLuna.Models
                     compra.Valor = DAOHelper.GetDouble(reader, "valor_comp");
                     compra.Data = DAOHelper.GetDateTime(reader, "data_comp");
                     compra.FormaPagamento = DAOHelper.GetString(reader, "formaPag_comp");
-                    compra.Parcela = reader.GetInt32("pagamento_comp");
+                    compra.Parcela = reader.GetInt32("parcela_comp");
                     compra.Descricao = DAOHelper.GetString(reader, "descricao_comp");
                     compra.ValorParc = DAOHelper.GetDouble(reader, "valorParc_comp");
                     compra.Fornecedor.Id = reader.GetInt32("id_forn_fk");

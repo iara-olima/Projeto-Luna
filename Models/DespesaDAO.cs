@@ -18,7 +18,7 @@ namespace ProjetoLuna.Models
             try
             {
                 var comando = _conn.Query();
-                comando.CommandText = "call inserirDespesa(@Descricao, @Data, @Hora, @Valor, @Parcelas, @ValorParc, @Tipo);";
+                comando.CommandText = "call inserirDespesa(@Descricao, @Data, @Hora, @Valor, @Parcelas, @ValorParc, @Tipo, @IdFornecedor);";
                 comando.Parameters.AddWithValue("@Descricao", despesa.Descricao);
                 comando.Parameters.AddWithValue("@Data", despesa.Data);
                 comando.Parameters.AddWithValue("@Hora", despesa.Hora);
@@ -26,6 +26,7 @@ namespace ProjetoLuna.Models
                 comando.Parameters.AddWithValue("@Parcelas", despesa.Parcelas);
                 comando.Parameters.AddWithValue("@ValorParc", despesa.ValorParc);
                 comando.Parameters.AddWithValue("@Tipo", despesa.Tipo);
+                comando.Parameters.AddWithValue("@IdFornecedor", despesa.Fornecedor.Id);
 
                 var resultado = comando.ExecuteNonQuery();
                 if (resultado == 0)
@@ -100,10 +101,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Despesa Set " +
-                    "descricao_desp = @Descricao, data_desp = @Data, hora_desp = @Hora, valor_desp = @Valor +" +
-                    " parcelas_desp = @Parcelas, valorParcela_desp = @ValorParcela, tipo_desp = @Tipo, id_forn_fk = @IdFornecedor " +
-                    "Where id_cli = @id";
+                comando.CommandText = "call atualizarDespesa(@Descricao, @Data, @Hora, @Valor, @Parcelas, @ValorParc, @Tipo, @IdFornecedor);";
 
                 comando.Parameters.AddWithValue("@Descricao", despesa.Descricao);
                 comando.Parameters.AddWithValue("@Data", despesa.Data);
