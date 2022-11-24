@@ -58,9 +58,7 @@ namespace ProjetoLuna.Models
                     pagamento.Data = DAOHelper.GetDateTime(reader, "data_pag");
                     pagamento.Valor = DAOHelper.GetDouble(reader, "valor_pag");
                     pagamento.FormaPag = DAOHelper.GetString(reader, "forma_pag");
-                    pagamento.Vencimento = DAOHelper.GetDateTime(reader, "vencimento_pag");
-                    pagamento.Hora = DAOHelper.GetDateTime(reader, "hora_pag");
-
+                    pagamento.Vencimento = reader.GetDateTime("vencimento_pag");
                     lista.Add(pagamento);
                 }
                 reader.Close();
@@ -72,6 +70,8 @@ namespace ProjetoLuna.Models
                 throw ex;
             }
         }
+        /* 
+         */
 
         public void Delete(Pagamento pag)
         {

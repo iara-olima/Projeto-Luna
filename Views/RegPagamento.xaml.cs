@@ -32,10 +32,10 @@ namespace ProjetoLuna.Views
 
         public RegPagamento(Pagamento pagamento)
         {
+            _pag = pagamento;
             InitializeComponent();
             Loaded += RegPagamento_Loaded;
-            _pag = pagamento;
-         
+
         }
         
         private void LoadData()

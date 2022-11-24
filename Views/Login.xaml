@@ -5,12 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/LoginIcon.png">
+        Title="Luna - Moda Íntima" Height="650" Width="1400" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/LoginIcon.png">
     <Grid Background="#370f24">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="650"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <StackPanel Width="500">
             <Label Content="Bem Vindo!" Margin="0 100 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>
             <StackPanel Margin="0 10 0 0">
@@ -39,7 +35,11 @@
                 </Button>
             </WrapPanel>
         </StackPanel>
-        <Image Source="/Imagens/Design PDS (1).png" Margin="-434,-245,712,-245" Grid.RowSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="1024" Margin="897,-199,0,0" VerticalAlignment="Top" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
+        <StackPanel HorizontalAlignment="Left" Margin="-290 -250 0 0">
+            <Image Source="/Imagens/Design PDS (1).png" Height="1100"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 -100 -310 0">
+            <Image Height="1000" Width="652" Source="/Imagens/Design PDS (2).png" Grid.RowSpan="2"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -5,27 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna"
         mc:Ignorable="d"
-        Title="Início"  Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/Home-Icon-TelaInicio.png">
+        Title="Início"  Height="750" Width="1200" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/Home-Icon-TelaInicio.png">
     <Grid Background="#FFF8DDEB">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="131*"/>
-            <RowDefinition Height="381*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="139*"/>
-            <ColumnDefinition Width="661*"/>
-        </Grid.ColumnDefinitions>
 
-        <Button Click="btEntrar_Click" Grid.Column="1" Grid.Row="1" Margin="322,301,0,0"  Width="140" Height="50" HorizontalAlignment="Left" Content="ENTRAR" FontSize="24" FontWeight="Medium"   Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True">
+
+        <Button Click="btEntrar_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 100" Width="180" Height="70" Content="ENTRAR" FontSize="24" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" IsDefault="True">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        <Label Grid.Column="1" Content="Desde 2022&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="336,10,0,0" VerticalAlignment="Top" Width="110" FontSize="18" FontWeight="Bold" Foreground="#FF370F24" FontFamily="Source Sans Pro Semibold"/>
-        <Image HorizontalAlignment="Left" Height="960" Margin="-274,-212,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="742" Source="Imagens/Design PDS (3).png" Grid.ColumnSpan="2"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="501" Margin="14,25,0,0" VerticalAlignment="Top" Width="756" Source="Imagens/Design PDS (5).png" Grid.RowSpan="2"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="1174" Margin="744,-94,0,0" VerticalAlignment="Top" Width="480" Source="Imagens/Design PDS (6).png" Grid.RowSpan="2"/>
+        <Label Content="Since 2022" HorizontalAlignment="Center" Height="28" VerticalAlignment="Top" Width="110" FontSize="18" FontWeight="Bold" Foreground="#FF370F24" FontFamily="Source Sans Pro Semibold"/>
+        <StackPanel Margin="-274,-200,0,0">
+            <Image HorizontalAlignment="Left" Height="1100" VerticalAlignment="Top" Width="650" Source="Imagens/Design PDS (3).png" Grid.ColumnSpan="2"/>
+        </StackPanel>
+        <Image HorizontalAlignment="Center" Height="572" Margin="0,4,0,0" VerticalAlignment="Top" Width="942" Source="Imagens/Design PDS (5).png"/>
+        <StackPanel HorizontalAlignment="Right" Margin="0 -90 -240 0">
+            <Image HorizontalAlignment="Left" Height="1050" VerticalAlignment="Top" Width="520" Source="Imagens/Design PDS (6).png" Grid.RowSpan="2"/>
+        </StackPanel>
     </Grid>
 </Window>
