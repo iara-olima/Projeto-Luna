@@ -104,7 +104,13 @@ namespace ProjetoLuna.Views
                     MessageBox.Show("Registro do cliente " + _cli.Nome + " inseridos com sucesso!");
                 }
 
-
+                txtNome.Clear();
+                txtEmail.Clear();
+                txtTelefone.Clear();
+                txtCpf.Clear();
+                txtEndereco.Clear();
+                cbSexo.Items.Clear();
+                dtNasc.SelectedDate = null;
             }
             catch (Exception ex)
             {

@@ -18,8 +18,7 @@ namespace ProjetoLuna.Models
 
             { 
                 var comando = _conn.Query();
-                comando.CommandText = "insert into Venda value " +
-                    "(null, @Valor, @Data, @Hora, @IdFuncionario, @IdCliente)";
+                comando.CommandText = "call inserirVenda(@Valor, @Data, @Hora, @IdFuncionario, @IdCliente);";
                 comando.Parameters.AddWithValue("@Valor", venda.Valor);
                 comando.Parameters.AddWithValue("@Data", venda.Data);
                 comando.Parameters.AddWithValue("@Hora", venda.Hora);
@@ -121,9 +120,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Venda Set" +
-                    "valor_vend = @Valor, hora_vend = @Hora, " +
-                    "data_vend = @Data, id_fun_fk = @IdFuncionario, id_cli_fk = @IdCliente";
+                comando.CommandText = "call atualizarVenda(@id, @Valor, @Data, @Hora, @IdFuncionario, @IdCliente);";
 
                 comando.Parameters.AddWithValue("@valor_vend", venda.Valor);
                 comando.Parameters.AddWithValue("@hora_vend", venda.Hora);

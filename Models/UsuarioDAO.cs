@@ -57,7 +57,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Usuario values (null, @CPF, @Senha, @IdFuncionario);";
+                comando.CommandText = "call inserirUsuario(@CPF, @Senha, @IdFuncionario);";
 
                 comando.Parameters.AddWithValue("@CPF", usuario.Funcionario.CPF);
                 comando.Parameters.AddWithValue("@Senha", usuario.Senha);
@@ -104,9 +104,7 @@ namespace ProjetoLuna.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "Update Usuario Set" +
-                    "cpf_usu = @CPF, senha_usu = @Senha, " +
-                    "id_fun_fk = @IdFuncionario";
+                comando.CommandText = "call atualizarUsuario(@id, @CPF, @Senha, @IdFuncionario);";
 
                 comando.Parameters.AddWithValue("@cpf_usu", usuario.UsuarioCPF);
                 comando.Parameters.AddWithValue("@senha_usu", usuario.Senha);
