@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Luna - Moda Íntima" Height="650" Width="1400" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/LoginIcon.png">
+        Title="Luna - Moda Íntima" Height="650" Width="1400" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" Icon="/Icons/LoginIcon.png" KeyDown="Window_KeyDown">
     <Grid Background="#370f24">
         <StackPanel Width="500">
             <Label Content="Bem Vindo!" Margin="0 100 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="50" Foreground="#FFC4719D"/>

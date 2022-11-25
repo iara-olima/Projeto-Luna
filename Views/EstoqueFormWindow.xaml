@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" WindowState="Maximized">
     <Grid Background="#FFF8DDEB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -16,8 +16,8 @@
 
         <!--MENU-->
 
-        <StackPanel Background="#741546" Margin="0,92,0,76" Grid.RowSpan="2">
-            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
+        <StackPanel Background="#741546" Margin="0 100 0 76" Grid.RowSpan="2">
+            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,25,0,15" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/client-icon.png" Height="32" Width="32"/>
                     <TextBlock Text="Cliente" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>

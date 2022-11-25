@@ -22,33 +22,28 @@ namespace ProjetoLuna.Views
         public Login()
         {
             InitializeComponent();
+            Loaded += Login_Loaded;
             _conn.Restart();
+        }
+
+        private void Login_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtCPF.Focus();
         }
 
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
-            string cpf = txtCPF.Text;
-            string senha = txtSenha.Password.ToString();
-            if (Usuario.Login(cpf, senha)) {
-                var form = new Views.Painel();
-                form.Show();
-                this.Close();
-            }
-            else MessageBox.Show("A senha ou o CPF podem estar incorretos.");
+            LogarConta();
         }
 
         private void BtCadastro_Click(object sender, RoutedEventArgs e)
         {
-            var form = new CadUser();
-            form.Show();
-            this.Close();
+            AcoesClick("Cadastro".ToUpper());
         }
 
         private void btCancelar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Principal();
-            form.Show();
-            this.Close();
+            AcoesClick("Cancelar".ToUpper());
         }
 
 
@@ -56,6 +51,44 @@ namespace ProjetoLuna.Views
         {
             txtCPF.Clear();
             txtSenha.Clear();
+        }
+
+        private void LogarConta ()
+        {
+            string cpf = txtCPF.Text;
+            string senha = txtSenha.Password.ToString();
+            if (Usuario.Login(cpf, senha))
+            {
+                var form = new Views.Painel();
+                form.Show();
+                this.Close();
+            }
+            else MessageBox.Show("A senha ou o CPF podem estar incorretos.");
+        }
+
+        private void AcoesClick(string acao)
+        {
+            var cadUser = new CadUser();
+            var principalPage = new Principal();
+
+            if (acao == "Logar".ToUpper())
+            {
+                cadUser.Show();
+                this.Close();
+            }
+            if (acao == "Cancelar".ToUpper())
+            {
+                principalPage.Show();
+                this.Close();
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter && txtSenha.IsFocused)
+            {
+                LogarConta();
+            }
         }
     }
 }

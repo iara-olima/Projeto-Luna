@@ -15,9 +15,6 @@ using ProjetoLuna.Views;
 
 namespace ProjetoLuna
 {
-    /// <summary>
-    /// Lógica interna para Principal.xaml
-    /// </summary>
     public partial class Principal : Window
     {
         public Principal()
@@ -28,11 +25,20 @@ namespace ProjetoLuna
 
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
+            EntrarLogin();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Space)
+                EntrarLogin();
+        }
+
+        private void EntrarLogin()
+        {
             Login form = new Login();
             form.Show();
             this.Close();
         }
-
-       
     }
 }
