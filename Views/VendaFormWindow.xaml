@@ -82,19 +82,16 @@
                 </Button.Resources>
             </Button>
         </StackPanel>
-        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCliente" AutoGenerateColumns="False" CanUserAddRows="False" 
+        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="131,193,131,165">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Id}" Width="*"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
-                <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*"/>
                 <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
-                <DataGridTextColumn Header="Funcionário" Binding="{Binding Funcionario}" Width="*"/>
-                <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal" Height="50" Width="550" Margin="0,430,130,78">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal" Height="50" Width="550" Margin="0,470,130,78">
             <Button Name="btEditar" Click="btEditar_Click" Content="Editar" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
             <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
             <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="150" BorderBrush="{x:Null}"/>

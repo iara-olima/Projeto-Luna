@@ -22,13 +22,13 @@ namespace ProjetoLuna.Models
 
                 comando.CommandText = "call inserirRecebimento(@Data, @Parcela, @ValorParcela, @Valor, @Forma, @Vencimento, @Hora, @IdCaixa, @IdVenda);";
 
-                comando.Parameters.AddWithValue("@Data", rec.Data?.ToString("D"));
+                comando.Parameters.AddWithValue("@Data", rec.Data);
                 comando.Parameters.AddWithValue("@Parcela", rec.Parcela);
                 comando.Parameters.AddWithValue("@ValorParcela", rec.ValorParcela);
                 comando.Parameters.AddWithValue("@Valor", rec.Valor);
                 comando.Parameters.AddWithValue("@Forma", rec.Forma);
-                comando.Parameters.AddWithValue("@Vencimento", rec.Vencimento?.ToString("D"));
-                comando.Parameters.AddWithValue("@Hora", rec.Hora?.ToString("T"));
+                comando.Parameters.AddWithValue("@Vencimento", rec.Vencimento);
+                comando.Parameters.AddWithValue("@Hora", rec.Hora);
                 comando.Parameters.AddWithValue("@IdCaixa", rec.Caixa.Id);
                 comando.Parameters.AddWithValue("@IdVenda", rec.Venda.Id);
             }

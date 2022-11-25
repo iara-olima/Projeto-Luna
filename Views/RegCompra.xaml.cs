@@ -34,10 +34,20 @@ namespace ProjetoLuna.Views
             Loaded += RegCompra_Loaded;
         }
 
+        public RegCompra(Compra compra)
+        {
+            InitializeComponent();
+            Loaded += RegCompra_Loaded;
+            _compra = compra;
+
+        }
+
         private void RegCompra_Loaded(object sender, RoutedEventArgs e)
         {
             cbFuncionario.ItemsSource = new FuncionarioDAO().List();
             cbFornecedor.ItemsSource = new FornecedorDAO().List();
+
+
             LoadData();
         }
 

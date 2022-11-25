@@ -86,12 +86,12 @@ namespace ProjetoLuna.Models
                 }
                 reader.Close();
                 return lista;
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
 
         public void Delete(Venda venda)
