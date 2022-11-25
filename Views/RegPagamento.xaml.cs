@@ -27,13 +27,13 @@ namespace ProjetoLuna.Views
             cbFormaPag.Items.Add("Dinheiro");
             cbFormaPag.Items.Add("Cheque");
             cbFormaPag.Items.Add("Outro");
-            //  Loaded += Pagamento_Loaded;
+            Loaded += RegPagamento_Loaded;
         }
 
         public RegPagamento(Pagamento pagamento)
         {
             InitializeComponent();
-            //  Loaded += Pagamento_Loaded;
+             Loaded += RegPagamento_Loaded;
             _pag = pagamento;
         }
 

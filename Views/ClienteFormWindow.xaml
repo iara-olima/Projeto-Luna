@@ -97,7 +97,7 @@
                 <Button x:Name="btCadastrar" Content="Cadastrar" Click="btCadastar_Click" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
             </StackPanel>
         </StackPanel>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="86,264,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="86,264,0,0" VerticalAlignment="Top" Width="100" Source="/Views/fundo.jpeg"/>
         <!--FIM MENU-->
 
 
