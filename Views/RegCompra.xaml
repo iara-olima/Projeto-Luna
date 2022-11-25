@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegCompra"
         mc:Ignorable="d"
-        Title="RegCompra" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
+        Title="RegCompra" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="800"/>
