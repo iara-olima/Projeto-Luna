@@ -101,6 +101,15 @@ namespace ProjetoLuna.Views
                     dao.Insert(_fun);
                     MessageBox.Show("Registro do Funcionário " + _fun.Nome + " inseridos com sucesso!");
                 }
+
+                txtNome.Clear();
+                txtCpf.Clear();
+                txtEmail.Clear();
+                txtFuncao.Clear();
+                cbSexo.Items.Clear();
+                txtTelefone.Clear();
+                txtSalario.Clear();
+
             }
             catch (Exception ex)
             {

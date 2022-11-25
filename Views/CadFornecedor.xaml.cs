@@ -89,6 +89,12 @@ namespace ProjetoLuna.Views
                     MessageBox.Show("Registro do Fornecedor " + _forn.NomeFantasia + " inseridos com sucesso!");
                 }
 
+                txtNomeFantasia.Clear();
+                txtCNPJ.Clear();
+                txtEmail.Clear();
+                txtEndereco.Clear();
+                txtRazaoSocial.Clear();
+                txtTelefone.Clear();
 
 
             }

@@ -86,6 +86,14 @@ namespace ProjetoLuna.Views
                     dao.Insert(_prod);
                     MessageBox.Show("Registro do Produto " + _prod.Nome + " inseridos com sucesso!");
                 }
+
+                txtDescricao.Clear();
+                txtMarca.Clear();
+                txtNome.Clear();
+                txtQuantidade.Clear();
+                txtValorCompra.Clear();
+                txtValorVenda.Clear();
+
             }
             catch (Exception ex)
             {
