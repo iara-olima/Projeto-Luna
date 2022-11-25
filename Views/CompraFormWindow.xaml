@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Luna - Moda Íntima" WindowState="Maximized" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/cartbuy-icon.png">
+        Title="Luna - Moda Íntima"  Height="650" Width="1200" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" Icon="/Icons/cartbuy-icon.png">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Imagens/fundo.jpeg"/>
