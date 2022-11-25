@@ -67,8 +67,8 @@ foreign key (id_fun_fk) references Funcionario(id_fun)
 create table Venda (
 id_vend int primary key auto_increment,
 valor_vend double,
-hora_vend time,
 data_vend date,
+hora_vend time,
 id_fun_fk int,
 id_cli_fk int,
 foreign key (id_fun_fk) references Funcionario(id_fun),
@@ -91,11 +91,11 @@ foreign key (id_forn_fk) references Fornecedor (id_forn),
 foreign key (id_fun_fk) references Funcionario (id_fun)
 );
 
+
 create table Produto_Venda (
 id_prodVend int primary key auto_increment,
 quantidade_itenv varchar(100),
 valor_itenv double,
-valor_total_itenv double,
 id_vend_fk int,
 id_prod_fk int,
 foreign key (id_vend_fk) references Venda (id_vend),
@@ -120,7 +120,6 @@ parcela_rec int,
 valorParc_rec double,
 valor_rec double, 
 forma_rec varchar(200),
-stts_rec varchar(200),
 vencimento_rec date,
 hora_rec time,
 id_cai_fk int,
@@ -137,9 +136,7 @@ hora_desp time,
 valor_desp double,
 parcelas_desp int,
 valorParcela_desp double,
-tipo_desp varchar(200),
-id_forn_fk int,
-foreign key (id_forn_fk) references Fornecedor (id_forn)
+tipo_desp varchar(200)
 );
 
 create table Pagamento (
@@ -147,7 +144,6 @@ id_pag int primary key auto_increment,
 data_pag date,
 valor_pag double,
 forma_pag varchar(200),
-stts_pag varchar(200),
 vencimento_pag date,
 hora_pag time,
 id_cai_fk int,
@@ -155,8 +151,6 @@ id_desp_fk int,
 foreign key (id_cai_fk) references Caixa (id_cai),
 foreign key (id_desp_fk) references Despesa (id_desp)
 ); 
-
-select * from usuario;
 
 #CRIAÇÃO AUTOMATICA DE USUARIO ADM
 insert into Funcionario values(null, "ADM", "1980-10-10", 0, 0, "a", "0", "I", "ADM");
@@ -389,11 +383,11 @@ $$ delimiter ;
 
 #Inserir Compra
 delimiter $$
-	create procedure inserirCompra(valor double, data date, forma varchar(300), parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
+	create procedure inserirCompra(valor double, data date, hora time, parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
     begin
 		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
 			if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
-				insert into Compra values(null, valor, data, forma, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
+				insert into Compra values(null, valor, data, hora, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
             else
 				select "O fornecedor selecionado não existe no cadastro!" as ERRO;
             end if;
@@ -517,16 +511,13 @@ $$ delimiter ;
 
 #Inserir Despesa
 delimiter $$
-	create procedure inserirDespesa(descricao varchar(200), data date, hora time, valor double, parcelas int, valorParcela double, tipo varchar(200), idFornecedor int)
+	create procedure inserirDespesa(descricao varchar(200), data date, hora time, valor double, parcelas int, valorParcela double, tipo varchar(200))
     begin
-		if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
+
 			if(valor <> "") and (valor is not null)then
-				insert into Despesa values(null, descricao, data, hora, valor, parcelas, valorParcela, tipo, idFornecedor);
+				insert into Despesa values(null, descricao, data, hora, valor, parcelas, valorParcela, tipo);
             else
 				select "O valor precisa ser informado!" as ERRO;
-            end if;
-        else
-			select "O fornecedor selecionado não existe no cadastro!" as ERRO;
 		end if;
     end;
 $$ delimiter ;
