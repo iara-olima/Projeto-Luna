@@ -52,18 +52,12 @@ namespace ProjetoLuna.Views
 
                 txtDescricao.Text = _desp.Descricao;
                 dtData.SelectedDate = _desp.Data;
-                Thora.SelectedTime = _desp.Hora;
-                cbTipo.SelectedItem = _desp.Tipo;
-
-                if (int.TryParse(txtQtdParc.Text, out int qtdParc))
-                    _desp.Parcelas = qtdParc;
-                if (double.TryParse(txtValor.Text, out double Valor))
-                    _desp.Valor = Valor;
-                if (double.TryParse(txtValorParc.Text, out double valorParc))
-                    _desp.ValorParc = valorParc;
-               
-
-  
+                Thora.SelectedTime = _desp.Hora;               
+                cbTipo.SelectedValue = _desp.Tipo;
+                txtValor.Text = _desp.Valor.ToString();
+                txtQtdParc.Text = _desp.Parcelas.ToString();
+                txtValorParc.Text = _desp.ValorParc.ToString();
+            
             }
             else
             {
@@ -82,7 +76,7 @@ namespace ProjetoLuna.Views
             if (Thora.SelectedTime != null)
                 _desp.Hora = Thora.SelectedTime;
 
-            cbTipo.Text = _desp.Tipo;
+            _desp.Tipo = cbTipo.Text;
 
 
             if (double.TryParse(txtValor.Text, out double Valor))

@@ -28,7 +28,6 @@ namespace ProjetoLuna.Views
 
         private void PagamentoFormWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            CarregarListagem();
         }
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
@@ -44,38 +43,6 @@ namespace ProjetoLuna.Views
             var form = new Views.Painel();
             form.Show();
             this.Close();
-        }
-
-        private void CarregarListagem()
-        {
-            try
-            {
-                var dao = new PagamentoDAO();
-                List<Pagamento> listaPagamento = dao.List();
-
-                dataGridPagamento.ItemsSource = listaPagamento;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //Verifica o valor selecionado no Data Grid e aciona a tela de cadastro com as informações carregadas nos campos
-        private void btEditar_Click(object sender, RoutedEventArgs e)
-        {
-            var pagamentoSelected = dataGridPagamento.SelectedItem as Pagamento;
-            if (pagamentoSelected == null)
-            {
-                MessageBox.Show("Selecione o pagamento que deseja editar.");
-            }
-            else
-            {
-                var form = new RegPagamento(pagamentoSelected);
-                form.ShowDialog();
-                this.Close();
-            }
         }
 
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
@@ -172,5 +139,9 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
+        private void btEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
