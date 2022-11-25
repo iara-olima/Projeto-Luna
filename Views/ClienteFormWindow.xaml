@@ -6,15 +6,20 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
         Title="Luna - Moda Íntima" Height="650" Width="1200"  WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" Icon="/Icons/client-icon.png">
-    <Grid Background="Purple" >
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagens/fundo.jpeg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
 
         <!--MENU-->
 
-        <StackPanel Height="528" Width="110" Grid.Row="1" Background="#741546" Margin="0 0 0 125">
+        <StackPanel Height="515" Width="110" Grid.Row="1" Background="#741546" Margin="0 0 0 125" >
+            
             <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,40,40,10" Height="50" Width="100">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/client-icon.png" Height="40" Width="40"/>
@@ -73,7 +78,9 @@
                 </StackPanel>
             </Button>
         </StackPanel>
+        
         <StackPanel Grid.Column="1" Background="#FFF8DDEB" Height="650" Width="1200">
+            <Border CornerRadius=" 0 40 0 0" />
             <TextBlock Text="Lista de Clientes" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="302" Grid.Column="1" Margin="200,34,0,0"/>
 
             <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCliente" AutoGenerateColumns="False" CanUserAddRows="False" 
@@ -97,7 +104,6 @@
                 <Button x:Name="btCadastrar" Content="Cadastrar" Click="btCadastar_Click" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
             </StackPanel>
         </StackPanel>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="86,264,0,0" VerticalAlignment="Top" Width="100" Source="/Views/fundo.jpeg"/>
         <!--FIM MENU-->
 
 

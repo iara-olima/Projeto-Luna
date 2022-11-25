@@ -22,7 +22,7 @@
         </TextBlock>
 
         <StackPanel Height="470">
-            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
+            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38" Cursor="Hand">
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/client-icon.png" Height="32" Width="32"/>
                     <TextBlock Text="Cliente" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
