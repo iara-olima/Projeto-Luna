@@ -9,7 +9,7 @@
         Title="Luna - Moda Íntima" Height="650" Width="1000" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen">
     <Grid>
         <Image HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="/Icons/seta_icon.png"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="12,8,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_Click" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="50" Height="50" Click="btVoltar_Click" Cursor="Hand"/>
 
         <TextBlock Text="Registrar Pagamento" FontSize="40" FontWeight="Bold" Foreground="#741546" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,9,0,0"/>
 
@@ -36,7 +36,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 70">
-            <Button Click="btSalvar_Click"  Width="150" Height="60" Content="SALVAR " FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0">
+            <Button Click="btSalvar_Click"  Width="150" Height="60" Content="SALVAR" FontSize="22" FontWeight="Medium" Background="#741546" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" VerticalAlignment="Top" IsDefault="True" Margin="0 0 40 0">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>

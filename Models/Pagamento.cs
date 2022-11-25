@@ -8,14 +8,15 @@ namespace ProjetoLuna.Models
 {
     public class Pagamento
     {
+
         public int Id { get; set; }
         public DateTime? Data { get; set; }
         public double Valor { get; set; }
         public string FormaPag { get; set; }
-        public string Status { get; set; }
         public DateTime? Vencimento { get; set; }
         public DateTime? Hora { get; set; }
         public Caixa Caixa { get; set; }
         public Despesa Despesa { get; set; }
+
     }
 }
