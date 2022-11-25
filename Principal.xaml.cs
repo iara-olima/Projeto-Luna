@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Views;
 
 namespace ProjetoLuna
 {
@@ -27,7 +28,7 @@ namespace ProjetoLuna
 
         private void btEntrar_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Views.Login();
+            Login form = new Login();
             form.Show();
             this.Close();
         }
