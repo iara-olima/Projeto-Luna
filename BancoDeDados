@@ -540,11 +540,11 @@ $$ delimiter ;
 
 #Inserir Pagamento
 delimiter $$
-	create procedure inserirPagamento(data date, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
+	create procedure inserirPagamento(dataP date, valor double, forma varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
     begin
 		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
 			if((select id_desp from Despesa where id_desp = idDespesa) is not null)then
-				insert into Pagamento values(null, data, valor, forma, status, vencimento, hora, idCaixa, idDespesa);
+				insert into Pagamento values(null, dataP, valor, forma, vencimento, hora, idCaixa, idDespesa);
             else
 				select "A despesa selecionada não existe no cadastro!" as ERRO;
             end if;
@@ -556,11 +556,11 @@ $$ delimiter ;
 
 #Atualizar Pagamento
 delimiter $$
-	create procedure atualizarPagamento(id int, data date, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
+	create procedure atualizarPagamento(id int, dataP date, valor double, forma varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
     begin
 		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
 			if((select id_desp from Despesa where id_desp = idDespesa) is not null)then
-				update Pagamento set data_pag = data, valor_pag = valor, forma_pag = forma, stts_pag = status, vencimento_pag = vencimento, hora_pag = hora, id_cai_fk = idCaixa, id_desp_fk = idDespesa where (id_pag = id);
+				update Pagamento set data_pag = data, valor_pag = valor, forma_pag = forma, vencimento_pag = vencimento, hora_pag = hora, id_cai_fk = idCaixa, id_desp_fk = idDespesa where (id_pag = id);
             else
 				select "A despesa selecionada não existe no cadastro!" as ERRO;
             end if;
