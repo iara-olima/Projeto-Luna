@@ -20,10 +20,10 @@
                   BorderBrush="#FF8F3765" BorderThickness="2,2,2,2"
                   DisplayMemberPath="Nome" SelectedValuePath="Id" Cursor="Hand" Foreground="#741546" FontSize="15" HorizontalContentAlignment="Center" Margin="0 0 0 10"/>
 
-            <Label HorizontalAlignment="Center" x:Name="lbSenha" Margin="0 10 0 0" Width="210" FontSize="30" Content="Defina a Senha:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-            <PasswordBox HorizontalAlignment="Center" x:Name="txtSenhaConfirma" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4" HorizontalContentAlignment="Center" Margin="0 15 0 0"/>
-            <Label HorizontalAlignment="Center" x:Name="lbSenhaConfirma" Margin="0 10 0 0" Width="255" FontSize="30" Content="Confirme a Senha:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
-            <PasswordBox x:Name="txtSenha" HorizontalAlignment="Center" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4" HorizontalContentAlignment="Center" Margin="0 15 0 0"></PasswordBox>
+            <Label x:Name="lbSenha" Margin="0 10 0 0" Width="210" FontSize="30" Content="Defina a Senha:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <PasswordBox x:Name="txtSenhaConfirma" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4" Margin="0 15 0 0"/>
+            <Label x:Name="lbSenhaConfirma" Margin="0 10 0 0" Width="255" FontSize="30" Content="Confirme a Senha:" Background="{x:Null}" Foreground="#FFF1D5E4"/>
+            <PasswordBox x:Name="txtSenha" Width="385" FontSize="30" BorderBrush="#FF8F3765" BorderThickness="0,0,0,2" Background="{x:Null}" Foreground="#FFF1D5E4" Margin="0 15 0 0"></PasswordBox>
 
             <WrapPanel HorizontalAlignment="Center" Margin="0 30 0 0">
                 <Button Click="btCadastrar_Click" Margin="0 0 50 0" Width="150" Height="50" Content="CADASTRAR" FontSize="22" FontWeight="Medium" Background="#FFC4719D" Foreground="#FFF8DDEB" FontFamily="Cascadia Mono SemiLight" BorderBrush="{x:Null}" IsDefault="True" Cursor="Hand">
