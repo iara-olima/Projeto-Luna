@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ProjetoLuna.Views"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ProjetoLuna.Views.RegCompra"
         mc:Ignorable="d"
-        Title="RegCompra" Height="650" Width="1500" Background="#FFF8DDEB" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" WindowState="Maximized">
+    Title="Luna - Moda Íntima" Height="650" Width="1500" Background="#FFF8DDEB" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" Icon="/Icons/cartbuy-icon.png">
+        
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="800"/>
@@ -67,8 +68,8 @@
             </Button>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Margin="10,65,390,489" Height="40">
-            <TextBlock Text="Produtos Comprados:" FontSize="30" Foreground="#741546" Height="40"/>
+        <StackPanel Grid.Column="1" Margin="0,10,170,450" Height="80" Width="500">
+            <TextBlock Text="Produtos Comprados:" FontSize="30" Foreground="#741546" Height="50" Width="500" Margin="0 0 140 0"/>
         </StackPanel>
         <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridProdutos" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="10,145,10,142">
@@ -87,8 +88,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Margin="0 0 0 60" Width="400">
-            <TextBlock Text="Valor Total:" Foreground="#741546" FontSize="25"/>
-            <TextBox HorizontalAlignment="Left" x:Name="txtValorTotal" TextWrapping="Wrap" Width="335" Height="50" IsReadOnly="True" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black"/>
+            <TextBlock Text="Valor Total:" Foreground="#741546" FontSize="25" Margin="15 0 0 0"/>
+            <TextBox HorizontalAlignment="Left" x:Name="txtValorTotal" TextWrapping="Wrap" Width="335" Height="50" IsReadOnly="True" FontSize="25" BorderBrush="#FF8F3765" BorderThickness="2,2,2,2" Background="White" Foreground="Black" Margin="15 0 0 0"/>
         </StackPanel>
     </Grid>
 </Window>
