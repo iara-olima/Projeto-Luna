@@ -29,6 +29,13 @@ namespace ProjetoLuna.Views
             InitializeComponent();
             Loaded += RegVenda_Loaded;
         }
+        public RegVenda(Venda venda)
+        {
+            InitializeComponent();
+            Loaded += RegVenda_Loaded;
+            _venda = venda;
+
+        }
 
         private void RegVenda_Loaded(object sender, RoutedEventArgs e)
         {

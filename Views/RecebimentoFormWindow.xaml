@@ -31,7 +31,6 @@
             <DataGrid Background="White" x:Name="dataGridRecebimento" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="189" Width="800">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
-                    <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*"/>
                     <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
                     <DataGridTextColumn Header="Parcela" Binding="{Binding Parcela}" Width="*"/>
                     <DataGridTextColumn Header="Valor Parc." Binding="{Binding ValorParc}" Width="*"/>
@@ -41,9 +40,8 @@
             </DataGrid>
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25 0 0 0">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50 0 0 0">
             <Button Content="Registrar" x:Name="btRegistrar" Click="btRegistrar_Click" Background="#FFC4719D" BorderBrush="{x:Null}" Height="30" Width="100" Margin="0 0 0 10"/>
-            <Button Content="Editar" x:Name="btEditar" Click="btEditar_Click" Background="#FFC4719D" BorderBrush="{x:Null}" Height="30" Width="100" Margin="0 0 0 10"/>
             <Button Content="Excluir" x:Name="btExcluir" Click="btExcluir_Click" Background="#FFC4719D" BorderBrush="{x:Null}" Height="30" Width="100"/>
         </StackPanel>
 

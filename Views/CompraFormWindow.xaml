@@ -5,61 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="Luna - Moda Íntima"  Height="650" Width="1200" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" Icon="/Icons/cartbuy-icon.png">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Imagens/fundo.jpeg"/>
         </Grid.Background>
+=======
+        Title="Luna - Moda Íntima" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icons/cartbuy-icon.png">
+    <Grid Background="#FFF8DDEB">
+>>>>>>> 102105b3a0a5097b7f7df22becd10ec2b9adc64d
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Border CornerRadius=" 0 40 0 0" Background="#741546"/>
-
         <!--MENU-->
 
-        <StackPanel Height="515" Width="110" Grid.Row="1" Background="#741546" Margin="0 0 0 125" >
-
-            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,40,40,10" Height="50" Width="100">
+        <StackPanel Height="528" Grid.Row="1" Background="#741546" Margin="0 0 0 110">
+            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,40,0,25" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/client-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btFuncionario" Click="btFuncionario_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,40,10" Height="50" Width="100">
+            <Button x:Name="btFuncionario" Click="btFuncionario_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/employee-card.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btEstoque" Click="btEstoque_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,40,10" Height="50" Width="100">
+            <Button x:Name="btEstoque" Click="btEstoque_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/instock-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btVenda" Click="btVenda_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,40,10" Height="50" Width="100">
+            <Button x:Name="btVenda" Click="btVenda_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/sale-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btCompra" Click="btCompra_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,40,10" Height="50" Width="100">
+            <Button x:Name="btCompra" Click="btCompra_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/cartbuy-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,40,10" Height="50" Width="100">
+            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/cashiermachine-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <StackPanel>
-                <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,40,10" Height="50" Width="100">
+                <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="45" Width="75">
                     <StackPanel Orientation="Horizontal" Width="40">
                         <Image Source="/Icons/provider-icon.png" Height="40" Width="40"/>
                     </StackPanel>
                 </Button>
-                <StackPanel Orientation="Horizontal" Width="50" Height="40" Margin="0 0 0 10">
-                    <Menu Margin="1 0 0 0">
-                        <Image Source="/Icons/financeiro_icon.png" Margin="-25 0 0 10" Width="60"/>
-                        <MenuItem Header=">" Cursor="Hand" Margin="-25 0 0 0" FontSize="15" FontFamily="roboto" Foreground="Black" FontWeight="Bold" Height="38" Background="#741546">
+                <StackPanel Orientation="Horizontal" Width="80" Height="38" Margin="0 -10 0 0">
+                    <Menu Margin="-4 0 0 0">
+                        <Image Source="/Icons/financeiro_icon.png" Margin="-10 0 0 10" Width="60"/>
+                        <MenuItem Header=">" Cursor="Hand" Margin="-25 0 0 0" FontSize="15" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
                             <MenuItem Header="_Pagamentos" Click="Pagamentos_Click" FontSize="20"/>
                             <MenuItem Header="_Recebimentos" Click="Recebimentos_Click" FontSize="20"/>
                             <MenuItem Header="_Despesas" Click="Despesas_Click" FontSize="20"/>
@@ -69,10 +71,8 @@
             </StackPanel>
         </StackPanel>
 
-
-
-        <StackPanel VerticalAlignment="Bottom" Background="#741546" Height="110">
-            <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,30,0,0" Height="38">
+        <StackPanel VerticalAlignment="Top" Background="#741546" Height="116" Margin="0,534,0,0">
+            <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="10,30,25,0" Height="38">
                 <StackPanel Orientation="Horizontal" Height="35">
                     <Image Source="/Icons/voltar_icon.png" Height="32" Width="32"/>
                 </StackPanel>
@@ -82,9 +82,9 @@
 
         <StackPanel Grid.Column="1" Background="#FFF8DDEB" Height="650" Width="1200">
 
-            <TextBlock Text="Lista de Compras:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="350" Grid.Column="1" Margin="200,34,0,0"/>
+            <TextBlock Text="Compras:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="180" Grid.Column="1" Margin="131,18,0,0"/>
             <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top" Margin="0 0 200 0">
-                <Button x:Name="btRegistrar" Content="Registrar Compra" Click="btRegistrarComp_Click" Background="#FFC4719D" Width="204" Height="75" FontSize="20" BorderBrush="{x:Null}">
+                <Button x:Name="btRegistrar" Content="Registrar Compra" Click="btRegistrarComp_Click" Background="#FFC4719D" Width="204" Height="78" FontSize="20" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>
@@ -92,7 +92,7 @@
                     </Button.Resources>
                 </Button>
             </StackPanel>
-            <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCompra" AutoGenerateColumns="False" CanUserAddRows="False" 
+            <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
                   CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Height="400" Width="800">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Código" Binding="{Binding Id}" Width="*"/>
@@ -102,8 +102,7 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <StackPanel Orientation="Horizontal" Width="530" Margin="0 10 0 0">
-                <Button Name="btEditar" Click="btEditar_Click" Content="Editar" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
+            <StackPanel Orientation="Horizontal" Width="330" Margin="0 10 0 0">
                 <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
                 <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="150" BorderBrush="{x:Null}"/>
             </StackPanel>

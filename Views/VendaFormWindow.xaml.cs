@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjetoLuna.Models;
 
 namespace ProjetoLuna.Views
 {
@@ -22,13 +23,33 @@ namespace ProjetoLuna.Views
         public VendaFormWindow()
         {
             InitializeComponent();
+            Loaded += VendaFormWindow_Loaded;
         }
-
+        private void VendaFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
+        }
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
             var form = new Views.Painel();
             form.Show();
             this.Close();
+        }
+
+        private void CarregarListagem()
+        {
+            try
+            {
+                var dao = new VendaDAO();
+                List<Venda> listaVenda = dao.List();
+
+                dataGrid.ItemsSource = listaVenda;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btFuncionario_Click(object sender, RoutedEventArgs e)
@@ -47,7 +68,7 @@ namespace ProjetoLuna.Views
 
         private void btVenda_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void btCompra_Click(object sender, RoutedEventArgs e)
@@ -108,14 +129,50 @@ namespace ProjetoLuna.Views
 
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
-
+            var vendaSelected = dataGrid.SelectedItem as Venda;
+            if (vendaSelected == null)
+            {
+                MessageBox.Show("Selecione a venda que deseja editar.");
+            }
+            else
+            {
+                var form = new RegVenda(vendaSelected);
+                form.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {
+            var vendaSelected = dataGrid.SelectedItem as Venda;
 
+            if (vendaSelected == null)
+            {
+                MessageBox.Show("Selecione a venda que deseja excluir.");
+            }
+            else
+            {
+                var resultado = MessageBox.Show($"Tem certeza que deseja deletar a venda {vendaSelected.Id} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                try
+                {
+                    if (resultado == MessageBoxResult.Yes)
+                    {
+                        var dao = new VendaDAO();
+                        dao.Delete(vendaSelected);
+
+                        MessageBox.Show("Venda removida com sucesso!");
+                        var form = new VendaFormWindow();
+                        form.Show();
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
-
         private void btEmitir_Click(object sender, RoutedEventArgs e)
         {
 

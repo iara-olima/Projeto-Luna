@@ -62,22 +62,6 @@ namespace ProjetoLuna.Views
             }
         }
 
-        //Verifica o valor selecionado no Data Grid e aciona a tela de cadastro com as informações carregadas nos campos
-        private void btEditar_Click(object sender, RoutedEventArgs e)
-        {
-            var recebimentoSelected = dataGridRecebimento.SelectedItem as Recebimento;
-            if (recebimentoSelected == null)
-            {
-                MessageBox.Show("Selecione o recebimento que deseja editar.");
-            }
-            else
-            {
-                var form = new RegRecebimento(recebimentoSelected);
-                form.ShowDialog();
-                this.Close();
-            }
-        }
-
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {

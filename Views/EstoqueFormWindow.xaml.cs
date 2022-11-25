@@ -82,34 +82,7 @@ namespace ProjetoLuna.Views
         //Verifica o valor selecionado no Data Grid e exclui os valores de acordo
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {
-            var produtoSelected = dataGridProduto.SelectedItem as Produto;
-
-            if (produtoSelected == null)
-            {
-                MessageBox.Show("Selecione o produto que deseja excluir.");
-            }
-            else
-            {
-                var resultado = MessageBox.Show($"Tem certeza que deseja deletar o produto {produtoSelected.Nome} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-                try
-                {
-                    if (resultado == MessageBoxResult.Yes)
-                    {
-                        var dao = new ProdutoDAO();
-                        dao.Delete(produtoSelected);
-
-                        MessageBox.Show("Produto removido com sucesso!");
-                        var form = new EstoqueFormWindow();
-                        form.Show();
-                        this.Close();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            
         }
 
         private void btEmitir_Click(object sender, RoutedEventArgs e)

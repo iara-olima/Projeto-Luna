@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using ProjetoLuna.Models;
 namespace ProjetoLuna.Views
 {
     /// <summary>
@@ -22,6 +22,12 @@ namespace ProjetoLuna.Views
         public CompraFormWindow()
         {
             InitializeComponent();
+            Loaded += CompraFormWindow_Loaded;
+        }
+
+        private void CompraFormWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
         }
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
@@ -29,6 +35,22 @@ namespace ProjetoLuna.Views
             var form = new Views.Painel();
             form.Show();
             this.Close();
+        }
+
+        private void CarregarListagem()
+        {
+            try
+            {
+                var dao = new CompraDAO();
+                List<Compra> listaCompra = dao.List();
+
+                dataGrid.ItemsSource = listaCompra;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btFuncionario_Click(object sender, RoutedEventArgs e)
@@ -105,14 +127,36 @@ namespace ProjetoLuna.Views
             this.Close();
         }
 
-        private void btEditar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btExcluir_Click(object sender, RoutedEventArgs e)
         {
+            var compraSelected = dataGrid.SelectedItem as Compra;
 
+            if (compraSelected == null)
+            {
+                MessageBox.Show("Selecione a compra que deseja excluir.");
+            }
+            else
+            {
+                var resultado = MessageBox.Show($"Tem certeza que deseja deletar a compra {compraSelected.Id} ?", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                try
+                {
+                    if (resultado == MessageBoxResult.Yes)
+                    {
+                        var dao = new CompraDAO();
+                        dao.Delete(compraSelected);
+
+                        MessageBox.Show("Compra removida com sucesso!");
+                        var form = new EstoqueFormWindow();
+                        form.Show();
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void btEmitir_Click(object sender, RoutedEventArgs e)
