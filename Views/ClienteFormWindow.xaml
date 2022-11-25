@@ -78,9 +78,8 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="1" Background="#FFF8DDEB" Height="650" Width="1200">
-            <Border CornerRadius=" 0 40 0 0" />
             <TextBlock Text="Lista de Clientes" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="302" Grid.Column="1" Margin="200,34,0,0"/>
 
             <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGridCliente" AutoGenerateColumns="False" CanUserAddRows="False" 

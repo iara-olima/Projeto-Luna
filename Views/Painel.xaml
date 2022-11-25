@@ -25,51 +25,51 @@
             <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38" Cursor="Hand">
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/client-icon.png" Height="32" Width="32"/>
-                    <TextBlock Text="Cliente" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    <TextBlock Text="Cliente" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btFuncionario" Click="btFuncionario_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240">
                     <Image Source="/Icons/employee-card.png" Height="32" Width="32"/>
-                    <TextBlock Text="Funcionario" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    <TextBlock Text="Funcionario" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btEstoque" Click="btEstoque_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="42">
                 <StackPanel Orientation="Horizontal" Width="240" Height="35">
                     <Image Source="/Icons/instock-icon.png" Height="32" Width="32"/>
-                    <TextBlock Text="Estoque" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    <TextBlock Text="Estoque" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btVenda" Click="btVenda_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40">
                 <StackPanel Orientation="Horizontal" Width="240" Height="35">
                     <Image Source="/Icons/sale-icon.png" Height="32" Width="32"/>
-                    <TextBlock Text="Venda" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    <TextBlock Text="Venda" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btCompra" Click="btCompra_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="38">
                 <StackPanel Orientation="Horizontal" Width="240" Height="35">
                     <Image Source="/Icons/cartbuy-icon.png" Height="32" Width="32"/>
-                    <TextBlock Text="Compra" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    <TextBlock Text="Compra" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40">
                 <StackPanel Orientation="Horizontal" Width="240" Height="35">
                     <Image Source="/Icons/cashiermachine-icon.png" Height="32" Width="32"/>
-                    <TextBlock Text="Caixa" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                    <TextBlock Text="Caixa" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                 </StackPanel>
             </Button>
             <StackPanel>
                 <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40">
                     <StackPanel Orientation="Horizontal" Width="240" Height="33">
                         <Image Source="/Icons/provider-icon.png" Height="32" Width="32"/>
-                        <TextBlock Text="Fornecedor" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                        <TextBlock Text="Fornecedor" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Width="250" Height="38">
-                <Image Source="/Icons/financeiro_icon.png" Height="32" Margin="20 0 20 0"/>
-                <Menu x:Name="mnFinanceiro" Background="{x:Null}" Height="38" Width="255" >
-                    <MenuItem Margin="-20 0 0 0" Header="_Financeiro" Cursor="Hand" FontSize="25" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
+                <Image Source="/Icons/financeiro_icon.png" Height="32" Margin="17 0 20 0"/>
+                <Menu x:Name="mnFinanceiro" Background="{x:Null}" Height="38" Width="270" >
+                    <MenuItem Margin="-10 0 0 0" Header="_Financeiro" Cursor="Hand" FontSize="25" FontFamily="roboto" Foreground="white" FontWeight="Bold" Height="38" Background="#741546">
                         <MenuItem Header="_Pagamentos" Click="Pagamentos_Click" FontSize="20"/>
                         <MenuItem Header="_Recebimentos" Click="Recebimentos_Click" FontSize="20"/>
                         <MenuItem Header="_Despesas" Click="Despesas_Click" FontSize="20"/>
@@ -77,10 +77,10 @@
                 </Menu>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btUsuario" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0 10 0 15" Height="40" Click="btUsuario_Click">
+                <Button x:Name="btUsuario" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0 15 0 15" Height="40" Click="btUsuario_Click">
                     <WrapPanel VerticalAlignment="Center" Width="240" Height="33">
                         <Image Source="/Icons/user-icon.png" Height="32" Width="32"/>
-                        <TextBlock Text="Usuário" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="10 0 0 0"/>
+                        <TextBlock Text="Usuário" FontFamily="roboto" FontSize="25" FontWeight="Bold" Margin="27 0 0 0"/>
                     </WrapPanel>
                 </Button>
             </StackPanel>
