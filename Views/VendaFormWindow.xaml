@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLuna.Views"
         mc:Ignorable="d"
-        Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Luna - Moda Íntima" Height="650" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" WindowState="Maximized">
     <Grid Background="#FFF8DDEB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -14,38 +14,38 @@
         <!--MENU-->
 
         <StackPanel Height="528" Grid.Row="1" Background="#741546" Margin="0 0 0 110">
-            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,40,0,25" Height="40" Width="70">
+            <Button x:Name="btCliente" Click="btCliente_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,40,0,25" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/client-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btFuncionario" Click="btFuncionario_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="40" Width="70">
+            <Button x:Name="btFuncionario" Click="btFuncionario_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/employee-card.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btEstoque" Click="btEstoque_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="40" Width="70">
+            <Button x:Name="btEstoque" Click="btEstoque_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/instock-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btVenda" Click="btVenda_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40" Width="70">
+            <Button x:Name="btVenda" Click="btVenda_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/sale-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btCompra" Click="btCompra_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40" Width="70">
+            <Button x:Name="btCompra" Click="btCompra_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/cartbuy-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="40" Width="70">
+            <Button x:Name="btCaixa" Click="btCaixa_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,15" Height="45" Width="75">
                 <StackPanel Orientation="Horizontal" Width="40">
                     <Image Source="/Icons/cashiermachine-icon.png" Height="40" Width="40"/>
                 </StackPanel>
             </Button>
             <StackPanel>
-                <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="40" Width="70">
+                <Button x:Name="btFornecedor" Click="btFornecedor_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,25" Height="45" Width="75">
                     <StackPanel Orientation="Horizontal" Width="40">
                         <Image Source="/Icons/provider-icon.png" Height="40" Width="40"/>
                     </StackPanel>
@@ -64,7 +64,7 @@
         </StackPanel>
 
         <StackPanel VerticalAlignment="Bottom" Background="#741546" Height="110">
-            <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="0,30,0,0" Height="38">
+            <Button x:Name="btVoltar" Click="btVoltar_Click" Background="{x:Null}" BorderThickness="0,0,0,0" Margin="10,30,25,0" Height="38">
                 <StackPanel Orientation="Horizontal" Height="35">
                     <Image Source="/Icons/voltar_icon.png" Height="32" Width="32"/>
                 </StackPanel>

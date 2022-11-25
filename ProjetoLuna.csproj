@@ -371,18 +371,6 @@
     <Resource Include="Icons\barra_menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\cliente_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\func_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\estoque_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\venda_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagens\rel.png" />
   </ItemGroup>
   <ItemGroup>
@@ -392,16 +380,10 @@
     <Resource Include="Imagens\DESIGN_PDS__1_-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\fornecedor_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\voltar_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\seta_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\compra_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\financeiro_icon.png" />
