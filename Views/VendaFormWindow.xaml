@@ -80,7 +80,6 @@
         </StackPanel>
         <!--FIM MENU-->
 
-<<<<<<< HEAD
         <StackPanel Grid.Column="1" Background="#FFF8DDEB" Height="650" Width="1200">
             <TextBlock Text="Lista de Vendas:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="338" Grid.Column="1" Margin="200,64,0,0"/>
             <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top" Margin="0 0 200 0">
@@ -107,33 +106,19 @@
             <StackPanel Orientation="Horizontal" Width="530" Margin="0 10 0 0">
                 <Button Name="btEditar" Click="btEditar_Click" Content="Editar" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
                 <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
-                <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="150" BorderBrush="{x:Null}"/>
+                <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="150" BorderBrush="{x:Null}" Cursor="Hand"/>
             </StackPanel>
-=======
-        <TextBlock Text="Vendas:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="158" Grid.Column="1" Margin="131,128,0,0"/>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="80" VerticalAlignment="Top" Margin="0 95 160 0">
-            <Button x:Name="btRegistrar" Content="Registrar Venda" Click="btRegistrarVend_Click" Background="#FFC4719D" Width="204" Height="78" FontSize="20" BorderBrush="{x:Null}">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="20"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-        </StackPanel>
-        <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
-                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="131,193,131,165">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Código" Binding="{Binding Id}" Width="*"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
-                <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
 
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal" Height="50" Width="550" Margin="0,470,130,78">
-            <Button Name="btEditar" Click="btEditar_Click" Content="Editar" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
-            <Button Name="btExcluir" Click="btExcluir_Click" Content="Excluir" Background="#FFC4719D" Grid.Column="1" Width="150" Margin="0 0 40 0" BorderBrush="{x:Null}"/>
-            <Button Name="btEmitir" Click="btEmitir_Click" Content="Emitir" Background="#FFC4719D" Grid.Column="1" Width="150" BorderBrush="{x:Null}"/>
->>>>>>> 102105b3a0a5097b7f7df22becd10ec2b9adc64d
+            <TextBlock Text="Vendas:" FontWeight="Bold" Foreground="#741546" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="158" Grid.Column="1" Margin="131,128,0,0"/>
+            
+            <DataGrid Background="White" BorderBrush="#741546" x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  CanUserDeleteRows="False" IsReadOnly="True" AlternationCount="2" Grid.Column="1" Margin="131,193,131,165">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Código" Binding="{Binding Id}" Width="*"/>
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                    <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Window>
