@@ -41,6 +41,30 @@ namespace ProjetoLuna.Views
         {
             cbCaixa.ItemsSource = new CaixaDAO().List();
             cbDespesa.ItemsSource = new DespesaDAO().List();
+
+            dtData.SelectedDate = DateTime.Now;
+            Thora.SelectedTime = DateTime.Now;
+
+            if (_pag.Id > 0)
+                preencherForm();
+        }
+
+        private void preencherForm()
+        {
+            dtData.SelectedDate = _pag.Data;
+            Thora.SelectedTime = _pag.Hora;
+
+            if (double.TryParse(txtValor.Text, out double Valor))
+                _pag.Valor = Valor;
+
+            dtVenc.SelectedDate = _pag.Vencimento;
+            cbFormaPag.SelectedItem = _pag.FormaPag;
+
+            if (_pag.Caixa != null)
+                cbCaixa.SelectedValue = _pag.Caixa.Id;
+
+            if (_pag.Despesa != null)
+                cbDespesa.SelectedValue = _pag.Despesa.Id;
         }
 
         private void btSalvar_Click(object sender, RoutedEventArgs e)
@@ -77,12 +101,18 @@ namespace ProjetoLuna.Views
 
         private void btVoltar_Click(object sender, RoutedEventArgs e)
         {
-
+            var form = new Views.PagamentoFormWindow();
+            form.Show();
+            this.Close();
         }
 
         private void btLimpar_Click(object sender, RoutedEventArgs e)
         {
-
+           
+            txtValor.Clear();
+            cbCaixa.SelectedIndex = -1;
+            cbDespesa.SelectedIndex = -1;
+            cbFormaPag.SelectedIndex = -1;
         }
     }
 }
