@@ -1,6 +1,5 @@
 create database bd_Luna;
 use bd_Luna;
-
 create table Cliente (
 id_cli int primary key auto_increment,
 nome_cli varchar (100),
@@ -11,7 +10,6 @@ cpf_cli varchar(100),
 endereco_cli varchar(100),
 sexo_cli varchar(100)
 );
-
 create table Funcionario(
 id_fun int primary key auto_increment,
 nome_fun varchar(200),
@@ -23,7 +21,6 @@ telefone_fun varchar(100),
 sexo_fun varchar(100),
 funcao_fun varchar(200)
 );
-
 create table Usuario(
 id_usu int primary key auto_increment,
 cpf_usu varchar(300),
@@ -31,7 +28,6 @@ senha_usu varchar(200) unique,
 id_fun_fk int,
 foreign key (id_fun_fk) references Funcionario (id_fun)
 );
-
 create table Fornecedor (
 id_forn int primary key auto_increment,
 nomeFantasia_forn varchar(200),
@@ -41,7 +37,6 @@ email_forn varchar(200),
 telefone_forn varchar(200),
 endereco_forn varchar(200)
 );
-
 create table Produto (
 id_prod int primary key auto_increment,
 nome_prod varchar (100),
@@ -51,7 +46,6 @@ valorVenda_prod double,
 valorCompra_prod double,
 descricao_prod varchar(300)
 );
-
 create table Caixa (
 id_cai int primary key auto_increment,
 data_cai date,
@@ -62,21 +56,16 @@ pagamento_cai double,
 id_fun_fk int,
 foreign key (id_fun_fk) references Funcionario(id_fun)
 );
-
-
 create table Venda (
 id_vend int primary key auto_increment,
 valor_vend double,
-data_vend date,
 hora_vend time,
+data_vend date,
 id_fun_fk int,
 id_cli_fk int,
 foreign key (id_fun_fk) references Funcionario(id_fun),
 foreign key (id_cli_fk) references cliente (id_cli)
 );
-
-
-
 create table Compra (
 id_comp int primary key auto_increment,
 valor_comp double,
@@ -96,12 +85,12 @@ create table Produto_Venda (
 id_prodVend int primary key auto_increment,
 quantidade_itenv varchar(100),
 valor_itenv double,
+valor_total_itenv double,
 id_vend_fk int,
 id_prod_fk int,
 foreign key (id_vend_fk) references Venda (id_vend),
 foreign key(id_prod_fk) references Produto (id_prod)
 );
-
 create table Produto_Compra (
 id_compProd int primary key auto_increment,
 quantidade_itenc varchar(100),
@@ -112,7 +101,6 @@ id_prod_fk int,
 foreign key (id_comp_fk) references Compra (id_comp),
 foreign key(id_prod_fk) references Produto (id_prod)
 );
-
 create table Recebimento  (
 id_rec int primary key auto_increment,
 data_rec date,
@@ -120,6 +108,7 @@ parcela_rec int,
 valorParc_rec double,
 valor_rec double, 
 forma_rec varchar(200),
+stts_rec varchar(200),
 vencimento_rec date,
 hora_rec time,
 id_cai_fk int,
@@ -127,7 +116,6 @@ id_vend_fk int,
 foreign key (id_cai_fk) references Caixa (id_cai),
 foreign key (id_vend_fk) references Venda (id_vend)
 );
-
 create table Despesa (
 id_desp int primary key auto_increment,
 descricao_desp varchar(200),
@@ -136,7 +124,10 @@ hora_desp time,
 valor_desp double,
 parcelas_desp int,
 valorParcela_desp double,
-tipo_desp varchar(200)
+tipo_desp varchar(200),
+id_forn_fk int,
+foreign key (id_forn_fk) references Fornecedor (id_forn)
+
 );
 
 create table Pagamento (
@@ -144,6 +135,7 @@ id_pag int primary key auto_increment,
 data_pag date,
 valor_pag double,
 forma_pag varchar(200),
+stts_pag varchar(200),
 vencimento_pag date,
 hora_pag time,
 id_cai_fk int,
@@ -152,10 +144,10 @@ foreign key (id_cai_fk) references Caixa (id_cai),
 foreign key (id_desp_fk) references Despesa (id_desp)
 ); 
 
+
 #CRIAÇÃO AUTOMATICA DE USUARIO ADM
 insert into Funcionario values(null, "ADM", "1980-10-10", 0, 0, "a", "0", "I", "ADM");
 insert into Usuario values(null, 0, "adm", 1);
-
 #PROCEDIMENTOS DO PROJETO LUNA
 #Inserir Cliente
 delimiter $$
@@ -172,7 +164,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Cliente
 delimiter $$
 	create procedure atualizarCliente(id int, nome varchar(100), nascimento date, email varchar(300), telefone varchar(300), cpf varchar(100), endereco varchar(100), sexo varchar(100))
@@ -188,7 +179,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Funcionário
 delimiter $$
 	create procedure inserirFuncionario(nome varchar(200), nascimento date, salario double, cpf varchar(100), email varchar(100), telefone varchar(100), sexo varchar(100), funcao varchar(200))
@@ -204,7 +194,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Funcionario
 delimiter $$
 	create procedure atualizarFuncionario(id int, nome varchar(100), nascimento date, salario double, cpf varchar(100), email varchar(300), telefone varchar(300), sexo varchar(100), funcao varchar(200))
@@ -220,7 +209,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Usuário
 delimiter $$
 	create procedure inserirUsuario(cpf varchar(14), senha varchar(200), idFuncionario int)
@@ -236,7 +224,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Usuario
 delimiter $$
 	create procedure atualizarUsuario(id int, cpf varchar(14), senha varchar(200), idFuncionario int)
@@ -252,7 +239,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Fornecedor
 delimiter $$
 	create procedure inserirFornecedor(nomeFantasia varchar(200), razaoSocial varchar(200), cnpj varchar(200), email varchar(200), telefone varchar(200), endereco varchar(200))
@@ -268,7 +254,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Fornecedor
 delimiter $$
 	create procedure atualizarFornecedor(id int, nomeFantasia varchar(200), razaoSocial varchar(200), cnpj varchar(200), email varchar(200), telefone varchar(200), endereco varchar(200))
@@ -284,7 +269,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Produto
 delimiter $$
 	create procedure inserirProduto(nome varchar(100), marca varchar(100), quantidade int, valorVenda double, valorCompra double, descricao varchar(300))
@@ -300,7 +284,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Produto
 delimiter $$
 	create procedure atualizarProduto(id int, nome varchar(100), marca varchar(100), quantidade int, valorVenda double, valorCompra double, descricao varchar(300))
@@ -316,7 +299,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Caixa
 delimiter $$
 	create procedure inserirCaixa(data date, saldoInicial double, saldoFinal double, recebimento double, pagamento double, idFuncionario int)
@@ -332,7 +314,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Caixa
 delimiter $$
 	create procedure atualizarCaixa(id int, data date, saldoInicial double, saldoFinal double, recebimento double, pagamento double, idFuncionario int)
@@ -348,7 +329,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Venda
 delimiter $$
 	create procedure inserirVenda(valor double, hora time, data date, idFuncionario int, idCliente int)
@@ -364,7 +344,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Venda
 delimiter $$
 	create procedure atualizarVenda(id int, valor double, hora time, data date, idFuncionario int, idCliente int)
@@ -383,10 +362,11 @@ $$ delimiter ;
 
 #Inserir Compra
 delimiter $$
-	create procedure inserirCompra(valor double, data date, hora time, parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
+	create procedure inserirCompra(valor double, dataC date, forma varchar(300), parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
     begin
 		if((select id_fun from Funcionario where id_fun = idFuncionario) is not null)then
 			if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
+				insert into Compra values(null, valor, data, forma, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
 				insert into Compra values(null, valor, data, hora, parcela, descricao, valorParcela, idFornecedor, idFuncionario);
             else
 				select "O fornecedor selecionado não existe no cadastro!" as ERRO;
@@ -396,7 +376,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #AtualizarCompra
 delimiter $$
 	create procedure atualizarCompra(id int, valor double, data date, hora time, parcela int, descricao varchar(300), valorParcela double, idFornecedor int, idFuncionario int)
@@ -412,7 +391,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Produto_Venda
 delimiter $$
 	create procedure inserirProdutoVenda(quantidade int, valor double, idVenda int, idProduto int)
@@ -428,7 +406,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Produto_Venda
 delimiter $$
 	create procedure atualizarProdutoVenda(id int, quantidade int, valor double, idVenda int, idProduto int)
@@ -444,7 +421,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Produto_Compra
 delimiter $$
 	create procedure inserirProdutoCompra(quantidade int, valor double, idCompra int, idProduto int)
@@ -460,7 +436,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Produto_Compra
 delimiter $$
 	create procedure atualizarProdutoCompra(id int, quantidade int, valor double, idCompra int, idProduto int)
@@ -476,10 +451,9 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Recebimento
 delimiter $$
-	create procedure inserirRecebimento(data date, parcela int, valorParcela double, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idVenda int)
+	create procedure inserirRecebimento(dataR date, parcela int, valorParcela double, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idVenda int)
     begin
 		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
 			if((select id_vend from Venda where id_vend = idVenda) is not null)then
@@ -492,7 +466,6 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Recebimento
 delimiter $$
 	create procedure atualizarRecebimento(id int, data date, parcela int, valorParcela double, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idVenda int)
@@ -513,15 +486,19 @@ $$ delimiter ;
 delimiter $$
 	create procedure inserirDespesa(descricao varchar(200), data date, hora time, valor double, parcelas int, valorParcela double, tipo varchar(200))
     begin
+		if((select id_forn from Fornecedor where id_forn = idFornecedor) is not null)then
 
 			if(valor <> "") and (valor is not null)then
+				insert into Despesa values(null, descricao, data, hora, valor, parcelas, valorParcela, tipo, idFornecedor);
 				insert into Despesa values(null, descricao, data, hora, valor, parcelas, valorParcela, tipo);
             else
 				select "O valor precisa ser informado!" as ERRO;
+            end if;
+        else
+			select "O fornecedor selecionado não existe no cadastro!" as ERRO;
 		end if;
     end;
 $$ delimiter ;
-
 #Atualizar Despesa
 delimiter $$
 	create procedure atualizarDespesa(id int, descricao varchar(200), data date, hora time, valor double, parcelas int, valorParcela double, tipo varchar(200), idFornecedor int)
@@ -537,14 +514,27 @@ delimiter $$
 		end if;
     end;
 $$ delimiter ;
-
 #Inserir Pagamento
 delimiter $$
 	create procedure inserirPagamento(dataP date, valor double, forma varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
     begin
 		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
 			if((select id_desp from Despesa where id_desp = idDespesa) is not null)then
-				insert into Pagamento values(null, dataP, valor, forma, vencimento, hora, idCaixa, idDespesa);
+				insert into Pagamento values(null, data, valor, forma, vencimento, hora, idCaixa, idDespesa);
+            else
+				select "A despesa selecionada não existe no cadastro!" as ERRO;
+            end if;
+      end if; 
+      END;
+$$ delimiter ;
+
+#Atualizar Pagamento
+delimiter $$
+	create procedure atualizarPagamento(id int, data date, valor double, forma varchar(200), status varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
+    begin
+		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
+			if((select id_desp from Despesa where id_desp = idDespesa) is not null)then
+				update Pagamento set data_pag = data, valor_pag = valor, forma_pag = forma, stts_pag = status, vencimento_pag = vencimento, hora_pag = hora, id_cai_fk = idCaixa, id_desp_fk = idDespesa where (id_pag = id);
             else
 				select "A despesa selecionada não existe no cadastro!" as ERRO;
             end if;
@@ -554,18 +544,55 @@ delimiter $$
     end;
 $$ delimiter ;
 
-#Atualizar Pagamento
-delimiter $$
-	create procedure atualizarPagamento(id int, dataP date, valor double, forma varchar(200), vencimento date, hora time, idCaixa int, idDespesa int)
-    begin
-		if((select id_cai from Caixa where id_cai = idCaixa) is not null)then
-			if((select id_desp from Despesa where id_desp = idDespesa) is not null)then
-				update Pagamento set data_pag = data, valor_pag = valor, forma_pag = forma, vencimento_pag = vencimento, hora_pag = hora, id_cai_fk = idCaixa, id_desp_fk = idDespesa where (id_pag = id);
-            else
-				select "A despesa selecionada não existe no cadastro!" as ERRO;
-            end if;
-        else
-			select "O caixa selecionado não existe no cadastro!" as ERRO;
-		end if;
-    end;
-$$ delimiter ;
+#inserção no banco de dados
+
+insert into Caixa values(null, '2022-09-23', 2350, 10300, 4, 3, null);
+insert into Caixa values(null, '2022-10-05', 3455, 4566, 5,6, null);
+insert into Caixa values (null, '2022-10-10',6400,10670, 3,4,null);
+
+insert into Cliente values(null, 'Lana Del Rey', '1995-08-12','laninha001@gmail.com', '(69) 99345-6787','133.655.666-13','rua das Seringueiras', 'Feminino');
+insert into Cliente values (null, 'Taylor Swift', '1996-10-04', 'taylors03@hotmail.com', '(69) 99245-7868', '444.555.666-89','rua 3, bairro novo', 'Feminino');
+insert into Cliente values (null, 'Carlos Alberto', '2000-07-13', 'alberto.carlos02@hotmail.com', '(69) 99309-5633', '305.456.678-55','rua das pedras', 'Masculino');
+
+insert into Compra values (null, 500.00, '2022-11-20', 'Cartão',0, 'Conjunto lingerie preta',0.00, null, null);
+insert into Compra values (null, 300.00, '2022-11-23', 'Cartão',0, 'Baby doll ',0.00, null, null);
+insert into Compra values (null, 100.00, '2022-11-25', 'Cartão',0, 'água mineral',0.00, null, null);
+
+insert into Despesa values (null, 'água mineral', '2022-11-15', '10:30',50.00, 0 ,0.00, 'Outro', null);
+insert into Despesa values (null, 'Energisa, energia', '2022-11-18', '11:48',200.00, 0 ,0.00, 'Energia', null);
+
+insert into Fornecedor values (null, 'Tex moda intima', 'Tex moda intima ltda', '1424256363', 'texmoda55@gmail.com ', '(11) 9208-8776','São Paulo, Av.Ceringueiras ');
+insert into Fornecedor values (null, 'Esmeralda', 'Esmeralda e CIA', '34556777', 'Esme.MI@gmail.com ', '(27) 9308-6667','Espirito Santo, rua 12');
+insert into Fornecedor values (null, 'Nix', 'Roupa intima ltda', '68665456', 'Nixmoda99@hotmail.com ', '(69) 9288-9934', 'Rua das flores');
+
+
+insert into Funcionario values (null, 'Regina Loures', '2000-10-05', 4000, '333.444.55-77', 'regininha0909@hotmail.com' ,'(69) 9345-0070', 'Feminino','Vendedora');
+insert into Funcionario values (null, 'Cassia Fernanda', '1981-04-10', 4000, '233.433.344-89', 'nanda33@hotmail.com' ,'(69) 9234-5568', 'Feminino','Caixa');
+
+insert into Pagamento values (null, '2022-11-19', 100.00, 'Cartão', 'pago', '2022-11-30' ,'12:47',null,null);
+insert into Pagamento values (null, '2022-10-02', 500.00, 'Cartão', 'pago', '2022-11-02' ,'09:16',null,null);
+insert into Pagamento values (null, '2022-09-10', 250.50, 'Cartão', 'pago', '2022-10-10' ,'15:03',null,null);
+
+insert into Produto values (null, 'Conjunto calcinha e sutiã, rosa',' Duloren', 6, 150.00, 80.00 ,'Conjunto de calcinha e sutiã 100% algodão');
+insert into Produto values (null, 'Body renda preto', 'Hope', 10, 142.60, 75.90 ,'Body modelador renda preta');
+insert into Produto values (null, 'Babydoll branco ', 'Hope', 5, 90.50, 50.99, 'babydoll de ceda branco');
+
+insert into Produto_Compra values (null, 3, 100.00, 300.00, null, null);
+insert into Produto_Compra values (null, 2, 50.00, 100.00, null, null);
+insert into Produto_Compra values (null, 1, 79.90, 79.90, null, null);
+
+insert into Produto_Venda values (null, 3, 150.00, 450.00, null, null);
+insert into Produto_Venda values (null, 2, 142.60, 285.20, null, null);
+insert into Produto_Venda values (null, 3, 90.50, 271.50, null, null);
+
+insert into Recebimento values (null, '2022-10-25', 2, '100.00','200.00','Cartão', 'Em aberto', '2022-11-25', null,  null, null);
+insert into Recebimento values (null, '2022-09-03', 3, '200.00','600.00','Cartão', 'Pago', '2022-11-03', '15:18',  null, null);
+
+insert into Usuario values (null, '111.222.333-44','321', null); 
+insert into Usuario values (null, '123.321.213-23','1234', null); 
+insert into Usuario values (null, '000.000.000-00','000', null); 
+
+insert into Venda values (null, 300.00, '15:18', '2022-11-21', null, null);
+insert into Venda values (null, 150.90, '16:55', '2022-11-20', null, null);
+insert into Venda values (null, 100.50, '08:15','2022-10-11', null, null);
+
